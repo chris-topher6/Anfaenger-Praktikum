@@ -27,6 +27,7 @@ per-mode=symbol-or-fraction,
 % Unterstützung für Links und PDF Metadaten
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
+\usepackage{pdfpages}
 % Einstellungen hier, z.B. Fonts
 \setmathfont{Latin Modern Math}
 \begin{document}
@@ -34,5 +35,15 @@ per-mode=symbol-or-fraction,
 \author{Henry Krämerkämper \and Christopher Breitfeld}
 \date{29.10.2020}
 \maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Einleitung}
 Ein Anfang
+\section{Aufgabenteil a)}
+  Man stelle die gemessenen Temperaturverläufe in einem geeigneten Diagramm dar. \\
+  \\
+  Im folgenden Diagramm werden die Verläufe der Temperaturen T1 und T2 in Abhängigkeit der Zeit aufgetragen.
+  Alle Werte wurden in SI-Einheiten konvertiert.
+  \includepdf{Temperaturverlaeufe.pdf}
 \end{document}
