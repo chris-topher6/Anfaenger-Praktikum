@@ -144,8 +144,8 @@ print(f"\n Aus Messreihe 2 folgt: \n L={L2}\n\n")
 molmass=120.91 #g/mol
 i=1
 while(i<40):
-    massdu=-(difT2.subs(t, i))/L1
-    print(f"Der Massendruchsatz nach t={i}s ist: dm/dt={massdu*molmass*10**3:.5f}mg")
+    massdu=-((a1+a2)*difT1.subs(t, i))/L1 #difQ2
+    print(f"Der Massendruchsatz nach t={i}s ist: dm/dt={massdu*molmass:.5f}g/s")
     i=i+10
 #################################################################################
 
