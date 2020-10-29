@@ -1,5 +1,7 @@
 %Ich bin ein TeX Dokument
 \documentclass{scrartcl} % KOMA-Script Dokumentenklasse Article
+%Für Positionierung von Gleitumgebungen
+\usepackage{scrhack}
 % Warnung, falls noch einmal kompiliert werden muss
 \usepackage[aux]{rerunfilecheck}
 % Paket für Schriftarteinstellung, muss immer geladen werden
@@ -27,7 +29,10 @@ per-mode=symbol-or-fraction,
 % Unterstützung für Links und PDF Metadaten
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
-\usepackage{pdfpages}
+%Für das Einbinden von Grafiken
+\usepackage{graphicx}
+%Positionierung von Gleitumgebungen
+\usepackage{float}
 % Einstellungen hier, z.B. Fonts
 \setmathfont{Latin Modern Math}
 \begin{document}
@@ -45,5 +50,19 @@ Ein Anfang
   \\
   Im folgenden Diagramm werden die Verläufe der Temperaturen T1 und T2 in Abhängigkeit der Zeit aufgetragen.
   Alle Werte wurden in SI-Einheiten konvertiert.
-  \includepdf{Temperaturverlaeufe.pdf}
+  \\
+  \begin{figure}
+    \centering
+    \includegraphics[scale = 0.75]{Temperaturverlaeufe.pdf}
+    \caption{Die beiden Temperaturverläufe der Reservoire 1 und 2.}
+    \label{fig:TemperaturverlaufA}
+  \end{figure}
+\section{Aufgabenteil b)}
+  Man versuche mit Hilfe einer nicht-linearen Ausgleichsrechnung die gemessenen Temperaturverläufe durch einfache Gleichungen zu approximieren.
+  \\
+  Die Ausgleichsgleichungen sind ebenfalls in \ref{fig:TemperaturverlaufA} skizziert. Der gewählte Ansatz ist
+  \begin{equation}
+    T(t) = \symup{A} \cdot t^2 + \symup{B} \cdot t + \symup{C}
+    \label{eq:Regressionsgleichung}
+  \end{equation}
 \end{document}
