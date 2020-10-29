@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import sympy 
+import sympy
 from sympy import *
 
 ########################################################################################
@@ -8,7 +8,7 @@ from sympy import *
 
 t, T1, p1, T2, p2, N = np.genfromtxt('Waermepumpe.txt', unpack=True)
 t=t*60
-p1=(p1+1)*(10)**5 
+p1=(p1+1)*(10)**5
 p2=(p2+1)*(10)**5
 T1=T1+273.15
 T2=T2+273.15
@@ -59,7 +59,7 @@ while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     print(f"die Abweichung beträgt {p*100:.2f}% vom Idealwert")
     print("\n")
     i=i+10
-i=1    
+i=1
 print("Berechnet mit T2 \n\n") #!!!!!!!!!!nochmal überprüfen!!!!!!!!!
 while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     vid=-T2[i]/(T2[i]-T1[i]) #ideale Güte
@@ -74,7 +74,7 @@ while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
 
 #e) Massendurchsatz, Verdampfungswärme, Dampfdruckkurve
 
-# aus V203-"Verdampfungswärme" ist begkannt:
+# aus V203-"Verdampfungswärme" ist bekannt:
 # ln(p)=_-L/(R*T)+c
 # p=p0*exp(-L/(R*T))
 # dabei ist R=ideale-Gaskonst., p=gemessener Druck, p0=Umgebungs-Druck, T=Temperatur, L=Verdampfungswärme, c=const.
@@ -97,9 +97,9 @@ x_plot = np.linspace(np.min(1/T1), np.max(1/T1))
 
 plt.plot(1/T1, np.log(p1), 'r.', label='Messdaten')
 plt.plot(
-    x_plot, 
-    params3[0]*x_plot+params3[1], 
-    'b-', 
+    x_plot,
+    params3[0]*x_plot+params3[1],
+    'b-',
     label='Ausgleichsgerade'
     )
 
@@ -118,9 +118,9 @@ x_plot = np.linspace(np.min(1/T2), np.max(1/T2))
 
 plt.plot(1/T2, np.log(p2), 'r.', label='Messdaten')
 plt.plot(
-    x_plot, 
-    params4[0]*x_plot+params4[1], 
-    'b-', 
+    x_plot,
+    params4[0]*x_plot+params4[1],
+    'b-',
     label='Ausgleichsgerade'
     )
 
@@ -130,7 +130,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Druckverlaeufe.pdf')
 
-L1=-params3[0]*8.3144621 #hier am besten R einfügen 
+L1=-params3[0]*8.3144621 #hier am besten R einfügen
 L2=-params4[0]*8.3144621 #Einheit: [R]=J/(K*mol)
 print(f"\n\n Aus Messreihe 1 folgt: \n L={L1}")
 print(f"\n Aus Messreihe 2 folgt: \n L={L2}\n\n")
