@@ -35,6 +35,8 @@ per-mode=symbol-or-fraction,
 \usepackage{float}
 % Einstellungen hier, z.B. Fonts
 \setmathfont{Latin Modern Math}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 \begin{document}
 \title{Titel}
 \author{Henry Krämerkämper \and Christopher Breitfeld}
@@ -54,7 +56,20 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
   $ A $ und der transportierten Wärmeenergie $ Q_\text{transp} $ an. Eine Formel für die Berechnung der Güteziffer lässt sich wie folgt herleiten: \\
   \\
   Wir bezeichnen die den wärmeren Reservoire 1 zugeführte Wärmeenergie als $ Q_\text{1} $ sowie die dem kälteren Reservoire 2 entnommene Wärmeenergie als $ Q_\text{2} $.
-  Dann gilt nach dem 1. Hauptsatz der Thermodynamik
+  Dann gilt nach dem ersten Hauptsatz der Thermodynamik
+  \begin{equation}
+    Q_\text{1} = Q_\text{2} + A.
+    \label{eqn:wärmeenergie}
+  \end{equation}
+  Dann ist das Verhältnis zwischen transportierter Wärmeenergie und aufgewendeter Arbeit
+  \begin{equation}
+    \frac{Q_\text{1}}{A} = v.
+  \end{equation}
+  Um die Güteziffer einer idealen Wärmepumpe zu berechnen, betrachten wir die Zusammenhänge nach dem zweiten Hauptsatz der Thermodynamik:
+  \begin{equation}
+    \frac{Q_\text{1}}{T_\text{1}} - \frac{Q_\text{2}}{T_\text{2}} = 0
+  \end{equation}
+  
 \section{Aufgabenteil a)}
   Man stelle die gemessenen Temperaturverläufe in einem geeigneten Diagramm dar. \\
   \\
