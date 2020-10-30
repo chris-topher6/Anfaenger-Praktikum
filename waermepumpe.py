@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sympy
-from sympy import *
 from uncertainties import ufloat
+import scipy.constants as const
 
 t, T1, p1, T2, p2, N = np.genfromtxt('Waermepumpe.txt', unpack=True)
 
@@ -28,13 +28,13 @@ paramserr1=np.array([h, h, h]) #ufloatarrays um die Fehler zu speichern
 paramserr2=np.array([h, h, h])
 i=0
 j=0
-print("Die Parameter der Regression für T1: \n")
+print("Die Parameter der Regression für T1:")
 for name, value, error in zip('abc', params1, errors1):
     paramserr1[i]=ufloat(value, error)
     print(f'{name} = {value:.8f} ± {error:.8f}')
     i=i+1
 print("\n")
-print("Die Parameter der Regression für T2: \n")
+print("Die Parameter der Regression für T2:")
 for name, value, error in zip('abc', params2, errors2):
     paramserr2[j]=ufloat(value, error)
     print(f'{name} = {value:.8f} ± {error:.8f}')
@@ -46,6 +46,7 @@ x_plot = np.linspace(0, 2100)
 plt.plot(
     x_plot,
     params1[0] * (x_plot)**2 + params1[1] * x_plot + params1[2],
+    color='orange',
     label='Regression T1',
     linewidth=3,
 )
@@ -53,15 +54,16 @@ x_plot = np.linspace(0, 2100)
 plt.plot(
     x_plot,
     params2[0] * (x_plot)**2 + params2[1] * x_plot + params2[2],
+    color='blue',
     label='Regression T2',
     linewidth=3,
 )
 #Plotten der Messwerte
-plt.plot(t, T1, '.', label='T1')
-plt.plot(t, T2, '.', label='T2')
+plt.plot(t, T1,  '.', color='red', label='T1')
+plt.plot(t, T2,  '.', color='green', label='T2')
 
-plt.xlabel(r"$t/s$")
-plt.ylabel(r"$T/K$")
+plt.xlabel(r"$t [s]$")
+plt.ylabel(r"$T [K]$")
 plt.legend(loc="best")
 plt.savefig('Temperaturverlaeufe.pdf')
 ############################################################################################
@@ -76,8 +78,13 @@ def difT2(x):
 
 #Berechnung der Güteziffern
 i=1
+j=0
 a1=4*4183
 a2=750
+vreal1a=np.array([h,h,h,h])
+vreal2a=np.array([h,h,h,h])
+vid1a=np.array([0,0,0,0])
+vid2a=np.array([0,0,0,0])
 print("Berechnet mit T1 \n\n")
 while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     vid=T1[i]/(T1[i]-T2[i]) #ideale Güte
@@ -87,8 +94,12 @@ while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     print(f"die ideale Güte nach t={t[i]}s: v_id={vid:.3f}")
     print(f"die Abweichung beträgt {p*100:.2f}% vom Idealwert")
     print("\n")
+    vreal1a[j]=vreal1
+    vid1a[j]=vid
     i=i+10
+    j=j+1
 i=1
+j=0
 print("Berechnet mit T2 \n\n") #!!!!!!!!!!nochmal überprüfen!!!!!!!!!
 while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     vid=-T2[i]/(T2[i]-T1[i]) #ideale Güte
@@ -98,7 +109,10 @@ while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     print(f"die ideale Güte nach t={t[i]}s: v_id= {vid:.3f}")
     print(f"die Abweichung beträgt {p*100:.2f}% vom Idealwert")
     print("\n")
+    vreal2a[j]=vreal2
+    vid2a[j]=vid
     i=i+10
+    j=j+1
 ############################################################################################################
 
 #e) Massendurchsatz, Verdampfungswärme, Dampfdruckkurve
@@ -125,22 +139,25 @@ plt.subplot(2,1,1) #Plot für die Messdaten 1
 params3, covariance_matrix3 = np.polyfit(1/T1, np.log(p1/p0), deg=1, cov=True)
 
 #Unsicherheit der Regression
-errors = np.sqrt(np.diag(covariance_matrix3))
+i=0
+paramserr3=np.array([h, h])
+errors3 = np.sqrt(np.diag(covariance_matrix3))
 print("Die Parameter der Regression für p1:")
-print('a1 = {:.3f} ± {:.3f}'.format(params3[0], errors[0]))
-print('b1 = {:.3f} ± {:.3f}'.format(params3[1], errors[1]))
-print("\n")
+for name, value, error in zip('ab', params3, errors3):
+    paramserr3[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i=i+1
 
 #Plotten der Regression
 x_plot = np.linspace(np.min(1/T1), np.max(1/T1))
 plt.plot(
     x_plot,
     params3[0]*x_plot+params3[1],
-    'b-',
-    label='Ausgleichsgerade'
+    color='b', 
+    label='Regression'
     )
 #Plotten der Messdaten
-plt.plot(1/T1, np.log(p1/p0), 'r.', label='Messdaten')
+plt.plot(1/T1, np.log(p1/p0), '.', color='r', label='Messdaten 1')
 
 plt.xlabel(r'$1/T_1 [K^{-1}]$') #nochmal überprüfen
 plt.ylabel(r'$ln(p_1/p_0)$')
@@ -154,23 +171,26 @@ plt.subplot(2,1,2) #Plot für die Messdaten 2
 params4, covariance_matrix4 = np.polyfit(1/T2, np.log(p2/p0), deg=1, cov=True)
 
 #Unsicherheit für Regression
-errors = np.sqrt(np.diag(covariance_matrix4))
+i=0
+paramserr4=np.array([h, h])
+errors4 = np.sqrt(np.diag(covariance_matrix4))
 print("Die Parameter der Regression für p2:")
-print('a2 = {:.3f} ± {:.3f}'.format(params4[0], errors[0]))
-print('b2 = {:.3f} ± {:.3f}'.format(params4[1], errors[1]))
-print("\n")
+for name, value, error in zip('ab4', params4, errors4):
+    paramserr4[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i=i+1
 
 #Plotten der Regression
 x_plot = np.linspace(np.min(1/T2), np.max(1/T2))
 plt.plot(
     x_plot,
     params4[0]*x_plot+params4[1],
-    'b-',
-    label='Ausgleichsgerade'
+    color='b',
+    label='Regression'
     )
 
 #Plotten der Messdaten
-plt.plot(1/T2, np.log(p2/p0), 'r.', label='Messdaten')
+plt.plot(1/T2, np.log(p2/p0), '.', color='r', label='Messdaten 2')
 
 plt.xlabel(r'$1/T_2 [K^{-1}]$') #nochmal überprüfen
 plt.ylabel(r'$ln(p_2/p_0)$')
@@ -179,10 +199,8 @@ plt.tight_layout()
 plt.savefig('Druckverlaeufe.pdf')
 
 #Berechnung der Verdampfungswärme
-L1=-params3[0]*8.3144621 #hier am besten R einfügen
-L2=-params4[0]*8.3144621 #Einheit: [R]=J/(K*mol)
-print(f"Aus Messreihe 1 folgt: \n L={L1:.3f} \n")
-print(f"Aus Messreihe 2 folgt: \n L={L2:.3f}\n\n")
+L=-params4[0]*8.3144621 #Einheit: [R]=J/(K*mol) #Hier am besten mit R berechnen
+print(f"Aus Messreihe 2 folgt: \n L={L:.3f}\n\n")
 
 #Brechnung des Massendurchsatzes
 # dQ/dt=L*dm/dt
@@ -192,10 +210,14 @@ print(f"Aus Messreihe 2 folgt: \n L={L2:.3f}\n\n")
 #[L]=J/mol, [dm/dt]=mol/s
 molmass=120.91 #g/mol
 i=1
+j=0
+dmdt=np.array([h, h, h, h])
 while(i<40):
-    massdu=-((a1+a2)*difT2(i))/L1 #difQ2 #!!!warum difT2 und L2???
+    massdu=-((a1+a2)*difT2(i))/L #difQ2 #!!!warum difT2???
     print(f"Der Massendruchsatz nach t={i}s ist: dm/dt=({massdu:.5f})mol/s=({massdu*molmass:.4f})g/s")
+    dmdt[j]=massdu
     i=i+10
+    j=j+1
 print("\n")
 #################################################################################
 
@@ -203,26 +225,41 @@ print("\n")
 #f) Die mechanische Leistung des Kompressors
 
 #Unsicherheit der Temperatur 
-T1err=np.array([h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h])
 T2err=np.array([h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h, h])
 i=0
 while(i<35):
-    #T1err[i]=ufloat(T1[i], 0.1)
     T2err[i]=ufloat(T2[i], 0.1)
     i=i+1
 
 #Berechnung der mechanischen Leistung
 i=1
+j=0
 k=1.14
 rho0=5.51 * 10**3 #g/m^3
 T0=273.15 #K
+Nmecha=[h,h,h,h]
 
 while(i<40):
     rho=(rho0*T0*p1[i])/(T2err[i]*p0) #g/m^3
     Nmech1=(1/(k-1))
     Nmech2=Nmech1*(p2[i]*(p1[i]/p2[i])**(1/k)-p1[i]) #pa
     Nmech3=Nmech2*(1/rho) #pa*m^3/g
-    Nmech4=Nmech3*((a1+a2)/L1)*difT1(i)*molmass #W
+    Nmech4=Nmech3*((a1+a2)/L)*difT1(i)*molmass #W
     #print(rho*10**(-3))#kg/m^3
     print(f"die mechanische Leistung nach t={t[i]} Sekunden: Nmech=({Nmech4:.5f})W")
+    Nmecha[j]=Nmech4
     i=i+10
+    j=j+1
+
+np.savetxt('tabelle1.txt', np.column_stack([t,T1,p1,T2,p2,N]),fmt='%10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
+np.savetxt('tabelle2.txt', np.column_stack([paramserr1,paramserr2]),fmt='%10.2f & %10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
+#np.savetxt('tabelle.txt', np.column_stack([paramserr1,paramserr2,vreal1a,vreal2a,vid1a,vid2a, paramserr3, paramserr4, L, dmdt, Nmecha]),fmt='%10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
+
+
+
+#s0=np.arange(3)          #paramserr1 
+#s7=np.linspace(0, 1, 3)  #paramserr2
+#np.savetxt('tabelle2.txt', np.column_stack([paramserr1, paramserr2]), header="n x")
+
+#np.savetxt('tabelle.txt', np.column_stack([t, T1, p1, T2, p2, N, paramserr1, paramserr2, vreal1a, vreal2a, vid1a, vid2a, a3, b3, a4, b4 L, dmdt, Nmecha]), header="t T1 p1 T2 p2 N paramserr1 paramserr2 vreal1 vreal2 vid1 vid2 paramserr3 paramserr4 L dmdt Nmech")
+#np.savetxt('tabelle.txt', np.column_stack([t, T1, p1, T2, p2, N, paramserr1]), header="t T1 p1 T2 p2 N paramserr1")
