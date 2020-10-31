@@ -12,6 +12,7 @@ p1=(p1+1)*(10)**5
 p2=(p2+1)*(10)**5
 T1=T1+273.15
 T2=T2+273.15
+R=const.N_A *const.k
 ########################################################################################
 
 #a,b) Temperaturverläufe als Diagramm
@@ -199,7 +200,7 @@ plt.tight_layout()
 plt.savefig('Druckverlaeufe.pdf')
 
 #Berechnung der Verdampfungswärme
-L=-params4[0]*8.3144621 #Einheit: [R]=J/(K*mol) #Hier am besten mit R berechnen
+L=-paramserr4[0]*R #Einheit: [R]=J/(K*mol) #Hier am besten mit R berechnen
 print(f"Aus Messreihe 2 folgt: \n L={L:.3f}\n\n")
 
 #Brechnung des Massendurchsatzes
@@ -215,7 +216,7 @@ dmdt=np.array([h, h, h, h])
 while(i<40):
     massdu=-((a1+a2)*difT2(i))/L #difQ2 #!!!warum difT2???
     print(f"Der Massendruchsatz nach t={i}s ist: dm/dt=({massdu:.5f})mol/s=({massdu*molmass:.4f})g/s")
-    dmdt[j]=massdu
+    dmdt[j]=massdu*molmass
     i=i+10
     j=j+1
 print("\n")
@@ -238,6 +239,7 @@ k=1.14
 rho0=5.51 * 10**3 #g/m^3
 T0=273.15 #K
 Nmecha=[h,h,h,h]
+rhoa=[h,h,h,h]
 
 while(i<40):
     rho=(rho0*T0*p1[i])/(T2err[i]*p0) #g/m^3
@@ -248,18 +250,13 @@ while(i<40):
     #print(rho*10**(-3))#kg/m^3
     print(f"die mechanische Leistung nach t={t[i]} Sekunden: Nmech=({Nmech4:.5f})W")
     Nmecha[j]=Nmech4
+    rhoa[j]=rho
     i=i+10
     j=j+1
 
 np.savetxt('tabelle1.txt', np.column_stack([t,T1,p1,T2,p2,N]),fmt='%10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
-np.savetxt('tabelle2.txt', np.column_stack([paramserr1,paramserr2]),fmt='%10.2f & %10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
-#np.savetxt('tabelle.txt', np.column_stack([paramserr1,paramserr2,vreal1a,vreal2a,vid1a,vid2a, paramserr3, paramserr4, L, dmdt, Nmecha]),fmt='%10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
-
-
-
-#s0=np.arange(3)          #paramserr1 
-#s7=np.linspace(0, 1, 3)  #paramserr2
-#np.savetxt('tabelle2.txt', np.column_stack([paramserr1, paramserr2]), header="n x")
-
-#np.savetxt('tabelle.txt', np.column_stack([t, T1, p1, T2, p2, N, paramserr1, paramserr2, vreal1a, vreal2a, vid1a, vid2a, a3, b3, a4, b4 L, dmdt, Nmecha]), header="t T1 p1 T2 p2 N paramserr1 paramserr2 vreal1 vreal2 vid1 vid2 paramserr3 paramserr4 L dmdt Nmech")
-#np.savetxt('tabelle.txt', np.column_stack([t, T1, p1, T2, p2, N, paramserr1]), header="t T1 p1 T2 p2 N paramserr1")
+np.savetxt('tabelle2a.txt', np.column_stack([paramserr1, paramserr2]), fmt='%r' ,delimiter='     ' ,header='err1 err2')
+np.savetxt('tabelle2b.txt', np.column_stack([paramserr3, paramserr4]), fmt='%r' ,delimiter='     ' ,header='err1 err2')
+np.savetxt('tabelle3.txt', np.column_stack([vreal1a, vreal2a, vid1a, vid2a]), fmt='%r' ,delimiter='     ' ,header='vreal1 vreal2 vid1 vid2')
+np.savetxt('tabelle4.txt', np.column_stack([L]), fmt='%r' ,delimiter='  ' ,header='L')
+np.savetxt('tabelle5.txt', np.column_stack([dmdt, Nmecha, rhoa]), fmt='%r' ,delimiter='     ' ,header='dm/dt, Nmech, rho')
