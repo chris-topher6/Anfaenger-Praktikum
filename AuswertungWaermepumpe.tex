@@ -41,7 +41,7 @@ per-mode=symbol-or-fraction,
 \usepackage{booktabs}
 
 \begin{document}
-\title{Titel}
+\title{Versuch D206 "Die Wärmepumpe"}
 \author{Henry Krämerkämper \and Christopher Breitfeld}
 \date{29.10.2020}
 \maketitle
@@ -80,9 +80,9 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
   anders formuliert werden:
   \begin{equation}
   	\frac{Q_\text{1}}{T_\text{1}} - \frac{Q_\text{2}}{T_\text{2}} > 0
-  	\label{eqn:wärmeenergie3}		
+  	\label{eqn:wärmeenergie3}
   \end{equation}
-	Aus Gleichung \eqref{eqn:wärmeenergie1} und Gleichung \eqref{eqn:wärmeenergie3} sowie der Definition der Güteziffer 
+	Aus Gleichung \eqref{eqn:wärmeenergie1} und Gleichung \eqref{eqn:wärmeenergie3} sowie der Definition der Güteziffer
 	\eqref{eqn:güteziffer} ergibt sich die Güteziffer einer idealen Wärmepumpe zu
 	\begin{equation}
 		v_\text{ideal} = \frac{Q_\text{1}}{A} = \frac{T_\text{1}}{T_\text{1} - T_\text{2}}
@@ -94,7 +94,7 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
 		\label{eqn:realegüteziffer}
 	\end{equation}
 	An \eqref{eqn:idealegüteziffer} und \eqref{eqn:realegüteziffer} kann man ablesen, dass eine Wärmepumpe eine höhere Güte hat,
-	wenn der Temperaturunterschied zwischen Reservoire 1 und Reservoire 2 möglichst gering ist. Das bedeutet, dass der Arbeitsaufwand 
+	wenn der Temperaturunterschied zwischen Reservoire 1 und Reservoire 2 möglichst gering ist. Das bedeutet, dass der Arbeitsaufwand
 	für geringe Temperaturunterschiede am kleinsten ist.
 	%Zeile 95 vielleicht ein bisschen renundant
 	\subsection{Der Massendurchsatz}
@@ -106,14 +106,28 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
 		\frac{\increment Q_\text{2}}{\increment t} = (m_\text{2} c_\text{w} + m_\text{k} c_\text{k}) \frac{\increment T_\text{2}}{t}.
 		\label{eqn:massendurchsatz1}
 	\end{equation}
-	Da der Wärmetransport über Verdampfung eines Mediums stattfindet, kann man \eqref{eqn:massendurchsatz1} auch mithilfe der 
+	Da der Wärmetransport über Verdampfung eines Mediums stattfindet, kann man \eqref{eqn:massendurchsatz1} auch mithilfe der
 	Verdampfungswärme $L$ schreiben:
 	\begin{equation}
-		\frac{\increment Q_\text{2}}{\increment t = L \cdot \frac{\increment m}{\increment t}
-		\label{eqn:massendurchsatz2}	
+		\frac{\increment Q_\text{2}}{\increment t} = L \cdot \frac{\increment m}{\increment t}
+		\label{eqn:massendurchsatz2}
 	\end{equation}
-
-  
+  \subsection{Die mechanische Kompressorleistung}
+  Für die verrichtete Arbeit $A_\text{m}$, die der Kompressor bei einer Volumenänderung von $V_\text{a}$ auf $V_\text{b}$ leistet, gilt
+  \begin{equation}
+    A_\text{m} = -\int_{V_\text{a}}^{V_\text{b}} p \symup{d}V.
+  \label{eqn:arbeitkompressor}
+  \end{equation}
+  Dann ist die Leistung des Kompressors
+  \begin{equation}
+    N_\text{mech} = \frac{\symup{d} A_\text{m}}{\symup{d} t}.
+    \label{eqn:leistungkompressor1}
+  \end{equation}
+  Mit der Annahme, das die Kompression ein annähernd adiabatisch ablaufender Vorgang ist, und unter Verwendung der Poissonschen Gleichung erhählt man für $N_\text{mech}$
+  \begin{equation}
+    N_\text{mech} = \frac{1}{\kappa - 1}  \left(p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a} \right)  \frac{\increment V_\text{a}}{\increment t}.
+    \label{eqn:leistungkompressor2}
+  \end{equation}
 \section{Aufgabenteil a)}
   Man stelle die gemessenen Temperaturverläufe in einem geeigneten Diagramm dar. \\
   \\
