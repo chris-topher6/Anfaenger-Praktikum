@@ -33,6 +33,8 @@ per-mode=symbol-or-fraction,
 \usepackage{graphicx}
 %Positionierung von Gleitumgebungen
 \usepackage{float}
+%Für Tabellen
+\usepackage{booktabs}
 % Einstellungen hier, z.B. Fonts
 \setmathfont{Latin Modern Math}
 \floatplacement{figure}{H}
@@ -50,7 +52,7 @@ per-mode=symbol-or-fraction,
 \newpage
 \section{Einleitung}
 Der Versuch "Die Wärmepumpe", welcher im folgenden erklärt und durchgeführt wird, behandelt den Transport von
-Wärmeenergie von einem kälteren zu einem wärmeren Reservoire. Nach dem zweiten Hauptsatz der Thermodynamik sind beide
+Wärmeenergie von einem kälteren zu einem wärmeren Reservoir. Nach dem zweiten Hauptsatz der Thermodynamik sind beide
 Flussrichtungen möglich, nur ist für den Transport vom kälteren zum wärmeren Reservoir zusätzliche Arbeit nötig. Diese verrichtet die Wärmepumpe.
 Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe sowie ihr Massendurchsatz und der Wirkungsgrad des Kompressors.
 \section{Theoretische Grundlagen}
@@ -58,7 +60,7 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
   Die hier verwendete Wärmepumpe wird unter anderem charakterisiert durch die Güteziffer $ v $. Sie gibt das Verhältnis zwischen der aufgewendeten Arbeit für den Wärmetransport
   $ A $ und der transportierten Wärmeenergie $ Q_\text{transp} $ an. Eine Formel für die Berechnung der Güteziffer lässt sich wie folgt herleiten: \\
   \\
-  Wir bezeichnen die den wärmeren Reservoire 1 zugeführte Wärmeenergie als $ Q_\text{1} $ sowie die dem kälteren Reservoire 2 entnommene Wärmeenergie als $ Q_\text{2} $.
+  Wir bezeichnen die den wärmeren Reservoir 1 zugeführte Wärmeenergie als $ Q_\text{1} $ sowie die dem kälteren Reservoir 2 entnommene Wärmeenergie als $ Q_\text{2} $.
   Dann gilt nach dem ersten Hauptsatz der Thermodynamik
   \begin{equation}
     Q_\text{1} = Q_\text{2} + A.
@@ -94,12 +96,12 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
 		\label{eqn:realegüteziffer}
 	\end{equation}
 	An \eqref{eqn:idealegüteziffer} und \eqref{eqn:realegüteziffer} kann man ablesen, dass eine Wärmepumpe eine höhere Güte hat,
-	wenn der Temperaturunterschied zwischen Reservoire 1 und Reservoire 2 möglichst gering ist. Das bedeutet, dass der Arbeitsaufwand
+	wenn der Temperaturunterschied zwischen Reservoir 1 und Reservoir 2 möglichst gering ist. Das bedeutet, dass der Arbeitsaufwand
 	für geringe Temperaturunterschiede am kleinsten ist.
 	%Zeile 95 vielleicht ein bisschen renundant
 	\subsection{Der Massendurchsatz}
-	Der Massendurchsatz einer Wärmepumpe beschreibt, wieviel Wärme aus dem kälteren Reservoire 2 pro Zeiteinheit entnommen wird. \\
-	Mitlhilfe des gemessenen Differenzenquotienten $ \frac{\increment T_\text{2}}{\increment t}$ sowie der Wärmekapazität von Reservoire 2
+	Der Massendurchsatz einer Wärmepumpe beschreibt, wieviel Wärme aus dem kälteren Reservoir 2 pro Zeiteinheit entnommen wird. \\
+	Mitlhilfe des gemessenen Differenzenquotienten $ \frac{\increment T_\text{2}}{\increment t}$ sowie der Wärmekapazität von Reservoir 2
 	$m_\text{2}c_\text{w}$ und der Wärmekapazität der Kupferschlange und des Eimers $m_\text{k}c_\text{k}$ ergibt sich der Massendurchsatz
 	zu
 	\begin{equation}
@@ -129,33 +131,65 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
     \label{eqn:leistungkompressor2}
   \end{equation}
 \section{Aufbau des Experiments}
-  Über ein Transportmedium, welches duch Verdampfung und Kondensation Wärme ab- oder aufnimmt,
-  wird in Form von Phasenumwandlungsenergie Wärme aus Reservoire 2 in Reservoire 1 abgegeben.
-  \begin{figure}
-    \centering
-    \includegraphics[scale = 0.15]{AufbauWaermepumpe.png}
-    \caption{Schematische Darstellung einer Wärmepumpe.}
-    \label{fig:wärmepumpe1}
-  \end{figure}
-\section{Aufgabenteil a)}
-  Man stelle die gemessenen Temperaturverläufe in einem geeigneten Diagramm dar. \\
-  \\
-  Im folgenden Diagramm werden die Verläufe der Temperaturen T1 und T2 in Abhängigkeit der Zeit aufgetragen.
-  Alle Werte wurden in SI-Einheiten konvertiert.
-  \\
-  \begin{figure}
-    \centering
-    \includegraphics[scale = 0.75]{Temperaturverlaeufe.pdf}
-    \caption{Die beiden Temperaturverläufe der Reservoire 1 und 2.}
-    \label{fig:TemperaturverlaufA}
-  \end{figure}
-\section{Aufgabenteil b)}
-  Man versuche mit Hilfe einer nicht-linearen Ausgleichsrechnung die gemessenen Temperaturverläufe durch einfache Gleichungen zu approximieren.
-  \\
-  Die Ausgleichsgleichungen sind ebenfalls in \ref{fig:TemperaturverlaufA} skizziert. Der gewählte Ansatz ist
-  \begin{equation}
-    T(t) = \symup{A} \cdot t^2 + \symup{B} \cdot t + \symup{C}.
-    \label{eq:Regressionsgleichung}
-  \end{equation}
-  Hierbei ist
+    \subsection{Funktionsweise einer Wärmepumpe}
+      Über ein Transportmedium, welches duch Verdampfung und Kondensation Wärme ab- oder aufnimmt,
+      wird in Form von Phasenumwandlungsenergie Wärme aus Reservoir 2 in Reservoir 1 abgegeben.
+      \begin{figure}
+        \centering
+        \includegraphics[scale = 0.15]{AufbauWaermepumpe.png}
+        \caption{Schematische Darstellung einer Wärmepumpe.}
+        \label{fig:wärmepumpe1}
+      \end{figure}
+      In Abbildung \ref{fig:wärmepumpe1} stellen die schwarz eingefärbten Leitungen den Abschnitt dar, in welchem das Transportmedium flüssig ist.
+      Aus Reservoir 1 heraus fließt das Transportmedium mit Druck $p_\text{b}$ hinein in den Reiniger R, wo aus dem Transportmedium alle Gasreste entfernt werden.
+      Das gereinigte Medium gelangt durch das Drosselventil D. Durch den Strömungswiderstand des Ventils ändert sich der Druck auf $p_\text{a}$. Da das Medium bei Druck $p_\text{b}$
+      flüssig, bei Druck $p_\text{a}$ jedoch gasförmig ist, verdampft das Medium in Reservoir 2 bei Temperatur $T_\text{2}$ und nimmt dabei Wärme auf. Die grau eingefärbten Leitungen
+      stellen nun den Abschnitt dar, in dem das Transportmedium gasförmig ist. Der Kompressor K komprimiert das Transportmedium adiabatisch,
+      wodurch sowohl Temperatur als auch Druck ansteigen.
+      In Reservoir 1 kondensiert das Medium wieder und gibt seine Wärmeenergie ab. Die Temperatur $T_\text{1}$ wird erhöht, das
+      Transportmedium ist wieder flüssig. Als Transportmedium wird ein reales Gas verwendet.
+    \subsection{Durchführung}
+      Die Messapparatur ist wie folgt aufgebaut:
+      \begin{figure}
+        \centering
+        \includegraphics[scale = 0.15]{AufbauMessreihe.png}
+        \caption{Die Messapparatur.}
+        \label{fig:wärmepumpe2}
+      \end{figure}
+      In die thermisch isolierten Reservoir 1 und 2 wird eine genau abgemessene Menge kaltes Wasser gefüllt. Damit eine zuverlässige Temperaturmessung mithilfe der beiden
+      Digitalthermometer stattfinden kann, werden die Reservoire mit den Rührmotoren während des Experiments laufend durchgerührt. Die Drücke $p_\text{b}$ und $p_\text{a}$
+      vor und hinter dem Drosselventil und die Leistungsaufnahme des Kompressors werden ebenfalls aufgenommen. Alle Messwerte werden in Abhängigkeit der Zeit gemessen.
+      Jede Minute wurde eine Messung gemacht, bis Reservoir 1 eine Temperatur von $T_\text{1} = \SI{50}{\celsius}$ erreicht hat.
+\section{Ergebnisse des Experiments}
+%Aufgabenteil a)
+  \subsection{Temperaturmessung}
+    Im folgenden Diagramm werden die Verläufe der Temperaturen T1 und T2 in Abhängigkeit der Zeit aufgetragen.
+    Alle Werte wurden in SI-Einheiten konvertiert.
+    \begin{figure}
+      \centering
+      \includegraphics[scale = 0.75]{Temperaturverlaeufe.pdf}
+      \caption{Die beiden Temperaturverläufe der Reservoire 1 und 2.}
+      \label{fig:TemperaturverlaufA}
+    \end{figure}
+%Aufgabenteil b)
+  \subsection{Aufgabenteil b)}
+    Die nicht-linearen Ausgleichsrechnungen sind ebenfalls in \ref{fig:TemperaturverlaufA} skizziert. Der gewählte Ansatz ist
+    \begin{equation}
+      T(t) = \symup{A} \cdot t^2 + \symup{B} \cdot t + \symup{C}.
+      \label{eq:Regressionsgleichung}
+    \end{equation}
+    \begin{table}
+      \centering
+      \caption{Parameter der nicht-linearen Ausgleichsrechnung}
+      \label{tab:regression1}
+      \sisetup{table-format=3.8}
+      \begin{tabular}{c S S S S S S}
+        \toprule
+          {$T$} & {$A$} & {$\increment A$} & {$B$} & {$\increment B$} & {$C$} & {$\increment C$}
+        \midrule
+          {$T_\text{1}$} & -0.00000322 & $\pm$ 0.00000004 &  0.02027984 & $\pm$ 0.00009110 & 294.97008061 & $\pm$ 0.04134539 \\
+          {$T_\text{2}$} &  0.00000096 & $\pm$ 0.00000027 & -0.01120872 & $\pm$ 0.00058032 & 295.87018729 & $\pm$ 0.26336055 \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
 \end{document}

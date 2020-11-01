@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.10.8)  1 NOV 2020 12:16
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.10.8)  1 NOV 2020 15:49
  restricted system commands enabled.
 **AuswertungWaermepumpe.tex
 (./AuswertungWaermepumpe.tex
@@ -814,6 +814,26 @@ Package scrhack Info: redefining \newfloat on input line 163.
 Package scrhack Info: redefining \listof on input line 163.
 Package scrhack Info: undefining \float@addtolists on input line 163.
 )
+(/home/henry/.local/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen182
+\lightrulewidth=\dimen183
+\cmidrulewidth=\dimen184
+\belowrulesep=\dimen185
+\belowbottomsep=\dimen186
+\aboverulesep=\dimen187
+\abovetopsep=\dimen188
+\cmidrulesep=\dimen189
+\cmidrulekern=\dimen190
+\defaultaddspace=\dimen191
+\@cmidla=\count308
+\@cmidlb=\count309
+\@aboverulesep=\dimen192
+\@belowrulesep=\dimen193
+\@thisruleclass=\count310
+\@lastruleclass=\count311
+\@thisrulewidth=\dimen194
+)
 luaotfload | cache : Lookup cache loaded from /home/henry/.local/texlive/2020/te
 xmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 
@@ -864,15 +884,15 @@ dflt;"<6.57-9.3075>"LatinModernMath:mode=base;script=math;language=dflt;+ssty=0;
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 38.
+(Font)              `operators' in the math version `normal' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/LatinModernMath(1)/m/n on input line 
-38.
+40.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 38.
+(Font)              `operators' in the math version `bold' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/LatinModernMath(1)/b/n on input line
- 38.
+ 40.
 
 Package fontspec Info: LatinModernMath scale = 1.0001.
 
@@ -933,15 +953,15 @@ guage=dflt;+ssty=1;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 38.
+(Font)              `symbols' in the math version `normal' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/LatinModernMath(2)/m/n on input line
- 38.
+ 40.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 38.
+(Font)              `symbols' in the math version `bold' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/LatinModernMath(2)/b/n on input line
- 38.
+ 40.
 
 Package fontspec Info: LatinModernMath scale = 0.9999.
 
@@ -990,96 +1010,76 @@ guage=dflt;+ssty=1;"
 (fontspec)             \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 38
+(Font)              `largesymbols' in the math version `normal' on input line 40
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/m/n on input line
- 38.
+ 40.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 38.
+(Font)              `largesymbols' in the math version `bold' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/b/n on input line
- 38.
+ 40.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 38.
+(Font)              scaled to size 10.95116pt on input line 40.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 38.
+(Font)              scaled to size 7.6658pt on input line 40.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 38.
+(Font)              scaled to size 5.47559pt on input line 40.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 38.
+(Font)              scaled to size 10.94882pt on input line 40.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 38.
+(Font)              scaled to size 7.66417pt on input line 40.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 38.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+(Font)              scaled to size 5.47441pt on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
 
 (/home/henry/.local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 
 (/home/henry/.local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(/home/henry/.local/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen182
-\lightrulewidth=\dimen183
-\cmidrulewidth=\dimen184
-\belowrulesep=\dimen185
-\belowbottomsep=\dimen186
-\aboverulesep=\dimen187
-\abovetopsep=\dimen188
-\cmidrulesep=\dimen189
-\cmidrulekern=\dimen190
-\defaultaddspace=\dimen191
-\@cmidla=\count308
-\@cmidlb=\count309
-\@aboverulesep=\dimen192
-\@belowrulesep=\dimen193
-\@thisruleclass=\count310
-\@lastruleclass=\count311
-\@thisrulewidth=\dimen194
-)
 (./AuswertungWaermepumpe.aux)
 \openout1 = AuswertungWaermepumpe.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  TU/LatinModernMath(1)/m/n --> TU/lmr/m/n on input line 4
-3.
+5.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 43.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 43.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 43.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 43.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 43.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 43.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 45.
 
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
@@ -1108,7 +1108,7 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 ic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 45.
 
 (/home/henry/.local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1122,9 +1122,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (/home/henry/.local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1152,17 +1152,17 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 48.
+(Font)              scaled to size 14.40152pt on input line 50.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 48.
+(Font)              scaled to size 10.00107pt on input line 50.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 48.
+(Font)              scaled to size 7.00075pt on input line 50.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 48.
+(Font)              scaled to size 14.39845pt on input line 50.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 48.
+(Font)              scaled to size 9.99893pt on input line 50.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 48.
+(Font)              scaled to size 6.99925pt on input line 50.
  [1
 
 
@@ -1172,66 +1172,61 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
 
 \openout3 = AuswertungWaermepumpe.toc
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 58--63
+Underfull \hbox (badness 10000) in paragraph at lines 60--65
 
  []
 
 [3]
-<AufbauWaermepumpe.png, id=55, 1856.9375pt x 1511.6475pt>
+<AufbauWaermepumpe.png, id=41, 1856.9375pt x 1511.6475pt>
 File: AufbauWaermepumpe.png Graphic file (type png)
 <use AufbauWaermepumpe.png>
-Package luatex.def Info: AufbauWaermepumpe.png  used on input line 136.
+Package luatex.def Info: AufbauWaermepumpe.png  used on input line 139.
 (luatex.def)             Requested size: 278.52861pt x 226.73734pt.
  [4]
+<AufbauMessreihe.png, id=59, 2053.6725pt x 1798.72pt>
+File: AufbauMessreihe.png Graphic file (type png)
+<use AufbauMessreihe.png>
+Package luatex.def Info: AufbauMessreihe.png  used on input line 155.
+(luatex.def)             Requested size: 308.03758pt x 269.79636pt.
+ [5
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
+<./AufbauWaermepumpe.png>]
 <Temperaturverlaeufe.pdf, id=70, 462.528pt x 346.896pt>
 File: Temperaturverlaeufe.pdf Graphic file (type pdf)
 <use Temperaturverlaeufe.pdf>
-Package luatex.def Info: Temperaturverlaeufe.pdf  used on input line 148.
+Package luatex.def Info: Temperaturverlaeufe.pdf  used on input line 170.
 (luatex.def)             Requested size: 346.89514pt x 260.17136pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--151
-
- []
-
-[5
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
-<./AufbauWaermepumpe.png>] [6
+ [6
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.2'
-<./Temperaturverlaeufe.pdf>] (./AuswertungWaermepumpe.aux)
-Package rerunfilecheck Info: File `AuswertungWaermepumpe.aux' has not changed.
-(rerunfilecheck)             Checksum: 905861F868D95E15962E7A4F0A4CDF40;6224.
-Package rerunfilecheck Info: File `AuswertungWaermepumpe.toc' has not changed.
-(rerunfilecheck)             Checksum: C47DAC18CFEDF008CE9DF6DD44437332;719.
-)
+<./AufbauMessreihe.png>]
+
+LaTeX Warning: Reference `fig:TemperaturverlaufA' on page 7 undefined on input l
+ine 176.
+
+! Misplaced \noalign.
+\l__siunitx_table_collect_pre_tl ->\noalign 
+                                            {\ifnum 0=`}\fi \@aboverulesep 
+l.190           1 &
+                  -0.00000322 &  0.00000004 &  0.02027984 &  0.00009110 & 29...
+? 
+! Emergency stop.
+\l__siunitx_table_collect_pre_tl ->\noalign 
+                                            {\ifnum 0=`}\fi \@aboverulesep 
+l.190           1 &
+                  -0.00000322 &  0.00000004 &  0.02027984 &  0.00009110 & 29...
+End of file on the terminal!
+
+
 
 Here is how much of LuaTeX's memory you used:
- 23834 strings out of 479058
- 100000,1144653 words of node,token memory allocated
- 764 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 5 glue, 4 kern, 1 glyph, 60 attribute, 69 gl
-ue_spec, 32 attribute_list, 1 write nodes
-   avail lists: 1:1,2:855,3:153,4:10,5:416,6:28,7:4595,8:73,9:424,10:7,11:530
- 42516 multiletter control sequences out of 65536+600000
- 85 fonts using 23906947 bytes
- 94i,8n,112p,10635b,755s stack positions out of 5000i,500n,10000p,200000b,200000s
-</home/henry/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm-math/latinm
-odern-math.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman5-
-regular.otf></home/henry/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm
--math/latinmodern-math.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/
-lm/lmroman8-regular.otf></home/henry/.local/texlive/2020/texmf-dist/fonts/openty
-pe/public/lm-math/latinmodern-math.otf></usr/share/texlive/texmf-dist/fonts/open
-type/public/lm/lmroman10-regular.otf></usr/share/texlive/texmf-dist/fonts/openty
-pe/public/lm/lmroman12-regular.otf></usr/share/texlive/texmf-dist/fonts/opentype
-/public/lm/lmsans10-bold.otf>
-Output written on AuswertungWaermepumpe.pdf (6 pages, 161298 bytes).
-
-PDF statistics: 200 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 131072)
- 65 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+ 23881 strings out of 479058
+ 100000,1144653 words of node,token memory allocated 5632 words of node memory still in use:
+   39 hlist, 3 vlist, 9 rule, 31 disc, 5 local_par, 13 dir, 16 math, 142 glue, 4
+8 kern, 22 penalty, 6 unset, 273 glyph, 7 align_record, 234 attribute, 84 glue_s
+pec, 119 attribute_list, 12 temp, 1 align_stack, 6 write, 6 pdf_dest, 1 pdf_setm
+atrix, 1 pdf_save, 1 pdf_restore nodes
+   avail lists: 1:1,2:580,3:131,4:21,5:344,6:22,7:4152,8:67,9:374,10:16,11:491
+ 42563 multiletter control sequences out of 65536+600000
+ 121 fonts using 35440611 bytes
+ 94i,9n,112p,10635b,782s stack positions out of 5000i,500n,10000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
