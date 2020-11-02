@@ -56,7 +56,9 @@ Wärmeenergie von einem kälteren zu einem wärmeren Reservoir. Nach dem zweiten
 Flussrichtungen möglich, nur ist für den Transport vom kälteren zum wärmeren Reservoir zusätzliche Arbeit nötig. Diese verrichtet die Wärmepumpe.
 Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe sowie ihr Massendurchsatz und der Wirkungsgrad des Kompressors.
 \section{Theoretische Grundlagen}
+Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotienten verwendet, da alle Berechnungen auf einer nicht-linearen Ausgleichsrechnung fußen.
   \subsection{Die Güteziffer}
+  \label{sec:güteziffer}
   Die hier verwendete Wärmepumpe wird unter anderem charakterisiert durch die Güteziffer $ v $. Sie gibt das Verhältnis zwischen der aufgewendeten Arbeit für den Wärmetransport
   $ A $ und der transportierten Wärmeenergie $ Q_\text{transp} $ an. Eine Formel für die Berechnung der Güteziffer lässt sich wie folgt herleiten: \\
   \\
@@ -93,9 +95,25 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
 	Dann gilt analog zu \eqref{eqn:idealegüteziffer} für die reale Güteziffer:
 	\begin{equation}
 		v_\text{real} < \frac{T_\text{1}}{T_\text{1}-T_\text{2}}
-		\label{eqn:realegüteziffer}
+		\label{eqn:realegüteziffer1}
 	\end{equation}
-	An \eqref{eqn:idealegüteziffer} und \eqref{eqn:realegüteziffer} kann man ablesen, dass eine Wärmepumpe eine höhere Güte hat,
+  Die reale Güteziffer lässt sich auch aus dem Differentialquotienten $ \frac{\increment T_\text{1}}{\increment t}$ berechnen. Die transportierte Wärmemenge $\increment Q_\text{1}$
+  für ein Zeitintervall $\increment t$ ist dann:
+  \begin{equation}
+    \frac{\increment Q_\text{1}}{\increment t} = (m_\text{1}c_\text{w} + m_\text{k}c_\text{k}) \frac{\increment T_\text{1}}{\increment t}.
+    \label{eqn:realegüteziffer2}
+  \end{equation}
+  Hierbei ist $m_\text{1}c_\text{w}$ die mittlere Wärmekapazität des Wassers in Reservoir 1 und $m_\text{k}c_\text{k}$ die mittlere Wärmekapazität der Kupferschlange und des Eimers.
+  Für die reale Güteziffer $v_\text{real}$ gilt
+  \begin{equation}
+    v_\text{real} = \frac{\increment Q_\text{1}}{\increment t \cdot N}.
+  \end{equation}
+  Hierbei ist $N$ die Leistungsaufnahme des Kompressors über $\increment t$. Daraus folgt dann
+  \begin{equation}
+    v_\text{real} = (m_\text{1}c_\text{w} + m_\text{k}c_\text{k}) \frac{\increment T_\text{1}}{\increment t} \cdot \frac{1}{N}.
+    \label{eqn:realegüteziffer3}
+  \end{equation}
+	An \eqref{eqn:idealegüteziffer} und \eqref{eqn:realegüteziffer1} kann man ablesen, dass eine Wärmepumpe eine höhere Güte hat,
 	wenn der Temperaturunterschied zwischen Reservoir 1 und Reservoir 2 möglichst gering ist. Das bedeutet, dass der Arbeitsaufwand
 	für geringe Temperaturunterschiede am kleinsten ist.
 	%Zeile 95 vielleicht ein bisschen renundant
@@ -161,38 +179,7 @@ Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe
       vor und hinter dem Drosselventil und die Leistungsaufnahme des Kompressors werden ebenfalls aufgenommen. Alle Messwerte werden in Abhängigkeit der Zeit gemessen.
       Jede Minute wurde eine Messung gemacht, bis Reservoir 1 eine Temperatur von $T_\text{1} = \SI{50}{\celsius}$ erreicht hat.
 \section{Ergebnisse des Experiments}
-%Aufgabenteil a)
-  \subsection{Temperaturmessung}
-    Im folgenden Diagramm werden die Verläufe der Temperaturen T1 und T2 in Abhängigkeit der Zeit aufgetragen.
-    Alle Werte wurden in SI-Einheiten konvertiert.
-    \begin{figure}
-      \centering
-      \includegraphics[scale = 0.75]{Temperaturverlaeufe.pdf}
-      \caption{Die beiden Temperaturverläufe der Reservoire 1 und 2.}
-      \label{fig:TemperaturverlaufA}
-    \end{figure}
-%Aufgabenteil b)
-  \subsection{Aufgabenteil b)}
-    Die nicht-linearen Ausgleichsrechnungen sind ebenfalls in \ref{fig:TemperaturverlaufA} skizziert. Der gewählte Ansatz ist
-    \begin{equation}
-      T(t) = \symup{A} \cdot t^2 + \symup{B} \cdot t + \symup{C}.
-      \label{eq:Regressionsgleichung}
-    \end{equation}
-    \begin{table}
-      \centering
-      \caption{Parameter der nicht-linearen Ausgleichsrechnung}
-      \label{tab:regression1}
-      \sisetup{table-format=3.8}
-      \begin{tabular}{c S S S S S S}
-        \toprule
-         {$T$} & {$A$} & {$\increment A$} & {$B$} & {$\increment B$} & {$C$} & {$\increment C$} \\
-        \midrule
-        %{$T_\text{1}$} & -0.00000322 & $\pm$ 0.00000004 &  0.02027984 & $\pm$ 0.00009110 & 294.97008061 & $\pm$ 0.04134539 \\
-        %{$T_\text{2}$} &  0.00000096 & $\pm$ 0.00000027 & -0.01120872 & $\pm$ 0.00058032 & 295.87018729 & $\pm$ 0.26336055 \\
-        {$T_\text{1}$} & -0.00000322 &  0.00000004 &  0.02027984 & 0.00009110 & 294.97008061 & 0.04134539 \\
-        {$T_\text{2}$} &  0.00000096 &  0.00000027 & -0.01120872 & 0.00058032 & 295.87018729 & 0.26336055 \\
-        
-          \bottomrule
-      \end{tabular}
-    \end{table}
+    \subsection{Diskussion der Ergebnisse}
+      In \ref{sec:güteziffer} haben wir bereits festgestellt, das eine Wärmepumpe umso günstiger arbeitet, je geringer der Temperaturunterschied zwischen den beiden Reservoiren ist.
+      Da dieser Temperaturunterschied im Laufe des Experiments immer weiter zunimmt, verschlechtert sich die Güteziffer der Wärmepumpe.
 \end{document}
