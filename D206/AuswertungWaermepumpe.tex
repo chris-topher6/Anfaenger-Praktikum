@@ -39,8 +39,6 @@ per-mode=symbol-or-fraction,
 \setmathfont{Latin Modern Math}
 \floatplacement{figure}{H}
 \floatplacement{table}{H}
-%Für die Tabellen
-\usepackage{booktabs}
 
 \begin{document}
 \title{Versuch D206 "Die Wärmepumpe"}
@@ -51,18 +49,18 @@ per-mode=symbol-or-fraction,
 \tableofcontents
 \newpage
 \section{Einleitung}
-Der Versuch "Die Wärmepumpe", welcher im folgenden erklärt und durchgeführt wird, behandelt den Transport von
+Der Versuch "Die Wärmepumpe", welcher im Folgenden erklärt und durchgeführt wird, behandelt den Transport von
 Wärmeenergie von einem kälteren zu einem wärmeren Reservoir. Nach dem zweiten Hauptsatz der Thermodynamik sind beide
 Flussrichtungen möglich, nur ist für den Transport vom kälteren zum wärmeren Reservoir zusätzliche Arbeit nötig. Diese verrichtet die Wärmepumpe.
-Im folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe sowie ihr Massendurchsatz und der Wirkungsgrad des Kompressors.
+Im Folgenden werden Merkmale dieser behandelt, in etwa die Güteziffer der Pumpe sowie ihr Massendurchsatz und der Wirkungsgrad des Kompressors.
 \section{Theoretische Grundlagen}
-Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotienten verwendet, da alle Berechnungen auf einer nicht-linearen Ausgleichsrechnung fußen.
+Im Folgenden wird immer der Differentialquotient anstelle des Differenzenquotienten verwendet, da alle Berechnungen auf einer nicht-linearen Ausgleichsrechnung fußen.
   \subsection{Die Güteziffer}
   \label{sec:güteziffer}
-  Die hier verwendete Wärmepumpe wird unter anderem charakterisiert durch die Güteziffer $ v $. Sie gibt das Verhältnis zwischen der aufgewendeten Arbeit für den Wärmetransport
+  Die hier verwendete Wärmepumpe wird unter anderem durch die Güteziffer $ v $ charakterisiert. Sie gibt das Verhältnis zwischen der aufgewendeten Arbeit für den Wärmetransport
   $ A $ und der transportierten Wärmeenergie $ Q_\text{transp} $ an. Eine Formel für die Berechnung der Güteziffer lässt sich wie folgt herleiten: \\
   \\
-  Wir bezeichnen die den wärmeren Reservoir 1 zugeführte Wärmeenergie als $ Q_\text{1} $ sowie die dem kälteren Reservoir 2 entnommene Wärmeenergie als $ Q_\text{2} $.
+  Wir bezeichnen die dem wärmeren Reservoir 1 zugeführte Wärmeenergie als $ Q_\text{1} $, sowie die dem kälteren Reservoir 2 entnommene Wärmeenergie als $ Q_\text{2} $.
   Dann gilt nach dem ersten Hauptsatz der Thermodynamik
   \begin{equation}
     Q_\text{1} = Q_\text{2} + A.
@@ -86,8 +84,8 @@ Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
   	\frac{Q_\text{1}}{T_\text{1}} - \frac{Q_\text{2}}{T_\text{2}} > 0
   	\label{eqn:wärmeenergie3}
   \end{equation}
-	Aus Gleichung \eqref{eqn:wärmeenergie1} und Gleichung \eqref{eqn:wärmeenergie3} sowie der Definition der Güteziffer
-	\eqref{eqn:güteziffer} ergibt sich die Güteziffer einer idealen Wärmepumpe zu
+	Aus Gleichung \eqref{eqn:wärmeenergie1} und Gleichung \eqref{eqn:wärmeenergie3}, sowie der Definition der Güteziffer
+	\eqref{eqn:güteziffer}, ergibt sich die Güteziffer einer idealen Wärmepumpe zu
 	\begin{equation}
 		v_\text{ideal} = \frac{Q_\text{1}}{A} = \frac{T_\text{1}}{T_\text{1} - T_\text{2}}
 		\label{eqn:idealegüteziffer}
@@ -114,11 +112,10 @@ Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
     \label{eqn:realegüteziffer3}
   \end{equation}
 	An \eqref{eqn:idealegüteziffer} und \eqref{eqn:realegüteziffer1} kann man ablesen, dass eine Wärmepumpe eine höhere Güte hat,
-	wenn der Temperaturunterschied zwischen Reservoir 1 und Reservoir 2 möglichst gering ist. Das bedeutet, dass der Arbeitsaufwand
+	wenn der Temperaturunterschied zwischen Reservoir 1 und Reservoir 2 möglichst gering ist. Das bedeutet, dass der Engeriverlust
 	für geringe Temperaturunterschiede am kleinsten ist.
-	%Zeile 95 vielleicht ein bisschen renundant
 	\subsection{Der Massendurchsatz}
-	Der Massendurchsatz einer Wärmepumpe beschreibt, wieviel Wärme aus dem kälteren Reservoir 2 pro Zeiteinheit entnommen wird. \\
+	Der Massendurchsatz einer Wärmepumpe beschreibt, wie viel Wärme aus dem kälteren Reservoir 2 pro Zeiteinheit entnommen wird. \\
 	Mitlhilfe des gemessenen Differenzenquotienten $ \frac{\increment T_\text{2}}{\increment t}$ sowie der Wärmekapazität von Reservoir 2
 	$m_\text{2}c_\text{w}$ und der Wärmekapazität der Kupferschlange und des Eimers $m_\text{k}c_\text{k}$ ergibt sich der Massendurchsatz
 	zu
@@ -143,9 +140,9 @@ Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
     N_\text{mech} = \frac{\symup{d} A_\text{m}}{\symup{d} t}.
     \label{eqn:leistungkompressor1}
   \end{equation}
-  Mit der Annahme, das die Kompression ein annähernd adiabatisch ablaufender Vorgang ist, und unter Verwendung der Poissonschen Gleichung erhählt man für $N_\text{mech}$
+  Unter der Annahme, dass die Kompression ein annähernd adiabatisch ablaufender Vorgang ist, und unter Verwendung der Poissonschen Gleichung erhählt man für $N_\text{mech}$
   \begin{equation}
-    N_\text{mech} = \frac{1}{\kappa - 1}  \left(p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}{p_\text{b}}} - p_\text{a} \right)  \frac{\increment V_\text{a}}{\increment t}.
+    N_\text{mech} = \frac{1}{\kappa - 1}  \left(p_\text{2} \sqrt[\kappa]{\frac{p_\text{1}}{p_\text{2}}} - p_\text{1} \right)  \frac{\increment V_\text{a}}{\increment t}.
     \label{eqn:leistungkompressor2}
   \end{equation}
 \section{Aufbau des Experiments}
@@ -159,9 +156,9 @@ Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
         \label{fig:wärmepumpe1}
       \end{figure}
       In Abbildung \ref{fig:wärmepumpe1} stellen die schwarz eingefärbten Leitungen den Abschnitt dar, in welchem das Transportmedium flüssig ist.
-      Aus Reservoir 1 heraus fließt das Transportmedium mit Druck $p_\text{b}$ hinein in den Reiniger R, wo aus dem Transportmedium alle Gasreste entfernt werden.
-      Das gereinigte Medium gelangt durch das Drosselventil D. Durch den Strömungswiderstand des Ventils ändert sich der Druck auf $p_\text{a}$. Da das Medium bei Druck $p_\text{b}$
-      flüssig, bei Druck $p_\text{a}$ jedoch gasförmig ist, verdampft das Medium in Reservoir 2 bei Temperatur $T_\text{2}$ und nimmt dabei Wärme auf. Die grau eingefärbten Leitungen
+      Aus Reservoir 1 heraus fließt das Transportmedium mit Druck $p_\text{2}$ hinein in den Reiniger R, von wo aus dem Transportmedium alle Gasreste entfernt werden.
+      Das gereinigte Medium gelangt durch das Drosselventil D. Durch den Strömungswiderstand des Ventils ändert sich der Druck auf $p_\text{1}$. Da das Medium bei Druck $p_\text{2}$
+      flüssig, bei Druck $p_\text{1}$ jedoch gasförmig ist, verdampft das Medium in Reservoir 2 bei Temperatur $T_\text{2}$ und nimmt dabei Wärme auf. Die grau eingefärbten Leitungen
       stellen nun den Abschnitt dar, in dem das Transportmedium gasförmig ist. Der Kompressor K komprimiert das Transportmedium adiabatisch,
       wodurch sowohl Temperatur als auch Druck ansteigen.
       In Reservoir 1 kondensiert das Medium wieder und gibt seine Wärmeenergie ab. Die Temperatur $T_\text{1}$ wird erhöht, das
@@ -170,19 +167,24 @@ Im folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
       Die Messapparatur ist wie folgt aufgebaut:
       \begin{figure}
         \centering
-        \includegraphics[scale = 0.15]{AufbauMessreihe.png}
+        \includegraphics[scale = 0.13]{AufbauMessreihe.png}
         \caption{Die Messapparatur.}
         \label{fig:wärmepumpe2}
       \end{figure}
       In die thermisch isolierten Reservoir 1 und 2 wird eine genau abgemessene Menge kaltes Wasser gefüllt. Damit eine zuverlässige Temperaturmessung mithilfe der beiden
-      Digitalthermometer stattfinden kann, werden die Reservoire mit den Rührmotoren während des Experiments laufend durchgerührt. Die Drücke $p_\text{b}$ und $p_\text{a}$
+      Digitalthermometer stattfinden kann, werden die Reservoire mit den Rührmotoren während des Experiments laufend durchgerührt. Die Drücke $p_\text{2}$ und $p_\text{1}$
       vor und hinter dem Drosselventil und die Leistungsaufnahme des Kompressors werden ebenfalls aufgenommen. Alle Messwerte werden in Abhängigkeit der Zeit gemessen.
-      Jede Minute wurde eine Messung gemacht, bis Reservoir 1 eine Temperatur von $T_\text{1} = \SI{50}{\celsius}$ erreicht hat.
-\section{Ergebnisse des Experiments}
+      Jede Minute wurde eine Messung durchgeführt, bis Reservoir 1 eine Temperatur von $T_\text{1} = \SI{50}{\celsius}$ erreicht hat.
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Auswertung der Messdaten}
+Die gemessenen Daten sind in der folgenden Tabelle \ref{tab:Messdaten} dargestellt.
+\include{Tabelle1.tex}
+\include{AuswertungMessdaten.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Diskussion der Ergebnisse}
-    Es fällt auf, das die errechnete Güteziffer der Wärmepumpe relativ weit von der idealen abweicht, siehe \ref{tab:güteziffer}. Dies liegt vermutlich an der Isolierung der
+    \label{sec:Auswertung}
+    Es fällt auf, das die errechnete Güteziffer der Wärmepumpe relativ weit von der idealen abweicht, siehe \ref{tab:gütezifferT1} und \ref{tab:gütezifferT2}. Dies liegt vermutlich an der Isolierung der
     Reservoire, die einen Wärmeaustausch mit der Umgebung nicht vollständig verhindern kann. Außerdem läuft die Kompression nur annähernd adiabatisch ab, hier treten also weitere
     Verluste auf. Zudem haben wir die Messung nicht selber durchgeführt, möglicherweise ist auch die Genauigkeit der Messung in Zweifel zu ziehen.
 \end{document}
-
-%\eqref{eqn:}
