@@ -11,7 +11,7 @@ Alle Werte wurden in SI-Einheiten konvertiert.
 
 %Aufgabenteil b)
 \subsection{Bestimmung der Näherungsfunktion}
-Die quadratische Regression ist ebenfalls in \ref{fig:TemperaturverlaufA} skizziert. Der gewählte Ansatz ist
+Die quadratische Regression ist ebenfalls in Abbildung \ref{fig:TemperaturverlaufA} skizziert. Der gewählte Ansatz ist
 \begin{equation}
   T(t) = \symup{A} \cdot t^2 + \symup{B} \cdot t + \symup{C}.
   \label{eq:Regressionsgleichung}
@@ -39,7 +39,7 @@ Nach den Ableitungsregeln ergibt sich:
     T'(t) = 2\symup{A} \cdot t + \symup{B}
     \label{eq:Regressionableitung}
 \end{equation}
-  Nun werden konkrete Werte für 4 verschiedene Temperaturen berechnet werden. Diese sind in unserem Fall die Temperaturen bei 
+  Nun werden konkrete Werte für 4 verschiedene Temperaturen berechnet werden. Diese sind in unserem Fall die Temperaturen bei
   den Zeiten $60s, 660s, 1 260s, 1 860s$.
   \begin{table}
     \centering
@@ -60,13 +60,13 @@ Nach den Ableitungsregeln ergibt sich:
 
 \subsection{Bestimmung der Güteziffer}
 Mithilfe der Differentialquotienten soll mit \eqref{eqn:realegüteziffer3} die reale Güteziffer berechnet werden. Zudem soll diese mit der
-idealen Güteziffer verglichen werden, die mit \eqref{eqn:idealegüteziffer} berechnet wird. 
+idealen Güteziffer verglichen werden, die mit \eqref{eqn:idealegüteziffer} berechnet wird.
 Die Abweichung p der Beiden Werte in Prozent wird berechnet mit:
 \begin{equation}
   p=\frac{v_{id}-v_{real}}{v_{id}} \cdot 100
 \end{equation}
 Die Berechnung bei den vier oben beschriebenen
-Zeitpunkten ergibt: 
+Zeitpunkten ergibt:
 \begin{table}
   \centering
   \caption{Güteziffern für T1}
@@ -102,14 +102,14 @@ Zeitpunkten ergibt:
   \end{tabular}
 \end{table}
 
-Es fällt auf, dass die Abweichung der realen Güteziffer von dem idealen Wert stark abweicht. 
+Es fällt auf, dass die Abweichung der realen Güteziffer von dem idealen Wert stark abweicht.
 Mögliche Gründe für diese Abweichung werden in \ref{sec:Auswertung} angegeben.
 
 \subsection{Bestimmung des Massendurchsatzes}
-Die Berechnung des Massendurchsatzes erfolgt mit \eqref{eqn:massendurchsatz2}. Dafür muss aber zuerst die 
-Verdampfungswärme L bestimmt werden. 
+Die Berechnung des Massendurchsatzes erfolgt mit \eqref{eqn:massendurchsatz2}. Dafür muss aber zuerst die
+Verdampfungswärme L bestimmt werden.
 \\
-Aus V203-"Verdampfungswärme" ist folgender Zusammenhang zwischen dem Druck p, der Temperatur T, und L bekannt:
+Aus V203 (Verdampfungswärme) ist folgender Zusammenhang zwischen dem Druck p, der Temperatur T, und L bekannt:
 \begin{equation}
   ln(p/p_0)=\frac{-L}{R \cdot T}
 \end{equation}
@@ -126,7 +126,7 @@ wird dieser Zusammenhang gut ersichtlich.
   \caption{Dampfdruckkurve}
   \label{fig:Dampfdruckkurve}
 \end{figure}
-Die eingezeichnete Regression hat nun genau die Funktionsgleichung \eqref{Dampfdruckgleichung}. Die Steigung der 
+Die eingezeichnete Regression hat nun genau die Funktionsgleichung \eqref{Dampfdruckgleichung}. Die Steigung der
 Gerade ist demnach $m=-L/R$. L erhält also durch $L=-m\cdot R$. Durch Einsetzen folgt:
 \\
 $L=\SI{14299.459 \pm 734.742}{\joule\second\kelvin\per\mole}$
@@ -167,13 +167,13 @@ Die Dichte kann man nun mit dem idealen Gasgesetz
   pV=nRT \Leftrightarrow \frac{pV}{T}=nR
 \end{equation}
 berechnen. Da die Stoffmenge $n$ des Gases immer konstant ist, da kein Gas entweicht oder zugeführt wird, und auch
-$R$ eine Konstante ist, ist die ganze Rechte Seite konstant. Diese Seite ist für die Temperatur $T_2$, den Druck $p_2$ und das
+$R$ eine Konstante ist, ist die ganze rechte Seite konstant. Diese Seite ist für die Temperatur $T_2$, den Druck $p_2$ und das
 Volumen $V_2$ gleich den Werten, bei denen die Dichte $\rho_0=\SI{5.514}{\gram\per\liter}$ des Gases gemessen wurde. Diese lauten
 $p_0=\SI{e5}{\pascal}$ und $T_0=\SI{273.15}{\kelvin}$.
 \begin{equation}
   \frac{p_2V_2}{T_2}=\frac{p_0V_0}{T_0} \Leftrightarrow \frac{p_2m}{\rho_2T_2}=\frac{p_0m}{\rho_0T_0}
 \end{equation}
-Da die auch die Masse des Gases konstant ist, kann diese herraus gekürzt werden.
+Da die auch die Masse des Gases konstant ist, kann diese gekürzt werden.
 Umstellen nach $\rho_2=\rho$ ergibt:
 \begin{equation}
   \rho=\frac{\rho_0T_0p_1}{T_2p_0} \label{rho}

@@ -12,6 +12,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{biblatex}
+\addbibresource{literaturverzeichnis.bib}
 %ISO Normen benutzen
 \usepackage[
 math-style=ISO,
@@ -95,10 +97,10 @@ Im Folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
 		v_\text{real} < \frac{T_\text{1}}{T_\text{1}-T_\text{2}}
 		\label{eqn:realegüteziffer1}
 	\end{equation}
-  Die reale Güteziffer lässt sich auch aus dem Differentialquotienten $ \frac{\symup{d} T_\text{1}}{\symup{d} t}$ berechnen. Die transportierte Wärmemenge $\symup{d} Q_\text{1}$
+  Die reale Güteziffer lässt sich auch aus dem Differentialquotienten $ \frac{\symup{d} T_\text{1}}{ \symup{d} t}$ berechnen. Die transportierte Wärmemenge $\symup{d} Q_\text{1}$
   für ein Zeitintervall $\symup{d} t$ ist dann:
   \begin{equation}
-    \frac{\symup{d} Q_\text{1}}{\symup[d] t} = (m_\text{1}c_\text{w} + m_\text{k}c_\text{k}) \frac{\symup{d} T_\text{1}}{\symup{d} t}.
+    \frac{\symup{d} Q_\text{1}}{\symup{d} t} = (m_\text{1}c_\text{w} + m_\text{k}c_\text{k}) \frac{\symup{d} T_\text{1}}{\symup{d} t}.
     \label{eqn:realegüteziffer2}
   \end{equation}
   Hierbei ist $m_\text{1}c_\text{w}$ die mittlere Wärmekapazität des Wassers in Reservoir 1 und $m_\text{k}c_\text{k}$ die mittlere Wärmekapazität der Kupferschlange und des Eimers.
@@ -112,39 +114,39 @@ Im Folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
     \label{eqn:realegüteziffer3}
   \end{equation}
 	An \eqref{eqn:idealegüteziffer} und \eqref{eqn:realegüteziffer1} kann man ablesen, dass eine Wärmepumpe eine höhere Güte hat,
-	wenn der Temperaturunterschied zwischen Reservoir 1 und Reservoir 2 möglichst gering ist. Das bedeutet, dass der Engeriverlust
+	wenn der Temperaturunterschied zwischen Reservoir 1 und Reservoir 2 möglichst gering ist. Das bedeutet, dass der Engergieverlust
 	für geringe Temperaturunterschiede am kleinsten ist.
 	\subsection{Der Massendurchsatz}
-	Der Massendurchsatz einer Wärmepumpe beschreibt, wie viel Wärme aus dem kälteren Reservoir 2 pro Zeiteinheit entnommen wird. \\
-	Mitlhilfe des gemessenen Differenzenquotienten $ \frac{\increment T_\text{2}}{\increment t}$ sowie der Wärmekapazität von Reservoir 2
-	$m_\text{2}c_\text{w}$ und der Wärmekapazität der Kupferschlange und des Eimers $m_\text{k}c_\text{k}$ ergibt sich der Massendurchsatz
-	zu
-	\begin{equation}
-		\frac{\increment Q_\text{2}}{\increment t} = (m_\text{2} c_\text{w} + m_\text{k} c_\text{k}) \frac{\increment T_\text{2}}{t}.
-		\label{eqn:massendurchsatz1}
-	\end{equation}
-	Da der Wärmetransport über Verdampfung eines Mediums stattfindet, kann man \eqref{eqn:massendurchsatz1} auch mithilfe der
-	Verdampfungswärme $L$ schreiben:
-	\begin{equation}
-		\frac{\increment Q_\text{2}}{\increment t} = L \cdot \frac{\increment m}{\increment t}
-		\label{eqn:massendurchsatz2}
-	\end{equation}
+  	Der Massendurchsatz einer Wärmepumpe beschreibt, wie viel Wärme aus dem kälteren Reservoir 2 pro Zeiteinheit entnommen wird. \\
+  	Mitlhilfe des gemessenen Differenzenquotienten $ \frac{\increment T_\text{2}}{\increment t}$ sowie der Wärmekapazität von Reservoir 2
+  	$m_\text{2}c_\text{w}$ und der Wärmekapazität der Kupferschlange und des Eimers $m_\text{k}c_\text{k}$ ergibt sich der Massendurchsatz
+  	zu
+  	\begin{equation}
+  		\frac{\increment Q_\text{2}}{\increment t} = (m_\text{2} c_\text{w} + m_\text{k} c_\text{k}) \frac{\increment T_\text{2}}{\increment t}.
+  		\label{eqn:massendurchsatz1}
+  	\end{equation}
+  	Da der Wärmetransport über Verdampfung eines Mediums stattfindet, kann man \eqref{eqn:massendurchsatz1} auch mithilfe der
+  	Verdampfungswärme $L$ schreiben:
+  	\begin{equation}
+  		\frac{\increment Q_\text{2}}{\increment t} = L \cdot \frac{\increment m}{\increment t}
+  		\label{eqn:massendurchsatz2}
+  	\end{equation}
   \subsection{Die mechanische Kompressorleistung}
-  Für die verrichtete Arbeit $A_\text{m}$, die der Kompressor bei einer Volumenänderung von $V_\text{a}$ auf $V_\text{b}$ leistet, gilt
-  \begin{equation}
-    A_\text{m} = -\int_{V_\text{a}}^{V_\text{b}} p \symup{d}V.
-  \label{eqn:arbeitkompressor}
-  \end{equation}
-  Dann ist die Leistung des Kompressors
-  \begin{equation}
-    N_\text{mech} = \frac{\symup{d} A_\text{m}}{\symup{d} t}.
-    \label{eqn:leistungkompressor1}
-  \end{equation}
-  Unter der Annahme, dass die Kompression ein annähernd adiabatisch ablaufender Vorgang ist, und unter Verwendung der Poissonschen Gleichung erhählt man für $N_\text{mech}$
-  \begin{equation}
-    N_\text{mech} = \frac{1}{\kappa - 1}  \left(p_\text{2} \sqrt[\kappa]{\frac{p_\text{1}}{p_\text{2}}} - p_\text{1} \right)  \frac{\increment V_\text{a}}{\increment t}.
-    \label{eqn:leistungkompressor2}
-  \end{equation}
+    Für die verrichtete Arbeit $A_\text{m}$, die der Kompressor bei einer Volumenänderung von $V_\text{1}$ auf $V_\text{2}$ leistet, gilt
+    \begin{equation}
+      A_\text{m} = -\int_{V_\text{1}}^{V_\text{2}} p \symup{d}V.
+    \label{eqn:arbeitkompressor}
+    \end{equation}
+    Dann ist die Leistung des Kompressors
+    \begin{equation}
+      N_\text{mech} = \frac{\symup{d} A_\text{m}}{\symup{d} t}.
+      \label{eqn:leistungkompressor1}
+    \end{equation}
+    Unter der Annahme, dass die Kompression ein annähernd adiabatisch ablaufender Vorgang ist, und unter Verwendung der Poissonschen Gleichung erhählt man für $N_\text{mech}$
+    \begin{equation}
+      N_\text{mech} = \frac{1}{\kappa - 1}  \left(p_\text{2} \sqrt[\kappa]{\frac{p_\text{1}}{p_\text{2}}} - p_\text{1} \right)  \frac{\increment V_\text{1}}{\increment t}.
+      \label{eqn:leistungkompressor2}
+    \end{equation}
 \section{Aufbau des Experiments}
     \subsection{Funktionsweise einer Wärmepumpe}
       Über ein Transportmedium, welches duch Verdampfung und Kondensation Wärme ab- oder aufnimmt,
@@ -187,4 +189,6 @@ Im Folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
       an der Isolierung der
       Reservoire, die einen Wärmeaustausch mit der Umgebung nicht vollständig verhindern kann. Außerdem läuft die Kompression nur annähernd adiabatisch ab, hier treten also weitere
       Verluste auf. Zudem haben wir die Messung nicht selber durchgeführt, möglicherweise ist auch die Genauigkeit der Messung in Zweifel zu ziehen.
+\nocite{*}
+\printbibliography
 \end{document}
