@@ -86,6 +86,11 @@ vreal1a=np.array([h,h,h,h])
 vreal2a=np.array([h,h,h,h])
 vid1a=np.array([0,0,0,0])
 vid2a=np.array([0,0,0,0])
+dT1dta=np.array([h,h,h,h])
+dT2dta=np.array([h,h,h,h])
+p1a=np.array([h,h,h,h])
+p2a=np.array([h,h,h,h])
+
 print("Berechnet mit T1 \n\n")
 while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     vid=T1[i]/(T1[i]-T2[i]) #ideale Güte
@@ -97,6 +102,8 @@ while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     print("\n")
     vreal1a[j]=vreal1
     vid1a[j]=vid
+    dT1dta[j]=difT1(i)
+    p1a[j]=p*100
     i=i+10
     j=j+1
 i=1
@@ -112,18 +119,15 @@ while(i<40): #4 unterschiedliche Zeiten mit 10s Abstand
     print("\n")
     vreal2a[j]=vreal2
     vid2a[j]=vid
+    dT2dta[j]=difT2(i)
+    p2a[j]=p*100
     i=i+10
     j=j+1
 ############################################################################################################
 
 #e) Massendurchsatz, Verdampfungswärme, Dampfdruckkurve
-# aus V203-"Verdampfungswärme" ist begkannt:
-# ln(p/p0)=_-L/(R*T)+c
-# aus V203-"Verdampfungswärme" ist begkannt:
-# ln(p)= -L/(R*T)+c
 # aus V203-"Verdampfungswärme" ist bekannt:
-# ln(p)=_-L/(R*T)+c
-# p=p0*exp(-L/(R*T))
+# ln(p/p0)=_-L/(R*T)+c
 # dabei ist R=ideale-Gaskonst., p=gemessener Druck, p0=Umgebungs-Druck, T=Temperatur, L=Verdampfungswärme, c=const.
 # daher wählen wir
 # x = 1/T
@@ -257,6 +261,6 @@ while(i<40):
 np.savetxt('tabelle1.txt', np.column_stack([t,T1,p1,T2,p2,N]),fmt='%10.2f', delimiter='  &  ', header="t T1 p1 T2 p2 N")
 np.savetxt('tabelle2a.txt', np.column_stack([paramserr1, paramserr2]), fmt='%r' ,delimiter='     ' ,header='err1 err2')
 np.savetxt('tabelle2b.txt', np.column_stack([paramserr3, paramserr4]), fmt='%r' ,delimiter='     ' ,header='err1 err2')
-np.savetxt('tabelle3.txt', np.column_stack([vreal1a, vreal2a, vid1a, vid2a]), fmt='%r' ,delimiter='     ' ,header='vreal1 vreal2 vid1 vid2')
+np.savetxt('tabelle3.txt', np.column_stack([dT1dta, dT2dta, vreal1a, vreal2a, vid1a, vid2a, p1a, p2a]), fmt='%r' ,delimiter='     ' ,header='dT1/dt dT2/dt vreal1 vreal2 vid1 vid2 p1a p2a')
 np.savetxt('tabelle4.txt', np.column_stack([L]), fmt='%r' ,delimiter='  ' ,header='L')
 np.savetxt('tabelle5.txt', np.column_stack([dmdt, Nmecha, rhoa]), fmt='%r' ,delimiter='     ' ,header='dm/dt, Nmech, rho')
