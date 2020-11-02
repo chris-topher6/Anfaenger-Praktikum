@@ -1,0 +1,35 @@
+\subsection{Berechnung des Mittelwerts}
+  \label{sec:mittelwert}
+  Für den Mittelwert gilt
+  \begin{equation}
+    \bar{x}_\text{k} = \frac{1}{N} \sum_{k = 1}^{N} x_\text{k}.
+  \end{equation}
+\subsection{Berechnung der Standardabweichung}
+  \label{sec:standardabweichung}
+  Die Standardabweichung berechnet sich wie folgt:
+  \begin{equation}
+    \increment \bar{x} = \sqrt{\frac{1}{N(N-1)} \sum_{k = 1}^{N}(x_\text{k} - \bar{x})^2 }
+  \end{equation}
+  mit Messwerten $x_\text{k}$ mit zufälligem Fehler.
+\subsection{Fehlerfortpflanzung nach Gauß}
+  \label{sec:fehlerfortpflanzung}
+  Für $n$ Messgrößen $n_\text{1}$, $n_\text{2}$, ..., $n_\text{N}$ mit der Unsicherheit
+  $\increment n_\text{1}$, $\increment n_\text{2}$, ..., $\increment n_\text{N}$. Für die Unsicherheit
+  der abgeleiteten Größe gilt
+  \begin{equation}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x} \right)^2 (\increment x)^2 + ... + \left(\frac{\partial f}{\partial f} \right)^2 (\increment y)^2 + \left(\frac{\partial
+    f}{\partial z} \right)^2 (\increment z)^2}
+  \end{equation}
+\subsection{Lineare Regression}
+  \label{sec:regression}
+  Für ($x_\text{1}$, $y_\text{1} \pm \sigma$), ..., $x_\text{N}$, $y_\text{N} \pm \sigma$) linear abhängige Größen und der Geradengleichung $y = m \cdot x + b$ ergibt sich die
+  Regression zu
+  \begin{align}
+    \hat{m}  & = \frac{\bar{xy} - \bar{x} \cdot \bar{y}}{\bar{x^2} - \bar{x}^2} \\
+    \hat{b}  & = \bar{y} - \hat{m} \bar{x}
+  \end{align}
+  Für die Unsicherheit $\sigma_\text{m}^2$ und $\sigma_\text{b}^2$ gilt dann
+  \begin{align}
+    \sigma_\text{m}^2 & = \frac{\sigma^2}{N(\bar{x^2} - \bar{x}^2)} \\
+    \sigma_\text{b}^2 & = \frac{\sigma^2 \bar{x^2}}{N(\bar{x^2} - \bar{x}^2)}
+  \end{align}
