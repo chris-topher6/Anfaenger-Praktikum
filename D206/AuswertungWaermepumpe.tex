@@ -175,16 +175,16 @@ Im Folgenden wird immer der Differentialquotient anstelle des Differenzenquotien
       Digitalthermometer stattfinden kann, werden die Reservoire mit den Rührmotoren während des Experiments laufend durchgerührt. Die Drücke $p_\text{2}$ und $p_\text{1}$
       vor und hinter dem Drosselventil und die Leistungsaufnahme des Kompressors werden ebenfalls aufgenommen. Alle Messwerte werden in Abhängigkeit der Zeit gemessen.
       Jede Minute wurde eine Messung durchgeführt, bis Reservoir 1 eine Temperatur von $T_\text{1} = \SI{50}{\celsius}$ erreicht hat.
-%\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Auswertung der Messdaten}
-Die gemessenen Daten sind in der folgenden Tabelle \ref{tab:Messdaten} dargestellt.
-\include{Tabelle1.tex}
-\include{AuswertungMessdaten.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \subsection{Diskussion der Ergebnisse}
-    \label{sec:Auswertung}
-    Es fällt auf, das die errechnete Güteziffer der Wärmepumpe relativ weit von der idealen abweicht, siehe \ref{tab:gütezifferT1} und \ref{tab:gütezifferT2}. Dies liegt vermutlich an der Isolierung der
-    Reservoire, die einen Wärmeaustausch mit der Umgebung nicht vollständig verhindern kann. Außerdem läuft die Kompression nur annähernd adiabatisch ab, hier treten also weitere
-    Verluste auf. Zudem haben wir die Messung nicht selber durchgeführt, möglicherweise ist auch die Genauigkeit der Messung in Zweifel zu ziehen.
+    Die gemessenen Daten sind in der folgenden Tabelle \ref{tab:Messdaten} dargestellt.
+    \input{Tabelle1.tex}
+    \input{AuswertungMessdaten.tex}
+    \section{Berechnung von Messunsicherheiten}
+    \input{Fehlerrechnung.tex}
+    \section{Diskussion der Ergebnisse}
+      \label{sec:Auswertung}
+      Es fällt auf, das die errechnete Güteziffer der Wärmepumpe relativ weit von der idealen abweicht, siehe \ref{tab:gütezifferT1} und \ref{tab:gütezifferT2}. Dies liegt vermutlich
+      an der Isolierung der
+      Reservoire, die einen Wärmeaustausch mit der Umgebung nicht vollständig verhindern kann. Außerdem läuft die Kompression nur annähernd adiabatisch ab, hier treten also weitere
+      Verluste auf. Zudem haben wir die Messung nicht selber durchgeführt, möglicherweise ist auch die Genauigkeit der Messung in Zweifel zu ziehen.
 \end{document}
