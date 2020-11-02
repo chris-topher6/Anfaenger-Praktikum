@@ -1,16 +1,3 @@
-\usepackage[
-    locale=DE 
-    separate-uncertainty=true 
-    per-mode=symblo-or-fraction
-]{siunitx}
-
-
-\section{Auswertung}
-\label{sec:Auswertung}
-
-\subsection{Messdaten}
-\include{Tabelle1.tex}
-
 \subsection{Temperaturverläufe}
 %Aufgabenteil a)
 \subsection{Temperaturmessung}
@@ -39,10 +26,9 @@ Die nicht-linearen Ausgleichsrechnungen sind ebenfalls in \ref{fig:Temperaturver
     \toprule
      {$T$} & {$A [K/s^2]$} & {$\increment A [K/s^2]$} & {$B [K/s]$} & {$\increment B [K/s]$} & {$C [K]$} & {$\increment C [K]$} \\
     \midrule
-    {$T_\text{1}$} & 3.2249e-6 &  $\pm$4.1934e-8 &  0.02027984 & $\pm$9.11047e-5 & 294.97008 & $\pm$0.04134 \\
-    {$T_\text{2}$} & 0.9550e-6 &  $\pm$26.711e-8 & -0.01120872 & $\pm$58.0316e-5 & 295.87019 & $\pm$0.26336 \\
-    
-      \bottomrule
+    {$T_\text{1}$} & 3.2249e-6 &  4.1934e-8 &  0.02027984 & 9.11047e-5 & 294.97008 & 0.04134 \\
+    {$T_\text{2}$} & 0.9550e-6 &  26.711e-8 & -0.01120872 & 58.0316e-5 & 295.87019 & 0.26336 \\
+    \bottomrule
   \end{tabular}
 \end{table}
 
@@ -53,7 +39,7 @@ Nach den Ableitungsregeln ergibt sich:
 \begin{equation}
     T'(t) = 2\symup{A} \cdot t + \symup{B}
     \label{eq:Regressionableitung}
-  \end{equation}
+\end{equation}
   Nun werden konkrete Werte für 4 verschiedene Temperaturen berechnet werden. Diese sind in unserem Fall die Temperaturen bei 
   den Zeiten $60s, 660s, 1 260s, 1 860s$.
   \begin{table}
@@ -69,8 +55,7 @@ Nach den Ableitungsregeln ergibt sich:
       660 & 0.02020 & 9.11047e-5 & 0.01118 & 5.80345e-4 
       1 260 & 0.020144 & 9.11216e-5 & 0.01117 & 5.80424e-4 
       1 860 & 0.020079 & 9.11417e-5 & 0.01115 & 5.80552e-4
-      
-        \bottomrule
+      \bottomrule
     \end{tabular}
   \end{table}
 
