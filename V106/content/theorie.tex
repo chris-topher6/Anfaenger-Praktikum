@@ -1,2 +1,45 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Der harmonische Oszillator}
+Ein harmonischer Oszillatorist ein physikalisches System, welches eine Schwingung ausführt. Das einfachste Beispiel
+hierfür ist eine Feder, an welcher eine Masse  $m$ um die Ruhelage $x_0$ oszilliert.
+%Abbildung einfügen
+Ein harmonischer Oszillator kann dabei über die Differentailgleichung
+\begin{equation}
+    \ddot{x}+\omega^2\cdot x=0
+\end{equation}
+definiert werden. Im mechanischen Fall ist dabei $x$ der Ort, $\ddot{x}$ die zweite Ableitung des Ortes nach der Zeit,
+also die Beschleunigung, und $\omega$ eine Konstante, welche weitere Informationen über das System, wie zum Beispiel die 
+Masse $m$, ergänzt. Zudem wird sich noch zeigen, dass $\omega$ die Frequenz der Schwingung beschreibt.
+\\
+Die Differentailgleichung kann bei der Feder aus dem zweiten Newton'schen Axiom
+\begin{equation}
+    F=m\cdot\dddot{x} \label{eqn:newton2}
+\end{equation} 
+hergeleitet werden. Dafür wird das zweite Newton'sche Axiom der rücktreibenden Kraft der Feder gleichgesetzt. Die 
+Gleichheit der beiden Kräfte folgt aus dem Reaktionsprinzip. Die rücktreibende Kraft wird bei dem obrigen Beispiel
+durch das Hook'sche Gesetz beschrieben
+\begin{equation}
+    F=-k\cdot x \label{eqn:hook}. %Vorzeichen???
+\end{equation}
+Dabei ist $k$ die Federkonstante der Feder.
+\\
+Durch das Gleichsetzen erhält man:
+\begin{equation}
+    m\cdot\dddot{x}=k\cdot x \Leftrightarrow \ddot{x}+\frac{k}{m}\cdot x=0 \label{eqn:dgl}
+\end{equation}
+Gesucht ist nun die Funktion $x(t)$, die die Differentailgleichung löst. Man wählt nun den Ansatz
+\begin{align}
+    x(t)&=A\cdot cos(\omega\cdot t)+B\cdot sin(\omega\cdot t) \\
+    \ddot{x}(t)&=-\omega^2\cdot x(t)
+    \label{eqn:ansatz}
+\end{align}
+$A$ und $B$ sind dabi Konstanten, die durch die Anfangsbedingung bestimmt werden. Einsetzen des Ansatzes \eqref{eqn:ansatz}
+in die Differentailgleichung \eqref{eqn:dgl} ergibt dann:
+\begin{equation}
+    A\cdot cos(\omega\cdot t)+B\cdot sin(\omega\cdot t)(\frac{k}{m}-\omega^2)=0
+\end{equation}
+Da der erste Fraktor der Gleichung nicht für alle Zeiten $t=0$ sein kann, muss der zweite Faktor null ergeben
+\begin{equation}
+    \frac{k}{m}-\omega^2=0 \Leftrightarrow \frac{k}{m}=\omega^2 .
+\end{equation}

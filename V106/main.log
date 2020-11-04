@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.10.8)  4 NOV 2020 17:33
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.10.8)  4 NOV 2020 18:56
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1786,29 +1786,29 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
 map}]
 Package tocbasic Info: character protrusion at toc deactivated on input line 15.
 
+ (./main.toc)
 \tf@toc=\write4
 
 \openout4 = main.toc
  [2
 
-] (./content/theorie.tex) (./content/durchfuehrung.tex)
-(./content/auswertung.tex) (./content/fehlerrechnung.tex)
-(./content/diskussion.tex)
+] (./content/einleitung.tex) (./content/theorie.tex) (./content/durchfuehrung.t
+ex [3]) (./content/auswertung.tex)
+(./content/fehlerrechnung.tex [4]) (./content/diskussion.tex)
 
-LaTeX Warning: Empty bibliography on input line 30.
+LaTeX Warning: Empty bibliography on input line 25.
 
-[3] [4] (./main.aux)
+[5] (./main.aux)
 
 Package rerunfilecheck Warning: File `main.aux' has changed. Rerun.
 
 Package rerunfilecheck Info: Checksums for `main.aux':
-(rerunfilecheck)             Before: A94A2480D3289E625EEA47CD1B285758;8
-(rerunfilecheck)             After:  BA7D4B4E92EA23F98CF1F255C0A41DC6;6024.
+(rerunfilecheck)             Before: 1E26DD9961261180403B9F1410E9458B;7257
+(rerunfilecheck)             After:  6B19FCE5AAAEB0B6AF4DE9E23F63D477;7384.
+Package rerunfilecheck Info: File `main.toc' has not changed.
+(rerunfilecheck)             Checksum: BC4E9BA8900BBFB9231FD272EEC4E306;1055.
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1821,28 +1821,28 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35212 strings out of 479058
+ 35256 strings out of 479058
  100000,1977958 words of node,token memory allocated
- 740 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 37 att
-ribute, 76 glue_spec, 20 attribute_list, 1 write nodes
-   avail lists: 1:4,2:959,3:248,4:23,5:402,6:31,7:2254,8:94,9:682,10:4,11:145
- 53484 multiletter control sequences out of 65536+600000
- 104 fonts using 36557147 bytes
+ 827 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 61 att
+ribute, 79 glue_spec, 32 attribute_list, 1 write nodes
+   avail lists: 1:4,2:951,3:229,4:22,5:445,6:35,7:4250,8:94,9:635,10:8,11:389
+ 53503 multiletter control sequences out of 65536+600000
+ 104 fonts using 36556715 bytes
  98i,10n,114p,10617b,2933s stack positions out of 5000i,500n,10000p,200000b,200000s
-</home/christopher/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm-math/
-latinmodern-math.otf></home/christopher/.local/texlive/2020/texmf-dist/fonts/ope
-ntype/public/lm/lmroman8-regular.otf></home/christopher/.local/texlive/2020/texm
+</home/christopher/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmrom
+an8-regular.otf></home/christopher/.local/texlive/2020/texmf-dist/fonts/opentype
+/public/lm-math/latinmodern-math.otf></home/christopher/.local/texlive/2020/texm
 f-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/christopher/.lo
 cal/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></hom
 e/christopher/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman12-
 regular.otf></home/christopher/.local/texlive/2020/texmf-dist/fonts/opentype/pub
 lic/lm/lmsans10-bold.otf></home/christopher/.local/texlive/2020/texmf-dist/fonts
 /opentype/public/lm/lmroman12-bold.otf>
-Output written on main.pdf (4 pages, 32961 bytes).
+Output written on main.pdf (5 pages, 42835 bytes).
 
-PDF statistics: 122 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 131072)
- 73 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 160 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 131072)
+ 89 words of extra memory for PDF output out of 10000 (max. 100000000)
 
