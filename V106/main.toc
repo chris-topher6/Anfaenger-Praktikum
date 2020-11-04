@@ -1,0 +1,12 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Theorie}{3}{section.1}%
+\contentsline {section}{\numberline {2}Durchführung}{3}{section.2}%
+\contentsline {section}{\numberline {3}Auswertung}{3}{section.3}%
+\contentsline {section}{\numberline {4}Fehlerrechnung}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Berechnung des Mittelwerts}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Berechnung der Standardabweichung}{3}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Fehlerfortpflanzung nach Gauß}{3}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Lineare Regression}{3}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Diskussion}{4}{section.5}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
