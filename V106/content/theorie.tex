@@ -125,6 +125,14 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
 
 \begin{enumerate}
     \item Gleichsinnige Schwingung: $\alpha_1=\alpha_2$
+        Bei einer gleichsinnigen Schwingung werden beide Pendel um den gleichen Winkel ausgelenkt. Die Pendel schwingen nun unabhängig von einander, 
+        so wie sie auch ohne eine Kopplung schwingen würden. Deswegen ist auch die Frequenz für mathematische Pendel analog zu jener, die wir für einzele 
+        mathematische Pendel her geleitet haben:
+        \begin{equation}
+            \omega_{+}=\sqrt{\frac{g}{l}}
+        \end{equation}
+        In Abbildung \ref{fig:gleichsinnig} ist die Amplitude der jeweiligen Schwingungen Abhängigkeit von der Zeit aufgetragen. Wie gut zu erkennen ist, sind
+        die Schwingungen identisch.
         \begin{figure}
         \centering
         \includegraphics[scale = 0.5]{gleichsinnig.pdf}
@@ -132,17 +140,42 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
         \label{fig:gleichsinnig}
       \end{figure}
     \item Gegensinnige Schwingung: $\alpha_1=-\alpha_2$
-    \begin{figure}
-        \centering
-        \includegraphics[scale = 0.5]{gegensinnig.pdf}
-        \caption{Amplituden in Abhängigkeit von t bei gegensinniger Schwingung}
-        \label{fig:gegensinnig}
-      \end{figure}
+        Bei einer gegensinnigen Schwingung werden beide Pendel genau entgegengesetzt ausgelenkt. Der Betrag des Winkels ist also exakt gleich groß, das Vorzeichen
+        ist jedoch genau entgegen gesetzt. Die Feder übt nun eine Kraft die Pendel aus, die Abhängig von der Auslenkung der Pendel ist. Dadurch ergibt sich die 
+        Frequenz für mathematische Pendel zu
+        \begin{equation}
+            \omega_{-}=\sqrt{\frac{g}{l}+2\frac{kl^2}{mL^2}}. %nochmal überprüfen
+        \end{equation}
+        Die Frequenz hängt nun also auch noch von der Federkonstante $k$ ab. Wie in Abbildung\ref{fig:gegensinnig} zu erkennen, sind die Schwingungen der beiden 
+        Pendel um $\pi$ phasenverschoden, an ansonsten sind sie aber komplett identisch.  
+        \begin{figure}
+            \centering
+            \includegraphics[scale = 0.5]{gegensinnig.pdf}
+            \caption{Amplituden in Abhängigkeit von t bei gegensinniger Schwingung}
+            \label{fig:gegensinnig}
+        \end{figure}
     \item Gekoppelte Schwingung: $\alpha_1=0$, $\alpha_2\neq 0$
-    \begin{figure}
-        \centering
-        \includegraphics[scale = 0.5]{gleichsinnig.pdf}
-        \caption{Amplituden in Abhängigkeit von t bei gekoppelter Schwingung}
-        \label{fig:gleichsinnig}
-      \end{figure}
+        Bei einer gekoppelten Schwingung wird nur eines der beiden Pendel ausgelekt. Das andere Pendel bleibt in der Ruhelage. Nun kommt es zu dem Phänomen der
+        Schwebung. Das erste Pendel, welches ausgelenkt wird, überträgt bei seiner Schwingung seine Energie nach und nach an das zweite Pendel, welches sich 
+        zu Beginn in der Ruhelage befand. Dadurch fängt nun das zweite Pendel an zu schwingen. Hat das erste Pendel seine gesamte Energie an das zweite Pendel
+        abgegeben, kommt es in der Ruhelage zum stillstand. Das zweite Pendel, welches nun so schwingt wie das erste zu Beginn, überträgt nun seine Energie wieder
+        an das erste Pendel, bis sich der Vorgang abermals wiederholt. Die Sogenannte Schwebungsfrequnz beschreibt nun die Zeitspanne zwischen dem Stillstand eines 
+        Pendels bis zum nächsten Stillstand des selben Pendels. Die Schwebungsfrequnzist dabei gegeben durch
+        \begin{equation}
+            \omega_\text{S}=\omega_+ - \omega_-
+        \end{equation}
+        und die Schwebungsdauer ist gegebn durch
+        \begin{equation}
+            T_\text{S}=\frac{T_+\cdot T_-}{T_+-T_-}.
+        \end{equation}
+        In Abbildung \ref{fig:gekoppelt} sind zwei Schwebungen aufgetragen. Es ist zu erkennen, dass sich die Fuktion aus zwei überlagerten Schwingungen zusammnsetzt.
+        Die einhüllende Schwingung, also eine Funktion, die alle Maxima der gezeigten Funktion erfasst, charakterisiert hierbei die Schwebung als solche. Die Schwingung
+        des Pendels selbst wir durch die dadrunter liegende Sinusfunktion beschrieben.
+            \begin{figure}
+            \centering
+            \includegraphics[scale = 0.5]{gleichsinnig.pdf}
+            \caption{Amplituden in Abhängigkeit von t bei gekoppelter Schwingung}
+            \label{fig:gekoppelt}
+        \end{figure}
+    Um die Schingungs %% hier den bums mit der Kopplungskonstante ergänzen
 \end{enumerate}
