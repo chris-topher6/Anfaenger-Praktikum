@@ -21,3 +21,4 @@ Tminusb = np.mean(Tminus5b) /5
 print("Pendellänge 0.325m:")
 print(Tplusb, Tminusb)
 #Aufgabe 4: Bestimmen sie mindestens 10mal die Schwingungsdauer T sowie die Schwebungsdauer Ts für eine gekoppelte Schwingung mit mindestens zwei Pendellängen
+Tkopa, Tschweba = np.mean("gekoppeltesPendelA.txt", unpack = True)
