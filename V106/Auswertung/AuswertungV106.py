@@ -22,3 +22,6 @@ print("Pendellänge 0.325m:")
 print(Tplusb, Tminusb)
 #Aufgabe 4: Bestimmen sie mindestens 10mal die Schwingungsdauer T sowie die Schwebungsdauer Ts für eine gekoppelte Schwingung mit mindestens zwei Pendellängen
 Tkopa, Tschweba = np.mean("gekoppeltesPendelA.txt", unpack = True)
+#Aufgabe 5: Berechnen sie aus den Schwingungsdauern den Kopplungsgrad K
+
+#Aufgabe 6: Vergleichen sie die gemessene Schwebungsdauer Ts mit der aus den Schwingungsdauern T+ und T- berechneten Schwebungsdauer Ts
