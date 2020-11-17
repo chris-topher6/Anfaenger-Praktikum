@@ -4,8 +4,8 @@ T15, T25 = np.genfromtxt("freieSchwingungsdauernA.txt", unpack = True)
 T1 = np.mean(T15) /5
 T2 = np.mean(T25) /5
 print(T1, T2)
-#Aufgabe 2: Bestimmen sie die Schwingunsdauer T+ für eine gleichphasige Schwingung für mindestens zwei Pendellängen
-#Aufgabe 3: Bestimmen sie die Schwingungsdauer T- für eine gegenphasige Schwingung für mindetsens zwei Pendellängen
+#Aufgabe 2: Bestimmen sie die Schwingunsdauer T+ für eine gleichsinnige Schwingung für mindestens zwei Pendellängen
+#Aufgabe 3: Bestimmen sie die Schwingungsdauer T- für eine gegensinige Schwingung für mindestens zwei Pendellängen
 #Pendellänge a
 Tplus5 , Tminus5Versuch1 = np.genfromtxt("gleichGegensinnigeSchwingungsdauernA.txt", unpack = True)
 Tminus5Versuch2 = np.genfromtxt("gegensinnigeSchwingungsdauer2A.txt", unpack = True)
@@ -21,7 +21,14 @@ Tminusb = np.mean(Tminus5b) /5
 print("Pendellänge 0.325m:")
 print(Tplusb, Tminusb)
 #Aufgabe 4: Bestimmen sie mindestens 10mal die Schwingungsdauer T sowie die Schwebungsdauer Ts für eine gekoppelte Schwingung mit mindestens zwei Pendellängen
-Tkopa, Tschweba = np.mean("gekoppeltesPendelA.txt", unpack = True)
+#Pendellänge A
+Tkopa, Tschweba = np.genfromtxt("gekoppeltesPendelA.txt", unpack = True)
+print("Pendellänge 0.993m:")
+print(Tkopa, Tschweba)
+#Pendellänge B
+Tkopb, Tschwebb = np.genfromtxt("gekoppeltesPendelB.txt", unpack = True)
+print("Pendellänge 0.325m:")
+print(Tkopb, Tschwebb)
 #Aufgabe 5: Berechnen sie aus den Schwingungsdauern den Kopplungsgrad K
 
 #Aufgabe 6: Vergleichen sie die gemessene Schwebungsdauer Ts mit der aus den Schwingungsdauern T+ und T- berechneten Schwebungsdauer Ts
