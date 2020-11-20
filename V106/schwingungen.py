@@ -16,6 +16,7 @@ plt.xlabel(r"$t$")
 plt.ylabel(r"$x$")
 plt.legend(loc="best")
 
+plt.tight_layout()
 plt.savefig('gleichsinnig.pdf')
 
 plt.figure("""first figure""")
@@ -31,6 +32,7 @@ plt.xlabel(r"$t$")
 plt.ylabel(r"$x$")
 plt.legend(loc="best")
 
+plt.tight_layout()
 plt.savefig('gegensinnig.pdf')
 
 plt.figure("""second figure""")
@@ -47,4 +49,5 @@ plt.xlabel(r"$t$")
 plt.ylabel(r"$x$")
 plt.legend(loc="best")
 
+plt.tight_layout()
 plt.savefig('gekoppelt.pdf')
