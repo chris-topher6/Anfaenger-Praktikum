@@ -17,6 +17,9 @@ build/main.bcf: main.tex
 
 build/main.pdf: main.tex build/schwingungen.pdf build/main.bcf
 	lualatex main.tex --output-directory=build main.tex 
+
+build/main.pdf: main.tex build/schwingungen.pdf build/main.bcf
+	lualatex main.tex --output-directory=build main.tex 
 	
 
 #build/main.pdf: FORCE | build
