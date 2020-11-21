@@ -15,6 +15,7 @@
             \bottomrule
           \end{tabular}
         \end{table}
+        \newpage
     Die dem zugrundeliegenden Messdaten beziehen sich auf 5 Schwingungen. Es wurden zehn Messungen für jeweils Pendel 1
     und Pedel 2 durchgeführt, wobei die eingestellte Pendellänge von Pendel 1 $0.993$m und von Pendel 2 $0.995$m beträgt.
     Gemessen wurde die Pendellänge vom Gewichtsmittelpunkt bis zu der Auflagenadel des Pendels. Die  Schwingungsdauern
@@ -46,6 +47,10 @@
     Daten dieser Messreihe sind in der Tabelle unter $T_{-}$ Versuch 2 zu finden. Der Einfluss der Federhöhe ist hier deutlich
     erkennbar.
   \subsection{Gekoppelte Schwingungen}
+    Es wurden die beiden Pendel mit einer Feder gekoppelt und bei zwei verschiedenen Pendellängen $0.993$m und $0.325$m die Dauer
+    von $5$ Schwingungen sowie die Dauer einer Schwebung gemessen. Die Schwingungsdauer wurde dann bestimmt indem die Messwerte
+    durch $5$ geteilt wurden. Es fiel auf, dass die Messung der Schwebung wenig exakt ablief da es für den Messenden schwierig
+    ist das Ende der Schwebung festzustellen.
     \begin{table}
       \centering
         \caption{Schwingungsdauer $T$ und Schwebungsdauer $T_{S}$ einer gekoppelten Schwingung}
@@ -54,4 +59,65 @@
         \begin{tabular}{S S S}
           \toprule
           {Pendellänge/m} & {$T$} & {$T_{S}$} \\
+          \midrule
+          0.993   &   1.4060 &     2.9460 \\
+                  &   1.5060 &     2.9900 \\
+                  &   1.4820 &     2.9900 \\
+                  &   1.4060 &     2.8240 \\
+                  &   1.4500 &     2.9380 \\
+                  &   1.4320 &     2.9320 \\
+                  &   1.4060 &     2.6800 \\
+                  &   1.4180 &     2.9780 \\
+                  &   1.4380 &     2.7840 \\
+                  &   1.4320 &     2.7900 \\
+          0.325   &   0.8860 &     1.6260 \\
+                  &   1.1000 &     1.5380 \\
+                  &   0.9520 &     1.6000 \\
+                  &   0.8980 &     1.6560 \\
+                  &   0.9160 &     1.4860 \\
+                  &   0.9100 &     1.6700 \\
+                  &   0.9200 &     1.6560 \\
+                  &   0.8880 &     1.6500 \\
+                  &   0.9440 &     1.4560 \\
+                  &   0.9040 &     1.5620 \\
+          \bottomrule
+        \end{tabular}
+      \end{table}
+    \newpage
+  \subsection{Der Kopplungsgrad der beiden Pendel}
+  Die beiden Kopplungsgrade wurden auf Basis der Messwerte für gleich- und gegensinnige Schwingungen berechnet. Wir haben hier
+  für die Pendellänge von $0.993$m auch einmal die fehlerbehaftete Messung der gegensinnigen Schwingung verwendet, um zu
+  demonstrieren wie groß der Einfluss der Federhöhe sein kann. Damit ist auch die große Abweichung der beiden Kopplungsgrade
+  zu erklären.
+    \begin{table}
+      \centering
+        \caption{Der Kopplungsgrad $K$ für zwei verschiedene Pendellängen}
+          \label{tab:aufgabe5}
+          \sisetup{table-format=1.4}
+          \begin{tabular}{S S S}
+            \toprule
+            {Pendellänge/m} & {$K$} & {$K$ Versuch 2}\\
+            \midrule
+            0.993   &   0.0159 &  0.1267\\
+            0.325   &   0.1356 &  \\
+            \bottomrule
+          \end{tabular}
+        \end{table}
+    \subsection{Schwebungsdauer der gekoppelten Pendel}
+      Aus den gegensinnigen und gleichsinnigen Schwingungen wurden folgende Schwebungsdauern berechnet:
+      \begin{table}
+        \centering
+          \caption{Vergleich der gemessenen und der berechneten Schwebungsdauer $T_{S}$}
+            \label{tab:aufgabe6}
+            \sisetup{table-format=3.4}
+            \begin{tabular}{S S S S}
+              \toprule
+              {Pendellänge/m} & {$T_{S}$ berechnet} & {$T_{S}$ berechnet Versuch 2} & {$T_{S}$ gemessen} \\
+              \midrule
+              0.993   &   123.3215 & 14.5597 \\
+              0.325   &   7.5247 & \\
+              \bottomrule
+            \end{tabular}
+          \end{table}
+
 \label{sec:Auswertung}
