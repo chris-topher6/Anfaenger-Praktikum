@@ -9,18 +9,18 @@ Ein harmonischer Oszillator kann dabei über die Differentialgleichung
     \ddot{x}+\omega^2\cdot x=0 \label{eqn:harmOsz}
 \end{equation}
 definiert werden. Im mechanischen Fall ist dabei $x$ der Ort, $\ddot{x}$ die zweite Ableitung des Ortes nach der Zeit,
-also die Beschleunigung, und $\omega$ eine Konstante, welche weitere Informationen über das System, wie zum Beispiel die 
+also die Beschleunigung, und $\omega$ eine Konstante, welche weitere Informationen über das System, wie zum Beispiel die
 Masse $m$, ergänzt. Zudem wird sich noch zeigen, dass $\omega$ die Frequenz der Schwingung beschreibt.
 \\
 Die Differentialgleichung kann bei der Feder aus dem zweiten Newton'schen Axiom
 \begin{equation}
     F=m\cdot\ddot{x} \label{eqn:newton2}
-\end{equation} 
-hergeleitet werden. Dafür wird das zweite Newton'sche Axiom der rücktreibenden Kraft der Feder gleichgesetzt. Die 
+\end{equation}
+hergeleitet werden. Dafür wird das zweite Newton'sche Axiom der rücktreibenden Kraft der Feder gleichgesetzt. Die
 Gleichheit der beiden Kräfte folgt aus dem Reaktionsprinzip. Die rücktreibende Kraft wird bei dem obrigen Beispiel
 durch das Hook'sche Gesetz beschrieben
 \begin{equation}
-    F=-k\cdot x \label{eqn:hook}. 
+    F=-k\cdot x \label{eqn:hook}.
 \end{equation}
 Dabei ist $k$ die Federkonstante der Feder.
 Durch das Gleichsetzen von \eqref{eqn:newton2} und \eqref{eqn:hook} erhält man:
@@ -42,17 +42,17 @@ Da der erste Faktor der Gleichung nicht für alle Zeiten $t=0$ sein kann, muss d
 \begin{equation}
     \frac{k}{m}-\omega^2=0 \Leftrightarrow \frac{k}{m}=\omega^2 .
 \end{equation}
-Aus dem Ansatz \eqref{eqn:ansatz} wird nun auch ersichtlich, dass $\omega$ die Frequenz der Schwingung beschreibt. Dies erfolgt 
-unter anderem aus der Überlegung, dass das Produkt innherhalb des Sinus einheitenlos sein muss. Da die Zeit $t$ in Sekunden gegeben
+Aus dem Ansatz \eqref{eqn:ansatz} wird nun auch ersichtlich, dass $\omega$ die Frequenz der Schwingung beschreibt. Dies erfolgt
+unter anderem aus der Überlegung, dass das Produkt innerhalb des Sinus einheitenlos sein muss. Da die Zeit $t$ in Sekunden gegeben
 ist, muss $\omega$ die Einheit $[\omega]=s^{-1}$ besitzen, also die Einheit einer Frequenz.
-Die Schwingungsdauer $T$ des Pendles kann nun aus der Frequenz $\omega$ berechnet werden
+Die Schwingungsdauer $T$ des Pendels kann nun aus der Frequenz $\omega$ berechnet werden
 \begin{equation}
     T=\frac{2\pi}{\omega}.
 \end{equation}
 
 \subsection{Das mathematische Pendel}
 Auch ein mathematisches Pendel ist für kleine Auslenkungen näherungsweise ein harmonischer Oszillator. Das Pendel soll dabei eine
-Punktmasse $m$ am Ende eines massenlosen Fadens sein, welcher eine konstatnte Länge $l$ hat und reibungsfrei hin und her schwingen kann.
+Punktmasse $m$ am Ende eines massenlosen Fadens sein, welcher eine konstante Länge $l$ hat und reibungsfrei hin und her schwingen kann.
 Die Differentialgleichung erlangt man wieder durch das Gleichsetzen von \eqref{eqn:newton2} und der rücktreibenden Kraft des Systems.
 Diese ist nun aber:
 \begin{equation}
@@ -63,7 +63,7 @@ Beschleunigung. Es gilt:
 \begin{equation}
     \ddot x(t)=l\cdot \ddot{\phi}(t)
 \end{equation}
-Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $t$. Durch Gleichsetzen von \eqref{eqn:newton2} und 
+Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $t$. Durch Gleichsetzen von \eqref{eqn:newton2} und
 \eqref{eqn:pendelkraft} erhält man nun die Differentialgleichung
 \begin{eqnarray}
     \ddot{\phi}(t)+\frac{g}{l}sin(\phi(t))=0.
@@ -77,7 +77,7 @@ Für $n=0$ ergibt sich die sogenannte Kleinwinkelnäherung
 \begin{equation}
     sin(x)\approx x.
 \end{equation}
-Durch diese erlangt man zumindest für kleine Winkel $\phi$ eine lineare Differentialgleichung der Form \eqref{eqn:harmOsz}. Zwar macht man bei der 
+Durch diese erlangt man zumindest für kleine Winkel $\phi$ eine lineare Differentialgleichung der Form \eqref{eqn:harmOsz}. Zwar macht man bei der
 Kleinwinkelnäherung einen Fehler, dieser ist für kleine Winkel jedoch so gering, dass wir die Näherung für die weiteren Berechnungen verwenden.
 Dies bedeutet aber auch, dass im Folgenden nur noch von kleinen Auslenkungen des Pendels ausgegangen wird!
 \\
@@ -110,11 +110,11 @@ Die Frequenz ändert sich zu
 \end{equation}
 
 \subsection{Gekoppelte Pendel}
-Koppelt man zwei identische Pendel mit einer Feder, so schwingen diese nicht mehr unabhängig von einander, da die Pendel zusätzliche Kräfte auf 
-einander auswirken. Als zusätzlichen Größen erhält man die Federkonstatnt $k$. Zudem sind nun zwei Längen für das System relevant, nämlich die 
-Länge der Pendel $L$ und der Abstand $l$ an dem die Feder an den Pendeln befestigt ist. 
+Koppelt man zwei identische Pendel mit einer Feder, so schwingen diese nicht mehr unabhängig von einander, da die Pendel zusätzliche Kräfte auf
+einander auswirken. Als zusätzlichen Größen erhält man die Federkonstante $k$. Zudem sind nun zwei Längen für das System relevant, nämlich die
+Länge der Pendel $L$ und der Abstand $l$, mit dem die Feder an den Pendeln befestigt ist.
 \\
-Man erhält nun ein Systemaus zwei Differentialgleichungen, die zudem mit einander gekoppelt sind:
+Man erhält nun ein System aus zwei Differentialgleichungen, die zudem miteinander gekoppelt sind:
 \begin{align}
     J\ddot{\phi}_1&=-mgL\phi_1+kl^2(\phi_2-\phi_1)\\
     J\ddot{\phi}_2&=-mgL\phi_2+kl^2(\phi_2-\phi_1)
@@ -125,13 +125,13 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
 
 \begin{enumerate}
     \item \textit{Gleichsinnige Schwingung: $\alpha_1=\alpha_2$} \\
-        Bei einer gleichsinnigen Schwingung werden beide Pendel um den gleichen Winkel ausgelenkt. Die Pendel schwingen nun unabhängig von einander, 
-        so wie sie auch ohne eine Kopplung schwingen würden. Deswegen ist auch die Frequenz für mathematische Pendel analog zu jener, die wir für einzele 
+        Bei einer gleichsinnigen Schwingung werden beide Pendel um den gleichen Winkel ausgelenkt. Die Pendel schwingen nun unabhängig von einander,
+        so wie sie auch ohne eine Kopplung schwingen würden. Deswegen ist auch die Frequenz für mathematische Pendel analog zu jener, die wir für einzele
         mathematische Pendel her geleitet haben
         \begin{equation}
             \omega_{+}=\sqrt{\frac{g}{l}}.
         \end{equation}
-        In Abbildung \ref{fig:gleichsinnig} ist die Amplitude der jeweiligen Schwingungen Abhängigkeit von der Zeit aufgetragen. Wie gut zu erkennen ist, sind
+        In Abbildung \ref{fig:gleichsinnig} ist die Amplitude der jeweiligen Schwingungen in Abhängigkeit von der Zeit aufgetragen. Wie gut zu erkennen ist, sind
         die Schwingungen identisch.
     \begin{figure}
         \centering
@@ -141,13 +141,13 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
       \end{figure}
     \item \textit{Gegensinnige Schwingung: $\alpha_1=-\alpha_2$}\\
         Bei einer gegensinnigen Schwingung werden beide Pendel genau entgegengesetzt ausgelenkt. Der Betrag des Winkels ist also exakt gleich groß, das Vorzeichen
-        ist jedoch genau entgegen gesetzt. Die Feder übt nun eine Kraft die Pendel aus, die Abhängig von der Auslenkung der Pendel ist. Dadurch ergibt sich die 
+        ist jedoch genau entgegen gesetzt. Die Feder übt nun eine Kraft auf die Pendel aus, die abhängig von der Auslenkung der Pendel ist. Dadurch ergibt sich die
         Frequenz für mathematische Pendel zu
         \begin{equation}
             \omega_{-}=\sqrt{\frac{g}{l}+2\frac{kl^2}{mL^2}}.
         \end{equation}
-        Die Frequenz hängt nun also auch noch von der Federkonstante $k$ ab. Wie in Abbildung\ref{fig:gegensinnig} zu erkennen, sind die Schwingungen der beiden 
-        Pendel um $\pi$ phasenverschoden. Ansonsten sind sie aber komplett identisch.  
+        Die Frequenz hängt nun also auch noch von der Federkonstante $k$ ab. Wie in Abbildung \ref{fig:gegensinnig} zu erkennen, sind die Schwingungen der beiden
+        Pendel um $\pi$ phasenverschoben. Ansonsten sind sie aber komplett identisch.
         \begin{figure}
             \centering
             \includegraphics[scale = 0.7]{gegensinnig.pdf}
@@ -156,10 +156,10 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
         \end{figure}
     \item \textit{Gekoppelte Schwingung: $\alpha_1=0$, $\alpha_2\neq 0$}\\
         Bei einer gekoppelten Schwingung wird nur eines der beiden Pendel ausgelenkt. Das andere Pendel bleibt in der Ruhelage. Nun kommt es zu dem Phänomen der
-        Schwebung. Das erste Pendel, welches ausgelenkt wird, überträgt bei seiner Schwingung seine Energie nach und nach an das zweite Pendel, welches sich 
+        Schwebung. Das erste Pendel, welches ausgelenkt wird, überträgt bei seiner Schwingung seine Energie nach und nach an das zweite Pendel, welches sich
         zu Beginn in der Ruhelage befand. Dadurch fängt nun das zweite Pendel an zu schwingen. Hat das erste Pendel seine gesamte Energie an das zweite Pendel
         abgegeben, kommt es in der Ruhelage zum Stillstand. Das zweite Pendel, welches nun so schwingt wie das Erste zu Beginn, überträgt nun seine Energie wieder
-        an das erste Pendel, bis sich der Vorgang abermals wiederholt. Die sogenannte Schwebungsfrequnz beschreibt nun die Zeitspanne zwischen dem Stillstand eines 
+        an das erste Pendel, bis sich der Vorgang abermals wiederholt. Die sogenannte Schwebungsfrequnz beschreibt nun die Zeitspanne zwischen dem Stillstand eines
         Pendels bis zum nächsten Stillstand des selben Pendels. Die Schwebungsfrequnz ist dabei gegeben durch
         \begin{equation}
             \omega_\text{S}=\omega_+ - \omega_-
@@ -170,7 +170,7 @@ $v_1$ und $v_2$, die die Pendel zu Beginn erhalten. Für die drei relevanten Fä
         \end{equation}
         In Abbildung \ref{fig:gekoppelt} sind zwei Schwebungen aufgetragen. Es ist zu erkennen, dass sich die Fuktion aus zwei überlagerten Schwingungen zusammensetzt.
         Die einhüllende Schwingung, also eine Funktion, die alle Maxima der gezeigten Funktion erfasst, charakterisiert hierbei die Schwebung als solche. Die Schwingung
-        des Pendels selbst wir durch die dadrunter liegende Sinusfunktion beschrieben.
+        des Pendels selbst wir durch die darunter liegende Sinusfunktion beschrieben.
         \\
         Um die Kopplung zwischen den beiden Pendeln zu beschreiben, wird die Kopplungskonstante $K$ definiert
         \begin{equation}
