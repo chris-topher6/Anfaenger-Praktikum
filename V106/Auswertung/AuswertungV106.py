@@ -37,13 +37,13 @@ print("Aufgabe4-----------------------------------------------------------------
 #Pendellänge A
 Tkopa, Tschweba = np.genfromtxt("gekoppeltesPendelA.txt", unpack = True)
 Tkopa = Tkopa /5
-Tschweba = Tschweba /5
+Tschweba = Tschweba
 print("Pendellänge 0.993m:")
 print(Tkopa, Tschweba)
 #Pendellänge B
 Tkopb, Tschwebb = np.genfromtxt("gekoppeltesPendelB.txt", unpack = True)
 Tkopb = Tkopb /5
-Tschwebb = Tschwebb /5
+Tschwebb = Tschwebb 
 print("Pendellänge 0.325m:")
 print(Tkopb, Tschwebb)
 np.savetxt("aufgabe4.txt", np.column_stack([Tkopa, Tschweba, Tkopb, Tschwebb]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " Tka Tsa Tkb Tsb ")
@@ -59,6 +59,8 @@ print("Aufgabe6-----------------------------------------------------------------
 Schwebungsdauera = (Tplusa * TminusaVersuch1)/(Tplusa - TminusaVersuch1)
 SchwebungsdaueraVersuch2 = (Tplusa * TminusaVersuch2)/(Tplusa - TminusaVersuch2)
 Schwebungsdauerb = (Tplusb * Tminusb)/(Tplusb - Tminusb)
-print(Schwebungsdauera, SchwebungsdaueraVersuch2, Schwebungsdauerb)
-np.savetxt("aufgabe6.txt", np.column_stack([Schwebungsdauera, SchwebungsdaueraVersuch2, Schwebungsdauerb]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " Schwebungsdauer a, Schwebungsdauer a Versuch2 Schwebungsdauer b ")
+Schwebungsdaueragemessen = np.mean(Tschweba)
+Schwebungsdauerbgemessen= np.mean(Tschwebb)
+print(Schwebungsdauera, SchwebungsdaueraVersuch2, Schwebungsdauerb, Schwebungsdaueragemessen, Schwebungsdauerbgemessen)
+np.savetxt("aufgabe6.txt", np.column_stack([Schwebungsdauera, SchwebungsdaueraVersuch2, Schwebungsdauerb, Schwebungsdaueragemessen, Schwebungsdauerbgemessen]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " Schwebungsdauer a, Schwebungsdauer a Versuch2 Schwebungsdauer b , Messung a, Messung b")
 print("---------------------------------------------------------------------------------------------------------------------")
