@@ -1,5 +1,5 @@
 import numpy as np
-import math
+import scipy
 print("Aufgabe1---------------------------------------------------------------------------------------------------------------------")
 #Aufgabe 1: Bestimmen sie die Schwingungsdauer T1 und T2 der beiden frei schwingenden Pendel
 #Pendellänge a
@@ -66,4 +66,14 @@ print(Schwebungsdauera, SchwebungsdaueraVersuch2, Schwebungsdauerb, Schwebungsda
 np.savetxt("aufgabe6.txt", np.column_stack([Schwebungsdauera, SchwebungsdaueraVersuch2, Schwebungsdauerb, Schwebungsdaueragemessen, Schwebungsdauerbgemessen]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " Schwebungsdauer a, Schwebungsdauer a Versuch2 Schwebungsdauer b , Messung a, Messung b")
 print("---------------------------------------------------------------------------------------------------------------------")
 #Bestimmung der Schwingungsfrequenzen aus den Messwerten für T
-wplusgemessen = 2 * math.pi / Tplusa 
+wplusgemessen = 2 * scipy.pi / Tplusa
+wminusgemessen = 2 * scipy.pi / TminusaVersuch2
+Tschweba = np.mean(Tschweba)
+wschwebgemessen = 2 * scipy.pi / Tschweba
+print(wplusgemessen, wminusgemessen, wschweb)
+#Bestimmung der Schwingungsfrequenzen aus den Formeln
+k = 1 #Federkonstante leider unbekannt?
+wplusberechnet = sqrt(scipy.g/0.993)
+#wminusberechnet = sqrt((scipy.g/0.993) + (2*k*0.786*0.786)/(1*))#l-verwirrung christopher fragen
+#wschwebberechnet = wplusberechnet - wminusberechnet
+#print(wplusberechnet, wminusberechnet, wschwebberechnet) 
