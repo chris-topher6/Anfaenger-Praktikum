@@ -23,11 +23,11 @@ durch das Hook'sche Gesetz beschrieben
     F=-k\cdot x \label{eqn:hook}.
 \end{equation}
 Dabei ist $k$ die Federkonstante der Feder.
-Durch das Gleichsetzen von \eqref{eqn:newton2} und \eqref{eqn:hook} erhält man:
+Gleichsetzen von \eqref{eqn:newton2} und \eqref{eqn:hook} liefert
 \begin{equation}
-    m\cdot\dddot{x}=-k\cdot x \Leftrightarrow \ddot{x}+\frac{k}{m}\cdot x=0 \label{eqn:dgl}
+    m\cdot\dddot{x}=-k\cdot x \Leftrightarrow \ddot{x}+\frac{k}{m}\cdot x=0 \label{eqn:dgl}.
 \end{equation}
-Gesucht ist nun die Funktion $x(t)$, die die Differentialgleichung löst. Man wählt nun den Ansatz:
+Gesucht ist nun die Funktion $x(t)$, die die Differentialgleichung löst. Ein geeigneter Ansatz für die Lösung ist:
 \begin{align}
     x(t)&=A\cdot cos(\omega\cdot t)+B\cdot sin(\omega\cdot t) \\
     \ddot{x}(t)&=-\omega^2\cdot x(t)
@@ -53,7 +53,7 @@ Die Schwingungsdauer $T$ des Pendels kann nun aus der Frequenz $\omega$ berechne
 \subsection{Das mathematische Pendel}
 Auch ein mathematisches Pendel ist für kleine Auslenkungen näherungsweise ein harmonischer Oszillator. Das Pendel soll dabei eine
 Punktmasse $m$ am Ende eines massenlosen Fadens sein, welcher eine konstante Länge $l$ hat und reibungsfrei hin und her schwingen kann.
-Die Differentialgleichung erlangt man wieder durch das Gleichsetzen von \eqref{eqn:newton2} und der rücktreibenden Kraft des Systems.
+Die Differentialgleichung folgt wieder aus dem Gleichsetzen von \eqref{eqn:newton2} und der rücktreibenden Kraft des Systems.
 Diese ist nun aber:
 \begin{equation}
     F_\text{rück}=-m\cdot g\cdot sin(\phi(t)) \label{eqn:pendelkraft}
@@ -63,8 +63,8 @@ Beschleunigung. Es gilt:
 \begin{equation}
     \ddot x(t)=l\cdot \ddot{\phi}(t)
 \end{equation}
-Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $t$. Durch Gleichsetzen von \eqref{eqn:newton2} und
-\eqref{eqn:pendelkraft} erhält man nun die Differentialgleichung
+Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $t$. Gleichsetzen von \eqref{eqn:newton2} und
+\eqref{eqn:pendelkraft} ergibt nun die Differentialgleichung
 \begin{eqnarray}
     \ddot{\phi}(t)+\frac{g}{l}sin(\phi(t))=0.
 \end{eqnarray}
@@ -75,10 +75,10 @@ Um die Differentialgleichung trotzdem lösen zu können, betrachten wir die Tayl
 \end{equation}
 Für $n=0$ ergibt sich die sogenannte Kleinwinkelnäherung
 \begin{equation}
-    sin(x)\approx x.
+    sin(x)\approx x. \label{eqn:kleinwinkel}
 \end{equation}
-Durch diese erlangt man zumindest für kleine Winkel $\phi$ eine lineare Differentialgleichung der Form \eqref{eqn:harmOsz}. Zwar macht man bei der
-Kleinwinkelnäherung einen Fehler, dieser ist für kleine Winkel jedoch so gering, dass wir die Näherung für die weiteren Berechnungen verwenden.
+Durch diese wird zumindest für kleine Winkel $\phi$ eine lineare Differentialgleichung der Form \eqref{eqn:harmOsz} erlangt. Zwar entsteht bei der
+Kleinwinkelnäherung ein Fehler, dieser ist für kleine Winkel jedoch so gering, dass wir die Näherung für die weiteren Berechnungen verwenden.
 Dies bedeutet aber auch, dass im Folgenden nur noch von kleinen Auslenkungen des Pendels ausgegangen wird!
 \\
 Die Differentialgleichung lautet nun
@@ -94,7 +94,7 @@ Die Frequenz des Pendels ist also sowohl unabhängig von der Masse $m$, als auch
 \subsection{Das physikalische Pendel}
 Anders als bei dem mathematischen Pendel ist die Masse des physikalischen Pendels nicht in einem Punkt am Ende eines massenlosen Fadens komprimiert.
 Das Pendel hat nun auf der gesamten Länge eine Masse und kann beliebig geformt sein. Um die zusätzlichen Informationen in die Differentialgleichung
-zu integrieren, führt man die Größe des Trägheitsmoments $J$ ein. Dieses ist definiert als
+zu integrieren, wird die Größe des Trägheitsmoments $J$ eingeführt. Dieses ist definiert als
 \begin{equation}
     J=\rho\int{\vec{r}^2\rho(\vec{r})dV}.
 \end{equation}
@@ -110,11 +110,11 @@ Die Frequenz ändert sich zu
 \end{equation}
 
 \subsection{Gekoppelte Pendel}
-Koppelt man zwei identische Pendel mit einer Feder, so schwingen diese nicht mehr unabhängig von einander, da die Pendel zusätzliche Kräfte auf
-einander auswirken. Als zusätzlichen Größen erhält man die Federkonstante $k$. Zudem sind nun zwei Längen für das System relevant, nämlich die
+Werden zwei identische Pendel mit einer Feder gekoppelt, so schwingen diese nicht mehr unabhängig von einander, da die Pendel zusätzliche Kräfte auf
+einander auswirken. Als zusätzlichen Größe fließt die Federkonstante $k$ in die Gleichung ein. Zudem sind nun zwei Längen für das System relevant, nämlich die
 Länge der Pendel $L$ und der Abstand $l$, mit dem die Feder an den Pendeln befestigt ist.
 \\
-Man erhält nun ein System aus zwei Differentialgleichungen, die zudem miteinander gekoppelt sind:
+Es liegt nun ein System aus zwei Differentialgleichungen vor, die zudem miteinander gekoppelt sind:
 \begin{align}
     J\ddot{\phi}_1&=-mgL\phi_1+kl^2(\phi_2-\phi_1)\\
     J\ddot{\phi}_2&=-mgL\phi_2+kl^2(\phi_2-\phi_1)
