@@ -1,6 +1,6 @@
 \section{Auswertung}
   \subsection{Messdaten}
-    In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten zusammengefasst:
+    In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten aufgeführt:
     \begin{table}
       \centering
           \label{tab:freieschwingungen}
@@ -105,41 +105,43 @@
       \end{table}
   \newpage
   \subsection{Freie Schwingungen}
+    \label{sec:freieschwingungen}
     Die Schwingungsdauern der frei schwingenden Pendel werden in folgender Tabelle wiedergegeben:
       \begin{table}
         \centering
           \caption{freie Schwingungsdauern T1 und T2.}
           \label{tab:aufgabe1}
           \sisetup{table-format=1.4}
-          \begin{tabular}{S S S}
+          \begin{tabular}{S S S S S}
             \toprule
-            {Pendellänge/m}  & {$T_{1}/\si{\second}$} & {$T_{2}/\si{second}$} \\
+            {Pendellänge/m}  & {$T_{1}/\si{\second}$} & {$\increment T_{1}/\si{\second}$} & {$T_{2}/\si{\second}$} & {$ \increment T_{2}/\si{\second}$} \\
             \midrule
-            0.993            &   1.9400  &   1.9450 \\
-            0.325            &   1.2274  &   1.2596 \\
+            0.993            &   1.9400  &  0.020  &  1.9450  &  0.029 \\
+            0.325            &   1.2274  &  0.021  &  1.2596  &  0.028\\
             \bottomrule
           \end{tabular}
         \end{table}
         \\
     Die dem zugrundeliegenden Messdaten beziehen sich auf 5 Schwingungen. Es wurden zehn Messungen für jeweils Pendel 1
-    und Pedel 2 durchgeführt, wobei die eingestellte Pendellänge von Pendel 1 $0.993$m und von Pendel 2 $0.995$m beträgt.
+    und Pedel 2 durchgeführt. Die Unsicherheit wurde nach Kapitel \ref{sec:Fehlerrechnung} bestimmt, indem zuerst der Mittelwert der Messwerte
+    und dann die Standardabweichung der Messwerte von dem Mittelwert berechnet wurde.
     Gemessen wurde die Pendellänge vom Gewichtsmittelpunkt bis zu der Auflagenadel des Pendels. Die  Schwingungsdauern
     wurden berechnet, indem der Mittelwert der 10 Messungen durch 5 geteilt wurde.
     Problematisch bei diesen Messungen ist, dass die Federhöhe in den Anweisungen nicht genauer spezifiziert ist.
-    Solcherlei Ungenauigkeiten in der Anweisung werden im folgenden an den entsprechenden Punkten genannt und in der
-    Diskussion abschließend behandelt. Bei obigen Messungen hing die Feder $0.288$m unter der Pendelaufhängung.
+    Dies wird in der Diskussion abschließend behandelt. Bei obigen Messungen hing die Feder $0.288$m unter der Pendelaufhängung.
   \subsection{gleich- und gegensinnige Schwingungen}
     \begin{table}
       \centering
         \caption{gegensinnige Schwingungsdauer $T_{-}$ und gleichsinnige Schwingungsdauer $T_{+}$.}
         \label{tab:aufgabe23}
         \sisetup{table-format=1.4}
-        \begin{tabular}{S S S S}
+        \begin{tabular}{S S S S S S S}
           \toprule
-          {Pendellänge/m} & {$T_{+}/\si{\second}$} & {$T_{-}/\si{\second}$} & {$T_{-}/\si{\second}$ Versuch 2}\\
+          {Pendellänge/m} & {$T_{+}/\si{\second}$} & {$\increment T_{+}/\si{\second}$} & {$T_{-}/\si{\second}$} & {$\increment T_{-}/\si{\second}$} & {$T_{-}/\si{\second}$ Versuch 2} &
+          {$\increment T_{-}/\si{\second}$ Versuch 2} \\
           \midrule
-          0.993           & 1.9772    & 1.9460   & 1.7408 \\
-          0.325           & 1.0996   & 0.9594    &         \\
+          0.993           & 1.9772  & 0.027  & 1.9460 & 0.025  & 1.7408 & 0.033 \\
+          0.325           & 1.0996  & 0.033  & 0.9594 & 0.029  &        &       \\
           \bottomrule
         \end{tabular}
     \end{table}
@@ -150,7 +152,7 @@
     sehr großen Auslenkungen eine Rolle spielt. Große Auslenkungen sind aber nicht realisierbar, da die Pendel sonst aneinander
     stoßen. Daher haben wir eine zweite Messreihe durchgeführt mit der Feder $0.786$m unterhalb der Aufhängung des Pendels. Die
     Daten dieser Messreihe sind in der Tabelle unter $T_{-}$ Versuch 2 zu finden. Der Einfluss der Federhöhe ist hier deutlich
-    erkennbar.
+    erkennbar. Die Unsicherheiten sind analog zu Abschnitt \ref{sec:freieschwingungen} berechnet worden.
   \subsection{Gekoppelte Schwingungen}
     Es wurden die beiden Pendel mit einer Feder gekoppelt und bei zwei verschiedenen Pendellängen $0.993$m und $0.325$m die Dauer
     von $5$ Schwingungen sowie die Dauer einer Schwebung gemessen. Die Schwingungsdauer wurde dann bestimmt indem die Messwerte
@@ -190,8 +192,9 @@
       \end{table}
     \newpage
   \subsection{Der Kopplungsgrad der beiden Pendel}
-  Die beiden Kopplungsgrade wurden auf Basis der Messwerte für gleich- und gegensinnige Schwingungen berechnet
-  (siehe \ref{tab:aufgabe23}). Wir haben hier für die Pendellänge von $0.993$m auch einmal die fehlerbehaftete Messung der
+  \label{sec:kopplungsgrad}
+  Die beiden Kopplungsgrade wurden auf Basis der Messwerte für gleich- und gegensinnige Schwingungen (siehe \ref{tab:aufgabe23}) sowie Gleichung \eqref{tab:aufgabe23}
+  berechnet. Wir haben hier für die Pendellänge von $0.993$m auch einmal die fehlerbehaftete Messung der
   gegensinnigen Schwingung verwendet, um zu demonstrieren, wie groß der Einfluss der Federhöhe sein kann. Damit ist auch die
   große Abweichung der beiden Kopplungsgrade zu erklären. Bei einer Pendellänge von $0.993$m hängt die Feder bei $0.786$m unter
   der Aufhängung des Pendels und bei einer Pendellänge von $0.325$m bei $0.538$m unter der Aufhängung.
@@ -200,19 +203,20 @@
         \caption{Der Kopplungsgrad $K$ für zwei verschiedene Pendellängen}
           \label{tab:aufgabe5}
           \sisetup{table-format=1.4}
-          \begin{tabular}{S S S}
+          \begin{tabular}{S S S S S}
             \toprule
-            {Pendellänge/m} & {$K$} & {$K$ Versuch 2}\\
+            {Pendellänge/m} & {$K$}  & {$\increment K$} & {$K$ Versuch 2} & {$\increment K$ Versuch 2}\\
             \midrule
-            0.993   &   0.0159 &  0.1267\\
-            0.325   &   0.1356 &  \\
+            0.993   &   0.0159 & 0.019 &  0.1267 & 0.023\\
+            0.325   &   0.1356 & 0.04  &         &      \\
             \bottomrule
           \end{tabular}
         \end{table}
         \\
         Der Kopplungsgrad $K$ Versuch 1 für die Pendellänge $0.993$m ist so niedrig, weil die Feder aufgrund ihrer Höhe keine
         wirkliche Kopplung der beiden Pendel verursacht. Wenn sie weiter herunter gehängt wird, steigt der Kopplungsgrad,
-        wie man gut an $K$ Versuch 2 sehen kann.
+        wie man gut an $K$ Versuch 2 sehen kann. Die Unsicherheit wurde hier nach der Gaußschen Fehlerfortpflanzung, wie in Abschnitt \ref{sec:Fehlerrechnung}
+        beschrieben, berechnet.
     \subsection{Schwebungsdauer der gekoppelten Pendel}
       Aus den gegensinnigen und gleichsinnigen Schwingungen wurden folgende Schwebungsdauern berechnet:
       \begin{table}
@@ -220,12 +224,13 @@
           \caption{Vergleich der gemessenen und der berechneten Schwebungsdauer $T_{S}$}
             \label{tab:aufgabe6}
             \sisetup{table-format=3.4}
-            \begin{tabular}{S S S S}
+            \begin{tabular}{S S S S S S S}
               \toprule
-              {Pendellänge/m} & {$T_{S}/\si{\second}$ berechnet} & {$T_{S}/\si{\second}$ berechnet Versuch 2} & {$T_{S}/\si{\second}$ gemessen} \\
+              {Pendellänge/m} & {$T_{S}/\si{\second}$} & {$\increment T_{S}/\si{\second}$} & {$T_{S}/\si{\second}$ V2} &
+              {$\increment T_{S}/\si{\second}$ V2} & {$T_{S}/\si{\second}$ Messung} & {$ \increment T_{S}/\si{\second}$ Messung} \\
               \midrule
-              0.993   &   123.3215 & 14.5597 &  14.4260\\
-              0.325   &   7.5247 &           &  7.9500\\
+              0.993   &   123.3215 &  144.25 & 14.5597 & 2.7 & 14.4260 & 0.5\\
+              0.325   &     7.5247 &    2.3  &  7.9500 & 0.4 &         &    \\
               \bottomrule
             \end{tabular}
           \end{table}
@@ -234,5 +239,25 @@
       Pendellänge verwendet.
       An der berechneten Schwebungsdauer der ersten Messung bei einer Pendellänge von $0.993$m kann man gut sehen,
       dass die Feder zu hoch hing um eine Kopplung der beiden Pendel zu gewährleisten. Daher dauert eine Schwebung
-      sehr lange. Die anderen Werte sind jedoch sehr ähnlich, die Messungen scheinen keine systematischen Fehler zu enthalten.
+      sehr lange und die Unsicherheit ist so hoch. Die anderen Werte sind jedoch sehr ähnlich, die Messungen scheinen keine systematischen Fehler zu enthalten.
+      Die Unsicherheit wurde wieder analog zu Abschnitt \ref{sec:kopplungsgrad} mit der Gaußschen Fehlerfortpflanzung berechnet.
+      \subsection{Berechnung der Schwingungsfrequenzen}
+        In folgender Tabelle werden die auf Basis der während des Versuches aufgenommenen Daten berechneten Schwingungsfrequenzen dargestellt:
+        \begin{table}
+          \centering
+            \caption{berechnete Schwingungsfrequenzen.}
+              \label{tab:aufgabe7}
+              \sisetup{table-format=1.3}
+              \begin{tabular}{S S S S S S}
+                \toprule
+                {$\omega_{+}$} & {$\increment \omega_{+}$} & {$\omega_{-}$} & {$\increment \omega_{-}$} & {$\omega_{S}$} & {$\increment \omega_{S}$} \\
+                \midrule
+                3.18 & 0.04 & 3.61 & 0.07 & 0.436 & 0.015 \\
+                \bottomrule
+              \end{tabular}
+            \end{table}
+            \\
+      Die Werte für $\omega$ wurden mithilfe von Gleichung \eqref{eqn:omega} sowie $T_{+} = 1.9972 \pm 0.021$, \\ $T_{-} = 1.7408 \pm 0.033$ und $T_{S} = 14.4260 \pm 0.5$
+      welche den Tabellen \ref{tab:aufgabe23} und \ref{tab:aufgabe6} zu entnehmen sind, berechnet. Die Messunsicherheit wurde mit der Gaußschen Fehlerfortpflanzung berechnet,
+      siehe dazu Abschnitt \ref{sec:Fehlerrechnung}.
 \label{sec:Auswertung}

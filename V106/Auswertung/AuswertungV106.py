@@ -119,7 +119,8 @@ print("Ts a V2: ", SchwebungsdaueraVersuch2)
 print("Ts b: ", Schwebungsdauerb)
 print("Ts a gemessen: ", Schwebungsdaueragemessen)
 print("Ts b gemessen: ", Schwebungsdauerbgemessen)
-
+print("Wert von Ts a V1: ", Schwebungsdauera.n)
+print("Unsicherheit von Ts a V1: ", Schwebungsdauera.s)
 #Bestimmung der Schwingungsfrequenzen aus den Messwerten für T
 print("w ")
 wplusgemessen = 2 * np.pi / TplusaMean
