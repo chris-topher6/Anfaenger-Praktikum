@@ -59,7 +59,7 @@ Diese ist nun aber:
 \begin{equation}
     F_\text{rück}=-m\cdot g\cdot sin(\phi(t)) \label{eqn:pendelkraft}
 \end{equation}
-In \eqref{eqn:newton2} müssen wir jetzt noch die Beschleunigung $\ddot x$ an das Problem anpassen. Diese ist bei einem Pendel die tangentiale
+In \eqref{eqn:newton2} muss jetzt noch die Beschleunigung $\ddot x$ an das Problem angepasst werden. Diese ist bei einem Pendel die tangentiale
 Beschleunigung. Es gilt:
 \begin{equation}
     \ddot x(t)=l\cdot \ddot{\phi}(t)
@@ -70,7 +70,7 @@ Der Winkel $\phi(t)$ beschreibt dabei die Auslenkung des Pendels zum Zeitpunkt $
     \ddot{\phi}(t)+\frac{g}{l}sin(\phi(t))=0.
 \end{eqnarray}
 Die Differentialgleichung ist auf Grund des Sinus jedoch nicht linear und deswegen weder analytisch lösbar, noch ein harmonischer Oszillator.
-Um die Differentialgleichung trotzdem lösen zu können, betrachten wir die Taylorfunktion des Sinus
+Um die Differentialgleichung trotzdem lösen zu können, wird hier die Taylorfunktion des Sinus betrachtet
 \begin{equation}
     sin(x)=\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}.
 \end{equation}
@@ -79,8 +79,8 @@ Für $n=0$ ergibt sich die sogenannte Kleinwinkelnäherung
     sin(x)\approx x. \label{eqn:kleinwinkel}
 \end{equation}
 Durch diese wird zumindest für kleine Winkel $\phi$ eine lineare Differentialgleichung der Form \eqref{eqn:harmOsz} erlangt. Zwar entsteht bei der
-Kleinwinkelnäherung ein Fehler, dieser ist für kleine Winkel jedoch so gering, dass wir die Näherung für die weiteren Berechnungen verwenden.
-Dies bedeutet aber auch, dass im Folgenden nur noch von kleinen Auslenkungen des Pendels ausgegangen wird!
+Kleinwinkelnäherung ein Fehler, dieser ist für kleine Winkel jedoch so gering, dass im folgenden die Näherung für die weiteren Berechnungen verwendet wird.
+Die folgenden Rechnungen sind also nur unter der Annahme einer kleinen Auslenkung sinnvoll.
 \\
 Die Differentialgleichung lautet nun
 \begin{equation}
@@ -101,7 +101,7 @@ zu integrieren, wird die Größe des Trägheitsmoments $J$ eingeführt. Dieses i
 \end{equation}
 Dabei ist $\rho$ die Dichte des Körpers an der jeweiligen Stelle.
 \\
-Die Differentialgleichung des Pendles wird dadurch zu
+Die Differentialgleichung des Pendels wird dadurch zu
 \begin{equation}
     \ddot{\phi}+\frac{mgl}{J}\phi=0.
 \end{equation}
