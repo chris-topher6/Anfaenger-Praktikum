@@ -123,17 +123,17 @@
         \end{table}
         \\
     Die dem zugrundeliegenden Messdaten beziehen sich auf 5 Schwingungen, daher wurden die Messwerte durch Fünf geteilt.
-    Der Mittelwert wurde unter Verwendung der Gleichung \eqref{eqn:mittelwert} berechnet.
+    Der Mittelwert wurde unter Verwendung folgender berechnet:
       \begin{equation}
         \label{eqn:mittelwert}
         \bar{x}_\text{k} = \frac{1}{N} \sum_{k = 1}^{N} x_\text{k}.
       \end{equation}
-    Von diesem Mittelwert wurde dann die Standardabweichung nach Gleichung \eqref{eqn:standardabweichung} ermittelt.
+    Von diesem Mittelwert wurde dann die Standardabweichung mit
       \begin{equation}
         \label{eqn:standardabweichung}
         \increment \bar{x} = \sqrt{\frac{1}{N(N-1)} \sum_{k = 1}^{N}(x_\text{k} - \bar{x})^2 }
       \end{equation}
-      mit Messwerten $x_\text{k}$ mit zufälligem Fehler.
+      ermittelt. Dabei sind $x_\text{k}$ die Messwerte mit zufälliger Unsicherheit.
   \subsection{gleich- und gegensinnige Schwingungen}
     \label{sec:gleichgegensinnig}
     \begin{table}
@@ -214,7 +214,7 @@
           \end{tabular}
         \end{table}
         \\
-        Die Unsicherheit wurde hier nach der Gaußschen Fehlerfortpflanzung berechnet.
+        Die Unsicherheit wurde hier nach der Gaußschen Fehlerfortpflanzung \eqref{eqn:fehlerfortpflanzung} berechnet.
         Bei $n$ Messgrößen $n_\text{1}$, $n_\text{2}$, ..., $n_\text{N}$ mit der Unsicherheit
         $\increment n_\text{1}$, $\increment n_\text{2}$, ..., $\increment n_\text{N}$ gilt für die Unsicherheit
         der abgeleiteten Größe
@@ -222,7 +222,7 @@
           \label{eqn:fehlerfortpflanzung}
           \increment f = \sqrt{\left(\frac{\partial f}{\partial n_\text{1}} \right)^2 (\increment n_\text{1})^2 + \left(\frac{\partial f}{\partial n_\text{2}} \right)^2 (\increment
           n_\text{2})^2 + ... + \left(\frac{\partial
-          f}{\partial  n_\text{n}} \right)^2 (\increment  n_\text{n})^2}
+          f}{\partial  n_\text{n}} \right)^2 (\increment  n_\text{n})^2}.
         \end{equation}
     \subsection{Schwebungsdauer der gekoppelten Pendel}
       Aus den gegensinnigen und gleichsinnigen Schwingungen wurden folgende Schwebungsdauern berechnet:
@@ -244,7 +244,7 @@
       \\
       Als Vergleichsgröße wird hier der Mittelwert der $10$ Messwerte aus Tabelle \ref{tab:aufgabe4} für die jeweilige
       Pendellänge verwendet.
-      Die Unsicherheit wurde wieder analog zu Abschnitt \ref{sec:kopplungsgrad} mit der Gaußschen Fehlerfortpflanzung berechnet.
+      Die Unsicherheit wurde wieder analog zu Abschnitt \ref{sec:kopplungsgrad} mit der Gaußschen Fehlerfortpflanzung \eqref{eqn:fehlerfortpflanzung} berechnet.
       \subsection{Berechnung der Schwingungsfrequenzen}
         In folgender Tabelle werden die auf Basis der während des Versuches aufgenommenen Daten berechneten Schwingungsfrequenzen dargestellt:
         \begin{table}
