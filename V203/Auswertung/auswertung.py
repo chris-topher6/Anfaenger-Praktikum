@@ -4,7 +4,7 @@ import sympy
 from uncertainties import ufloat
 import scipy.constants as const
 
-Th, ph = np.genfromtxt("MessungHoheDruecke1.txt", unpack = True)
+Th, ph = np.genfromtxt("MessungHoheDruecke2.txt", unpack = True)
 Tn, pn = np.genfromtxt("MessungNiedrigeDruecke.txt", unpack = True)
 
 #Umrechnung in SI
@@ -91,11 +91,18 @@ plt.savefig('a.pdf')
 #b)
 #Berechnung der Verdampfungswärme
 L=-paramserr1[0]*R #Einheit: [R]=J/(K*mol) 
-print(f"Verdampfungswärme für p<1bar: \n L={L:.3f}JsK/mol \n\n")
+print(paramserr1[0])
+print(f"Verdampfungswärme für p<1bar: \n L={L:.3f}J/mol \n\n")
 
 ################################################################################################################################
 #c) 
-#Vd=R*T/p
+#La=W=pV=RT
+T0=373
+La=R*T0
+Li=L-La #J/mol
+Li=Li/(6.02214076*10**23) #J/Molekül
+Li=Li*6.242*10**18 #eV/Molekül
+print(f"Arbeit zur Verdampfung pro Molekül: \n Li={Li:.3f}eV \n\n")
 
 ################################################################################################################################
 #d)
