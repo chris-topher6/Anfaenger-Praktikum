@@ -5,13 +5,13 @@ from uncertainties import ufloat
 import scipy.constants as const
 
 Th, ph = np.genfromtxt("MessungHoheDruecke2.txt", unpack = True)
-Tn, pn = np.genfromtxt("MessungNiedrigeDruecke.txt", unpack = True)
+pn, Tn = np.genfromtxt("MessungNiedrigeDruecke.txt", unpack = True)
 
 #Umrechnung in SI
 Th=Th+273.15
 Tn=Tn+273.15
-ph=ph*(10)**2
-pn=pn*(10)**5
+pn=pn*(10)**2 #Achtung beim umrechnen!!
+ph=ph*(10)**5
 R=const.N_A *const.k
 
 ####################################################################################################################################
@@ -49,8 +49,8 @@ plt.plot(
 #Plotten der Messdaten
 plt.plot(1/Tn, np.log(pn/p0), '.', color='r', label='Messdaten')
 
-plt.xlabel(r'$1/T_1 [K^{-1}]$') #nochmal überprüfen
-plt.ylabel(r'$ln(p_1/p_0)$')
+plt.xlabel(r'$1/T [K^{-1}]$') #nochmal überprüfen
+plt.ylabel(r'$ln(p/p_0)$')
 plt.legend(loc='best')
 
 #2) p>1bar
@@ -80,8 +80,8 @@ plt.plot(
 #Plotten der Messdaten
 plt.plot(1/Th, np.log(ph/p0), '.', color='r', label='Messdaten')
 
-plt.xlabel(r'$1/T_1 [K^{-1}]$') #nochmal überprüfen
-plt.ylabel(r'$ln(p_1/p_0)$')
+plt.xlabel(r'$1/T [K^{-1}]$') #nochmal überprüfen
+plt.ylabel(r'$ln(p/p_0)$')
 plt.legend(loc='best')
 plt.tight_layout()
 
@@ -90,21 +90,66 @@ plt.savefig('a.pdf')
 ################################################################################################################################
 #b)
 #Berechnung der Verdampfungswärme
-L=-paramserr1[0]*R #Einheit: [R]=J/(K*mol) 
+Ln=-paramserr1[0]*R #Einheit: [R]=J/(K*mol) 
 print(paramserr1[0])
-print(f"Verdampfungswärme für p<1bar: \n L={L:.3f}J/mol \n\n")
+print(f"Verdampfungswärme für p<1bar: \n L={Ln:.3f}J/mol \n\n")
 
 ################################################################################################################################
 #c) 
 #La=W=pV=RT
 T0=373
 La=R*T0
-Li=L-La #J/mol
+Li=Ln-La #J/mol
 Li=Li/(6.02214076*10**23) #J/Molekül
 Li=Li*6.242*10**18 #eV/Molekül
 print(f"Arbeit zur Verdampfung pro Molekül: \n Li={Li:.3f}eV \n\n")
 
 ################################################################################################################################
 #d)
+
+#Das Ploynom 3. Grades
+plt.figure("""second figure""")
+
+#Parameter für Regression
+params3, covariance_matrix3 = np.polyfit(Th, ph, deg=3, cov=True)
+
+#Unsicherheit der Regression
+i=0
+paramserr3=np.array([h, h, h, h])
+errors3 = np.sqrt(np.diag(covariance_matrix3))
+print("")
+for name, value, error in zip('abcd', params3, errors3):
+    paramserr3[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i=i+1
+
+#Plotten der Regression
+x_plot = np.linspace(np.min(Th), np.max(Th))
+plt.plot(
+    x_plot,
+    params3[0]*(x_plot**3)+params3[1]*(x_plot**2)+params3[2]*(x_plot)+params3[3],
+    color='b', 
+    label='Regression'
+    )
+#Plotten der Messdaten
+plt.plot(Th, ph, '.', color='r', label='Messdaten')
+
+plt.xlabel(r'$T [K]$') #nochmal überprüfen
+plt.ylabel(r'$p [Pa]$')
+plt.legend(loc='best')
+
+plt.savefig('d.pdf')
+
+#Ableiten
+dpdT=3*params3[0]*(x_plot**2)+2*params3[1]*(x_plot)+params3[2]
+
 #(Vd-Vf)dp=L/T dT
 #L=T(Vd-Vf) dp/dT
+Vd=-(R*Th)/(2*ph) + np.sqrt(((R*Th)/(2*ph))**2-0.9/ph)
+Vf=(R*Th)/ph #Darf man hier das Gasgesetz benutzen????
+print(Vd)
+print(Vf)
+print(dpdT)
+#Vfa=np.array([Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf])
+#Lh=Th(Vd-Vf)*dpdT
+#print(f"Verdampfungswärme für p<1bar: \n L={Lh:.3f}J/mol \n\n")
