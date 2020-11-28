@@ -138,18 +138,28 @@ plt.xlabel(r'$T [K]$') #nochmal überprüfen
 plt.ylabel(r'$p [Pa]$')
 plt.legend(loc='best')
 
-plt.savefig('d.pdf')
+plt.savefig('d1.pdf')
 
 #Ableiten
-dpdT=3*params3[0]*(x_plot**2)+2*params3[1]*(x_plot)+params3[2]
+dpdT=3*params3[0]*(Th**2)+2*params3[1]*(Th)+params3[2]
 
 #(Vd-Vf)dp=L/T dT
-#L=T(Vd-Vf) dp/dT
-Vd=-(R*Th)/(2*ph) + np.sqrt(((R*Th)/(2*ph))**2-0.9/ph)
-Vf=(R*Th)/ph #Darf man hier das Gasgesetz benutzen????
-print(Vd)
-print(Vf)
-print(dpdT)
-#Vfa=np.array([Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf, Vf])
-#Lh=Th(Vd-Vf)*dpdT
+#L=T(Vd-Vf) dp/dT #Vf wird vernachlässigt
+#L=T(Vd) dp/dT
+Vd=(R*Th)/(2*ph) + np.sqrt(((R*Th)/(2*ph))**2 - 0.9/ph)
+Lh=Th*(Vd)*dpdT
 #print(f"Verdampfungswärme für p<1bar: \n L={Lh:.3f}J/mol \n\n")
+
+plt.figure("""third figure""")
+plt.plot(Th, Lh, 'x', label='L in Abhängigkeit von T')
+
+plt.xlabel(r'$T [K]$') #nochmal überprüfen
+plt.ylabel(r'$L [J/mol]$')
+plt.legend(loc='best')
+plt.tight_layout()
+
+plt.savefig('d2.pdf')
+
+#Daten in txt Datein spichern:
+np.savetxt("1niedrig.txt", np.column_stack([pn, Tn]), fmt = "%10.2f", delimiter = " & ", header = " pn Tn")
+np.savetxt("1hoch.txt", np.column_stack([ph, Th]), fmt = "%10.2f", delimiter = " & ", header = " ph Th")
