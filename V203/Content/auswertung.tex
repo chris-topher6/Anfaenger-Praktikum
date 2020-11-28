@@ -1,10 +1,17 @@
+%Probleme:
+  %Umgebungsruck p0?
+  %Tabelle zu groß und verrutscht
+  %Kursive Buchstben in Formel
+  %Fehlerberechnung Fehlt
+
 \section{Auswertung}
-  \subsection{Messdaten}
+\label{sec:auswertung}
+\subsection{Messdaten}
 In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten aufgeführt:
 \begin{table}
   \centering
-      \label{tab:niedringe}
-      \caption{Messwerte der Temperatur im Druckbereich über \SI[]{}[]{}}
+      \label{tab:hohe}
+      \caption{Messwerte der Temperatur im Druckbereich über $\SI{1}{bar}$}
       \sisetup{table-format=6.2}
       \begin{tabular}{S S}
         \toprule
@@ -32,10 +39,10 @@ In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten
 
 \begin{table}
     \centering
-        \label{tab:niedringe}
-        \caption{Messwerte der Temperatur im niedringen Druckbereich}
-        \sisetup{table-format=6.2}
-        \begin{tabular}{S S}
+      \label{tab:niedringe}
+      \caption{Messwerte der Temperatur im niedringen Druckbereich}
+      \sisetup{table-format=7.2}
+      \begin{tabular}{S S}
           \toprule
           {$p / \si{\pascal}$} & {$ T / \si{\kelvin}$} \\
           \midrule
@@ -88,8 +95,69 @@ In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten
          95700  &   377.15 \\
          97700  &   377.15 \\
          99700  &   378.15 \\
-        101700  &   378.15 \\
-          \bottomrule
-        \end{tabular}
-      \end{table}
+         101700 &   378.15 \\
+      \bottomrule
+      \end{tabular}
+\end{table}
 
+\subsection{Die Dampfdruckkurve}
+Auf Grundlage der Messwerten in Tabelle \ref{tab:niedringe} wird nun die Verdampfungswärme $L$ des
+Wassers bestimmt. Dazu wird die in Kapitel \ref{sec:Theorie} hergeleitete Formel
+\begin{equation}
+  ln(\frac{p}{p_0})=-\frac{L}{R\cdot T} \label{eqn:dampfdruck1}
+\end{equation}
+verwendet. $p_0=\SI{100300}{\pascal}$ ist dabei der Umgebungsdruck und $R$ die allgemeine Gaskonstante.
+Wählt man nun $x=1/T$ und $y=ln(p-p_0)$, dann erhält man die lineare Gleichung:
+\begin{equation}
+  y=-\frac{L}{R}\cdot x+c \label{eqn:dampfdruck2}
+\end{equation}
+Trägt man die Messwerte in ein Koordinaten System ein und setzt wie oben beschrieben $x=1/T$ und $y=ln(p-p_0)$,
+wird dieser Zusammenhang gut ersichtlich. In Abbildung \ref{fig:Dampfdruckkurve} wurde die Messdaten
+zusammen mit einer Regressionsgeraden mit Python auf die oben beschriebene Weise abgebildet. 
+\begin{figure}
+  \centering
+  \includegraphics[scale = 0.75]{a.pdf}
+  \caption{Dampfdruckkurve des Wassers}
+  \label{fig:Dampfdruckkurve}
+\end{figure}
+Die eingezeichneten Regressionen haben nun Funktionsgleichungen der Form von Gleichung \eqref{eqn:dampfdruck2} mit
+\begin{align}
+  \frac{L}{R} &= \SI{4738.75 \pm 34.25}{\kelvin} \\
+  c           &= \num{12.56 \pm 0.0973} 
+\end{align}
+für die Messwerte bei niedrigem und
+\begin{align}
+  \frac{L}{R} &=  \SI{7054.89 \pm 226.93}{\kelvin}\\
+  c           & =\num{18.03 \pm 0.54}
+\end{align}
+bei hohem Druck.
+\\
+Die Steigung der Gerade ist demnach
+\begin{equation}
+  m=-\frac{L}{R} \Leftrightarrow L=-m\cdot R. \label{eqn:L}
+\end{equation}
+
+\subsection{Die Verdampfungswärme}
+Mit Gleichung \eqref{eqn:L} kann nun die gemittelte Verdampfungswärme des Wassers berechnet werden.
+Durch Einsetzen folgt für die Messwerte aus Tabelle \ref{tab:niedringe}
+\begin{equation}
+  L=\SI{39400.195\pm284.792}{\joule\per\mole}.
+\end{equation}
+\\
+Die äußere Verdampfungswärme $L_a$ ist die Energie, die benötigt wird, um das Volumen des Wassers von
+$V_F$ auf $V_D$ zu vergößern. Demnach gilt für $L_a$ nach der idealen Gasgleichung
+\begin{equation}
+  L_a=pV=RT.
+\end{equation}
+Eine Abschätzung mit $T=\SI{373}{kelvin}$ ergibt
+\begin{equation}
+  L_a=\SI{3101.29}{\joule\per\mole}.
+\end{equation}
+Die Differenz der gemittelten Verdampfungswärme $L$ und der äußeren Verdampfungswärme $L_a$ ist dann 
+die Energie $L_i$, die ein Wassermolekül besitzen muss, um die Anziehungskräfte der anderen Moleküle zu überwinden
+und zu verdampfen. Bilden der Differenzliefert
+\begin{equation}
+  L_i=L-L_a=\SI{0.376 \pm 0.003}{\electronvolt}
+\end{equation}
+
+\subsection{Abhängigkeit der Verdampfungswärme von der Temperatur}
