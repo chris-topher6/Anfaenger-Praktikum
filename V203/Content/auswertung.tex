@@ -161,3 +161,52 @@ und zu verdampfen. Bilden der Differenzliefert
 \end{equation}
 
 \subsection{Abhängigkeit der Verdampfungswärme von der Temperatur}
+Um die Verdampfungswärme $L$ in Abhängigkeit und der Termperatur zu bestimmen, formt man die
+Clausius-Clapeyronsche Gleichung \eqref{eqn:Clausius} nach L um und erhält
+\begin{equation}
+  L=T(V_D-V_F)\frac{dp}{dT}. \label{eqn:Clausius2}
+\end{equation}
+$V_F$ kann dabei gegenüber $V_D$ vernachlässigt werden. $V_D$ kann zudem nicht mehr durch die
+ideale Gasgleichung \eqref{eqn:gasgleichung} berechnet werden. Eine bessere Näherung für $V_D$
+ist stattdessen 
+\begin{align}
+  &RT=\left(p+\frac{a}{V_D^2}\right) \qquad mit \quad a=\SI{0.9}{\joule\cubic\metre\per\square\mole}\\
+  \Leftrightarrow \quad &V_D=\frac{RT}{2p}\pm\sqrt{\frac{R^2T^2}{4p^2}-\frac{a}{p}}. \label{eqn:V_d}
+\end{align}
+Durch Einsetzen in Gleichung \eqref{eqn:Clausius2} ergibt sich
+\begin{equation}
+  L=T\left(\frac{RT}{2p}\pm\sqrt{\frac{R^2T^2}{4p^2}-\frac{a}{p}}\right)\frac{dp}{dT}. \label{eqn:Clausius3}
+\end{equation}
+Um den Differentialquotienten $dp/dT$ zu bestimmen, wird ein Ausgleichspolynom dritten Grades
+aus den Messwerten aus Tabelle \ref{tab:hohe} gebildet und dann abgeleitet. In Abbildung
+\ref{fig:Polynom} wurde dieses Polynom mit Pythongraphisch dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[scale = 0.75]{d.pdf}
+  \caption{Ein T-p-Diagramm mit Ausgleichspolynom}
+  \label{fig:Polynom}
+\end{figure}
+Das Polynom hat dabei die Form
+\begin{equation}
+  p=aT^3+bT^2+cT+d
+\end{equation}
+\begin{align}
+  mit \quad a &= \SI{-0.5015\pm0.3859}{\pascal\per\cubic\kelvin}\\
+      b &= \SI{750.50\pm479.79}{\pascal\square\kelvin}\\
+      c &= \SI{-351292.70\pm198606.23}{\pascal\kelvin}\\
+      d &= \SI{52690170.95\pm27370895.05}{\pascal}
+\end{align}
+mit der Ableitung
+\begin{equation}
+  \frac{dp}{dT}3aT^2+2bT+c.
+\end{equation}
+Mit Gleichung \ref{eqn:Clausius3} kann nun $L(T)$ für die Messwerte aus Tabelle \ref{tab:hohe}
+berechnet werden. Mittels Python wurde $L(T)$ in Abbildung \ref{fig:L} als Graph dargestellt.
+Dabei existieren nach Gleichung \ref{eqn:V_d} zwei Lösungen $L_1$ und $L_2$. $L_1$ ist dabei
+die Lösung für die positive und $L_2$ die Lösung für die negative Lösung.
+\begin{figure}
+  \centering
+  \includegraphics[scale = 0.75]{d2.pdf}
+  \caption{L in Abhängigkeit von T}
+  \label{fig:L}
+\end{figure}
