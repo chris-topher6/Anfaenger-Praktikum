@@ -138,6 +138,7 @@ plt.plot(Th, ph, '.', color='r', label='Messdaten')
 plt.xlabel(r'$T [K]$') #nochmal überprüfen
 plt.ylabel(r'$p [Pa]$')
 plt.legend(loc='best')
+plt.tight_layout()
 
 plt.savefig('d1.pdf')
 
@@ -149,12 +150,24 @@ dpdT=3*params3[0]*(Th**2)+2*params3[1]*(Th)+params3[2]
 #L=T(Vd) dp/dT
 Vd=(R*Th)/(2*ph) + np.sqrt(((R*Th)/(2*ph))**2 - 0.9/ph)
 Lh=Th*(Vd)*dpdT
-#print(f"Verdampfungswärme für p<1bar: \n L={Lh:.3f}J/mol \n\n")
 
+#Plots für Lh
 plt.figure("""third figure""")
-plt.plot(Th, Lh, 'x', label='L in Abhängigkeit von T')
+plt.subplot(2,1,1) #für die positive Lösung
+plt.plot(Th, Lh, 'bx', label='L1')
 
-plt.xlabel(r'$T [K]$') #nochmal überprüfen
+plt.xlabel(r'$T [K]$') 
+plt.ylabel(r'$L [J/mol]$')
+plt.legend(loc='best')
+plt.tight_layout()
+
+Vd=(R*Th)/(2*ph) - np.sqrt(((R*Th)/(2*ph))**2 - 0.9/ph)
+Lh=Th*(Vd)*dpdT
+
+plt.subplot(2,1,2) #für die negative Lösung
+plt.plot(Th, Lh, 'bx', label='L2')
+
+plt.xlabel(r'$T [K]$') 
 plt.ylabel(r'$L [J/mol]$')
 plt.legend(loc='best')
 plt.tight_layout()
