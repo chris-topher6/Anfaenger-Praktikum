@@ -224,7 +224,7 @@ und zu verdampfen. Bilden der Differenzliefert
 
 \subsection{Abhängigkeit der Verdampfungswärme von der Temperatur}
 Um die Verdampfungswärme $L$ in Abhängigkeit und der Termperatur zu bestimmen, formt man die
-Clausius-Clapeyronsche Gleichung \eqref{eqn:Clausius} nach L um und erhält
+Clausius-Clapeyronsche Gleichung \eqref{eqn:clausiusclapeyron} nach L um und erhält
 \begin{equation}
   L=T(V_D-V_F)\frac{dp}{dT}. \label{eqn:Clausius2}
 \end{equation}
@@ -233,7 +233,7 @@ ideale Gasgleichung \eqref{eqn:gasgleichung} berechnet werden. Eine bessere Näh
 ist stattdessen 
 \begin{align}
   &RT=\left(p+\frac{a}{V_D^2}\right) \qquad mit \quad a=\SI{0.9}{\joule\cubic\metre\per\square\mole}\\
-  \Leftrightarrow \quad &V_D=\frac{RT}{2p}\pm\sqrt{\frac{R^2T^2}{4p^2}-\frac{a}{p}}. \label{eqn:V_d}
+  \Leftrightarrow \quad &V_D=\frac{RT}{2p}\pm\sqrt{\frac{R^2T^2}{4p^2}-\frac{a}{p}}. \label{eqn:Vd}
 \end{align}
 Durch Einsetzen in Gleichung \eqref{eqn:Clausius2} ergibt sich
 \begin{equation}
@@ -266,11 +266,11 @@ Auch hier wurden die Unsicherheiten mittels \textit{numpy} berechnet. Mit Gleich
 \ref{eqn:Clausius3} kann nun $L(T)$ für die Messwerte aus Tabelle \ref{tab:hohe}
 berechnet werden. Mittels Python wurden die Ergebnisse aus Tabelle \ref{tab:L} in Abbildung
 \ref{fig:L} in einem T-L-Koordinatensystem dargestellt.
-Dabei existieren nach Gleichung \ref{eqn:V_d} zwei Lösungen $L_1$ und $L_2$. $L_1$ ist dabei
+Dabei existieren nach Gleichung \ref{eqn:Vd} zwei Lösungen $L_1$ und $L_2$. $L_1$ ist dabei
 die Lösung für den positiven und $L_2$ die Lösung für die negativen Wurzelterm.
 \begin{table}
   \centering
-      \label{tab:hohe}
+      \label{tab:L}
       \caption{L in Abhängigkeit von T bei p<1bar}
       \sisetup{table-format=5.2}
       \begin{tabular}{S S S}
