@@ -8,7 +8,7 @@
 \label{sec:auswertung}
 \subsection{Messdaten}
 In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten aufgeführt:
-\begin{table}
+\begin{table}[H]
   \centering
       \label{tab:hohe}
       \caption{Messwerte der Temperatur im Druckbereich über $\SI{1}{bar}$}
@@ -37,12 +37,73 @@ In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten
       \end{tabular}
     \end{table}
 
-\begin{table}
-    \centering
-      \label{tab:niedringe}
-      \caption{Messwerte der Temperatur im niedringen Druckbereich}
-      \sisetup{table-format=7.2}
-      \begin{tabular}{S S}
+%\begin{table}
+%    \centering
+%      \label{tab:niedringe}
+%      \caption{Messwerte der Temperatur im niedringen Druckbereich}
+%      \sisetup{table-format=7.2}
+%      \begin{tabular}{S S}
+%          \toprule
+%          {$p / \si{\pascal}$} & {$ T / \si{\kelvin}$} \\
+%          \midrule
+%          3700  &   301.65 \\
+%          5700  &   309.15 \\
+%          7700  &   314.15 \\
+%          9700  &   318.15 \\
+%         11700  &   322.15 \\
+%         13700  &   325.15 \\
+%         15700  &   328.15 \\
+%         17700  &   330.15 \\
+%         19700  &   333.15 \\
+%         21700  &   335.15 \\
+%         23700  &   337.15 \\
+%         25700  &   339.15 \\
+%         27700  &   341.15 \\
+%         29700  &   342.15 \\
+%         31700  &   344.15 \\
+%         33700  &   346.15 \\
+%         35700  &   347.15 \\
+%         37700  &   349.15 \\
+%         39700  &   350.15 \\
+%         41700  &   352.15 \\
+%         43700  &   353.15 \\
+%         45700  &   355.15 \\
+%         47700  &   356.15 \\
+%         49700  &   357.15 \\
+%         51700  &   358.15 \\
+%         53700  &   359.15 \\
+%         55700  &   360.15 \\
+%         57700  &   361.15 \\
+%         59700  &   362.15 \\
+%         61700  &   363.15 \\
+%         63700  &   364.15 \\
+%         65700  &   365.15 \\
+%         67700  &   366.15 \\
+%         69700  &   367.15 \\
+%         71700  &   368.15 \\
+%         73700  &   369.15 \\
+%         75700  &   369.15 \\
+%         77700  &   370.15 \\
+%         79700  &   371.15 \\
+%         81700  &   372.15 \\
+%         83700  &   372.15 \\
+%         85700  &   373.15 \\
+%         87700  &   373.15 \\
+%         89700  &   375.15 \\
+%         91700  &   375.15 \\
+%         93700  &   376.15 \\
+%         95700  &   377.15 \\
+%         97700  &   377.15 \\
+%         99700  &   378.15 \\
+%         101700 &   378.15 \\
+%      \bottomrule
+%      \end{tabular}
+%\end{table}
+\begin{longtable}{S S}
+    %\centering
+      %\label{tab:niedringe}
+      %\caption{Messwerte der Temperatur im niedringen Druckbereich}
+      %\sisetup{table-format=7.2}
           \toprule
           {$p / \si{\pascal}$} & {$ T / \si{\kelvin}$} \\
           \midrule
@@ -97,8 +158,7 @@ In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten
          99700  &   378.15 \\
          101700 &   378.15 \\
       \bottomrule
-      \end{tabular}
-\end{table}
+\end{longtable}
 
 \subsection{Die Dampfdruckkurve}
 Auf Grundlage der Messwerten in Tabelle \ref{tab:niedringe} wird nun die Verdampfungswärme $L$ des
@@ -130,7 +190,8 @@ für die Messwerte bei niedrigem und
   \frac{L}{R} &=  \SI{7054.89 \pm 226.93}{\kelvin}\\
   c           & =\num{18.03 \pm 0.54}
 \end{align}
-bei hohem Druck.
+bei hohem Druck. Die Unsicherheit der Parameter wurden genau wie die Regression mit \textit{nummeric python} 
+berechnet.
 \\
 Die Steigung der Gerade ist demnach
 \begin{equation}
@@ -143,6 +204,7 @@ Durch Einsetzen folgt für die Messwerte aus Tabelle \ref{tab:niedringe}
 \begin{equation}
   L=\SI{39400.195\pm284.792}{\joule\per\mole}.
 \end{equation}
+Die Unsicherheit folgt wieder aus der von \textit{nummeric python} berechneten Unsicherheit der Parameter.
 \\
 Die äußere Verdampfungswärme $L_a$ ist die Energie, die benötigt wird, um das Volumen des Wassers von
 $V_F$ auf $V_D$ zu vergößern. Demnach gilt für $L_a$ nach der idealen Gasgleichung
@@ -198,12 +260,43 @@ Das Polynom hat dabei die Form
 \end{align}
 mit der Ableitung
 \begin{equation}
-  \frac{dp}{dT}3aT^2+2bT+c.
+  \frac{dp}{dT}=3aT^2+2bT+c.
 \end{equation}
-Mit Gleichung \ref{eqn:Clausius3} kann nun $L(T)$ für die Messwerte aus Tabelle \ref{tab:hohe}
-berechnet werden. Mittels Python wurde $L(T)$ in Abbildung \ref{fig:L} als Graph dargestellt.
+Auch hier wurden die Unsicherheiten mittels \textit{numpy} berechnet. Mit Gleichung 
+\ref{eqn:Clausius3} kann nun $L(T)$ für die Messwerte aus Tabelle \ref{tab:hohe}
+berechnet werden. Mittels Python wurden die Ergebnisse aus Tabelle \ref{tab:L} in Abbildung
+\ref{fig:L} in einem T-L-Koordinatensystem dargestellt.
 Dabei existieren nach Gleichung \ref{eqn:V_d} zwei Lösungen $L_1$ und $L_2$. $L_1$ ist dabei
-die Lösung für die positive und $L_2$ die Lösung für die negative Lösung.
+die Lösung für den positiven und $L_2$ die Lösung für die negativen Wurzelterm.
+\begin{table}
+  \centering
+      \label{tab:hohe}
+      \caption{L in Abhängigkeit von T bei p<1bar}
+      \sisetup{table-format=5.2}
+      \begin{tabular}{S S S}
+        \toprule
+        {$T / \si{\kelvin}$} & {$ L1 \cdot \si{\mole\per\joule}$} & {$ L2 \cdot \si{\mole\per\joule}$} \\
+        \midrule
+        381.15 &   53692.43 &     242.76 \\
+        392.15 &   75364.64 &     649.06 \\
+        398.15 &   67826.04 &     856.78 \\
+        405.15 &   66219.19 &    1085.11 \\
+        409.15 &   59842.89 &    1211.06 \\
+        414.15 &   57002.17 &    1360.70 \\
+        419.15 &   54896.48 &    1502.82 \\
+        422.15 &   51084.88 &    1586.96 \\
+        425.15 &   48084.48 &    1668.54 \\
+        428.15 &   45649.91 &    1747.52 \\
+        431.65 &   44004.85 &    1835.11 \\
+        434.15 &   41905.56 &    1897.51 \\
+        436.15 &   39791.49 &    1947.66 \\
+        440.15 &   39115.31 &    2036.59 \\
+        443.15 &   37955.11 &    2101.95 \\
+        446.15 &   36910.54 &    2164.46 \\
+    
+        \bottomrule
+      \end{tabular}
+    \end{table}
 \begin{figure}
   \centering
   \includegraphics[scale = 0.75]{d2.pdf}
