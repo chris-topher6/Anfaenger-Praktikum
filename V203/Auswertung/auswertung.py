@@ -149,12 +149,12 @@ dpdT=3*params3[0]*(Th**2)+2*params3[1]*(Th)+params3[2]
 #L=T(Vd-Vf) dp/dT #Vf wird vernachlässigt
 #L=T(Vd) dp/dT
 Vd=(R*Th)/(2*ph) + np.sqrt(((R*Th)/(2*ph))**2 - 0.9/ph)
-Lh=Th*(Vd)*dpdT
+Lh1=Th*(Vd)*dpdT
 
 #Plots für Lh
 plt.figure("""third figure""")
 plt.subplot(2,1,1) #für die positive Lösung
-plt.plot(Th, Lh, 'bx', label='L1')
+plt.plot(Th, Lh1, 'bx', label='L1')
 
 plt.xlabel(r'$T [K]$') 
 plt.ylabel(r'$L [J/mol]$')
@@ -162,10 +162,10 @@ plt.legend(loc='best')
 plt.tight_layout()
 
 Vd=(R*Th)/(2*ph) - np.sqrt(((R*Th)/(2*ph))**2 - 0.9/ph)
-Lh=Th*(Vd)*dpdT
+Lh2=Th*(Vd)*dpdT
 
 plt.subplot(2,1,2) #für die negative Lösung
-plt.plot(Th, Lh, 'bx', label='L2')
+plt.plot(Th, Lh2, 'bx', label='L2')
 
 plt.xlabel(r'$T [K]$') 
 plt.ylabel(r'$L [J/mol]$')
@@ -177,3 +177,4 @@ plt.savefig('d2.pdf')
 #Daten in txt Datein spichern:
 np.savetxt("1niedrig.txt", np.column_stack([pn, Tn]), fmt = "%10.2f", delimiter = " & ", header = " pn Tn")
 np.savetxt("1hoch.txt", np.column_stack([ph, Th]), fmt = "%10.2f", delimiter = " & ", header = " ph Th")
+np.savetxt("d.txt", np.column_stack([Th, Lh1, Lh2]), fmt = "%10.2f", delimiter = " & ", header = " Th Lh1 Lh2")
