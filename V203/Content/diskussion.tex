@@ -1,12 +1,33 @@
 \section{Diskussion}
 \label{sec:Diskussion}
-\begin{align*}
-L&=\SI{39400.195\pm284.792}{\joule\per\mole}\\
-L_i&=\SI{0.376 \pm 0.003}{\electronvolt}
-\end{align*}
-\begin{table}
+Im Folgenden sind die Ergebnisse aus Kapitel \ref{sec:Auswertung} zusammen mit den jeweiligen Literaturwerten
+$L_{Lit}$ und der prozentualen Abweichung $f$ von dem Literaturwert tabellarisch dargestellt.
+\begin{table}[H]
+  \centering
+      \caption{$L$ bei $p<1bar$ mit Literaturwert und Abweichung}
+      \sisetup{table-format=5.3}
+      \begin{tabular}{S S S S S}
+        \toprule
+        {$ L_{p<1bar} \cdot \si{\mole\per\joule}$} & {$ \Delta L_{<1bar} \cdot \si{\mole\per\joule}$} & {$ L_{Lit} \cdot \si{\mole\per\joule}$} & {$f [\%]$} & {$\Delta f [\%]$}\\
+        39400.195 & 284.792 & 40657 & 3.1 & 0.7\\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+\begin{table}[H]
+  \centering
+      \caption{$L_{i}$ bei $p>1bar$ mit Literaturwert und Abweichung}
+      \sisetup{table-format=5.3}
+      \begin{tabular}{S S S S S}
+        \toprule
+        {$ L_{i} / \si{\electronvolt}$} & {$ \Delta L_{i} / \si{\electronvolt}$} & {$ L_{Lit} / \si{\electronvolt}$} & {$f [\%]$} & {$\Delta f [\%]$}\\
+        0.376 & 0.003 & 0.00 & 0.00 & 0.00\\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+
+\begin{table}[H]
     \centering
-        \caption{L in Abhängigkeit von T bei p<1bar}
+        \caption{$L$ in Abhängigkeit von $T$ bei $p<1bar$}
         \sisetup{table-format=5.2}
         \begin{tabular}{S S S}
           \toprule
@@ -31,3 +52,29 @@ L_i&=\SI{0.376 \pm 0.003}{\electronvolt}
           \bottomrule
         \end{tabular}
       \end{table}
+
+Bei der Verdampfungswärme $L_{p<1bar}$, welche aus den Messwerten \ref{tab:niedrige} bei niedrigem 
+Druck $p<1bar$ berechnet wurde, stimmt der Messwert weitestgehend mit dem Literaturwert überein. Die
+prozentuale Abweichung $f$ ist demnach vergleichsweise niedrig. Auch die Unsicherheit 
+$\Delta L_{p<1bar}$ deutet nicht auf einen systematischen Fehler hin, sondern liegt im Rahmen einer
+Messunsicherheit.\\
+Folgende Fehlerquellen können zu Abweichungen von den Messwerten \ref{tab:niedrige} führen:
+\begin{enumerate}
+  \item \textit{Menschlicher Fehler}
+    Da das Ablesen der Temperatur und die Regulierung des Kühlwassers nicht automatisiert, sondern durch 
+    einen Menschen durchgeführt wurden, sind die Daten mit zusätzlichen Messunsicherheiten behaftet.
+  \item \textit{Abkühlen des Wassers}
+    Auf Grund technischer Problme mit der Messaperatur sind lag die Ausgangstemperatur des Wassers
+    bei $\SI{301.65}{\kelvin}$ also über der Raumtemperatur von in etwa $\SI{293}{\kelvin}$.
+\end{enumerate}
+Folgende Fehlerquellen können zu Abweichungen von den Messwerten \ref{tab:hohe} führen:
+\begin{enumerate}
+  \item \textit{Menschlicher Fehler}
+    Es kann wieder zu zusätzlichen Ablesefehlern bei der Messung der Temperatur gekommen sein.
+  \item \textit{Druckverlust}
+    Bei dem Versuch viel nach kurzer Zeit auf, dass die Messaperatur an einer Verschraubung undicht war,
+    sodass Wasserdampf entweichte und der Druck stark abfiel. Wegen dieses Problems ist die Messung
+    erneut mit einer identischen Aperatur durchgeführt. Auch hier kam es zu dem Entweichen von Wasserdampf,
+    jedoch an einem sehr viel späteren Zeitpunkt und einem geringeren Ausmaß. Trotzdem ist ein systematischer
+    Fehler durch den Drckabfall wahrscheinlich.
+\end{enumerate}
