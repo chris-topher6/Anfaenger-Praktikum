@@ -172,9 +172,16 @@ plt.ylabel(r'$L [J/mol]$')
 plt.legend(loc='best')
 plt.tight_layout()
 
+#Vergleich mit den Literaturwerten
+Lnl=40657
+Lnab=100*(Lnl-Ln)/Lnl #bei 100°C https://physik.cosmos-indirekt.de/Physik-Schule/Verdampfungsw%C3%A4rme
+Lil=0
+print(f"L & {Ln} & {Lnl} & {Lnab} \\")
+
 plt.savefig('d2.pdf')
 
 #Daten in txt Datein spichern:
 np.savetxt("1niedrig.txt", np.column_stack([pn, Tn]), fmt = "%10.2f", delimiter = " & ", header = " pn Tn")
 np.savetxt("1hoch.txt", np.column_stack([ph, Th]), fmt = "%10.2f", delimiter = " & ", header = " ph Th")
 np.savetxt("d.txt", np.column_stack([Th, Lh1, Lh2]), fmt = "%10.2f", delimiter = " & ", header = " Th Lh1 Lh2")
+#np.savetxt("e.txt", np.column_stack([Ln, Lnl, Lnab]), fmt = "%10.2f", delimiter = " & ", header = "Ln Lnl Lnab")
