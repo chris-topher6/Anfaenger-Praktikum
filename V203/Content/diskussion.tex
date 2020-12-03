@@ -1,6 +1,7 @@
 \section{Diskussion}
 \label{sec:Diskussion}
-Im Folgenden sind die Ergebnisse aus Kapitel \ref{sec:auswertung} zusammen mit den jeweiligen Literaturwerten
+\subsection{Versuch für p<1bar}
+Im Folgenden sind die Ergebnisse aus Kapitel \ref{sec:auswertung} für $p<1bar$ zusammen mit den jeweiligen Literaturwerten
 $L_{Lit}$ und der prozentualen Abweichung $f$ von dem Literaturwert tabellarisch dargestellt.
 \begin{table}[H]
   \centering
@@ -24,34 +25,6 @@ $L_{Lit}$ und der prozentualen Abweichung $f$ von dem Literaturwert tabellarisch
         \bottomrule
       \end{tabular}
     \end{table}
-
-\begin{table}[H]
-    \centering
-        \caption{$L$ bei $p<1bar$ mit Literaturwert\cite{AP04} und Abweichung}
-        \sisetup{table-format=5.2}
-        \begin{tabular}{S S S S}
-          \toprule
-          {$p / \si{\pascal}$} & {$ L_{p>1bar} \cdot \si{\mole\per\joule}$} & {$ L_{Lit} \cdot \si{\mole\per\joule}$} & {$f [\%]$} \\
-          \midrule
-          50000.00 &   53692.43 &   41525.22 &     -29.30 \\
-          100000.00 &   75364.64 &   40678.50 &     -85.27 \\
-          150000.00 &   67826.04 &   40102.01 &     -69.13 \\
-          200000.00 &   66219.19 &   39651.63 &     -67.00 \\
-          250000.00 &   59842.89 &   39291.33 &     -52.31 \\
-          300000.00 &   57002.17 &   38967.05 &     -46.28 \\
-          350000.00 &   54896.48 &   38678.81 &     -41.93 \\
-          400000.00 &   51084.88 &   38426.59 &     -32.94 \\
-          450000.00 &   48084.48 &   38192.39 &     -25.90 \\
-          500000.00 &   45649.91 &   37958.19 &     -20.26 \\
-          550000.00 &   44004.85 &   37760.03 &     -16.54 \\
-          600000.00 &   41905.56 &   37561.86 &     -11.56 \\
-          650000.00 &   39791.49 &       / &       / \\
-          700000.00 &   39115.31 &   37201.55 &      -5.14 \\
-          750000.00 &   37955.11 &       / &       / \\
-          800000.00 &   36910.54 &   36859.26 &      -0.14  \\
-          \bottomrule
-        \end{tabular}
-      \end{table}
 \noindent
 Bei der Verdampfungswärme $L_{p<1bar}$, welche aus den Messwerten \ref{tab:niedringe} bei niedrigem
 Druck $p<1bar$ berechnet wurde, stimmt der Messwert weitestgehend mit dem Literaturwert überein. Die
@@ -68,6 +41,41 @@ dann $L_{p<1bar}$ berechnet wurde:
     Auf Grund technischer Problme mit der Messaperatur sind lag die Ausgangstemperatur des Wassers
     bei $\SI{301.65}{\kelvin}$, also über der Raumtemperatur von in etwa $\SI{293}{\kelvin}$.
 \end{enumerate}
+
+\subsection{Versuch für p<1bar}
+Zunächst ist anzumerken, dass nicht beide Lösungen von Gleichung \ref{eqn:Clausius3} in Tabelle \ref{tab:L}
+physikalisch sinnvoll sind. Deswegen wird im Folgenden nur die Lösung mit dem positiven Wurzelterm $L_1$
+betrachtet. $L_2$, aus der Berechnung mit dem negativen Wurzelterm, wird im weiteren nicht näher beleuchtet.
+Im Folgenden sind also nur die sinnvollen Ergebnisse aus Kapitel \ref{sec:auswertung} für $p>1bar$ zusammen 
+mit den jeweiligen Literaturwerten $L_{Lit}$ und der prozentualen Abweichung $f$ von dem Literaturwert 
+tabellarisch dargestellt.
+\begin{table}[H]
+  \centering
+      \caption{$L$ bei $p<1bar$ mit Literaturwert\cite{AP04} und Abweichung}
+      \sisetup{table-format=5.2}
+      \begin{tabular}{S S S S}
+        \toprule
+        {$p / \si{\pascal}$} & {$ L_{p>1bar} \cdot \si{\mole\per\joule}$} & {$ L_{Lit} \cdot \si{\mole\per\joule}$} & {$f [\%]$} \\
+        \midrule
+        50000.00 &   53692.43 &   41525.22 &     -29.30 \\
+        100000.00 &   75364.64 &   40678.50 &     -85.27 \\
+        150000.00 &   67826.04 &   40102.01 &     -69.13 \\
+        200000.00 &   66219.19 &   39651.63 &     -67.00 \\
+        250000.00 &   59842.89 &   39291.33 &     -52.31 \\
+        300000.00 &   57002.17 &   38967.05 &     -46.28 \\
+        350000.00 &   54896.48 &   38678.81 &     -41.93 \\
+        400000.00 &   51084.88 &   38426.59 &     -32.94 \\
+        450000.00 &   48084.48 &   38192.39 &     -25.90 \\
+        500000.00 &   45649.91 &   37958.19 &     -20.26 \\
+        550000.00 &   44004.85 &   37760.03 &     -16.54 \\
+        600000.00 &   41905.56 &   37561.86 &     -11.56 \\
+        650000.00 &   39791.49 &       / &       / \\
+        700000.00 &   39115.31 &   37201.55 &      -5.14 \\
+        750000.00 &   37955.11 &       / &       / \\
+        800000.00 &   36910.54 &   36859.26 &      -0.14  \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
 Folgende Fehlerquellen können zu den großen Abweichungen von den Messwerten \ref{tab:hohe} führen, aus denen
 dann $L_{p>1bar}$:
 \begin{enumerate}
