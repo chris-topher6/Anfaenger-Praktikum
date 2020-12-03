@@ -20,7 +20,7 @@ R=const.N_A *const.k
 
 #1) p<1bar
 plt.figure("""first figure""")
-p0=100300
+p0=100000
 h=ufloat(0,0)
 
 plt.subplot(2,1,1) #Plot für die Messdaten
