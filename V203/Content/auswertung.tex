@@ -100,7 +100,7 @@ In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten
 %\end{table}
 \begin{longtable}{S S}
     %\centering
-    \caption{Messwerte der Temperatur im niedringen Druckbereich}\\
+    \caption{Messwerte der Temperatur im niedrigen Druckbereich}\\
     \label{tab:niedringe}\\
       %\sisetup{table-format=7.2}
           \toprule
@@ -160,19 +160,19 @@ In den folgenden Tabellen sind die während des Experimentes aufgenommenen Daten
 \end{longtable}
 
 \subsection{Die Dampfdruckkurve}
-Auf Grundlage der Messwerten in Tabelle \ref{tab:niedringe} wird nun die Verdampfungswärme $L$ des
+Auf Grundlage der Messwerte in Tabelle \ref{tab:niedringe} wird nun die Verdampfungswärme $L$ des
 Wassers bestimmt. Dazu wird die in Kapitel \ref{sec:Theorie} hergeleitete Formel
 \begin{equation}
   ln(\frac{p}{p_0})=-\frac{L}{R\cdot T} \label{eqn:dampfdruck1}
 \end{equation}
 verwendet. $p_0=\SI{100000}{\pascal}$ ist dabei der Umgebungsdruck und $R$ die allgemeine Gaskonstante.
-Wählt man nun $x=1/T$ und $y=ln(p-p_0)$, dann erhält man die lineare Gleichung:
+Wird nun $x=1/T$ und $y=ln(p-p_0)$ gewählt, ergibt sich die lineare Gleichung:
 \begin{equation}
-  y=-\frac{L}{R}\cdot x+c \label{eqn:dampfdruck2}
+  y=-\frac{L}{R}\cdot x+c \label{eqn:dampfdruck2}.
 \end{equation}
-Trägt man die Messwerte in ein Koordinaten System ein und setzt wie oben beschrieben $x=1/T$ und $y=ln(p-p_0)$,
+Werden die Messwerte nun in ein Koordinatensystem eingetragen und wird wie oben beschrieben $x=1/T$ und $y=ln(p-p_0)$ eingesetzt,
 wird dieser Zusammenhang gut ersichtlich. In Abbildung \ref{fig:Dampfdruckkurve} wurde die Messdaten
-zusammen mit einer Regressionsgeraden mit Python auf die oben beschriebene Weise abgebildet. 
+zusammen mit einer Regressionsgeraden mit Python auf die oben beschriebene Weise abgebildet.
 \begin{figure}
   \centering
   \includegraphics[scale = 0.75]{Auswertung/a.pdf}
@@ -182,14 +182,14 @@ zusammen mit einer Regressionsgeraden mit Python auf die oben beschriebene Weise
 Die eingezeichneten Regressionen haben nun Funktionsgleichungen der Form von Gleichung \eqref{eqn:dampfdruck2} mit
 \begin{align*}
   \frac{L}{R} &= \SI{4738.75 \pm 34.25}{\kelvin} \\
-  c           &= \num{12.56 \pm 0.0973} 
+  c           &= \num{12.56 \pm 0.0973}
 \end{align*}
 für die Messwerte bei niedrigem und
 \begin{align*}
   \frac{L}{R} &=  \SI{7054.89 \pm 226.93}{\kelvin}\\
   c           & =\num{18.03 \pm 0.54}
 \end{align*}
-bei hohem Druck. Die Unsicherheit der Parameter wurden genau wie die Regression mit \textit{nummeric python} 
+bei hohem Druck. Die Unsicherheit der Parameter wurden genau wie die Regression mit \textit{numeric python}
 berechnet.
 \\
 Die Steigung der Gerade ist demnach
@@ -210,11 +210,11 @@ $V_F$ auf $V_D$ zu vergößern. Demnach gilt für $L_a$ nach der idealen Gasglei
 \begin{equation*}
   L_a=pV=RT.
 \end{equation*}
-Eine Abschätzung mit $T=\SI{373}{kelvin}$ ergibt
+Eine Abschätzung mit $T=\SI{373}{\kelvin}$ ergibt
 \begin{equation*}
   L_a=\SI{3101.29}{\joule\per\mole}.
 \end{equation*}
-Die Differenz der gemittelten Verdampfungswärme $L$ und der äußeren Verdampfungswärme $L_a$ ist dann 
+Die Differenz der gemittelten Verdampfungswärme $L$ und der äußeren Verdampfungswärme $L_a$ ist dann
 die Energie $L_i$, die ein Wassermolekül besitzen muss, um die Anziehungskräfte der anderen Moleküle zu überwinden
 und zu verdampfen. Bilden der Differenz liefert
 \begin{equation*}
@@ -222,14 +222,14 @@ und zu verdampfen. Bilden der Differenz liefert
 \end{equation*}
 
 \subsection{Abhängigkeit der Verdampfungswärme von der Temperatur}
-Um die Verdampfungswärme $L$ in Abhängigkeit und der Termperatur zu bestimmen, formt man die
-Clausius-Clapeyronsche Gleichung \eqref{eqn:clausiusclapeyron} nach L um und erhält
+Um die Verdampfungswärme $L$ in Abhängigkeit von der Temperatur zu bestimmen, wird die
+Clausius-Clapeyronsche Gleichung \eqref{eqn:clausiusclapeyron} nach L umgeformt. Dann ergibt sich
 \begin{equation}
   L=T(V_D-V_F)\frac{dp}{dT}. \label{eqn:Clausius2}
 \end{equation}
 $V_F$ kann dabei gegenüber $V_D$ vernachlässigt werden. $V_D$ kann zudem nicht mehr durch die
 ideale Gasgleichung \eqref{eqn:gasgleichung} berechnet werden. Eine bessere Näherung für $V_D$
-ist stattdessen 
+ist stattdessen
 \begin{align}
   &RT=\left(p+\frac{a}{V_D^2}\right) \qquad mit \quad a=\SI{0.9}{\joule\cubic\metre\per\square\mole}\\
   \Leftrightarrow \quad &V_D=\frac{RT}{2p}\pm\sqrt{\frac{R^2T^2}{4p^2}-\frac{a}{p}}. \label{eqn:Vd}
@@ -240,7 +240,7 @@ Durch Einsetzen in Gleichung \eqref{eqn:Clausius2} ergibt sich
 \end{equation}
 Um den Differentialquotienten $dp/dT$ zu bestimmen, wird ein Ausgleichspolynom dritten Grades
 aus den Messwerten aus Tabelle \ref{tab:hohe} gebildet und dann abgeleitet. In Abbildung
-\ref{fig:Polynom} wurde dieses Polynom mit Pythongraphisch dargestellt.
+\ref{fig:Polynom} wurde dieses Polynom mit Python graphisch dargestellt.
 \begin{figure}
   \centering
   \includegraphics[scale = 0.75]{Auswertung/d1.pdf}
@@ -261,7 +261,7 @@ mit der Ableitung
 \begin{equation*}
   \frac{dp}{dT}=3aT^2+2bT+c.
 \end{equation*}
-Auch hier wurden die Unsicherheiten mittels \textit{numpy} berechnet. Mit Gleichung 
+Auch hier wurden die Unsicherheiten mittels \textit{numpy} berechnet. Mit Gleichung
 \ref{eqn:Clausius3} kann nun $L(T)$ für die Messwerte aus Tabelle \ref{tab:hohe}
 berechnet werden. Mittels Python wurden die Ergebnisse aus Tabelle \ref{tab:L} in Abbildung
 \ref{fig:L} in einem T-L-Koordinatensystem dargestellt.
