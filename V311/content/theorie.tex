@@ -1,8 +1,102 @@
 \section{Theorie}
 \label{sec:Theorie}
 \subsection{elektrische Leitfähigkeit}
-
 Ein elektrischen Leiter besteht aus einer kristallinen Struktur, in welchem die Valenzelektronen der Atome
 ein großes System bilden. Das hat zur Folge, dass sie dem Pauli-Prinzip unterliegen. Demnach muss jedes 
 Valenzelektron einen anderen Quantenzustand beitzen. Es gibt nun so viele Elektronen verschiedener Energien,
-dass man von quasikontinuierlichen Energiebändern spricht, in denen es jedoch verbotene Zonen gibt.
+dass man von quasikontinuierlichen Energiebändern spricht, in denen es jedoch verbotene Zonen gibt.\\
+Wie auch in der Versuchsanleitung %\cite{}
+wird nun ein Na-Atom betrachtet, welches vollständig gefüllte 1s-, 2s-, 2p-Orbitale und ein 3s-Orbital besitzt,
+in welchem sich nur ein Elektron befindet. Diese Konfiguration ist in Abbildung %\ref{fig:Orbitale}
+veranschaulicht. In den gefüllten Orbitalen kann weder Energie aufgenommen noch abgegeben werden. Nur in dem
+3s-Orbital ist nur ein Elektron vorhanden, also ist noch Platz für ein zweites Elektron.\\
+%
+%hier Abbildung einfügen
+%
+Wird nun ein 
+elektrisches Feld an das Metall angelegt, können sich Elektronen durch diese Orbitale in Richtung des 
+elektischen Feldes bewegen. So entsteht durch die Bewegung der Elektronen aus dem obersten Energieband
+ein elektrischer Strom. Dieses oberste Energieband wird deswegen auch Leitfähigkeitsband genannt und die 
+Elektronen dieses Bandes Leitungselektronen. Bei nicht leitende Stoffen befinden sich keine Elektronen in dem
+obersten Energieband.\\
+Die Leitfähigkeit hängt dabei von Unregelmäßigkeiten in den Kristallen ab.
+\subsection{Mathematische Beschreibung der Leitfähigkeit}
+Die Bewegung der Leitungselektronen ähnelt der von den Atomen in einem Idealen Gas und kann somit auch ähnlich
+berechnet werden. Die Elektronen bewegen sich durch den Leiter und führen dabei Stöße mit Strukturdefekten in 
+dem Kristallgitter.\\
+Die mittlere Flugzeit $\bar{\tau}$ beschreibt nun die durchschnittliche Zeit zwischen zwei Stößen des Elektrons mit
+dem Gitter. Während dieser Zeit wird ein Elektron in einem elektischen Feld gleichmäßig beschleunigt. Diese
+Beschleunigung ist dabei
+\begin{equation}
+    \vec{b}=-\frac{e_0}{m_0}\vec{E}
+\end{equation}
+mit der Ladung $-e_0$ und der Ruhemasse $m_0$ des Elektrons. Die Geschwindigkeitsänderung $\Delta\vec{\bar{v}}$
+Während $\bar{\tau}$ ist dann also
+\begin{equation}
+    \Delta\vec{\bar{v}}=\vec{b}\bar{\tau}.
+\end{equation}
+Nach jedem Stoß wird das Elektron dann zufällig gestreut und wird dann wieder von dem elektischen Feld
+beschleunigt. Deswegen führt man die mittlere Driftgeschwindigkeit $\vec{\bar{v}}_d$ ein, für welche 
+\begin{equation}
+    \vec{\bar{v}}_d=\frac{1}{2}\Delta\vec{\bar{v}}
+\end{equation}
+gilt. Nun kann über die mittlere Driftgeschwindigkeit die Stromdichte $\vec{j}$ definiert werden. Diese gibt an
+wie viele Elektronen durch einen Leiter mit bestimmtem Querschnitt fließen. Die Stromdichte ist dabei durch
+\begin{equation}
+    \vec{j}=-n \vec{\bar{v}}_d e_0
+    =\frac{1}{2}\frac{e_0^2}{m_0}n\bar{\tau}\vec{E} \label{eqn:j}
+\end{equation}
+definiert, wobei $n$ die Anzahl der Elektronen ist. Bei einem homogenen Leiter mit Länge $L$ und Querschnitt
+$Q$ gilt zudem
+\begin{align}
+    j=\frac{I}{Q} \qquad E=\frac{U}{L}.
+\end{align}
+Einsetzen in Gleichung \eqref{eqn:j} liefert
+\begin{equation}
+    I=\frac{1}{2}\frac{e_0^2}{m_0}n\bar{\tau}\frac{Q}{L}U. \label{eqn:I}
+\end{equation}
+Definiert man nun die Leitfähigkeit $S$ durch
+\begin{equation}
+    S=\frac{1}{2}\frac{e_0^2}{m_0}n\bar{\tau}\frac{Q}{L}
+\end{equation}
+fällt auf, dass \eqref{eqn:I} die Form des Ohmschen Gesetztes besitzt
+\begin{equation}
+    U=S\cdot U, \qquad \text{mit}\quad S=\frac{1}{R}.
+\end{equation}
+Der Widerstand $R$ ist also gegeben durch
+\begin{equation}
+    R=2\frac{m_0}{e_0^2}\frac{1}{n\bar{\tau}}\frac{L}{Q}. \label{eqn:R}
+\end{equation}
+%Vielleicht braucht man das hier gar nicht
+Nun kann durch den Widerstand $R$ und die Leitfähigkeit $S$ der spezifische Widerstand $\rho$ und
+die spezifische Leitfähigkeit $\sigma$berechnet werden. Dies erfolgt durch
+\begin{equation}
+    \sigma=\frac{1}{2}\frac{e_0^2}{m_0}n\bar{\tau} 
+    \quad \text{und} \quad
+    \rho=2\frac{m_0}{e_0^2}\frac{1}{n\bar{\tau}}.
+\end{equation}
+%Bis hier
+Der Widerstand $R$ ist nun eine präzise messbare Größe, über welche mit Gleichung \ref{eqn:R} Aussagen
+über die Bewegung der Elektronen im Leiter getroffen werden können. Jedoch müssen noch die unbekannten
+Größen $n$ und $\bar{\tau}$ näher beleuchtet werden.
+\subsection{Der Hall-Effekt}
+Der Hall-Effekt tritt auf, wenn durch eine stromdurchflossene Leiterplatte senkrecht in ein Magnetfeld 
+gebracht wird. Durch die Lorenzkraft $F_L$ werden die Elektronen gemäß der 3-Finger-Regel auf der Leiterplatte
+verschoben. Der Betrag der Lorenzkraft ist dabei gegeben durch
+\begin{equation}
+    F_L=e_0\bar{v}B
+\end{equation} 
+Dadurch entsteht eine Potentialdifferenz auf der Leiterplatte. Diese Potentialdifferenz wird 
+Hall-Spannung genannt. \\
+In Abbildung \ref{fig:Hall} ist die beschriebne Versuchsanordnung noch einmal visualisiert.
+Die Elektronen bewegen sich dabei in negative x-Richtung, der magnetische Fluss verläuft in positive z-Richtung.
+Nach der 3-Finger-Regel (linke Hand für negative Ladungen) wird schnell ersichtlich, dass die Lorenzkraft die 
+Elektronen in negative y-Richtung verschiebt.
+%
+%hier Abbildung einfügen!!
+%
+Die Hallspannung $U_H$ ist dabei durch
+\begin{equation}
+    U_H=\bar{v}_dB\cdot b
+\end{equation}
+gegeben, wobei man 
