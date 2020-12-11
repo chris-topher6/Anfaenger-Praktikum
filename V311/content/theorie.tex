@@ -97,6 +97,67 @@ Elektronen in negative y-Richtung verschiebt.
 %
 Die Hallspannung $U_H$ ist dabei durch
 \begin{equation}
-    U_H=\bar{v}_dB\cdot b
+    U_H=\bar{v}_dB\cdot b \label{eqn:Uh1}
 \end{equation}
-gegeben, wobei man 
+gegeben, wobei man $\bar{v_d}$ schreiben kann als 
+\begin{equation}
+    \bar{v_d}=-\frac{1}{ne_0}\frac{I_q}{bd}. \label{eqn:vd}
+\end{equation}
+Dabei ist $b$ die Breite und $d$ die Dicke der Leiterplatte wie in Abbildung \ref{fig:Hall} zu erkennen.
+Dadurch lässt sich \eqref{eqn:Uh1} schreiben als 
+\begin{equation}
+    U_H=-\frac{1}{ne_0}\frac{B\cdot I_q}{d}. \label{eqn:Uh2}
+\end{equation}
+Die Größen $U_h$, $B$, $I_d$, $b$ und $d$ sind nun ohne viel Aufwand zu messen. Somit kann dann also durch 
+Gleichung \label{eqn:Uh2} $n$ und durch Gleichung \ref{eqn:vd} $v_d$ bestimmt werden. Da $n$ nun bekannt ist,
+kann durch Gleichung \ref{eqn:R} nach der Messung von $R$ auch $\tau$ berechnet werden.
+werden.\\
+\subsection{Weitere Leitfähigkeitsparameter}
+Aus den errechneten Parametern lassen sich nun noch weitere Parameter ableiten, die weitere Informationen 
+über die Bewegung der Elektronen liefern.\\
+Interessant ist die mittlere freie Weglänge $\bar{l}$, die die Elektronen in der Zeit $\bar{\tau}$ zurücklegen, bevor
+sie wieder mit dem Gitter stoßen. $\bar{l}$ kann dabei durch
+\begin{equation}
+    \bar{l}=\bar{\tau}\cdot v_T
+\end{equation}
+berechnet werden. $v_T$ ist bei die Totalgeschwindigkeit des Elektrons, welche durch die Brownsche Bewegung 
+%vielleicht besser Wärmebewegung?
+der Kristallbausteine erzeugt wird.\\
+Versteht man die Leitungselektronen wie Atome in einem Idealen Gas, so besitzt ein ELektron die kinetische Energie
+\begin{equation}
+    E_{kin}=\frac{3}{2}kT=\frac{1}{2}m_0v_T^2. \label{eqn:Ekin}
+\end{equation}
+Dabei entspricht $k$ der Bolzmann Konstante. Umstellen von \eqref{eqn:Ekin} liefert
+\begin{equation}
+    v_T=\sqrt{\frac{3kT}{m_0}}. \label{eqn:vT1}
+\end{equation}
+Allerdings muss bei den Elektronen das Anfangs erwähnte Pauli-Prinzip beachtet werden. So muss die Fermi-Dirac-Verteilung
+\begin{equation}
+    f(E)dE=\frac{1}{e^{\frac{E-E_f}{kT}}+1}dE
+\end{equation}
+verwendet werden, um zu beschreiben, wie Groß die Wahrscheinlichkeit $f(E)$ ist, ein 
+Elektron mit der Engerie bis $E+dE$ anzutreffen. $E_F$ ist dabei die Fermi-Energie, die durch
+\begin{equation}
+    E_F=\frac{h^2}{2m_0}\sqrt[3]{()\frac{3n}{8\pi})^2} \label{eqn:EF}
+\end{equation}
+gegeben ist. $h$ ist hierbei das Plancksche Wirkungsquantum. \\
+\eqref{eqn:EF} ist nun sehr viel besser geeignet um $v_T$ zu bestimmen als \ref{eqn:Ekin}. 
+Für die Leitungselektronen kann nun $E \approx E_F$ aufgenommen werden.
+$v_T$ kann dann beschrieben werden als
+\begin{equation}
+    v_T\approx\sqrt{\frac{2E_F}{m_0}}.
+\end{equation}
+Dadruch folgt für die mittlere freie Weglänge $\bar{l}$
+\begin{equation}
+    \bar{l}\approx\bar{\tau}\sqrt{\frac{2E_F}{m_0}}.
+\end{equation}
+Nun kann noch die Beweglichkeit $\mu$ der Elektronen bestimmt werden. Diese ist genau der Faktor, der 
+das elektrische Feld mit der Driftgeschwindigkeit verbindet. Es gilt
+\begin{equation}
+    \vec{\bar{v}}_d=\mu \vec{E}.
+\end{equation}
+\section{Der anormale Hall-Effekt}
+Es kann vorkommen, dass sich Energiebänder überlappen und Elektronen dann von dem unteren in das höhere Band
+springen. Dadurch entstehen sogenannte Löcher in den Bändern, die sich wie positive Ladungen verhalten, sich 
+in einem elektrischen Feld also in die umgekehrte Richtung wie die Elektronen bewegen. Dies wird anormaler 
+Hall-Effekt genannt.
