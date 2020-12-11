@@ -1,0 +1,12 @@
+#Stromstärke in Ampere Hallspannung in mVolt, umgepolt, Magnet wird konstant gehalten
+0   0.016
+0.5 0.0088
+1.0 0.0158
+1.5 0.0231
+2.0 0.0300
+2.5 0.0373
+3.0 0.0443
+3.5 0.0513
+4.0 0.0585
+4.5 0.0657
+5.0 0.0727

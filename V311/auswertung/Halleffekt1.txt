@@ -1,0 +1,12 @@
+#Stromstärke in Ampere Hallspannung in mVolt, nicht umgepolt, Platine wird konstant gehalten
+0   0.0871
+0.5 0.0885
+1.0 0.0897
+1.5 0.0914
+2.0 0.0926
+2.5 0.0942
+3.0 0.0957
+3.5 0.0971
+4.0 0.0983
+4.5 0.0992
+5.0 0.1002
