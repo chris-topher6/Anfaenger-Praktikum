@@ -3,9 +3,9 @@
     Die untersuchte Silberprobe ist $0.022 \si{\milli\meter}$ dick und $14.844 \si{\milli\meter}$ lang sowie
     $25.164\si{\milli\meter}$ breit. Der gemessene elektrische Widerstand beträgt $0.6 \si{\ohm}$.
   \subsection{Untersuchung des Hall-Effektes}
-    \begin{table}
+    \begin{table}[H]
       \centering
-        \caption{Messung der Hall-Spannung mit konstant gehaltenem Querstrom mit $\SI{5}{\ampere}$.}
+        \caption{Messung der Hall-Spannung mit konstant gehaltenem Probenstrom mit $\SI{5}{\ampere}$.}
         \label{tab:hallspannung1}
         \sisetup{table-format=1.4}
         \begin{tabular}{S S S }
@@ -26,9 +26,9 @@
           \bottomrule
         \end{tabular}
       \end{table}
-      \begin{table}
+      \begin{table}[H]
         \centering
-          \caption{Messung der Hall-Spannung mit konstant gehaltenem Magnetfeld mit $\SI{5}{\ampere}$.}
+          \caption{Messung der Hall-Spannung mit konstant gehaltenem Spulenstrom mit $\SI{5}{\ampere}$.}
           \label{tab:hallspannung1}
           \sisetup{table-format=1.4}
           \begin{tabular}{S S S }
@@ -50,5 +50,44 @@
           \end{tabular}
         \end{table}
   \subsection{Berechnung der Leitfähigkeitsparameter}
+    \subsubsection{Anzahl der Ladungsträger pro Volumen}
+        Für die Anzahl der Ladungsträger pro Volumen ergibt sich mit \ref{eqn:Uh2} nach umstellen nach n
+        \begin{equation}
+            n=-\frac{1}{U_{H} e_0}\frac{B\cdot I_q}{d}. \label{eqn:Uh21}
+          \end{equation}
+          Dabei bezeichnet $U_{H}$ die Hall-Spannung, $e_{0}$ die Elementarladung, $B$ die magnetische Flussdichte, $I_{q}$ den Platinenstrom und $d$ die Dicke
+          der Probe. Mit Gleichung \ref{eqn:Uh21} ergibt sich dann die Anzahl der Ladungsträger pro Volumen für eine Silberprobe zu
+          \begin{equation}
+            n_{P} = (-1.0 \pm -0.6) \cdot 10^{25} \frac{1}{\si{\cubic\meter}}
+          \end{equation}
+          für konstant gehaltenen Platinenstrom und
+          \begin{equation}
+            n_{S} = (-1.7 \pm -1.5) \cdot 10^{25} \frac{1}{\si{\cubic\meter}}
+          \end{equation}
+        für konstant gehaltenen Spuhlenstrom.
+        Der Fehler wurde mit Gaußscher Fehlerfortpflanzung
+        \begin{equation}
+          \sigma_f = \sqrt{\sum_{i=0}^{N} {\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i}}}
+          \label{eqn:gauss}
+        \end{equation}
+        und der Mittelwert durch ein arithmetisches Mittel berechnet.
+    \subsubsection{Anzahl der Ladungsträger pro Atom}
+        Die Zahl der Ladungsträger pro Atom berechnet sich mit Gleichung \ref{eqn:z}. Es gilt
+        \begin{equation*}
+          \rho = \frac{N_{A} m_\text{Ag}}{V}
+        \end{equation*}
+        Mit $a = \frac{N_{A}}{V}$ lässt sich $a$ nun schreiben als
+        \begin{equation*}
+          a = \frac{\rho}{m_\text{Ag}}.
+        \end{equation*}
+        $m_\text{Ag}$ bezeichnet hierbei die Masse eines einzelnen Silberatoms und beträgt $m_\text{Ag} = 107.8682u$ mit
+        der Atomaren Masseinheit $u = 1.661 \cdot 10^{-27}$. Dann lässt sich $z$ schreiben als
+        \begin{equation}
+          z =\frac{n V}{N_A} = \frac{n}{a} = \frac{n m_\text{Ag}}{\rho}
+          \label{eqn:zzz}
+        \end{equation}
+        Einsetzen in \ref{eqn:zzz} ergibt nun
 
-\label{sec:Auswertung}
+    \subsubsection{Die mittlere Flugzeit tau}
+
+  \label{sec:Auswertung}

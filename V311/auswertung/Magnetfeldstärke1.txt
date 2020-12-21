@@ -1,4 +1,4 @@
-#Stromstärke in Ampere Magnetfeldstärke in mTesla, nicht umgepolt
+#Stromstärke in Ampere Magnetfeldflussdichte in mTesla, nicht umgepolt
 0     21.6
 0.5  127.8
 1.0  247.5
