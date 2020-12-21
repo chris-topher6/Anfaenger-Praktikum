@@ -24,7 +24,7 @@ ein elektrischer Strom. Dieses oberste Energieband wird deswegen auch Leitfähig
 Elektronen dieses Bandes Leitungselektronen. Bei nicht leitenden Stoffen befinden sich keine Elektronen in dem
 obersten Energieband. Die Leitfähigkeit hängt dabei von Unregelmäßigkeiten in den Kristallen ab.
 \subsection{Mathematische Beschreibung der Leitfähigkeit}
-Die Bewegung der Leitungselektronen ähnelt der von den Atomen in einem Idealen Gas und kann somit auch ähnlich
+Die Bewegung der Leitungselektronen ähnelt der von den Atomen in einem idealen Gas und kann somit auch ähnlich
 berechnet werden. Die Elektronen bewegen sich durch den Leiter und führen dabei Stöße mit Strukturdefekten in 
 dem Kristallgitter.\\\\
 Die mittlere Flugzeit $\bar{\tau}$ beschreibt nun die durchschnittliche Zeit zwischen zwei Stößen des Elektrons mit
@@ -38,7 +38,7 @@ Während $\bar{\tau}$ ist dann also
 \begin{equation*}
     \Delta\vec{\bar{v}}=\vec{b}\bar{\tau}.
 \end{equation*}
-Nach jedem Stoß wird das Elektron dann zufällig gestreut und wird dann wieder von dem elektischen Feld
+Nach jedem Stoß wird das Elektron zufällig gestreut und dann wieder von dem elektischen Feld
 beschleunigt. Deswegen führt man die mittlere Driftgeschwindigkeit $\vec{\bar{v}}_d$ ein, für welche 
 \begin{equation*}
     \vec{\bar{v}}_d=\frac{1}{2}\Delta\vec{\bar{v}}
@@ -99,18 +99,18 @@ Elektronen in negative y-Richtung verschiebt.
 %
 \begin{figure}[H]
     \centering
+    \includegraphics[scale = 0.3]{content/1Hall.png}
     \caption{Versuchsaufbau zur Messung der Hallspannung. Quelle: \cite{AP01}}
     \label{fig:Hall}
-      \includegraphics[scale = 0.3]{content/1Hall.png}
   \end{figure}
 %
 \noindent Die Hallspannung $U_H$ ist dabei durch
 \begin{equation}
     U_H=\bar{v}_dB\cdot b \label{eqn:Uh1}
 \end{equation}
-gegeben, wobei man $\bar{v_d}$ schreiben kann als 
+gegeben, wobei man $\bar{v}_d$ schreiben kann als 
 \begin{equation}
-    \bar{v_d}=-\frac{1}{ne_0}\frac{I_q}{bd}. \label{eqn:vd}
+    \bar{v}_d=-\frac{1}{ne_0}\frac{I_q}{bd}. \label{eqn:vd}
 \end{equation}
 Dabei ist $b$ die Breite und $d$ die Dicke der Leiterplatte wie auch in Abbildung \ref{fig:Hall} zu erkennen.
 Dadurch lässt sich Gleichung \eqref{eqn:Uh1} schreiben als 
@@ -123,15 +123,21 @@ kann durch Gleichung \ref{eqn:R} nach der Messung von $R$ auch $\tau$ berechnet 
 \subsection{Weitere Leitfähigkeitsparameter}
 Aus den errechneten Parametern lassen sich nun noch weitere Parameter ableiten, die weitere Informationen 
 über die Bewegung der Elektronen liefern.\\\\
-Interessant ist die mittlere freie Weglänge $\bar{l}$, die die Elektronen in der Zeit $\bar{\tau}$ zurücklegen, bevor
+In dem letzten Abschnitt wurde $n$ als \textit{Ladungsträger pro Volumen} eingeführt. Nun wird zudem die 
+Größe $z$ als \textit{Ladungsträger pro Atom} mit 
+\begin{equation}
+    z=\frac{n V_A}{N_A}\label{eqn:z}
+\end{equation}
+definiert. Dabei ist $V_A$ !!! und $N_A$ !!!.\\\\
+Interessant ist zudem die mittlere freie Weglänge $\bar{l}$, die die Elektronen in der Zeit $\bar{\tau}$ zurücklegen, bevor
 sie wieder mit dem Gitter stoßen. $\bar{l}$ kann dabei durch
 \begin{equation*}
     \bar{l}=\bar{\tau}\cdot v_T
 \end{equation*}
-berechnet werden. $v_T$ ist dabei die Totalgeschwindigkeit des Elektrons, welche durch die Brownsche Bewegung 
+berechnet werden. $v_T$ ist dabei die Totalgeschwindigkeit des Elektrons, welche durch die Brown'sche Bewegung 
 %vielleicht besser Wärmebewegung?
 der Kristallbausteine erzeugt wird.\\
-Versteht man die Leitungselektronen wie Atome in einem Idealen Gas, so besitzt ein Elektron die kinetische Energie
+Versteht man die Leitungselektronen wie Atome in einem idealen Gas, so besitzt ein Elektron die kinetische Energie
 \begin{equation}
     E_{kin}=\frac{3}{2}kT=\frac{1}{2}m_0v_T^2 . \label{eqn:Ekin}
 \end{equation}
@@ -141,9 +147,9 @@ Dabei entspricht $k$ der Bolzmann Konstante. Umstellen von \eqref{eqn:Ekin} lief
 \end{equation}
 Allerdings muss bei den Elektronen das Anfangs erwähnte Pauli-Prinzip beachtet werden. So muss die Fermi-Dirac-Verteilung
 \begin{equation*}
-    f(E)dE=\frac{1}{e^{\frac{E-E_f}{kT}}+1}dE
+    f(E)\text{dE}=\frac{1}{e^{\frac{E-E_f}{kT}}+1}\text{dE}
 \end{equation*}
-verwendet werden, um zu beschreiben, wie Groß die Wahrscheinlichkeit $f(E)$ ist, ein 
+verwendet werden, um zu beschreiben, wie groß die Wahrscheinlichkeit $f(E)$ ist, ein 
 Elektron mit der Engerie bis $E+dE$ anzutreffen. $E_F$ ist dabei die Fermi-Energie, die durch
 \begin{equation}
     E_F=\frac{h^2}{2m_0}\sqrt[3]{\left(\frac{3n}{8\pi}\right)^2} \label{eqn:EF}
