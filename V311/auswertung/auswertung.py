@@ -12,6 +12,9 @@ uhplatineconst = np.array([hallspannung1, hallspannung2])
 uhspuleconst = np.array([hallspannung3, hallspannung4])
 uhmeanplatinec = ufloat(np.mean(uhplatineconst), np.std(uhplatineconst))
 uhmeanspulec = ufloat(np.mean(uhspuleconst), np.std(uhspuleconst))
+#In SI umrechnen
+uhmeanplatinec = uhmeanplatinec/1000
+uhmeanspulec = uhmeanspulec/1000
 #Berechnung des Mittelwertes der Magnetischen Flussdichte(1,3: nicht umgepolt; 2,4: umgepolt)
 stromstärkem1, magflussd1 = np.genfromtxt("Magnetfeldstärke1.txt", unpack=True)
 stromstärkem2, magflussd2 = np.genfromtxt("Magnetfeldstärke2.txt", unpack=True)
@@ -44,20 +47,25 @@ VAg = 8.21775715*(10**(-9))
 pAg = 10490
 #Masse der Probe
 mProbe = pAg*VAg
-#print("Die Probe wiegt: ")
-#print(mProbe)
+print("Die Probe wiegt: ")
+print(mProbe)
 #Atomgewicht von Silber
 u = 1.661*(10**(-27))
 mAg = 107.8682*u
-#print("Das Atomgewicht von Silber beträgt: ")
-#print(mAg)
+print("Das Atomgewicht von Silber beträgt: ")
+print(mAg)
 #Anzahl Silberatome in der Probe
 atomeProbe = mProbe/mAg
-#print("Die Probe enthält dann folgende Atomzahl: ")
-#print(atomeProbe)
+print("Die Probe enthält dann folgende Atomzahl: ")
+print(atomeProbe)
+z11 = n1*VAg/atomeProbe
+z22 = n2*VAg/atomeProbe
+print("Alternativ für z1:")
+print(z11)
+print("Alternativ für z2: ")
+print(z22)
 #Atomvolumen von Silber in m^3
-VAAg = 0.000001030
-
+VAAg = 0.00001030
 z1 = (n1*VAAg)/const.Avogadro
 z2 = (n2*VAAg)/const.Avogadro
 print("Die Anzahl von Ladungsträgern pro Atom beträgt: ")
@@ -128,8 +136,8 @@ stromstärkemagnet1, flussdichte1 = np.genfromtxt("Magnetfeldstärke1.txt", unpa
 stromstärkemagnet2, flussdichte2 = np.genfromtxt("Magnetfeldstärke2.txt", unpack=True)
 plt.plot(stromstärkemagnet1,flussdichte1, "k.", label="Nicht Umgepolt")
 plt.plot(stromstärkemagnet2,flussdichte2, "r.", label="Umgepolt")
-plt.xlabel("I/A")
-plt.ylabel("B/mT")
+plt.xlabel("I[A]")
+plt.ylabel("B[mT]")
 plt.legend()
 #plt.show()
 plt.savefig("magnetplot1.pdf")

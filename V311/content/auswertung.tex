@@ -65,11 +65,11 @@
           Dabei bezeichnet $U_{H}$ die Hall-Spannung, $e_{0}$ die Elementarladung, $B$ die magnetische Flussdichte, $I_{q}$ den Platinenstrom und $d$ die Dicke
           der Probe. Mit Gleichung \ref{eqn:Uh21} ergibt sich dann die Anzahl der Ladungsträger pro Volumen für eine Silberprobe zu
           \begin{equation*}
-            n_{P} = (-1.0 \pm -0.6) \cdot 10^{25} \frac{1}{\si{\cubic\meter}}
+            n_{P} = (-1.0 \pm -0.6) \cdot 10^{28} \frac{1}{\si{\cubic\meter}}
           \end{equation*}
           für konstant gehaltenen Platinenstrom und
           \begin{equation*}
-            n_{S} = (-1.7 \pm -1.5) \cdot 10^{25} \frac{1}{\si{\cubic\meter}}
+            n_{S} = (-1.7 \pm -1.5) \cdot 10^{28} \frac{1}{\si{\cubic\meter}}
           \end{equation*}
         für konstant gehaltenen Spulenstrom.
         Der Fehler wurde mit Gaußscher Fehlerfortpflanzung
@@ -83,9 +83,15 @@
       Die Anzahl der Ladungsträger pro Atom berechnet sich mit \ref{eqn:z}.
        Nun ergibt sich für die Anzahl der Ladungsträger pro Atom
        \begin{align*}
-         z_{P} & = \frac{n_{P} V_{A}}{N_A} = (1.6 \pm 1.1) \cdot 10^{-5} \\
-         z_{S} & = \frac{n_{S} V_{A}}{N_A} = (3.0 \pm 2.6) \cdot 10^{-5}
+         z_{P} & = \frac{n_{P} V_{A}}{N_A} = -0.16 \pm 0.11 \\
+         z_{S} & = \frac{n_{S} V_{A}}{N_A} = -0.30 \pm 0.26
        \end{align*}
+       Alternativ kann $z$ auch berechnet werden, indem die Masse der Probe durch
+       \begin{equation*}
+         m_{Probe} = \rho_{Ag} \cdot V_{Probe}
+       \end{equation*}
+       berechnet wird. Hierbei bezeichnet $\rho_{Ag} = 10490 \si{\kilo\gram\per\cubic\meter}$ die Dichte von Silber
+       bei $20 °C$ und $V_{Probe}$ das Volumen der Silberfolie.
     \subsubsection{Die mittlere Flugzeit}
     \label{sec:mitflugz}
       Die mittlere Flugzeit $\bar{\tau}$ berechnet sich nach
@@ -94,8 +100,8 @@
       \end{equation*}
       zu
       \begin{align*}
-        \bar{\tau}_{P} & = (3.4 \pm 2.3) \cdot 10^{-13} \si{\second} \\
-        \bar{\tau}_{S} & = (1.9 \pm 1.7) \cdot 10^{-13} \si{\second}. 
+        \bar{\tau}_{P} & = (-3.4 \pm -2.3) \cdot 10^{-16} \si{\second} \\
+        \bar{\tau}_{S} & = (-1.9 \pm -1.7) \cdot 10^{-16} \si{\second}.
       \end{align*}
       Hierbei ist $m_{0} = 9.1122 \cdot 10^{-31} \si{\kilo\gram}$ die Ruhemasse des Elektrons, $L = 25.164 \cdot 10^{-3} \si{\meter}$ die Länge der Probe,
       $e_{0}$ die Elementarladung, $R = 0.6 \si{\ohm}$ der gemessene Widerstand, $n$ die Anzahl der Ladungsträger pro Volumen wie in \ref{sec:ladtrprovol} berechnet
@@ -108,8 +114,8 @@
       Hierbei bezeichnet $j = 1 \si{\ampere\per\cubic\milli\meter}$ die Stromdichte und $n$ die Anzahl der Ladungsträger pro Volumen, analog zu \ref{sec:mitflugz}.
       Dann ergibt sich
       \begin{align*}
-        \bar{v_{dP}} & = (7 \pm 4) \cdot 10^{-7} \si{\meter\per\second} \\
-        \bar{v_{dS}} & = (3.6 \pm 3.2) \cdot 10^{-7} \si{\meter\per\second}
+        \bar{v_{dP}} & = (7 \pm 4) \cdot 10^{-10} \si{\meter\per\second} \\
+        \bar{v_{dS}} & = (3.6 \pm 3.2) \cdot 10^{-10} \si{\meter\per\second}
       \end{align*}
     \subsubsection{Die Beweglichkeit}
       Die Beweglichkeit $\mu$ wird nach \ref{eqn:mu} berechnet durch
@@ -118,8 +124,8 @@
       \end{equation}
       $m_{0}$ bezeichnet die Ruhemasse des Elektrons. Mit $\bar{\tau}$ aus Abschnitt \ref{sec:mitflugz} ergibt sich
       \begin{align*}
-        \mu_{P} & = 0.030 \pm 0.020 \si{\coulomb\second\per\kilo\gram}\\
-        \mu_{S} & = 0.017 \pm 0.015 \si{\coulomb\second\per\kilo\gram}
+        \mu_{P} & = (3.0 \pm 2.0) \cdot 10^{-5} \si{\coulomb\second\per\kilo\gram}\\
+        \mu_{S} & = (1.7 \pm 1.5) \cdot 10^{-5} \si{\coulomb\second\per\kilo\gram}
       \end{align*}
     \subsubsection{Die Totalgeschwindigkeit}
     \label{sec:totgeschw}
@@ -129,8 +135,8 @@
       \end{equation}
       wobei $h$ die Planck-Konstante, $m_{0}$ die Ruheenergie des Elektrons und $n$ die Anzahl der Ladungsträger pro Volumen bezeichnet. Damit ergibt sich dann
       \begin{align*}
-        E_{FP} & = (2.6 \pm 1.2) \cdot 10^{-21} \si{\joule} \\
-        E_{FS} & = (3.9 \pm 2.3) \cdot 10^{-21} \si{\joule}
+        E_{FP} & = (2.6 \pm 1.2) \cdot 10^{-19} \si{\joule} \\
+        E_{FS} & = (3.9 \pm 2.3) \cdot 10^{-19} \si{\joule}
       \end{align*}
       Die Totalgeschwindigkeit $|v|$ wird berechnet durch
       \begin{equation}
@@ -138,8 +144,8 @@
       \end{equation}
       Einsetzen der Werte für $E_{F}$ und $m_{0}$ ergibt nun
       \begin{align*}
-        |v|_{P} & = (7.6 \pm 1.7)\cdot 10^{4} \si{\meter\per\second}\\
-        |v|_{S} & = (9.3 \pm 2.7)\cdot 10^{4} \si{\meter\per\second}
+        |v|_{P} & = (7.6 \pm 1.7)\cdot 10^{5} \si{\meter\per\second}\\
+        |v|_{S} & = (9.3 \pm 2.7)\cdot 10^{5} \si{\meter\per\second}
       \end{align*}
     \subsubsection{Die mittlere freie Weglänge}
       Die mittlere freie Weglänge $\bar{l}$ berechnet sich mit
@@ -148,8 +154,8 @@
       \end{equation}
       Mit den Werten aus Abschnitt \ref{sec:mitflugz} sowie \ref{sec:totgeschw} ergibt sich nun
       \begin{align*}
-        \bar{l_{P}} & = (2.6 \pm 1.1)\cdot 10^{-8}  \si{\meter} \\
-        \bar{l_{S}} & = (1.8 \pm 1.0)\cdot 10^{-8}  \si{\meter}
+        \bar{l_{P}} & = (-2.6 \pm 1.1)\cdot 10^{-10}  \si{\meter} \\
+        \bar{l_{S}} & = (-1.8 \pm 1.0)\cdot 10^{-10}  \si{\meter}
       \end{align*}
   \subsection{Die magnetische Flussdichte in Abhängigkeit des Feldstroms}
   \begin{table}[H]
