@@ -44,19 +44,22 @@ VAg = 8.21775715*(10**(-9))
 pAg = 10490
 #Masse der Probe
 mProbe = pAg*VAg
-print("Die Probe wiegt: ")
-print(mProbe)
+#print("Die Probe wiegt: ")
+#print(mProbe)
 #Atomgewicht von Silber
 u = 1.661*(10**(-27))
 mAg = 107.8682*u
-print("Das Atomgewicht von Silber beträgt: ")
-print(mAg)
+#print("Das Atomgewicht von Silber beträgt: ")
+#print(mAg)
 #Anzahl Silberatome in der Probe
 atomeProbe = mProbe/mAg
-print("Die Probe enthält dann folgende Atomzahl: ")
-print(atomeProbe)
-z1 = n1/atomeProbe
-z2 = n2/atomeProbe
+#print("Die Probe enthält dann folgende Atomzahl: ")
+#print(atomeProbe)
+#Atomvolumen von Silber in m^3
+VAAg = 0.000001030
+
+z1 = (n1*VAAg)/const.Avogadro
+z2 = (n2*VAAg)/const.Avogadro
 print("Die Anzahl von Ladungsträgern pro Atom beträgt: ")
 print(z1,z2)
 #Berechnung der mittleren Flugzeit tau

@@ -76,22 +76,14 @@
           \sigma_f = \sqrt{\sum_{i=0}^{N} {\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i}}}
           \label{eqn:gauss}
         \end{equation}
-        und der Mittelwert durch ein arithmetisches Mittel berechnet.
+        und der Mittelwert durch ein arithmetisches Mittel berechnet. Die Gaußsche Fehlerfortpflanzung und der
+        Mittelwert werden im folgenden analog mit Python berechnet.
     \subsubsection{Anzahl der Ladungsträger pro Atom}
-       Die vorliegende Silberprobe hat ein Volumen von
-       \begin{equation*}
-         V_{Ag} = \SI{0.022}{\milli\meter} \cdot \SI{14.844}{\milli\meter} \cdot \SI{25.164}{\milli\meter} = 8.21775715 \cdot 10^{-9} \si{\cubic\meter}.
-       \end{equation*}
-       Die Dichte von Silber beträgt $\rho = 10490 \si{\kilo\gram\per\cubic\meter}$. Daher ist die Masse der Probe
-       \begin{equation*}
-         \rho \cdot V_{Ag} = 8.620 \cdot 10^{-5} \si{\kilo\gram}.
-       \end{equation*}
-       Das Atomgewicht von Silber beträgt $m_{A} = 1.7917 \cdot 10^{-25} \si{\kilo\gram}$.
-       Damit enthält die Probe $\frac{V_{Ag}}{m{A}} = 4.8113 \cdot 10^{20}$ Atome.
+      Die Anzahl der Ladungsträger pro Atom berechnet sich mit \ref{eqn:z}.
        Nun ergibt sich für die Anzahl der Ladungsträger pro Atom
        \begin{align*}
-         z_{P} & = \frac{n_{P}}{4.8113 \cdot 10^{20}} = (-2.0 \pm 1.3)\cdot 10^{4} \\
-         z_{S} & = \frac{n_{S}}{4.8113 \cdot 10^{20}} = (-3.6 \pm 3.2)\cdot 10^{4}
+         z_{P} & = \frac{n_{P} V_{A}}{N_A} = (1.6 \pm 1.1) \cdot 10^{-5}
+         z_{S} & = \frac{n_{S} V_{A}}{N_A} = (3.0 \pm 2.6) \cdot 10^{-5}
        \end{align*}
     \subsubsection{Die mittlere Flugzeit}
     \label{sec:mitflugz}
@@ -214,5 +206,5 @@
           \label{fig:magnet1}
       \end{figure}
       Die Messwerte steigen linear mit dem Spuhlenstrom an, man sieht jedoch, dass der Anstieg bei der nicht umgepolten
-      Messung ein wenig höher ausfällt als bei der umgepolten Messung. 
+      Messung ein wenig höher ausfällt als bei der umgepolten Messung.
   \label{sec:Auswertung}
