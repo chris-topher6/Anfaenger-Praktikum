@@ -54,7 +54,7 @@
         \end{table}
   \subsection{Berechnung der Leitfähigkeitsparameter}
   Bei den folgenden Rechnungen gibt ein Ergebnis mit Subskript $P$ ein Ergebnis unter Verwendung der Messwerte mit konstantem Platinenstrom und $S$ eines mit
-  konstantem Spuhlenstrom.
+  konstantem Spulenstrom.
     \subsubsection{Anzahl der Ladungsträger pro Volumen}
     \label{sec:ladtrprovol}
         Für die Anzahl der Ladungsträger pro Volumen ergibt sich mit \ref{eqn:Uh2} nach umstellen nach n
@@ -63,14 +63,14 @@
           \end{equation}
           Dabei bezeichnet $U_{H}$ die Hall-Spannung, $e_{0}$ die Elementarladung, $B$ die magnetische Flussdichte, $I_{q}$ den Platinenstrom und $d$ die Dicke
           der Probe. Mit Gleichung \ref{eqn:Uh21} ergibt sich dann die Anzahl der Ladungsträger pro Volumen für eine Silberprobe zu
-          \begin{equation}
+          \begin{equation*}
             n_{P} = (-1.0 \pm -0.6) \cdot 10^{25} \frac{1}{\si{\cubic\meter}}
-          \end{equation}
+          \end{equation*}
           für konstant gehaltenen Platinenstrom und
-          \begin{equation}
+          \begin{equation*}
             n_{S} = (-1.7 \pm -1.5) \cdot 10^{25} \frac{1}{\si{\cubic\meter}}
-          \end{equation}
-        für konstant gehaltenen Spuhlenstrom.
+          \end{equation*}
+        für konstant gehaltenen Spulenstrom.
         Der Fehler wurde mit Gaußscher Fehlerfortpflanzung
         \begin{equation}
           \sigma_f = \sqrt{\sum_{i=0}^{N} {\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i}}}
@@ -89,10 +89,10 @@
        Das Atomgewicht von Silber beträgt $m_{A} = 1.7917 \cdot 10^{-25} \si{\kilo\gram}$.
        Damit enthält die Probe $\frac{V_{Ag}}{m{A}} = 4.8113 \cdot 10^{20}$ Atome.
        Nun ergibt sich für die Anzahl der Ladungsträger pro Atom
-       \begin{align}
+       \begin{align*}
          z_{P} & = \frac{n_{P}}{4.8113 \cdot 10^{20}} = (-2.0 \pm 1.3)\cdot 10^{4} \\
          z_{S} & = \frac{n_{S}}{4.8113 \cdot 10^{20}} = (-3.6 \pm 3.2)\cdot 10^{4}
-       \end{align}
+       \end{align*}
     \subsubsection{Die mittlere Flugzeit}
     \label{sec:mitflugz}
       Die mittlere Flugzeit $\bar{\tau}$ berechnet sich nach
@@ -100,34 +100,34 @@
         \bar{\tau} = \frac{2m_{0}L}{e_{0}^{2}RnQ}
       \end{equation*}
       zu
-      \begin{align}
+      \begin{align*}
         \bar{\tau}_{P} & = (-3.4 \pm 2.3) \cdot 10^{-13} \\
         \bar{\tau}_{S} & = (-1.9 \pm 1.7) \cdot 10^{-13}.
-      \end{align}
+      \end{align*}
       Hierbei ist $m_{0} = 9.1122 \cdot 10^{-31} \si{\kilo\gram}$ die Ruhemasse des Elektrons, $L = 25.164 \cdot 10^{-3} \si{\meter}$ die Länge der Probe,
       $e_{0}$ die Elementarladung, $R = 0.6 \si{\ohm}$ der gemessene Widerstand, $n$ die Anzahl der Ladungsträger pro Volumen wie in \ref{sec:ladtrprovol} berechnet
       und $Q = 3.26568 \cdot 10^{-7}$ der Querschnitt der Probe.
     \subsubsection{Die mittlere Driftgeschwindigkeit}
-      Die mittlere Driftgeschwindigkeit $\bar{v_{d}}$ berechnet sich aus
+      Die mittlere Driftgeschwindigkeit $\bar{v}_d$ berechnet sich nach \ref{eqn:vd} aus
       \begin{equation}
-        \bar{v_{d}} = \frac{j}{e_{0} \cdot n}.
+        \bar{v}_d = \frac{j}{e_{0} \cdot n}.
       \end{equation}
       Hierbei bezeichnet $j = 1 \si{\ampere\per\cubic\milli\meter}$ die Stromdichte und $n$ die Anzahl der Ladungsträger pro Volumen, analog zu \ref{sec:mitflugz}.
       Dann ergibt sich
-      \begin{align}
+      \begin{align*}
         \bar{v_{dP}} & = (7 \pm 4) \cdot 10^{-7} \\
         \bar{v_{dS}} & = (3.6 \pm 3.2) \cdot 10^{-7}
-      \end{align}
+      \end{align*}
     \subsubsection{Die Beweglichkeit}
-      Die Beweglichkeit $\mu$ wird berechnet durch
+      Die Beweglichkeit $\mu$ wird nach \ref{eqn:mu} berechnet durch
       \begin{equation}
         \mu = -\frac{e_{0} \cdot \bar{\tau}}{2 \cdot m_{0}}.
       \end{equation}
       $m_{0}$ bezeichnet die Ruhemasse des Elektrons. Mit $\bar{\tau}$ aus Abschnitt \ref{sec:mitflugz} ergibt sich
-      \begin{align}
+      \begin{align*}
         \mu_{P} & = 0.030 \pm 0.020 \si{\coulomb\second\per\kilo\gram}\\
         \mu_{S} & = 0.017 \pm 0.015 \si{\coulomb\second\per\kilo\gram}
-      \end{align}
+      \end{align*}
     \subsubsection{Die Totalgeschwindigkeit}
     \label{sec:totgeschw}
       Um die mittlere Totalgeschwindigkeit zu berechnen, muss zuerst die Fermi-Energie bekannt sein. Diese berechnet sich nach
@@ -135,29 +135,29 @@
         E_{F} = \frac{h^{2}}{2m_{0}} \cdot \sqrt[3]{\left(\frac{3n}{8 \pi}\right)^{2}}
       \end{equation}
       wobei $h$ die Planck-Konstante, $m_{0}$ die Ruheenergie des Elektrons und $n$ die Anzahl der Ladungsträger pro Volumen bezeichnet. Damit ergibt sich dann
-      \begin{align}
+      \begin{align*}
         E_{FP} & = (2.6 \pm 1.2) \cdot 10^{-21} \si{\joule} \\
         E_{FS} & = (3.9 \pm 2.3) \cdot 10^{-21} \si{\joule}
-      \end{align}
+      \end{align*}
       Die Totalgeschwindigkeit $|v|$ wird berechnet durch
       \begin{equation}
         |v| = \sqrt{\frac{2 \cdot E_{F}}{m_{0}}}.
       \end{equation}
       Einsetzen der Werte für $E_{F}$ und $m_{0}$ ergibt nun
-      \begin{align}
+      \begin{align*}
         |v|_{P} & = (7.6 \pm 1.7)\cdot 10^{4} \si{\meter\per\second}\\
         |v|_{S} & = (9.3 \pm 2.7)\cdot 10^{4} \si{\meter\per\second}
-      \end{align}
+      \end{align*}
     \subsubsection{Die mittlere freie Weglänge}
       Die mittlere freie Weglänge $\bar{l}$ berechnet sich mit
       \begin{equation}
         \bar{l} = \bar{\tau} \cdot |v|
       \end{equation}
       Mit den Werten aus Abschnitt \ref{sec:mitflugz} sowie \ref{sec:totgeschw} ergibt sich nun
-      \begin{align}
+      \begin{align*}
         \bar{l_{P}} & = (-2.6 \pm 1.1)\cdot 10^{-8}  \si{\meter} \\
         \bar{l_{S}} & = (-1.8 \pm 1.0)\cdot 10^{-8}  \si{\meter}
-      \end{align}
+      \end{align*}
   \subsection{Die magnetische Flussdichte in Abhängigkeit des Feldstroms}
   \begin{table}[H]
     \centering
