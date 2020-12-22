@@ -54,7 +54,8 @@
         \end{table}
   \subsection{Berechnung der Leitfähigkeitsparameter}
   Bei den folgenden Rechnungen gibt ein Ergebnis mit Subskript $P$ ein Ergebnis unter Verwendung der Messwerte mit konstantem Platinenstrom und $S$ eines mit
-  konstantem Spulenstrom.
+  konstantem Spulenstrom. In den folgenden Berechnungen werden für Physikalische Konstanten der Werte der Scientific
+  Python Datenbank verwendet sowie für Unsicherheiten Numeric Python.
     \subsubsection{Anzahl der Ladungsträger pro Volumen}
     \label{sec:ladtrprovol}
         Für die Anzahl der Ladungsträger pro Volumen ergibt sich mit \ref{eqn:Uh2} nach umstellen nach n
@@ -93,8 +94,8 @@
       \end{equation*}
       zu
       \begin{align*}
-        \bar{\tau}_{P} & = (3.4 \pm 2.3) \cdot 10^{-13} \\
-        \bar{\tau}_{S} & = (1.9 \pm 1.7) \cdot 10^{-13}.
+        \bar{\tau}_{P} & = (3.4 \pm 2.3) \cdot 10^{-13} \si{\second} \\
+        \bar{\tau}_{S} & = (1.9 \pm 1.7) \cdot 10^{-13} \si{\second}. 
       \end{align*}
       Hierbei ist $m_{0} = 9.1122 \cdot 10^{-31} \si{\kilo\gram}$ die Ruhemasse des Elektrons, $L = 25.164 \cdot 10^{-3} \si{\meter}$ die Länge der Probe,
       $e_{0}$ die Elementarladung, $R = 0.6 \si{\ohm}$ der gemessene Widerstand, $n$ die Anzahl der Ladungsträger pro Volumen wie in \ref{sec:ladtrprovol} berechnet
@@ -107,8 +108,8 @@
       Hierbei bezeichnet $j = 1 \si{\ampere\per\cubic\milli\meter}$ die Stromdichte und $n$ die Anzahl der Ladungsträger pro Volumen, analog zu \ref{sec:mitflugz}.
       Dann ergibt sich
       \begin{align*}
-        \bar{v_{dP}} & = (7 \pm 4) \cdot 10^{-7} \\
-        \bar{v_{dS}} & = (3.6 \pm 3.2) \cdot 10^{-7}
+        \bar{v_{dP}} & = (7 \pm 4) \cdot 10^{-7} \si{\meter\per\second} \\
+        \bar{v_{dS}} & = (3.6 \pm 3.2) \cdot 10^{-7} \si{\meter\per\second}
       \end{align*}
     \subsubsection{Die Beweglichkeit}
       Die Beweglichkeit $\mu$ wird nach \ref{eqn:mu} berechnet durch
