@@ -39,7 +39,7 @@ errN=np.sqrt(N)
 plt.plot(x, gerade(x, *params), "k", linewidth=1, label="Regression Plateau")
 plt.errorbar(U, N, xerr=0, yerr=errN, fmt = "x", markersize = 3, ecolor='red', label="Messdaten")
 plt.xlabel(r"$U[V]$")
-plt.ylabel(r"$N[1/60s]$")
+plt.ylabel(r"$N[1/s]$")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot1.pdf')
@@ -99,4 +99,20 @@ plt.xlabel(r"$I[A]$")
 plt.ylabel(r"$Z$")
 plt.legend(loc='best')
 plt.tight_layout()
-plt.savefig('plot2.pdf')
+plt.savefig('plot2.pdf') 
+
+#Ausgeben der Parameter
+i=0
+h=ufloat(0,0)
+paramserr = np.array([h, h])
+errors = np.sqrt(np.diag(covariance_matrix))
+for name, value, error in zip('ab', params, errors):
+    paramserr[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i=i+1
+#Speichern in txt-Datein
+Iu=Iu*10**(6)
+Nu = unp.uarray(N, np.sqrt(N))
+np.savetxt("mess1.txt", np.column_stack([U, noms(Nu), stds(Nu)]), fmt = "%10.2f", delimiter = " & ", header = " U[V] N[1/s] deltaN")
+np.savetxt("mess2.txt", np.column_stack([U2, noms(N3u), stds(N3u), noms(Iu), stds(Iu)]), fmt = "%10.2f", delimiter = " & ", header = " U[V] N[1/s] deltaN I[micro A] deltaI")
+np.savetxt("mess3.txt", np.column_stack([noms(N3u), stds(N3u), noms(Iu), stds(Iu), noms(Qu), stds(Qu)]), fmt = "%10.2f", delimiter = " & ", header = " N[1/s] deltaN I[micro A] deltaI Q[e] deltaQ")
