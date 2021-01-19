@@ -3,90 +3,100 @@ import matplotlib.pyplot as plt
 import numpy as np
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+import scipy.constants as const
+from scipy.stats import sem
+from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
 
-#U, N, A = np.genfromtxt('mess1.txt', unpack=True)
-#
-#t = 125
-#Ns = N / t
-#n = np.sqrt(N) / t
-#
-##AUSGEWÄHLTE MESSWERTE
-#U2, N2 = np.genfromtxt('mess2.txt', unpack=True)
-#
-#Ns2 = N2 / t
-#n2 = np.sqrt(N2) / t
-#
-#params, covariance_matrix = np.polyfit(U2, Ns2, deg=1, cov=True)
-#
-#errors = np.sqrt(np.diag(covariance_matrix))
+U, N = np.genfromtxt('Kennlinie.dat', unpack=True)
+N=N/60
+################################################################################################
+#a)
 
-#print('a = {:.3f} ± {:.4f}'.format(params[0], errors[0]))
-#print('b = {:.3f} ± {:.4f}'.format(params[1], errors[1]))
+#Gerade für Platau
+def gerade(x, m, b):
+    return m*x+b
+Up = np.array(U[5:33])
+Np = np.array(N[5:33])
+x = np.linspace(np.min(Up), np.max(Up))
+params, covariance_matrix = np.polyfit(Up, Np, deg=1, cov=True)
+uncertainties = np.sqrt(np.diag(covariance_matrix))
 
-#def gerade (x, m, b):
-#    return m*x+b
-#
-#z = np.linspace(np.min(U) - 10, np.max(U) + 10)
-#
-#
-#plt.errorbar(U, Ns, yerr=n, fmt='o',label='Messwerte')
-#plt.plot(z, gerade (z, *params), 'b-', label='Ausgleichsgerade')
-#plt.xlim(np.min(U) - 10, np.max(U) + 10)
-#plt.xlabel(r'$U \: / \: V$')
-#plt.ylabel(r'$\frac{N}{t} \: / \: \frac{1}{s}$')
-#plt.legend(loc='best')
-#
-#plt.tight_layout()
-#plt.savefig('plot1.pdf')
+#Ausgeben der Parameter
+i=0
+h=ufloat(0,0)
+paramserr = np.array([h, h])
+errors = np.sqrt(np.diag(covariance_matrix))
+for name, value, error in zip('ab', params, errors):
+    paramserr[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i=i+1
+#Umrechnen in % pro 100V
+paramserr[0]=paramserr[0]*100
+print(f'a={paramserr[0]:.8f}s%/V') ##Richtige Einheit????????
 
-#a = ufloat(0.003, 0.0056)
-#b = ufloat(88.764, 2.8337)
-#
-#N3 = np.genfromtxt('mess3.txt', unpack=True)
-#t3 = 100
-#Ns3 = N3 / t3
-#n3 = np.sqrt(N3) / t3
-#
-#r1 = ufloat(235.14, 1.53)
-#r2 = ufloat(350.81, 1.87)
-#r12 = ufloat(566.51, 2.38)
-#
-#T = (r1 + r2 - r12) / (2 * r1 * r2)
+#Plot von Messdaten und Gerade
+errN=np.sqrt(N)
+plt.plot(x, gerade(x, *params), "k", linewidth=1, label="Regression Plateau")
+plt.errorbar(U, N, xerr=0, yerr=errN, fmt = "x", markersize = 3, ecolor='red', label="Messdaten")
+plt.xlabel(r"$U[V]$")
+plt.ylabel(r"$N[1/60s]$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot1.pdf')
 
-#print(T)
+###################################################################################################
+#b)
+tprim=120*10**(-6) #abgelesen vom Osz
+tnach=170*10**(-6)
+dt=tnach-tprim #zeitlicher Abstand zwischen Primär und Nachentladungsimpuls
 
+ttot1=160*10**(-6) #abgelesen vom Osz
 
-U4, Nw, Nf, i = np.genfromtxt('mess4.txt', unpack=True)
+N1=96041/120
+N12=158479/120
+N2=76518/120
+N1u=ufloat(N1, np.sqrt(N1))
+N12u=ufloat(N12, np.sqrt(N12))
+N2u=ufloat(N2, np.sqrt(N2))
 
-t = 125
-Ns = unp.uarray(Nw, Nf)
+ttot2=(N1+N2-N12)/(2*N1*N2)
+ttot2u=(N1u+N2u-N12u)/(2*N1u*N2u)
 
-I = i * 1e-6
-p = 6.242*1e9
-Q = I / Nw
-print(Q)
+abw=100*(ttot2-ttot1)/ttot2
+print(f'Totzeit Osz: t1={ttot1*10**(6):.3f} micro s')
+print(f'Totzeit 2Q: t2={ttot2u*10**(6):.3f} micro s')
+print(f'Die Abweichung von t1 bezüglich t2 ist p={abw:.3f}%')
 
-Qf = np.array([0.14, 0.13, 0.16, 0.26, 0.31, 0.30])
+##################################################################################################
+#c)
+U2, N3, I = np.genfromtxt('Zaehlrohrstrom.dat', unpack=True)
+#in SI
+I=I*10**(-6)
+Im=np.mean(I)
+N3=N3/60
+#als ufloats
+Iu= unp.uarray(I, 0.05*10**(-6))
+Imu=ufloat(np.mean(I), sem(I))
+N3u = unp.uarray(N3, np.sqrt(N3))
 
-#print(Q)
-#params, covariance_matrix = np.polyfit(U4, Q, deg=1, cov=True)
-#
-#errors = np.sqrt(np.diag(covariance_matrix))
-#
-#print('a = {:.3f} ± {:.4f}'.format(params[0], errors[0]))
-#print('b = {:.3f} ± {:.4f}'.format(params[1], errors[1]))
-#
-#def gerade2 (x, m, b):
-#    return m*x+b
-#
-#z2 = np.linspace(np.min(U4) - 10, np.max(U4) + 10)
-#
-#plt.errorbar(U4, Q, yerr=Qf, fmt='o',label='Messwerte')
-#plt.plot(z2, gerade2 (z2, *params), 'b-', label='Ausgleichsgerade')
-#plt.xlim(np.min(U4) - 10, np.max(U4) + 10)
-#plt.xlabel(r'$U \: / \: V$')
-#plt.ylabel(r'$Q \: / \: Ge$')
-#plt.legend(loc='best')
-#
-#plt.tight_layout()
-#plt.savefig('plot2.pdf')
+Qu=Imu/N3u
+Qu=Qu/const.e
+#print(f'die pro einfallendem Teilchen freigesetzte Ladung beträgt Q={Qu:.8f}e')
+print("\nDie Q sind:")
+print(Qu)
+
+Z=I/(N3*const.e)
+Zu=Iu/(N3u*const.e)
+print("\nDie Z sind:")
+print(Zu)
+
+plt.figure()
+plt.errorbar(I, Z, xerr=stds(Iu), yerr=stds(Zu), fmt = "x", ecolor='red', label="Messdaten")
+x=np.linspace(np.min(I), np.max(I))
+params,covariance_matrix=np.polyfit(I, Z, deg=1, cov=True)
+plt.plot(x, gerade(x, *params), "k", label="Regression")
+plt.xlabel(r"$I[A]$")
+plt.ylabel(r"$Z$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot2.pdf')
