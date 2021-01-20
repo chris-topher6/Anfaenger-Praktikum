@@ -1,2 +1,91 @@
+\newpage
 \section{Diskussion}
 \label{sec:Diskussion}
+Im Folgenden sind die Ergebnisse aus Kapitel \ref{sec:Auswertung} noch einmal aufgelistet.
+    \begin{table}[H]
+        \centering
+        \caption{Auflistung der Ergebnisse}
+        \label{tab:test}
+        \begin{tabular}{c c c}
+            \toprule
+            \text{Größe} & \text{Wert} & \text{Einheit}\\
+            \midrule
+            $I_\text{Plateau}       $   & [370, 640]          & $\si{\volt}                         $\\
+            $l_\text{Plateau}       $   & 270                 & $\si{\volt}                         $\\
+            $a_\text{Plateau}       $   & 1.92 \pm 0.37       & $\si{\percent\per\volt\per\second}  $\\
+            $t_\text{Abstand}       $   & 50                  & $\si{\micro\second}                 $\\
+            $t_{\text{tot-Osz}}    $   & 160                 & $\si{\micro\second}                 $\\
+            $t_{\text{tot-2Q}}    $   & 114.96 \pm 47.27    & $\si{\micro\second}                 $\\
+            $p                      $   & -39.18              & $\%                                 $\\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    \begin{table}[H]
+        \centering
+        \caption{Die freigesetzte Ladung pro Teilchen}
+        \label{tab:ladungproteilchen2}
+        \begin{tabular}{c c @{${}\pm{}$} c c @{${}\pm{}$} c}
+            \toprule
+            $U \; [\si{\volt}]$ & 
+            \multicolumn{2}{c} {$N \; [\si{\per\second}]$}   & 
+            \multicolumn{2}{c} {$Q \; [\si{\giga}\symup{e_0}]$} \\ 
+            \midrule
+            350 & 163.95 & 12.80 & 36.64 & 7.50\\
+            400 & 166.58 & 12.91 & 36.06 & 7.38\\
+            450 & 171.07 & 13.08 & 35.12 & 7.17\\
+            500 & 169.18 & 13.01 & 35.51 & 7.25\\
+            550 & 169.73 & 13.03 & 35.39 & 7.23\\
+            600 & 170.88 & 13.07 & 35.16 & 7.18\\
+            650 & 174.88 & 13.22 & 34.35 & 7.00\\
+            700 & 192.45 & 13.87 & 31.22 & 6.32\\    
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    \begin{table}[H]
+        \centering
+        \caption{Die Zahl der freigesetzten Ladungen pro Teilchen}
+        \label{tab:zahlproteilchen2}
+        \begin{tabular}{c c @{${}\pm{}$} c c @{${}\pm{}$} c}
+            \toprule
+            $U \; [\si{\volt}]$ & 
+            \multicolumn{2}{c}{$N \; [\si{\per\second}]$} & 
+            \multicolumn{2}{c}{$Z [\si{\giga}]$} \\
+            \midrule
+            350 & 163.95 & 12.80 & 11.42 & 2.10\\
+            400 & 166.58 & 12.91 & 14.99 & 2.20\\
+            450 & 171.07 & 13.08 & 25.54 & 2.67\\
+            500 & 169.18 & 13.01 & 29.51 & 2.92\\
+            550 & 169.73 & 13.03 & 36.77 & 3.37\\
+            600 & 170.88 & 13.07 & 47.48 & 4.07\\
+            650 & 174.88 & 13.22 & 49.97 & 4.18\\
+            700 & 192.45 & 13.87 & 58.38 & 4.51\\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\newpage
+\noindent Die Ergebnisse entsprechen von den Größenordnungen der Theorie und auch die berechneten Unsicherheiten
+sind plausibel. Bei den Graphen sind zudem keine großen Abweichungen einzelner Messpunkte von der 
+Regression zu erkennen. Dies lässt darauf schließen, dass bei dem Versuch keine gravierenden systematischen
+Fehler aufgetreten sind.
+\\
+Es gibt jedoch Fehlerquellen, die zu Ungenauigkeiten geführt haben können. 
+\begin{itemize}
+    \item \textit{Ablesen vom Oszilloskop}\\
+        Das Ablesen des zeitlichen Abstands zwischen Primär- und Nachentladungsimpulsen und der Totzeit
+        von dem Oszilloskop (vgl. Abb.\ref{fig:Osz}) kann zu zusätzlichen Messunsicherheiten geführt haben.
+        Dies kann auch ein Grund für die relativ große Abweichung zwischen $t_{tot-Osz}$ und 
+        $t_{tot-2Q}$ von $p=\num{-39.18}\%$ sein. Die zwei-Quellen-Methode kann dabei als 
+        genauer angenommen werden. Eine ähnlich hohe Unsicherheit ist demnach auch bei $t_{Abstand}$
+        zu erwarten. 
+    \item \textit{Einmalige Messung der Totzeit}\\
+        Bei der Messung der Totzeit ist bei beiden Methoden nur jeweils eine Messung durchgeführt worden.
+        Dadurch werden die gemessenen Werte direkt zum Berechnen der Totzeit benutzt, anstatt einen 
+        Mittelwert zu bilden, bei dem der Standartfehler sehr viel geringer ist. Auch dies könnte zu 
+        der großen Abweichung zwischen $t_{tot-Osz}$ und $t_{tot-2Q}$ beigetragen haben.
+    \item \textit{Ablesen des Plateau-Intervalls}\\
+        Druch die natürlich auftretenden Schwankungen in dem Zerfallsprozess wurde das Ablesen des 
+        Plateau-Intervalls (vgl. Abb.\ref{fig:Kennlinie}) erschwert. Dies hat direkte Auswirkungen auf
+        die Plateau-Länge und Plateau-Steigung. Durch die große Anzahl an Messwerten führt ein kleiner
+        Fehler bei dem Ablesen des Plateau-Intervalls jedoch nur zu einem noch kleineren Fehler bei der
+        Plateau-Steigung.
+\end{itemize}
