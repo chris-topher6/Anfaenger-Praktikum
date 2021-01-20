@@ -91,8 +91,9 @@ ergeben sich dabei aus Gleichung \ref{eqn:Wurzel}.
     \caption{Kennlinie mit linearer Regression an dem Plateau}
     \label{fig:Kennlinie}
   \end{figure}
-  \noindent Durch Ablesen kann nun das Intervall des Plateaus auf $I=[370, 640]$ geschätzt werden. In diesem 
-  Intervall wurde von \textit{python} eine Regression durchgeführt. Diese hat eine Funktionsgleichung der Form
+  \noindent Durch Ablesen kann nun das Intervall des Plateaus auf $I_{P}=[\SI{370}{\volt}, \SI{640}{\volt}]$ geschätzt werden.
+  Die Länge die Plateaus beträgt somit $l_{P}=\SI{270}{\volt}$. Für das Intervall 
+  wurde von \textit{python} eine Regression durchgeführt. Diese hat eine Funktionsgleichung der Form
   \begin{equation}
       y=a\cdot x+b \label{eqn:gerade}
   \end{equation} 
@@ -110,7 +111,7 @@ ergeben sich dabei aus Gleichung \ref{eqn:Wurzel}.
 \subsection{Der zeitliche Abstand zwischen Primär- und Nachentladungsimpulsen}
 Der zeitliche Abstand zwischen Primär- und Nachentladungsimpulsen erfolgt über Ablesen von einem
 Oszilloskop. Das dafür verwendete Bild ist dabei in Abbildung \ref{fig:Osz} dargestellt. Die Zeitachse
-am Oszilloskop ist \SI{100}{\micro\second}$/DIV$.
+am Oszilloskop ist $\SI{100}{\micro\second}/\text{DIV}$.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{content/Osz.png}
@@ -127,7 +128,7 @@ Durch dieses Vorgehen ergibt sich
 Die Totzeit kann auf zwei verschiedenen Wegen ermittelt werden.
 \subsubsection*{Abesen vom Oszilloskop}
         Auch die Totzeit kann durch Ablesen von Abbildung \ref{fig:Osz} bestimmt werden. Das liefert
-        $t_{tot_1}=\SI{160}{\micro\second}$.
+        $t_{tot-Osz}=\SI{160}{\micro\second}$.
 \subsubsection*{Berechnung mit Zwei-Quellen-Methode}
         Bei der Zwei-Quellen-Methode wurden die Messwerte
         \begin{align*}
@@ -139,11 +140,11 @@ Die Totzeit kann auf zwei verschiedenen Wegen ermittelt werden.
         \begin{equation*}
             t_{tot}\approx \frac{N_1+N_2-N_{1+2}}{2N_1N_2}
         \end{equation*}
-        die Totzeit berechnet. Einsetzen ergibt $t_{tot_2}=\SI{114.96 \pm 47.27}{\micro\second}$.
-\subsubsection*{prozentuale Abweichung}
+        die Totzeit berechnet. Einsetzen ergibt $t_{tot-2Q}=\SI{114.96 \pm 47.27}{\micro\second}$.
+\subsubsection*{Prozentuale Abweichung}
 Die prozentuale Abweichung der beiden Werte kann durch 
 \begin{equation}
-    p=\frac{t_{tot_2}-t_{tot_1}}{t_{tot_2}}*100
+    p=\frac{t_{tot-Q}-t_{tot-Osz}}{t_{tot-2Q}}*100
 \end{equation}
 berechnet werden. Durch Einsetzen ergibt sich $p=\num{-39.18}\%$.
 
@@ -208,7 +209,6 @@ berechnet, wobei $\symup{e_0}$ die Elementarladung ist.
         \bottomrule
     \end{tabular}
 \end{table}
-%Anzahl an freigesetzten Ladungen Z
 \noindent In Abbildung \ref{fig:Z} ist die Anzahl an freigesetzten Ladungen pro Teilchen gegen die Stromstärke 
 aufgetragen. Zudem ist mit \textit{python} eine Regression berechnet worden. 
 \begin{figure}[H]
@@ -217,9 +217,9 @@ aufgetragen. Zudem ist mit \textit{python} eine Regression berechnet worden.
     \caption{Anzahl an freigesetzten Ladungen pro Teilchen in Abhängigkeit der Stromstärke}
     \label{fig:Z}
 \end{figure}
-Die Regressionsgerade ist dabei der Form \ref{eqn:gerade}, mit den Parametern
+\noindent Die Regressionsgerade ist dabei der Form \ref{eqn:gerade}, mit den Parametern
 \begin{align*}
     a &= \SI{32.6 \pm 1.39}{\peta\per\ampere}\\
-    b &= \SI{2.85 \pm 1.50}{\giga}.
+    b &= \num{2.85 \pm 1.50}\si{\giga}.
 \end{align*}
 Die Unsicherheiten wurden dabei wieder mit \textit{nummeric python} berechnet.
