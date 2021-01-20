@@ -4,13 +4,13 @@
     Kathode dient. In der Achse des Zylinders befindet sich der Anodendraht, der ebenfalls an die
     Spannungsquelle angeschlossen ist. Im Inneren des Zylinders befindet sich ein Gasgemisch,
     im vorliegenden Versuch wird Argon und Ethylalkohol verwendet.
-    \begin{figure}
+    \begin{figure}[H]
       \centering
-        \label{fig:aufbau1}
-        \includegraphics[scale=0.3]{content/AufbauGMZ.png}
+        \includegraphics[scale=0.4]{content/AufbauGMZ.png}
         \caption{Der Aufbau eines Zählrohres mit Eintrittsfenster.}
+        \label{fig:aufbau1}
     \end{figure}
-    \\
+    \noindent
     In obiger Abbildung ist ein Zählrohr mit Eintrittsfenster dargestellt. Dies wird benötigt,
     um einerseits das Gasgemisch innerhalb des Zylinders zu halten und andererseits den
     $\alpha$- und $\beta$-Teilchen zu ermöglichen, in den Zylinder zu gelangen. Es gibt auch
@@ -23,37 +23,43 @@
     seine Energie abgeben. Dadurch entstehen Ionen und Elektronen. Die Anzahl der positiven Ionen ist
     proportional zu der Energie des eingefallenen Teilchens. Dieser Prozess wird als Primärentladung
     bezeichnet.
-    \begin{figure}
+  \subsection{Die Wirkungsweise des Geiger-Mühler-Zählrohres}
+    \begin{figure}[H]
       \centering
-        \label{fig:aufbau2}
-        \includegraphics[scale=0.3]{content/SpannungAnzahlElektronenGMZ.png}
+        \includegraphics[scale=0.4]{content/SpannungAnzahlElektronenGMZ.png}
         \caption{Die Anzahl der erzeugten Elektronen-Ionenpaare aufgetragen gegen die Spannung.}
+          \label{fig:aufbau2}
     \end{figure}
-    \\
-    In Abbildung \ref{fig:aufbau2} ist erkennbar, dass die Anzahl der Elektronen-Ionen-Paare von der
-    angelegten Spannung abhängt. Wenn die Spannung nicht hoch genug ist, erreichen nicht alle
-    Elektronen die Anode und rekombinieren. Dies ist in Abbildung \ref{fig:aufbau2} der Bereich [1].
-    Bei erhöhter Spannung steigt die Feldstärke soweit an, dass die Rekombinationswahrscheinlichkeit
-    sehr gering wird. Der Ionisationsstrom ist nun proportional zu der Energie und der Intensität der
-    einfallenden Teilchen, da fast alle Elektronen zu der Anode gelangen. Dies entspricht Bereich [2]
-    in Abbildung \ref{fig:aufbau2}. Ein solches Gerät wird als Ionisationskammer bezeichnet.
-    Da eine Ionisationskammer nur relativ geringe Ströme erzeugt, kann eine solche Apparatur nur bei
-    hohen Intensitäten verwendet werden.
-    Bei weiterer Erhöhung der Feldstärke erreichen die aus der Ionisation entstandenen Elektronen
-    genug Energie um selber zu ionisieren. Dieser Prozess wird als Stoßionisation bezeichnet. Dadurch
-    ergibt sich eine exponentielle Erzeugung von Elektronen, eine Townsend-Lawine. Die am Anodendraht
-    gemessene Ladung $Q$ ist nun recht groß und daher gut messbar. Dieser Ladungsimpuls ist
-    proportional zu der Energie und Intensität der einfallenden Teilchen und ermöglicht daher eine
-    Bestimmung dieser Werte. Eine in diesem Spannungsbereich arbeitende Apparatur wird als
-    Proportionalitätszählrohr bezeichnet und ist in Abbildung \ref{fig:aufbau2} Bereich [3]
-    dargestellt.
-    Noch höhere Spannung sorgt dafür dass die Ladung $Q$ unabhängig von der Primären Ionisation wird.
-    Dieser Bereich heißt Auslösebereich und ist in Abbildung \ref{fig:aufbau2} als Bereich [4]
-    dargestellt. Nun entstehen bei der Primären Ionisation neben den Ionen und Elektronen auch
-    UV-Photonen durch Elektronenstoß der durch die höhere Spannung angeregten Argon-Atomen. Die
-    UV-Photonen sind ladungsneutral und können sich daher auch senkrecht zum elektrischen Feld bewegen.
-    Dadurch setzt sich die Lawine im gesamten Volumen des Zählrohrs fort. In diesem Spannungsbereich
-    kann nur die Intensität gemessen werden.
+    \noindent
+    \subsubsection{Rekombination vor Sammlung}
+      In Abbildung \ref{fig:aufbau2} ist erkennbar, dass die Anzahl der Elektronen-Ionen-Paare von der
+      angelegten Spannung abhängt. Wenn die Spannung nicht hoch genug ist, erreichen nicht alle
+      Elektronen die Anode und rekombinieren. Dies ist in Abbildung \ref{fig:aufbau2} der Bereich [I].
+    \subsubsection{Die Ionisationskammer}
+      Bei erhöhter Spannung steigt die Feldstärke soweit an, dass die Rekombinationswahrscheinlichkeit
+      sehr gering wird. Der Ionisationsstrom ist nun proportional zu der Energie und der Intensität
+      der einfallenden Teilchen, da fast alle Elektronen zu der Anode gelangen. Dies entspricht
+      Bereich [II] in Abbildung \ref{fig:aufbau2}. Ein solches Gerät wird als Ionisationskammer
+      bezeichnet. Da eine Ionisationskammer nur relativ geringe Ströme erzeugt, kann eine solche
+      Apparatur nur bei hohen Intensitäten verwendet werden.
+    \subsubsection{Das Proportionalitätszählrohr}
+      Bei weiterer Erhöhung der Feldstärke besitzen die aus der Ionisation entstandenen Elektronen
+      genug Energie um selber zu ionisieren. Dieser Prozess wird als Stoßionisation bezeichnet.
+      Dadurch ergibt sich eine exponentielle Erzeugung von Elektronen, eine Townsend-Lawine. Die am
+      Anodendraht gemessene Ladung $Q$ ist nun recht groß und daher gut messbar. Dieser Ladungsimpuls
+      ist proportional zu der Energie und Intensität der einfallenden Teilchen und ermöglicht daher
+      eine Bestimmung dieser Werte. Eine in diesem Spannungsbereich arbeitende Apparatur wird als
+      Proportionalitätszählrohr bezeichnet und ist in Abbildung \ref{fig:aufbau2} Bereich [III]
+      dargestellt.
+    \subsubsection{Der Auslösebereich}
+      Noch höhere Spannung sorgt dafür, dass die Ladung $Q$ unabhängig von der Primären Ionisation
+      wird. Dieser Bereich heißt Auslösebereich und ist in Abbildung \ref{fig:aufbau2} als Bereich
+      [IV] dargestellt. Dies ist der Bereich, in dem ein Geiger-Müller-Zählrohr im engeren Sinne
+      arbeitet. Nun entstehen bei der Primären Ionisation neben den Ionen und Elektronen auch
+      UV-Photonen durch Elektronenstoß der durch die höhere Spannung angeregten Argon-Atome. Die
+      UV-Photonen sind ladungsneutral und können sich daher auch senkrecht zum elektrischen Feld
+      bewegen. Dadurch setzt sich die Lawine im gesamten Volumen des Zählrohrs fort. In diesem
+      Spannungsbereich kann nur die Intensität gemessen werden.
   \subsection{Die Totzeit}
     Nachdem ein Teilchen eingetroffen ist, bewegen sich die abgespaltenen Elektronen recht schnell zu
     dem Anodendraht. Die Ionen besitzen eine wesentlich größere Masse und brauchen daher länger um zu
@@ -79,17 +85,18 @@
     Als Charakteristik eines Geiger-Müller-Zählrohres bezeichnet man die registrierte Teilchenanzahl N
     bei konstanter Strahlungsintensität gegen die angelegte Spannung $U$ aufgetragen. Eine solche
     Charakteristik ist im Folgenden abgebildet.
-    \begin{figure}
+    \begin{figure}[H]
       \centering
-      \label{fig:charakteristik1}
-      \includegraphics[scale=0.4]{content/Charakteristik}
+      \includegraphics[scale=0.6]{content/Charakteristik}
       \caption{Die Charakteristik eines Zählrohres.}
+      \label{fig:charakteristik1}
     \end{figure}
+    \noindent
     Ab der Spannung $U_{E}$ beginnt der Auslösebereich, ab dem das Geiger-Müller-Zählrohr arbeitet.
     Der größte Teil des Auslösebereichs ist das Plateau. Die Steigung des Plateaus wird durch eine
     geringe Anzahl an Nachentladungen ausgelöst, die trotz des Alkohols ablaufen. Bei einem idealen
     Zählrohr wäre die Steigung des Plateaus also null. Daher ist die Qualität eines Zählrohres höher,
-    wenn das Plateau lang und flach ist. Auf der rechten Seite des Plateaus in Abbildung
+    wenn das Plateau länger und flacher ist. Auf der rechten Seite des Plateaus in Abbildung
     \ref{fig:charakteristik1} beginnt der Bereich der Dauerentladung, wo die zunehmende Anzahl der
     Nachentladungen in eine selbstständige Gasentladung übergehen und eine Dauerentladung gezündet
     wird. Durch die entstehenden sehr hohen Stromdichten wird das Zählrohr in diesem Bereich schnell
