@@ -1,11 +1,12 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Messdaten}
+\label{subsec:messdaten}
 Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1} und \ref{tab:mess2}
 dargestellt.
 \begin{table}[H]
     \centering
-        \caption{Messdaten 1}
+        \caption{Messdaten 1. Quelle:\cite{AP02}}
         \label{tab:mess1}
         \sisetup{table-format=3.2}
         \begin{tabular}{c c @{${}\pm{}$} c}
@@ -57,7 +58,7 @@ dargestellt.
 
 \begin{table}[H]
   \centering
-      \caption{Messdaten 2}
+      \caption{Messdaten 2. Quelle:\cite{AP02}}
       \label{tab:mess2}
       \sisetup{table-format=3.2}
       \begin{tabular}{c c @{${}\pm{}$} c c @{${}\pm{}$} c}
@@ -79,6 +80,7 @@ dargestellt.
     \end{table}
     
 \subsection{Die Zählrohr-Charakteristik}
+\label{subsec:Charakteristik}
 Da die Zählrate Poission verteilt ist, ist die Messunsicherheit gegeben durch 
 \begin{equation}
     \Delta N=\sqrt{N}. \label{eqn:Wurzel}
@@ -91,7 +93,7 @@ ergeben sich dabei aus Gleichung \ref{eqn:Wurzel}.
     \caption{Kennlinie mit linearer Regression an dem Plateau}
     \label{fig:Kennlinie}
   \end{figure}
-  \noindent Durch Ablesen kann nun das Intervall des Plateaus auf $I_{P}=[\SI{370}{\volt}, \SI{640}{\volt}]$ geschätzt werden.
+  \noindent Durch Ablesen kann nun das Plateau-Intervall auf $I_{P}=[\SI{370}{\volt}, \SI{640}{\volt}]$ geschätzt werden.
   Die Länge die Plateaus beträgt somit $l_{P}=\SI{270}{\volt}$. Für das Intervall 
   wurde von \textit{python} eine Regression durchgeführt. Diese hat eine Funktionsgleichung der Form
   \begin{equation}
@@ -109,13 +111,14 @@ ergeben sich dabei aus Gleichung \ref{eqn:Wurzel}.
   \end{equation*}
 
 \subsection{Der zeitliche Abstand zwischen Primär- und Nachentladungsimpulsen}
+\label{subsec:abstand}
 Der zeitliche Abstand zwischen Primär- und Nachentladungsimpulsen erfolgt über Ablesen von einem
 Oszilloskop. Das dafür verwendete Bild ist dabei in Abbildung \ref{fig:Osz} dargestellt. Die Zeitachse
 am Oszilloskop ist $\SI{100}{\micro\second}/\text{DIV}$.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{content/Osz.png}
-    \caption{Spannungs-Zeit-Messung mittels Oszilloskop}
+    \caption{Spannungs-Zeit-Messung mittels Oszilloskop. Quelle:\cite{AP02}}
     \label{fig:Osz}
   \end{figure}
 Durch dieses Vorgehen ergibt sich
@@ -125,7 +128,11 @@ Durch dieses Vorgehen ergibt sich
 \end{align*}
 
 \subsection{Die Totzeit}
-Die Totzeit kann auf zwei verschiedenen Wegen ermittelt werden.
+\label{subsec:totzeit}
+Die Totzeit kann auf zwei verschiedenen Wegen ermittelt werden. Zum einen kann diese von einem Oszilloskop
+abgelesen und zum andere durch die Zwei-Quellen-Methode bestimmt werden. 
+In diesem Unterkapitel wird die Totzeit durch beide Methoden ermittelt und die Abweichung der Werte 
+berechnet. 
 \subsubsection*{Abesen vom Oszilloskop}
         Auch die Totzeit kann durch Ablesen von Abbildung \ref{fig:Osz} bestimmt werden. Das liefert
         $t_{tot-Osz}=\SI{160}{\micro\second}$.
@@ -136,7 +143,7 @@ Die Totzeit kann auf zwei verschiedenen Wegen ermittelt werden.
             N_{1+2} &= \SI{637.65}{\per\per\second}\\
             N_2 &= \SI{1320.66}{\per\per\second}
         \end{align*}
-        aufgenommenen. Nun wird durch 
+        aufgenommenen \cite{AP02}. Nun wird durch 
         \begin{equation*}
             t_{tot}\approx \frac{N_1+N_2-N_{1+2}}{2N_1N_2}
         \end{equation*}
@@ -144,23 +151,24 @@ Die Totzeit kann auf zwei verschiedenen Wegen ermittelt werden.
 \subsubsection*{Prozentuale Abweichung}
 Die prozentuale Abweichung der beiden Werte kann durch 
 \begin{equation}
-    p=\frac{t_{tot-Q}-t_{tot-Osz}}{t_{tot-2Q}}*100
+    p_{abw}=\frac{t_{tot-Q}-t_{tot-Osz}}{t_{tot-2Q}}\cdot 100
 \end{equation}
-berechnet werden. Durch Einsetzen ergibt sich $p=\num{-39.18}\%$.
+berechnet werden. Durch Einsetzen ergibt sich $p_{abw}=\num{-39.18}\%$.
 
 \subsection{Freigesetzte Ladung pro Teilchen}
-%freigesetzte Ladung Q
+\label{subsec:Ladung}
 Die freigesetzte Ladung pro Teilchen lässt sich durch
 \begin{equation}
-    Q=\frac{\bar{I}}{N}
+    Q=\frac{\bar{I}}{N} \label{eqn:Q}
 \end{equation}
 berechnen. $\bar{I}$ ist dabei das arithmetische Mittel der Werte von $I$, die aus Tabelle \ref{tab:mess2}
 zu entnehmen sind. Das arithmetische Mittel ist dabei durch 
 \begin{equation*}
     \bar{x}_\text{k} = \frac{1}{N} \sum_{k = 1}^{N} x_\text{k}
 \end{equation*} 
-gegeben. Durch Einsetzen ergibt sich $\bar{I}=\SI{0.96 \pm 0.18}{\micro\ampere}$.
-Die berechneten Werte für $Q$ sind in Tabelle \ref{tab:Q} aufgelistet.
+gegeben. Durch Einsetzen ergibt sich für den Mittelwert $\bar{I}=\SI{0.96 \pm 0.18}{\micro\ampere}$.
+Die mit Gleichung \ref{eqn:Q} berechneten Werte für $Q$ sind in Tabelle \ref{tab:ladungproteilchen} 
+aufgelistet.
 \begin{table}[H]
     \centering
     \caption{Die freigesetzte Ladungen pro Teilchen}

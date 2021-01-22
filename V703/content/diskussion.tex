@@ -1,25 +1,28 @@
 \newpage
 \section{Diskussion}
 \label{sec:Diskussion}
-Im Folgenden sind die Ergebnisse aus Kapitel \ref{sec:Auswertung} noch einmal aufgelistet.
+Im Folgenden sind die Ergebnisse aus Kapitel \ref{subsec:Charakteristik} - \ref{subsec:totzeit}
+noch einmal aufgelistet.
     \begin{table}[H]
-        \centering
-        \caption{Auflistung der Ergebnisse}
+        %\centering
+        %\caption{Auflistung der Ergebnisse}
         \label{tab:test}
-        \begin{tabular}{c c c}
-            \toprule
-            \text{Größe} & \text{Wert} & \text{Einheit}\\
-            \midrule
-            $I_\text{Plateau}       $   & [370, 640]          & $\si{\volt}                         $\\
-            $l_\text{Plateau}       $   & 270                 & $\si{\volt}                         $\\
-            $a_\text{Plateau}       $   & 1.92 \pm 0.37       & $\si{\percent\per\volt\per\second}  $\\
-            $t_\text{Abstand}       $   & 50                  & $\si{\micro\second}                 $\\
-            $t_{\text{tot-Osz}}    $   & 160                 & $\si{\micro\second}                 $\\
-            $t_{\text{tot-2Q}}    $   & 114.96 \pm 47.27    & $\si{\micro\second}                 $\\
-            $p                      $   & -39.18              & $\%                                 $\\
-            \bottomrule
+        \begin{tabular}{c @{${}={}$} c c}
+        %    \toprule
+        %    \text{Größe} & \text{Wert} & \text{Einheit}\\
+        %    \midrule
+            $I_\text{Plateau}       $   & [370, 640]         & $\si{\volt}                         $\\
+            $l_\text{Plateau}       $   & 270                & $\si{\volt}                         $\\
+            $a_\text{Plateau}       $   & (1.92 \pm 0.37)    & $\si{\percent\per\volt\per\second}  $\\
+            $t_\text{Abstand}       $   & 50                 & $\si{\micro\second}                 $\\
+            $t_{\text{tot-Osz}}     $   & 160                & $\si{\micro\second}                 $\\
+            $t_{\text{tot-2Q}}      $   & (114.96 \pm 47.27) & $\si{\micro\second}                 $\\
+            $p_{abw}                $   & -39.18             & $\%                                 $\\
+        %    \bottomrule
         \end{tabular}
     \end{table}
+    \noindent Die Ergebnisse aus Kapitel \ref{subsec:Ladung} sind in den Tabellen \ref{tab:ladungproteilchen2}
+    und \ref{tab:zahlproteilchen2} dargestellt.
     \begin{table}[H]
         \centering
         \caption{Die freigesetzte Ladung pro Teilchen}
@@ -78,7 +81,7 @@ Es gibt jedoch Fehlerquellen, die zu Ungenauigkeiten geführt haben können.
         genauer angenommen werden. Eine ähnlich hohe Unsicherheit ist demnach auch bei $t_{Abstand}$
         zu erwarten. 
     \item \textit{Einmalige Messung der Totzeit}\\
-        Bei der Messung der Totzeit ist bei beiden Methoden nur jeweils eine Messung durchgeführt worden.
+        Bei der Messung der Totzeit ist bei beiden Methoden jeweils nur eine Messung durchgeführt worden.
         Dadurch werden die gemessenen Werte direkt zum Berechnen der Totzeit benutzt, anstatt einen 
         Mittelwert zu bilden, bei dem der Standartfehler sehr viel geringer ist. Auch dies könnte zu 
         der großen Abweichung zwischen $t_{tot-Osz}$ und $t_{tot-2Q}$ beigetragen haben.
