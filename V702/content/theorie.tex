@@ -1,2 +1,70 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Grundlagen}
+\label{sec:Grundlagen}
+Atomkerne sind nur für bestimmte Verhältnisse ihrer Bestandteile, den Protonen und Neutronen, stabil.
+Bei sogenannten Isotopen ist nun die Protonenanzahl identisch, also handelt es sich um das gleiche 
+Element, die Neutronenzahl aber ist verschieden. So sind die Verhältnisse der Protronen und Neutronen
+im Atomkern bei verschiedenen Isotopen unterschiedlich, weswegen einige Isotope instabile Atomkerne
+besitzen. Diese zerfallen dann radioaktiv.\\
+Um die verschiedenen Isotope eindeutig in Fromeln darstellenzu können, wird die Massenzahl des Elements
+oben links neben das Elementensymbol geschrieben und gegebenfalls wird auch die Kernladung unten links 
+hinzugefügt.\\
+Der radioaktive Zerfall ist dabei nicht deterministisch, sodass dieser durch eine Wahrscheinlichkeit 
+charakterisiert wird. Diese Zerfallswahrscheinlichkeit kann durch die Halbwertszeit $T$ beschrieben 
+werden. Die Halbwertszeit ist dabei die Zeit, in der die Hälte der instabilen Atomkerne zerfallen sind
+und kann bei verschiedenen Isotopen um 23 Größenordnungen verteilt sein.\\
+\subsection{Gewinnung von Isotopen durch Neutronenbeschuss}
+In dem Versuch werden aus praktischen Gründen Isotope mit einer Halbwertszeit zwischen Sekunden und 
+wenigen Stunden verwendet. Da diese auf Grund des raschen Zerfalls nicht natürlich vorkommen, werden 
+sie vor Beginn der Messung durch Neutronenbeschuss hergestellt. Ein Atom $\ce{^{m}_{z}A}$ wird dabei 
+mit einem Neutron $\ce{^{1}_{0}}$ beschossen und reagiert mit diesem nach
+\begin{equation}
+    \ce{^{m}_{z}A}+\ce{^{1}_{0}n}\rightarrow
+    \ce{^{m + 1}_{z}A^*}
+    \rightarrow\ce{^{m + 1}_{z}A}+\gamma. \label{eqn:iso1}
+\end{equation}
+Das nun entstandene Isotop $\ce{^{m + 1}_{z}A}$ ist dann jenes, welches für das Experiment benötigt
+wird. In diesem Fall werden als Ausgangselemente Vanadium $\ce{^{51}V}$ und die Rhodium $\ce{^{103}Rh}$
+verwendet. Die Reaktionen lauten also nach \ref{eqn:iso1}:
+%Doppelpunkt eher unschön.Alternativen aber auch
+\begin{align*}
+    \ce{^{51}V}+\ce{^{1}n}&\rightarrow\ce{^{52}V}\\
+    \ce{^{103}Rh}+\ce{^{1}n}&
+    \begin{cases}
+        \overrightarrow{\tiny{10\%}} \ce{^{104 i}Rh}\\
+        \overrightarrow{\tiny{90\%}} \ce{^{104}Rh}
+    \end{cases}
+\end{align*}
+Rhodium ist insofern ein Spezialfall, dass er in zwei verschiedene isomere Isotope zerfällt. Bei diesen
+ist die Anordnung der Kernbausteine verschieden, weswegen sich auch der Verlauf des weiteren Zerfalls
+unterscheidet, wie im folgenden Kaptiel \ref{sec:Zerfallsreaktionen} näher erläutert. 
+\subsection{Zerfallsreaktionen}
+\label{sec:Zerfallsreaktionen}
+In diesem Abschnitt werden die Zerfälle der soeben erhaltenen Isotope weiter erläutert.
+\subsubsection*{Vanadium-52} 
+Der beim Vanadium-52 auftretende Zerall ist ein $\beta^-$-Zerfall. Bei diesem wird im Kern ein Neutron
+in ein Proton umgewandelt. Dabei entsteht ein hochenergetisches Elektron $\beta^-$, sowie ein 
+Antineutrino $\bar{v}_e$. Die Reaktion ist
+\begin{equation}
+    \ce{^{52}_{23}V}\rightarrow\ce{^{52}_{24}Cr}+\beta^-+\bar{v}_e. \label{eqn:VZerfall}
+\end{equation}
+\subsubsection*{Rhodium-104 und -104i}
+Auch Rhodium-104 ist ein $\beta^-$-Strahler und zerfällt demnach auf die gleiche Art und Weise wie 
+Vanadium-52. Die Reaktion ist demnach analog zu \ref{eqn:VZerfall}
+\begin{equation}
+    \ce{^{104}_{45}Rh}\rightarrow\ce{^{104}_{46}Pd}+\beta^-+\bar{v}_e. \label{eqn:RhZerfall}
+\end{equation}
+Das isomere Rhodium-104i geht durch die Emission eines $\gamma$-Quantes in Rhodium-104 über.Dieser 
+Vorgang wird durch
+\begin{equation}
+    \ce{^{104 i}_{45}Rh}\rightarrow+\gamma
+\end{equation}
+beschrieben. Das dabei entstehende Rhodium-104 zerfällt dann weiter nach Gleichung \ref{eqn:RhZerfall}.
+\subsection{Mathematische Beschreibung}
+\label{sec:mathe}
+Die in \ref{sec:Grundlagen} anschaulich definierte Halbwertszeit wird mathematisch definiert durch.
+\begin{equation}
+    \frac{1}{2}N_0=N_0\textbf{e}^{-\lambda t}
+\end{equation}
+mit der 
