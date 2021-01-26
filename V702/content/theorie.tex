@@ -8,7 +8,7 @@ Bei sogenannten Isotopen ist nun die Protonenanzahl identisch, also handelt es s
 Element, die Neutronenzahl aber ist verschieden. So sind die Verhältnisse der Protronen und Neutronen
 im Atomkern bei verschiedenen Isotopen unterschiedlich, weswegen einige Isotope instabile Atomkerne
 besitzen. Diese zerfallen dann radioaktiv.\\
-Um die verschiedenen Isotope eindeutig in Fromeln darstellenzu können, wird die Massenzahl des Elements
+Um die verschiedenen Isotope eindeutig in Fromeln darstellen zu können, wird die Massenzahl des Elements
 oben links neben das Elementensymbol geschrieben und gegebenfalls wird auch die Kernladung unten links 
 hinzugefügt.\\
 Der radioaktive Zerfall ist dabei nicht deterministisch, sodass dieser durch eine Wahrscheinlichkeit 
@@ -27,8 +27,8 @@ mit einem Neutron $\ce{^{1}_{0}n}$ beschossen und reagiert mit diesem nach
     \label{eqn:iso1}
 \end{equation}
 Das nun entstandene Isotop $\ce{^{m + 1}_{z}A}$ ist dann jenes, welches für das Experiment benötigt
-wird. In diesem Fall werden als Ausgangselemente Vanadium $\ce{^{51}V}$ und die Rhodium $\ce{^{103}Rh}$
-verwendet. Die Reaktionen lauten also nach \ref{eqn:iso1}:
+wird. In diesem Fall werden als Ausgangselemente Vanadium-51 und Rhodium-103 verwendet. Die 
+Reaktionen lauten also nach \ref{eqn:iso1}:
 %Doppelpunkt eher unschön.Alternativen aber auch
 \begin{align*}
     \ce{^{51}V}+\ce{^{1}n&->^{52}V}\\
@@ -38,9 +38,9 @@ verwendet. Die Reaktionen lauten also nach \ref{eqn:iso1}:
         \ce{->[90\%]^{104}Rh}
     \end{cases}
 \end{align*}
-Rhodium ist insofern ein Spezialfall, dass er in zwei verschiedene isomere Isotope zerfällt. Bei diesen
+Rhodium ist insofern ein Spezialfall, dass es in zwei verschiedene isomere Isotope zerfällt. Bei diesen
 ist die Anordnung der Kernbausteine verschieden, weswegen sich auch der Verlauf des weiteren Zerfalls
-unterscheidet, wie im folgenden Kaptiel \ref{sec:Zerfallsreaktionen} näher erläutert. 
+unterscheidet. Der weitere Zerfall wird im folgenden Kaptiel \ref{sec:Zerfallsreaktionen} näher erläutert. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zerfallsreaktionen}
 \label{sec:Zerfallsreaktionen}
@@ -70,8 +70,8 @@ beschrieben. Das dabei entstehende Rhodium-104 zerfällt dann weiter nach Gleich
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mathematische Beschreibung}
 \label{sec:mathe}
-Die Anzahl an den Ausgangskernen $N_0$ nimmt bei radioaktivem Zerfall exponentiell ab. Dabei ist die Anzahl 
-$N(t)$ an übrigen Atomen nach der Zeit $t$ gegeben durch das Zerfallsgesetz
+Die Anzahl an den Ausgangskernen $N_0$ nimmt bei radioaktivem Zerfall exponentiell ab. Dabei ist die 
+Anzahl $N(t)$ an übrigen Atomen nach der Zeit $t$ gegeben durch das Zerfallsgesetz
 \begin{equation}
     N(t)=N_0\textbf{e}^{-\lambda t} 
     \label{eqn:Zerfall}
@@ -88,8 +88,9 @@ Daraus folgt
     T=\textbf{ln}\left(\frac{2}{\lambda}\right) 
     \label{eqn:T}.
 \end{equation}
-Gemessen wird nun jedoch die Zahl der zerfallenen Kerne $N_{\Delta t}(t)$ und nicht die der noch übrigen
-kerne $N(t)$. $N_{\Delta t}(t)$ ist nun die Differenz zwischen den Kernen $N(t)$ und $N(t+\Delta t)$, also
+Gemessen wird nun jedoch die Zahl der zerfallenen Kerne $N_{\Delta t}(t)$ und nicht die, der noch übrigen
+Kerne $N(t)$. $N_{\Delta t}(t)$ ist nun die Differenz zwischen den Kernen $N(t)$ und $N(t+\Delta t)$, 
+also
 \begin{equation*}
     N_{\Delta t}(t)=N(t)-N(t+\Delta t) 
     \label{eqn:Zerfall},
@@ -99,13 +100,13 @@ woraus sich mit Gleichung \ref{eqn:Zerfall}
     N_{\Delta t}(t)=N_0\textbf{e}^{-\lambda t}-N_0\textbf{e}^{-\lambda (t+\Delta t)}
     =N_0(1-\textbf{e}^{-\lambda \Delta t})\textbf{e}^{-\lambda t}
 \end{equation*}
-ergibt. Darauf folgt nach Anwendung des natütlichen Logarithmus 
+ergibt. Daraus folgt nach Anwendung des natütlichen Logarithmus 
 \begin{equation}
     \textbf{ln}(N_{\Delta t}(t))
     =\textbf{ln}(N_0(1-\textbf{e}^{-\lambda \Delta t}))-\lambda t 
     \label{eqn:Zerfall2}.
 \end{equation}
-Die Gleichung \label{eqn:Zerfall} ist dabei eine Gleichung der Form 
+Die Gleichung \ref{eqn:Zerfall2} ist dabei eine Gleichung der Form 
 \begin{equation}
     y(t)=a\cdot t+b 
     \label{eqn:gerade}
@@ -119,18 +120,18 @@ mit
 Somit lässt sich die Halbwertszeit $T$ mit Gleichung \ref{eqn:T} aus der Zerfallskonstante $lambda$
 bestimmen, wobei $\lambda$ durch die negative Steigung der Gerade \ref{eqn:Zerfall2} gegeben ist.
 \subsubsection*{Besonderheit bei Isotopengemischen}
-Bei Rhodium liegt wie in Kapitel \ref{sec:Neutronenbeschuss} beschrieben ein Isotopengemischen aus Rhodium-104 
-und -104i vor, wobei Rhodium-104i nach Gleichung \ref{eqn:Rh-104i} in Rhodium-104 zerfällt, welches 
-dann weiter zerfällt. Es laufen demnach gleichzeitig zwei Zerfälle mit unterschiedlicher Halbwertszeit
-ab. Zudem werden durch den Zerfall des Rhodium-104i neue Rhodium-104 Kerne gebildet, sodass Gleichung
-\ref{eqn:Zerfall2} nicht mehr gilt.\\
-Die Lösung des ersten Problems, also der zwei gleichzeitigen Zerfälle mit unterschiedlichen 
-Halbwertszeiten, folgt aus der Tatsache, dass sich die Halbwertszeiten der beiden Reaktionen stark 
-unterscheiden. Es gilt nämlich
+Bei Rhodium liegt wie in Kapitel \ref{sec:Neutronenbeschuss} beschrieben ein Isotopengemischen aus 
+Rhodium-104 und -104i vor, wobei Rhodium-104i nach Gleichung \ref{eqn:Rh-104i} in Rhodium-104 zerfällt,
+welches dann weiter zerfällt. Es laufen demnach gleichzeitig zwei Zerfälle mit unterschiedlicher 
+Halbwertszeit ab. Zudem werden durch den Zerfall des Rhodium-104i neue Rhodium-104 Kerne gebildet, sodass
+Gleichung \ref{eqn:Zerfall2} nicht mehr gilt.\\
+Die Lösung des ersten Problems, also dass gleichzeitig zwei Zerfälle mit unterschiedlichen 
+Halbwertszeiten statt finden, folgt aus der Tatsache, dass sich die Halbwertszeiten der beiden Reaktionen
+stark unterscheiden. Es gilt nämlich
 \begin{align*}
     T_{\ce{^{104}Rh}}>>T_{\ce{^{104i}Rh}}\\
     \Rightarrow
-    \lambda_{\ce{^{104}Rh}}<<\lambda_{\ce{^{104i}Rh}}
+    \lambda_{\ce{^{104}Rh}}<<\lambda_{\ce{^{104i}Rh}}.
 \end{align*}
 So kann nach einer gewissen Zeit $t^*$ nurnoch der Zerfall von Rhodium-104 beobachtet werden, da das 
 Rhodium-104i bereits fast volltändig zerfallen ist. Wenn dieser Umstand in der Ausgleichsrechnung 
@@ -139,7 +140,7 @@ Der Zerfall einer solchen Probe ist in Abbildung \ref{fig:Isotopengemisch} noch 
 dargestellt. 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{content/Isotopengemisch.png}
+    \includegraphics[scale=0.4]{content/Isotopengemisch.png}
     \caption{Zerfallskurve eines Isotopengemisches mit $\lambda_1<<\lambda_2$. Quelle:\cite{AP01}}
     \label{fig:Isotopengemisch}
   \end{figure}
