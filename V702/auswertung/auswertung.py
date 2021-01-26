@@ -27,17 +27,31 @@ nulleffekt = nulleffekt/10
 #Berücksichtige Nulleffekt
 Nvanadium = impvanadium - np.mean(nulleffekt)
 Nrhodium = imprhodium - np.mean(nulleffekt)
-#fitte Zerfallsgesetz
-def zerfallsgesetz(N0, llambda, t):
-    N = N0 * np.exp(-llambda * t)
-    return(N)
-params, covariance_matrix = curve_fit(zerfallsgesetz, unp.nominal_values(tvanadium), np.log(unp.nominal_values(Nvanadium)))
-uncertainties = np.sqrt(np.diag(covariance_matrix))
-for name, value, uncertainty in zip('N0 llamba t', params, uncertainties):
-    print(f'{name} = {value:8.3f} ± {uncertainty:.3f}')
+
+#fitte log(zerfallsgesetz)
+params1, covariance_matrix1 = np.polyfit(unp.nominal_values(tvanadium), np.log(unp.nominal_values(Nvanadium)), deg = 1, cov = True)
+#linspace über komplette Zeitskala
+x_plot1 = np.linspace(0,1320)
+
 #Plotte Nvanadium
-plt.errorbar(unp.nominal_values(tvanadium), np.log(unp.nominal_values(Nvanadium)), xerr = unp.std_devs(tvanadium), yerr = np.log(unp.std_devs(Nvanadium)), fmt = "x", ecolor = "red")
-plt.ylabel("N [Imp/t]")
+plt.errorbar(unp.nominal_values(tvanadium), np.log(unp.nominal_values(Nvanadium)), xerr = unp.std_devs(tvanadium), yerr = np.log(unp.std_devs(Nvanadium)), fmt = "x", ecolor = "black", label="Messung")
+plt.plot(x_plot1, params1[0]*x_plot1+params1[1], label="Regression" )
+plt.ylabel("ln(N)")
 plt.xlabel("t [s]")
-plt.savefig("PlotVanadiumLinLog.pdf")
+plt.legend()
+plt.savefig("PlotVanadiumLinLog1.pdf")
 plt.clf()
+#Angabe der Zerfallszeit(reziproke Zerfallskonstante) nach erster Regression
+zerfallszeit1 = 1/(params1[0] * (-1))
+print("Die Zerfallszeit beträgt: ", zerfallszeit1)
+#Bestimmung der Halbwertszeit
+halbwertszeit = np.log(2/(params1[0] * (-1)))
+print("Die Halbwertszeit beträgt: ", halbwertszeit)
+#Literaturangabe Wikipedia: 52 Vanadium 3.743min, ungefähr 220s
+#Plotte Nvanadium, beachte nur Werte bis 440s (zwischen Messpunkt t=420s und t= 450s)
+x_plot2 = np.linspace(0, 420)
+#tvanadium und Nvanadium verringern auf oben genannte Messwerte
+tvanadium2 = tvanadium[:14]
+Nvanadium2 = Nvanadium[:14]
+#params2, covariance_matrix2 = np.polyfit()
+#params2, covariance_matrix2 = np.polyfit(unp.nominal_values)
