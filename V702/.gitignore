@@ -6,5 +6,7 @@ main.run.xml
 main.fdb_latexmk
 main.fls
 main.log
+main.bbl
+main.blg
 matplotlibrc
 .DS_Store
