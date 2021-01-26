@@ -99,7 +99,7 @@ plt.xlabel(r"$I[A]$")
 plt.ylabel(r"$Z$")
 plt.legend(loc='best')
 plt.tight_layout()
-plt.savefig('plot2.pdf') 
+plt.savefig('plot2.pdf')
 
 #Ausgeben der Parameter
 i=0
