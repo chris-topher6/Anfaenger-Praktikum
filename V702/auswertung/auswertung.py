@@ -76,8 +76,9 @@ Nrhodium = imprhodium - np.mean(nulleffekt)
 #plotte Rhodium
 plt.errorbar(unp.nominal_values(trhodium), np.log(unp.nominal_values(Nrhodium)), xerr = unp.std_devs(trhodium), yerr = np.log(unp.std_devs(Nrhodium)), fmt = "x", ecolor = "black", label = "Messung Rhodium")
 #Fitte Funktion an den Langlebigen Teil des Zerfalls
-#trhdodiumlanglebig = trhodium
-params3, covariance_matrix3 = np.polyfit(unp.nominal_values(trhodiumlanglebig), unp.nominal_values(Nrhodiumlanglebig), deg = 1, cov = True)
+trhodiumlanglebig = trhodium[15:44]
+Nrhodiumlanglebig = Nrhodium[15:44]
+params3, covariance_matrix3 = np.polyfit(unp.nominal_values(trhodiumlanglebig), np.log(unp.nominal_values(Nrhodiumlanglebig)), deg = 1, cov = True)
 x_plot3 = np.linspace(220, 660)
 plt.plot(x_plot3, params3[0]*x_plot3+params3[1], label = "Langlebige Regression")
 plt.ylabel("log(N)")
@@ -85,4 +86,26 @@ plt.xlabel("t [s]")
 plt.legend()
 plt.savefig("PlotRhodiumLinLog1.pdf")
 plt.clf()
-print(trhodium())
+#Bestimme Werte
+print("Die Zerfallskonstante Lambda der langlebigen Regression von Rhodium beträgt: ", params3[0])
+zerfallszeit3 = 1/(params3[0]*(-1))
+print("Die Zerfallszeit des langlebigen Zerfalls von Rhodium beträgt: ", zerfallszeit3)
+halbwertszeit3 = np.log(2)/(params3[0]*(-1))
+print("Die Halbwertszeit des langlebigen Zerfalls von Rhodium beträgt: ", halbwertszeit3)
+#Plotte Extrapolierte Regression des Langlebigen Rhodium-Zerfalls
+plt.errorbar(unp.nominal_values(trhodium), np.log(unp.nominal_values(Nrhodium)), xerr = unp.std_devs(trhodium), yerr = np.log(unp.std_devs(Nrhodium)), fmt = "x", ecolor = "black", label = "Messung Rhodium")
+x_plot4 = np.linspace(0, 660)
+plt.plot(x_plot4, params3[0]*x_plot4+params3[1], label = "Extrapolierte langlebige Regression ")
+plt.ylabel("log(N)")
+plt.xlabel("t [s]")
+plt.legend()
+plt.savefig("PlotRhodiumLinLogExtr1.pdf")
+plt.clf()
+#Langlebigen Zerfall vom Kurzlebigen trennen
+NominalNrhodiumkurzlebig = np.zeros(43)
+DevNrhodiumkurzlebig = np.zeros(43)
+for i in range(0,43):
+    NominalNrhodiumkurzlebig[i] = unp.nominal_values(Nrhodium[i]) - params3[0]*unp.nominal_values(trhodium[i])+params3[1]
+    DevNrhodiumkurzlebig[i] = unp.std_devs(Nrhodium[i]) - params3[0]*unp.std_devs(trhodium[i])+params3[1]
+
+Nrhodiumkurzlebig = unp.uarray(NominalNrhodiumkurzlebig, DevNrhodiumkurzlebig)
