@@ -73,19 +73,19 @@ beschrieben. Das dabei entstehende Rhodium-104 zerfällt dann weiter nach Gleich
 Die Anzahl an den Ausgangskernen $N_0$ nimmt bei radioaktivem Zerfall exponentiell ab. Dabei ist die 
 Anzahl $N(t)$ an übrigen Atomen nach der Zeit $t$ gegeben durch das Zerfallsgesetz
 \begin{equation}
-    N(t)=N_0\textbf{e}^{-\lambda t} 
-    \label{eqn:Zerfall}
+    N(t)=N_0\text{e}^{-\lambda t} 
+    \label{eqn:Zerfallsgesetz}
 \end{equation}
-mit der Zerfallskonstante $\lambda$. Aus dem Zerfallsgesetz \ref{eqn:Zerfall} kann nun die mathematische
+mit der Zerfallskonstante $\lambda$. Aus dem Zerfallsgesetz \ref{eqn:Zerfallsgesetz} kann nun die mathematische
 Definition der Halbwertszeit hergeleitet werde. Wie in Kapitel \ref{sec:Grundlagen} beschrieben ist die 
 Halbwertszeit die Zeit $T$ nach der nurnoch $\frac{1}{2}N_0$ der Kerne übrig sind. Mit Gleichung 
-\ref{eqn:Zerfall} ergibt sich
+\ref{eqn:Zerfallsgesetz} ergibt sich
 \begin{equation*}
-    \frac{1}{2}N_0=N_0\textbf{e}^{-\lambda T}.
+    \frac{1}{2}N_0=N_0\text{e}^{-\lambda T}.
 \end{equation*}
 Daraus folgt 
 \begin{equation}
-    T=\textbf{ln}\left(\frac{2}{\lambda}\right) 
+    T=\frac{\ln(2)}{\lambda} 
     \label{eqn:T}.
 \end{equation}
 Gemessen wird nun jedoch die Zahl der zerfallenen Kerne $N_{\Delta t}(t)$ und nicht die, der noch übrigen
@@ -93,17 +93,17 @@ Kerne $N(t)$. $N_{\Delta t}(t)$ ist nun die Differenz zwischen den Kernen $N(t)$
 also
 \begin{equation*}
     N_{\Delta t}(t)=N(t)-N(t+\Delta t) 
-    \label{eqn:Zerfall},
+    \label{eqn:Zerfall1},
 \end{equation*}
-woraus sich mit Gleichung \ref{eqn:Zerfall}
+woraus sich mit Gleichung \ref{eqn:Zerfall1}
 \begin{equation*}
-    N_{\Delta t}(t)=N_0\textbf{e}^{-\lambda t}-N_0\textbf{e}^{-\lambda (t+\Delta t)}
-    =N_0(1-\textbf{e}^{-\lambda \Delta t})\textbf{e}^{-\lambda t}
+    N_{\Delta t}(t)=N_0\text{e}^{-\lambda t}-N_0\text{e}^{-\lambda (t+\Delta t)}
+    =N_0(1-\text{e}^{-\lambda \Delta t})\text{e}^{-\lambda t}
 \end{equation*}
 ergibt. Daraus folgt nach Anwendung des natütlichen Logarithmus 
 \begin{equation}
-    \textbf{ln}(N_{\Delta t}(t))
-    =\textbf{ln}(N_0(1-\textbf{e}^{-\lambda \Delta t}))-\lambda t 
+    \ln(N_{\Delta t}(t))
+    =\ln(N_0(1-\text{e}^{-\lambda \Delta t}))-\lambda t 
     \label{eqn:Zerfall2}.
 \end{equation}
 Die Gleichung \ref{eqn:Zerfall2} ist dabei eine Gleichung der Form 
@@ -113,9 +113,9 @@ Die Gleichung \ref{eqn:Zerfall2} ist dabei eine Gleichung der Form
 \end{equation}
 mit
 \begin{align*}
-    y(t)&=\textbf{ln}(N_{\Delta t}(t))\\
+    y(t)&=\ln(N_{\Delta t}(t))\\
     a&=-\lambda\\
-    b&=\textbf{ln}(N_0(1-\textbf{e}^{-\lambda \Delta t})).
+    b&=\ln(N_0(1-\text{e}^{-\lambda \Delta t})).
 \end{align*}
 Somit lässt sich die Halbwertszeit $T$ mit Gleichung \ref{eqn:T} aus der Zerfallskonstante $lambda$
 bestimmen, wobei $\lambda$ durch die negative Steigung der Gerade \ref{eqn:Zerfall2} gegeben ist.
