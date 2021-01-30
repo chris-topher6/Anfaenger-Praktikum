@@ -102,10 +102,25 @@ plt.legend()
 plt.savefig("PlotRhodiumLinLogExtr1.pdf")
 plt.clf()
 #Langlebigen Zerfall vom Kurzlebigen trennen
-NominalNrhodiumkurzlebig = np.zeros(43)
-DevNrhodiumkurzlebig = np.zeros(43)
-for i in range(0,43):
+NominalNrhodiumkurzlebig = np.zeros(44)
+DevNrhodiumkurzlebig = np.zeros(44)
+for i in range(0,44):
     NominalNrhodiumkurzlebig[i] = unp.nominal_values(Nrhodium[i]) - params3[0]*unp.nominal_values(trhodium[i])+params3[1]
     DevNrhodiumkurzlebig[i] = unp.std_devs(Nrhodium[i]) - params3[0]*unp.std_devs(trhodium[i])+params3[1]
 
 Nrhodiumkurzlebig = unp.uarray(NominalNrhodiumkurzlebig, DevNrhodiumkurzlebig)
+#Plotte Regression des Kurzlebigen Zerfalls
+plt.errorbar(unp.nominal_values(trhodium), np.log(unp.nominal_values(Nrhodium)), xerr = unp.std_devs(trhodium), yerr = np.log(unp.std_devs(Nrhodium)), fmt = "x", ecolor = "black", label = "Messung Rhodium")
+params4, covariance_matrix4 = np.polyfit(unp.nominal_values(trhodium), np.log(unp.nominal_values(Nrhodiumkurzlebig)), deg = 1, cov = True)
+plt.plot(x_plot4, params4[0]*x_plot4+params4[1], label = "Kurzlebige Regression")
+plt.ylabel("log(N)")
+plt.xlabel("t [s]")
+plt.legend()
+plt.savefig("PlotRhodiumLinLogKurzl1.pdf")
+plt.clf()
+#Bestimme Werte
+print("Die Zerfallskonstante Lambda der kurzlebigen Regression von Rhodium beträgt: ", params4[0])
+zerfallszeit4 = 1/(params4[0]*(-1))
+print("Die Zerfallszeit des kurzlebigen Zerfalls von Rhodium beträgt: ", zerfallszeit4)
+halbwertszeit4 = np.log(2)/(params4[0]*(-1))
+print("Die Halbwertszeit des kurzlebigen Zerfalls von Rhodium beträgt: ", halbwertszeit4)
