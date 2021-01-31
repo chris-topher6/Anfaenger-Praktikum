@@ -1,3 +1,157 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
+  \subsection{Angabe der Messdaten}
+    Im Folgenden sind die Messergebnisse des Versuches tabellarisch dargestellt.
+    \begin{table}[H]
+      \centering
+      \caption{Die Messung des Zerfalls von Vanadium.}
+      \label{tab:Vanadium1}
+      \sisetup{table-format = 4.0}
+      \begin{tabular}{S S}
+        \toprule
+        {$t [s]$} & {$N [Imp]$} \\
+        \midrule
+        30	& 189  \\
+        60	& 197 \\
+        90	& 150 \\
+        120	& 159 \\
+        150	& 155 \\
+        180	& 132 \\
+        210	& 117 \\
+        240	& 107 \\
+        270	& 94 \\
+        300	& 100 \\
+        330	& 79 \\
+        360	& 69 \\
+        390	& 81 \\
+        420	& 46 \\
+        450	& 49 \\
+        480	& 61 \\
+        510	& 56 \\
+        540	& 40 \\
+        570	& 45 \\
+        600	& 32 \\
+        630	& 27 \\
+        660	& 43 \\
+        690	& 35 \\
+        720	& 19 \\
+        750	& 28 \\
+        780	& 27 \\
+        810	& 36 \\
+        840	& 25 \\
+        870	& 29 \\
+        900	& 18 \\
+        930	& 17 \\
+        960	& 24 \\
+        990	& 21 \\
+       1020 &	25  \\
+       1050 &	21 \\
+       1080 &	24 \\
+       1110 &	25 \\
+        1140 &	17 \\
+        1170 &	20 \\
+        1200 &	19 \\
+        1230 &	20 \\
+        1260 &	18 \\
+        1290 &	16 \\
+        1320 &	17 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Die Messung des Zerfalls von Rhodium.}
+    \label{tab:Rhodium1}
+    \sisetup{table-format = 3.0}
+    \begin{tabular}{S S}
+      \toprule
+      {$t [s]$} & {$N [Imp]$} \\
+      \midrule
+      15	& 667 \\
+      30	& 585 \\
+      45	& 474 \\
+      60	& 399 \\
+      75	& 304 \\
+      90	& 253 \\
+      105	& 213 \\
+      120	& 173 \\
+      135	& 152 \\
+      150	& 126 \\
+      165	& 111 \\
+      180	&  92 \\
+      195	&  79 \\
+      210	&  74 \\
+      225	&  60 \\
+      240	&  52 \\
+      255	&  56 \\
+      270	&  53 \\
+      285	&  41 \\
+      300	&  36 \\
+      315	&  37 \\
+      330	&  32 \\
+      345	&  36 \\
+      360	&  38 \\
+      375	&  34 \\
+      390	&  40 \\
+      405	&  21 \\
+      420	&  35 \\
+      435	&  33 \\
+      450	&  36 \\
+      465	&  20 \\
+      480	&  24 \\
+      495	&  30 \\
+      510	&  30 \\
+      525	&  26 \\
+      540	&  28 \\
+      555	&  23 \\
+      570	&  20 \\
+      585	&  28 \\
+      600	&  17 \\
+      615	&  26 \\
+      630	&  19 \\
+      645	&  13 \\
+      660	&  17 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \subsection{Bestimmung der Untergrundrate}
+  Die Untergrundrate $N_{U}$ wurde mehrfach mit einem Messintervall von $t = \SI{300}{\second}$ gemessen. Im Folgenden ist $N_{U}$ tabellarisch dargestellt.
+  \begin{table}
+    \centering
+    \caption{Die gemessene Untergrundrate $N_{U}$.}
+    \label{tab:untergrundrate1}
+    \sisetup{table-format=3.0}
+    \begin{tabular}{S S}
+      \toprule
+      {$t [s]$} & {$N [Imp]$} \\
+      \midrule
+      0 & 129 \\
+      300 & 143 \\
+      600 & 144 \\
+      900 & 136 \\
+      1200 & 139 \\
+      1500 & 126 \\
+      1800 & 158 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  Aus diesen Werten für den Nulleffekt wurde mithilfe von Python der Mittelwert berechnet. Die Messzeit wird mit einer Ungenauigkeit von $\increment t = 10^{-5}$ aufgenommen.
+  \begin{equation}
+    \label{eqn:nulleffekt1}
+    \bar{N_{U}} = 134 \pm 4 \si{Imp}
+  \end{equation}
+  Zusätzlich wird die Untergrundrate \eqref{eqn:nulleffekt1} an die Messzeiten von Vanadium ($t=\SI{30}{\second}$) und Rhodium ($t=\SI{15}{\second}$) angepasst.
+\subsection{Bestimmung der Halbwertszeit von Vanadium}
+  Zur Bestimmung der Halbwertszeit des Vanadiums wurde von den gemessenen Werten der Nulleffekt abgezogen. Aufgrund der Poisson-Verteilung der Werte lässt sich die Messunsicherheit nach
+  Gleichung \eqref{eqn:messunsvanadium} berechnen.
+  \begin{equation}
+    \label{eqn:messunsvanadium}
+    \increment N = \sqrt{N}
+  \end{equation}
+  Aus den so erhaltenen Werten und Unsicherheiten ergibt sich der im Folgenden dargestellte Plot \ref{fig:PlotVanadiumLinLog1} mit halblogarithmischer Darstellung.
+  \begin{figure}[H]
+    \centering
+    \label{fig:PlotVanadiumLinLog1}
+    \includegraphics[scale=0.7]{auswertung/PlotVanadiumLinLog1.pdf}
+  \end{figure}
+  An die Messwerte wurde eine lineare Regression angenähert, woran die Zerfallszeit nach dem Zerfallsgesetz \ref{eqn:zerfallsgesetz} bestimmt wurde.
