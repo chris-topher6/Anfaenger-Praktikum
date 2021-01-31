@@ -20,6 +20,7 @@ nulleffekt = [129, 143, 144, 136, 139, 126, 158]
 deltatnulleffekt = ufloat(300, 10**(-5))
 #Fehler der Messung
 nulleffekt = unp.uarray(nulleffekt, np.sqrt(nulleffekt))
+print("Der Nulleffekt für delta t = 300s beträgt: ", np.mean(nulleffekt))
 #Nulleffekt auf 30s Messintervalle bringen
 deltatnulleffekt = deltatnulleffekt/10
 nulleffekt = nulleffekt/10
