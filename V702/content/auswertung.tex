@@ -135,6 +135,7 @@
       \bottomrule
     \end{tabular}
   \end{table}
+  \noindent
   Aus diesen Werten für den Nulleffekt wurde mithilfe von \textit{python} \cite{numpy} der Mittelwert berechnet. Die Messzeit wird mit einer Ungenauigkeit von $\increment t = 10^{-5}$ aufgenommen.
   \begin{equation}
     \label{eqn:nulleffekt1}
@@ -159,17 +160,17 @@
   \noindent
   An die Messwerte wurde durch lineare Regression das Zerfallsgesetz \ref{eqn:Zerfallsgesetz} angenähert. Dies ermöglicht die Bestimmung der Zerfallszeit, welche die reziproke Zerfallskonstante
   darstellt. Nach der Regression bestimmt sich diese zu
-  \begin{equation}
-    \label{eqn:zerfallszeitergebniss1}
+  \begin{equation*}
+    %\label{eqn:zerfallszeitergebniss1}
     \frac{1}{-\lambda_{V}} = \SI{315.607}{\second}.
-  \end{equation}
+  \end{equation*}
   Da jedoch die Messwerte für größere Zeiten allmählich kleiner als der Nulleffekt werden, kann ein genauerer Wert gewonnen werden, indem die Regression nur mit Messwerten bis zur doppelten
   Halbwertszeit durchgeführt wird. Mithilfe der Zerfallszeit aus obiger Regression ergibt sich die Halbwertszeit nach \ref{eqn:T} zu
-  \begin{equation}
-    \label{eqn:halbwertszeitergebniss1}
+  \begin{equation*}
+    %\label{eqn:halbwertszeitergebniss1}
     T_{V} = \SI{218.762}{\second}.
-  \end{equation}
-  Um alle Messwerte bis zu der doppelten Halbwertszeit zu betrachten werden also Werte bis $t = \SI{450}{\second}$ betrachtet. Die aus diesen Daten resuktierende Regression ist in folgendem
+  \end{equation*}
+  Um alle Messwerte bis zu der doppelten Halbwertszeit zu betrachten werden also Werte bis $t = \SI{450}{\second}$ betrachtet. Die aus diesen Daten resultierende Regression ist in folgendem
   Plot \ref{fig:PlotVanadiumLinLog2} dargestellt.
   \begin{figure}[H]
     \centering
@@ -179,17 +180,17 @@
   \end{figure}
   \noindent
   Aus der auf den Messwerten bis zur doppelten Halbwertszeit basierenden Regression ergeben sich für die Zerfallszeit
-  \begin{equation}
-    \label{eqn:zerfallszeitergebniss2}
+  \begin{equation*}
+    %\label{eqn:zerfallszeitergebniss2}
     \frac{1}{-\lambda_{V}} = \SI{259.871}{\second},
-  \end{equation}
+  \end{equation*}
   sowie für die Halbwertszeit des Vanadiums
-  \begin{equation}
-    \label{eqn:halbwertszeitergebniss2}
+  \begin{equation*}
+    %\label{eqn:halbwertszeitergebniss2}
     T = \SI{180.129}{\second}.
-  \end{equation}
+  \end{equation*}
 \subsection{Bestimmung der Halbwertszeit von Rhodium}
-  Für die Bestimmung der Halbwertszeit von Rhodium wurde analog zu \ref{sec:vanadium1} der Nulleffekt von den Messwerten abgezogen sowie die Messunsicherheit bestimmt. Da Rhodium anders als Vanadium
+  Für die Bestimmung der Halbwertszeit von Rhodium wurde analog zu \ref{sec:vanadium1} der Nulleffekt von den Messwerten abgezogen, sowie die Messunsicherheit bestimmt. Da Rhodium anders als Vanadium
   zwei Zerfallskanäle besitzt, müssen diese getrennt betrachtet werden. Dafür wurde an einer halblogarithmischen Darstellung der Messwerte der Übergang vom kurzlebigen zum langlebigen Zerfall
   abgeschätzt. Der geschätzte Zeitpunkt beträgt $t^{*} = \SI{220}{\second}$, hier geht in der linearen Darstellung der Messdaten der exponentielle Zerfall in einen linearen über. An den langlebigen
   Zerfall wurde durch eine lineare Regression das Zerfallsgesetz angepasst. Dies ist in Abbildung \ref{fig:PlotRhodiumLinLog1} dargestellt.
@@ -201,15 +202,15 @@
   \end{figure}
   \noindent
   Die Zerfallskonstante des langlebigen Zerfalls von Rhodium ergibt sich aus der Regression des Zerfallsgesetzes \ref{eqn:Zerfallsgesetz} zu
-  \begin{equation}
-    \label{eqn:zerfallskonstanterhodiumergebnisslanglebig}
+  \begin{equation*}
+    %\label{eqn:zerfallskonstanterhodiumergebnisslanglebig}
     \lambda = \SI{-0.003274}{\per\second}. %Einheit richtig???
-  \end{equation}
+  \end{equation*}
   Für die Halbwertszeit des langlebigen Zerfalls von Rhodium ergibt sich
-  \begin{equation}
-    \label{eqn:halbwertszeitrhodiumergebnisslanglebig}
+  \begin{equation*}
+    %\label{eqn:halbwertszeitrhodiumergebnisslanglebig}
     T = \SI{211.742}{\second}.
-  \end{equation}
+  \end{equation*}
   In folgender Abbildung wurde die obige Regression für alle Zeiten kleiner als $t^{*}$ extrapoliert, um dann den kurzlebigen Zerfall betrachten zu können.
   \begin{figure}[H]
     \centering
@@ -219,7 +220,7 @@
   \end{figure}
   \noindent
   Nach Abzug des langlebigen Zerfalls lässt sich auch eine Regression des Zerfallsgesetzes \ref{eqn:Zerfallsgesetz} basierend auf dem kurzlebigen Zerfall durchführen. Dies ist in folgender Abbildung
-  \ref{fig:} dargestellt.
+  \ref{fig:PlotRhodiumLinLogKurzl1} dargestellt.
   \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{auswertung/PlotRhodiumLinLogKurzl1.pdf}
@@ -228,12 +229,12 @@
   \end{figure}
   \noindent
   Aus der Regression des Zerfallsgesetzes an den kurzlebigen Zerfall ergibt sich die Zerfallskonstante zu
-  \begin{equation}
-    \label{eqn:zerfallskonstanterhodiumergebnisskurzlebig}
+  \begin{equation*}
+    %\label{eqn:zerfallskonstanterhodiumergebnisskurzlebig}
     \lambda = \SI{-0.004992}{\per\second}.%??? Einheit  
-  \end{equation}
+  \end{equation*}
   Die Halbwertszeit des kurzlebigen Zerfalls beträgt dann
-  \begin{equation}
-    \label{eqn:halbwertszeitrhodiumergebnisskurzlebig}
+  \begin{equation*}
+    %\label{eqn:halbwertszeitrhodiumergebnisskurzlebig}
     T = \SI{138.844}{\second}.
-  \end{equation}
+  \end{equation*}
