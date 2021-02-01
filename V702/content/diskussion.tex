@@ -1,2 +1,84 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+  Die Ergebnisse aus Abschnitt \ref{sec:Auswertung} sind in folgenden Tabellen zusammengefasst.
+  \begin{table}[H]
+    \centering
+    \caption{Die Ergebnisse der ersten Regression der Vanadiummessung.}
+    \label{tab:ergebnisse1}
+    \sisetup{table-format=3.6}
+    \begin{tabular}
+      {S S}
+      \toprule
+      {Parameter} & {Wert} \\
+      \midrule
+      $\lambda$            & $\SI{-0.003168}{\frac{1}{\second}}$ \\
+      $\frac{1}{-\lambda}$ & $\SI{315.607344}{\second}$ \\
+      $T$                 & $\SI{218.762341}{\second}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Die Ergebnisse der zweiten Regression der Vanadiummessung.}
+    \label{tab:ergebnisse2}
+    \sisetup{table-format=3.6}
+    \begin{tabular}
+      {S S}
+      \toprule
+      {Parameter} & {Wert} \\
+      \midrule
+      $\lambda$            & $\SI{-0.003848}{\frac{1}{\second}}$ \\
+      $\frac{1}{-\lambda}$ & $\SI{259.871436}{\second}$ \\
+      $T$                 & $\SI{180.129153}{\second}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Die Ergebnisse der Regression des langlebigen Zerfalls der Rhodiummessung.}
+    \label{tab:ergebnisse3}
+    \sisetup{table-format=3.6}
+    \begin{tabular}
+      {S S}
+      \toprule
+      {Parameter} & {Wert} \\
+      \midrule
+      $\lambda$            & $\SI{ -0.003274}{\frac{1}{\second}}$ \\
+      $\frac{1}{-\lambda}$ & $\SI{305.478582}{\second}$ \\
+      $T$                 & $\SI{211.741618}{\second}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Die Ergebnisse der Regression des kurzlebigen Zerfalls der Rhodiummessung.}
+    \label{tab:ergebnisse3}
+    \sisetup{table-format=3.6}
+    \begin{tabular}
+      {S S}
+      \toprule
+      {Parameter} & {Wert} \\
+      \midrule
+      $\lambda$            & $\SI{-0.004992}{\frac{1}{\second}}$ \\
+      $\frac{1}{-\lambda}$ & $\SI{200.309745}{\second}$ \\
+      $T$                 & $\SI{138.844135}{\second}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\noindent
+Die Werte erscheinen nicht unplausibel und besitzen auch die richtigen Größenordnungen. Die Messwerte scheinen auch keinem systematischen Fehler zu unterliegen.
+Die Größenordnung der Unsicherheiten der Messwerte scheint ebenfalls die Aussagekraft der Werte nicht zu beeinflussen. Jedoch können trotzdem mehrere Faktoren die Messung verfälscht haben.
+Die sind im Folgenden dargestellt.
+\begin{itemize}
+  \item \textit{Wahl der Abgrenzung zwischen kurz- und langlebigen Zerfall des Rhodiums}\\
+    Da die Bestimmung des Zeitpunktes $t^{*}$ durch die Experimentierenden nach Gutdünken vorgenommen wurde, ist der Zeitpunkt keine exakte Wahl.
+    Daher wird an dieser Stelle weitere Unsicherheit entstanden sein. Diese kann möglicherweise durch eine erneute Durchführung mit mehr Messpunkten verringert werden.
+  \item \textit{Ungenauigkeit der linearen Regression}\\
+    Da das fitten einer Regression nur ein nicht exaktes Mittel ist, um die Halbwertszeit zu bestimmen, wird auch durch die Regression eine Unsicherheit entstanden sein.
+  \item \textit{Das Geiger-Müller-Zählrohr}\\
+    Die im Vergleich relativ hohe Tot- und Erholungszeit des Geiger-Müller-Zählrohres verhindert, das jeder eintreffende Impuls wirklich gemessen wird und erzeugt so ebenfalls eine
+    Unsicherheit.
+  \item \textit{Die Untergrundrate}\\
+    Die Untergrundrate kann auf zwei Wegen eine Unsicherheit erzeugen. Einerseits ist die Messung des Nulleffektes ebenfalls mit Fehlern behaftet, andereseits kann die Untergrundrate
+    von unbekannten Faktoren beeinflusst werden und ggf. schwanken, was eine Berücksichtigung des Nulleffektes in diesem Experiment erschwert.
+\end{itemize}
