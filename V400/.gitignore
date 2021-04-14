@@ -8,4 +8,10 @@ main.fdb_latexmk
 main.fls
 main.bbl
 main.blg
+x.log
 .DS_Store
+
+plot1.pdf
+plot2.pdf
+plot3.pdf
+plot4.pdf
