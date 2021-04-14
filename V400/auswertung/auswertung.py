@@ -11,8 +11,25 @@ a2, b2             = np.genfromtxt('Brechung1.dat', unpack=True)
 a3, b3             = np.genfromtxt('Brechung2.dat', unpack=True)
 a4, b4g, b4r = np.genfromtxt('Prisma.dat', unpack=True)
 
+#grad in rad
+a1=a1*np.pi/180
+a2=a2*np.pi/180
+a3=a3*np.pi/180
+a4=a4*np.pi/180
+b1=b1*np.pi/180
+b2=b2*np.pi/180
+b3=b3*np.pi/180
+b4g=b4g*np.pi/180
+b4r=b4r*np.pi/180
+
+#gerade für die Plots
+def gerade(x, m, b):
+    return m*x+b
+
 ############################################################################################################
 #Aufgabe1
+print("Aufgabe 1")
+
 plt.figure()#Plot
 x=np.linspace(np.min(a1), np.max(a1))
 params,covariance_matrix=np.polyfit(a1, b1, deg=1, cov=True)
@@ -24,22 +41,24 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot1.pdf')
 
-i         = 0
-h         = ufloat(0,0)
+i          = 0
+h          = ufloat(0,0)
 paramserr1 = np.array([h, h])
-errors    = np.sqrt(np.diag(covariance_matrix))
+errors     = np.sqrt(np.diag(covariance_matrix))
 for name, value, error in zip('ab', params, errors):
     paramserr1[i]=ufloat(value, error)
     print(f'{name} = {value:.8f} ± {error:.8f}')
-    i     = i+1
+    i      = i+1
 
 ############################################################################################################
 #Aufgabe2
+print("Aufgabe 2")
+
 n   =  np.sin(a2)/np.sin(b2) #n berechnen
 nm  =  np.mean(n)
-nf  =  np.sem(n)
+nf  =  sem(n)
 nu  =  ufloat(nf,nf)
-nit =  1.4931 #vergleichen mit Literatur
+nid =  1.4931 #vergleichen mit Literatur
 p   =  100*(nid-n)/nid
 
 plt.figure() #Plot von n
@@ -62,23 +81,48 @@ for name, value, error in zip('ab', params, errors):
     print(f'{name} = {value:.8f} ± {error:.8f}')
     i     = i+1
 
-c   = 2.9979*10^8 #berechnen der Lichtgeschwindigkeit
+c   = 2.9979*10**8 #berechnen der Lichtgeschwindigkeit
 v   = c/nu
 
 ############################################################################################################
 #Aufgabe3
-d   = 5.85*10**(-3)
-s1  = d*np.sin(a3-b3)/np.cos(b3) #Strahlenversatz Methode 1
-b31 = np.arcsin(np.sin(a3)/nu) #Strahlenversatz Methode 2
-s2  = d*np.sin(a3-b3)/np.cos(b3)
-p   = 100*(s1-s2)/s1 #vergleichen
-plt.plot(a,b, '.', label='Messdaten')#grün
-k1g    = np.arcsin(np.sin(a4)/nkron) #in Prismaskizze: beta1=k1
-deltag = (a4+b4g)-(2*k1g-g)
-#rot
-deltar = (a4+b4r)-(2*k1r-g)
+print("Aufgabe 3")
 
-plt.figure() #Plot von Ablenkung
+d   = 5.85*10**(-3)
+s1  = d*np.sin(a3-b3)/np.cos(b3)     #Strahlenversatz Methode 1
+b31 = np.arcsin(np.sin(a3)/nm)       #Strahlenversatz Methode 2
+s2  = d*np.sin(a3-b31)/np.cos(b31)
+p   = 100*(s1-s2)/s1                 #vergleichen
+
+plt.figure()                         #Plot
+x=np.linspace(np.min(a3), np.max(a3))
+params1,covariance_matrix   =   np.polyfit(a3, s1*1000, deg=1, cov=True)
+params2,covariance_matrix   =   np.polyfit(a3, s2*1000, deg=1, cov=True)
+plt.plot(x, gerade(x, *params1), color='green',                   label='Regression s_1')
+plt.plot(x, gerade(x, *params2), color='red',                     label='Regression s_2')
+plt.plot(a4, s1*1000, '.',       color='orange',  markersize = 3, label='s_1')
+plt.plot(a4, s2*1000, '.',       color='blue',    markersize = 3, label='s_2')
+plt.xlabel(r"$\alpha$")
+plt.ylabel(r"$s/mm$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot3.pdf')
+
+print(f's1  ={s1}')
+print(f's2  ={s2}')
+print(f'p   ={p }')
+
+############################################################################################################
+#Aufgabe4
+print("Aufgabe 4")
+
+nkron  = 1.61282
+g      = 60
+k1    = np.arcsin(np.sin(a4)/nkron) #in Prismaskizze: beta1=k1
+deltag = (a4+b4g)-(2*k1-g)          #grün
+deltar = (a4+b4r)-(2*k1-g)          #rot
+
+plt.figure()                         #Plot von Ablenkung
 x=np.linspace(np.min(a4), np.max(a4))
 paramsg,covariance_matrixg   =   np.polyfit(a4, deltag, deg=1, cov=True)
 paramsr,covariance_matrixr   =   np.polyfit(a4, deltar, deg=1, cov=True)
@@ -112,3 +156,4 @@ for name, value, error in zip('ab', paramsr, errors):
     i      = i+1
 ############################################################################################################s
 #Aufgabe5
+print("Aufgabe 5")
