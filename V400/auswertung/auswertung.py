@@ -28,6 +28,7 @@ def gerade(x, m, b):
 
 ############################################################################################################
 #Aufgabe1
+print()
 print("Aufgabe 1")
 
 plt.figure()#Plot
@@ -41,6 +42,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot1.pdf')
 
+print("Die Parameter der ersten Regression sind:")
 i          = 0
 h          = ufloat(0,0)
 paramserr1 = np.array([h, h])
@@ -52,6 +54,7 @@ for name, value, error in zip('ab', params, errors):
 
 ############################################################################################################
 #Aufgabe2
+print()
 print("Aufgabe 2")
 
 n   =  np.sin(a2)/np.sin(b2) #n berechnen
@@ -72,6 +75,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot2.pdf')
 
+print("Die Parameter der zweiten Regression sind:")
 i         = 0 #Ausgeben der Parameter
 h         = ufloat(0,0)
 paramserr2 = np.array([h, h])
@@ -83,9 +87,11 @@ for name, value, error in zip('ab', params, errors):
 
 c   = 2.9979*10**8 #berechnen der Lichtgeschwindigkeit
 v   = c/nu
+print(f'Die Lichtgeschwindigkeit in Plexiglas beträgt: v={v}')
 
 ############################################################################################################
 #Aufgabe3
+print()
 print("Aufgabe 3")
 
 d   = 5.85*10**(-3)
@@ -96,10 +102,10 @@ p   = 100*(s1-s2)/s1                 #vergleichen
 
 plt.figure()                         #Plot
 x=np.linspace(np.min(a3), np.max(a3))
-params1,covariance_matrix   =   np.polyfit(a3, s1*1000, deg=1, cov=True)
-params2,covariance_matrix   =   np.polyfit(a3, s2*1000, deg=1, cov=True)
-plt.plot(x, gerade(x, *params1), color='green',                   label='Regression s_1')
-plt.plot(x, gerade(x, *params2), color='red',                     label='Regression s_2')
+params3,covariance_matrix3   =   np.polyfit(a3, s1*1000, deg=1, cov=True)
+params4,covariance_matrix4   =   np.polyfit(a3, s2*1000, deg=1, cov=True)
+plt.plot(x, gerade(x, *params3), color='green',                   label='Regression s_1')
+plt.plot(x, gerade(x, *params4), color='red',                     label='Regression s_2')
 plt.plot(a4, s1*1000, '.',       color='orange',  markersize = 3, label='s_1')
 plt.plot(a4, s2*1000, '.',       color='blue',    markersize = 3, label='s_2')
 plt.xlabel(r"$\alpha$")
@@ -108,12 +114,33 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot3.pdf')
 
-print(f's1  ={s1}')
-print(f's2  ={s2}')
-print(f'p   ={p }')
+print("Die Parameter der dritten Regression sind:")
+i          = 0
+h          = ufloat(0,0)
+paramserr3 = np.array([h, h])
+errors     = np.sqrt(np.diag(covariance_matrix3))
+for name, value, error in zip('ab', params3, errors):
+    paramserr3[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i      = i+1 
+i          = 0
+h          = ufloat(0,0)
+paramserr4 = np.array([h, h])
+errors     = np.sqrt(np.diag(covariance_matrix4))
+for name, value, error in zip('ab', params4, errors):
+    paramserr4[i]=ufloat(value, error)
+    print(f'{name} = {value:.8f} ± {error:.8f}')
+    i      = i+1
+
+print(f'Strahlenversatz Methode 1: s1  = {s1}')
+print(f'Strahlenversatz Methode 2: s2  = {s2}')
+print(f'Prozentuale Abweichung   : p   = {p }')
+#Speichern in .txt
+np.savetxt("strahlenversatz.txt", np.column_stack([s1*1000, s2*1000, p]), fmt = "%10.2f", delimiter = " & ", header = " s1/mm, s2/mm, p/%")
 
 ############################################################################################################
 #Aufgabe4
+print()
 print("Aufgabe 4")
 
 nkron  = 1.61282
@@ -136,7 +163,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot4.pdf')
 
-#Ausgeben der Parameter
+print("Die Parameter der vierten Regression sind:")
 i          = 0
 h          = ufloat(0,0)
 paramserrg = np.array([h, h])
@@ -145,7 +172,6 @@ for name, value, error in zip('ab', paramsg, errors):
     paramserrg[i]=ufloat(value, error)
     print(f'{name} = {value:.8f} ± {error:.8f}')
     i      = i+1 
-
 i          = 0
 h          = ufloat(0,0)
 paramserrr = np.array([h, h])
@@ -156,4 +182,5 @@ for name, value, error in zip('ab', paramsr, errors):
     i      = i+1
 ############################################################################################################s
 #Aufgabe5
+print()
 print("Aufgabe 5")
