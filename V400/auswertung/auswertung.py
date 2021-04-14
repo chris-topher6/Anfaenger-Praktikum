@@ -62,7 +62,7 @@ nm  =  np.mean(n)
 nf  =  sem(n)
 nu  =  ufloat(nm,nf)
 nid =  1.4931 #vergleichen mit Literatur
-p   =  100*(nid-n)/nid
+p   =  100*(nid-nu)/nid
 
 plt.figure() #Plot von n
 x=np.linspace(np.min(a2), np.max(a2))
@@ -91,6 +91,7 @@ c   = 2.9979*10**8 #berechnen der Lichtgeschwindigkeit
 v   = c/nu
 print(f'Die Lichtgeschwindigkeit in Plexiglas beträgt: v={v}')
 print("Der Brechungsindex beträgt: ", nu)
+print("Die Abweichung vom Literaturwert beträgt: ", p)
 ############################################################################################################
 #Aufgabe3
 print()
@@ -184,5 +185,11 @@ for name, value, error in zip('ab', paramsr, errors):
     i      = i+1
 ############################################################################################################s
 #Aufgabe5
+#Gitter 600
+bmax600 = [0, 22.5]
+bmax300 = [0, 10.7, 22]
+bmax100 = [0, 3.7, 7.2, 11, 14, 18, 22, 26]
+l1 = (unumpy.sin(bmax600(0))/1) * 1/600
+lambda600 = []
 print()
 print("Aufgabe 5")
