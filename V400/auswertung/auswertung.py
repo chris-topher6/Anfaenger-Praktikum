@@ -9,11 +9,11 @@ from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
 a1, b1             = np.genfromtxt('Reflexion.dat', unpack=True)
 a2, b2             = np.genfromtxt('Brechung1.dat', unpack=True)
 a3, b3             = np.genfromtxt('Brechung2.dat', unpack=True)
-a4g, b4g, a4r, a4r = np.genfromtxt('Prisma.dat', unpack=True)
+a4, b4g, b4r = np.genfromtxt('Prisma.dat', unpack=True)
 
 ############################################################################################################
 #Aufgabe1
-plt.figure()
+plt.figure()#Plot
 x=np.linspace(np.min(a1), np.max(a1))
 params,covariance_matrix=np.polyfit(a1, b1, deg=1, cov=True)
 plt.plot(x, gerade(x, *params), "k", label="Regression")
@@ -73,20 +73,19 @@ b31 = np.arcsin(np.sin(a3)/nu) #Strahlenversatz Methode 2
 s2  = d*np.sin(a3-b3)/np.cos(b3)
 p   = 100*(s1-s2)/s1 #vergleichen
 plt.plot(a,b, '.', label='Messdaten')#grün
-k1g    = np.arcsin(np.sin(a4g)/nkron) #in Prismaskizze: beta1=k1
-deltag = (a4g+b4g)-(2*k1g-g)
+k1g    = np.arcsin(np.sin(a4)/nkron) #in Prismaskizze: beta1=k1
+deltag = (a4+b4g)-(2*k1g-g)
 #rot
-k1r    = np.arcsin(np.sin(a4r)/nkron) #in Prismaskizze: beta1=k1
-deltar = (a4r+b4r)-(2*k1r-g)
+deltar = (a4+b4r)-(2*k1r-g)
 
 plt.figure() #Plot von Ablenkung
 x=np.linspace(np.min(a4), np.max(a4))
-paramsg,covariance_matrixg   =   np.polyfit(a4g, deltag, deg=1, cov=True)
-paramsr,covariance_matrixr   =   np.polyfit(a4r, deltar, deg=1, cov=True)
+paramsg,covariance_matrixg   =   np.polyfit(a4, deltag, deg=1, cov=True)
+paramsr,covariance_matrixr   =   np.polyfit(a4, deltar, deg=1, cov=True)
 plt.plot(x, gerade(x, *paramsg), color='green',   label='Regression grün')
 plt.plot(x, gerade(x, *paramsr), color='red',     label='Regression rot')
-plt.plot(a4g, deltag, '.',       color='orange',  label='Messdaten grün')
-plt.plot(a4r, deltar, '.',       color='blue',    label='Messdaten rot')
+plt.plot(a4, deltag, '.',        color='orange',  label='Messdaten grün')
+plt.plot(a4, deltar, '.',        color='blue',    label='Messdaten rot')
 plt.xlabel(r"$\alpha$")
 plt.ylabel(r"$\delta$")
 plt.legend(loc='best')
