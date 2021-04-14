@@ -67,8 +67,10 @@ p   =  100*(nid-n)/nid
 plt.figure() #Plot von n
 x=np.linspace(np.min(a2), np.max(a2))
 params,covariance_matrix=np.polyfit(a2, n, deg=1, cov=True)
-plt.plot(x, gerade(x, *params), "k", label="Regression")
-plt.plot(a2, n, '.', label='Messdaten')
+plt.plot(x, gerade(x, *params), "k",    label="Regression")
+plt.plot(x, x*0+nm,     color='orange', label='Mittelwert')
+plt.plot(x, x*0+1.4931, color='green',  label='Literatrwert')
+plt.plot(a2, n, '.',                    label='berechneter Brechungsindex')
 plt.xlabel(r"$\alpha [rad]$")
 plt.ylabel(r"$n$")
 plt.legend(loc='best')
