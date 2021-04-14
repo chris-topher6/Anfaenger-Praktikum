@@ -88,7 +88,7 @@ for name, value, error in zip('ab', params, errors):
 c   = 2.9979*10**8 #berechnen der Lichtgeschwindigkeit
 v   = c/nu
 print(f'Die Lichtgeschwindigkeit in Plexiglas beträgt: v={v}')
-
+print("Der Brechungsindex beträgt: ", nu)
 ############################################################################################################
 #Aufgabe3
 print()

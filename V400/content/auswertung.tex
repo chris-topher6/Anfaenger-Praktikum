@@ -2,9 +2,9 @@
 \label{sec:Auswertung}
 In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Reflexion an einem Spiegel für verschiedene Winkel.}
+  \caption{Die Messwerte der Reflexion an einem Spiegel für verschiedene Winkel. Verwendet wurde der grüne Laser mit $\lambda = \SI{532}{\nano\meter}$.}
   \label{tab:MessungAufgabe1}
   \sisetup{table-format=2.1}
   \begin{tabular}{S S}
@@ -23,9 +23,9 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Brechung an einer planparallelen Platte der Messung 1 für verschiedene Winkel.}
+  \caption{Die Messwerte der Brechung an einer planparallelen Platte der Messung 1 für verschiedene Winkel. Verwendet wurde der grüne Laser mit $\lambda = \SI{532}{\nano\meter}$.}
   \label{tab:MessungAufgabe2}
   \sisetup{table-format=2.2}
   \begin{tabular}{S S}
@@ -44,9 +44,9 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Brechung an einer planparallelen Platte der Messung 2 für verschiedene Winkel.}
+  \caption{Die Messwerte der Brechung an einer planparallelen Platte der Messung 2 für verschiedene Winkel. Verwendet wurde der grüne Laser mit $\lambda = \SI{532}{\nano\meter}$.}
   \label{tab:MessungAufgabe3}
   \sisetup{table-format=2.1}
   \begin{tabular}{S S}
@@ -63,9 +63,9 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Brechung an einem Prsima für verschiedene Winkel.}
+  \caption{Die Messwerte der Brechung an einem Prisma für verschiedene Winkel. Verwendet wurde der grüne Laser mit $\lambda = \SI{532}{\nano\meter}$ und der rote Laser mit $\lambda = \SI{635}{\nano\meter}$.}
   \label{tab:MessungAufgabe4}
   \sisetup{table-format=2.1}
   \begin{tabular}{S S S}
@@ -81,9 +81,9 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 600 Linien/mm.}
+  \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 600 Linien/mm. Verwendet wurde der grüne Laser mit $\lambda = \SI{532}{\nano\meter}$.}
   \label{tab:MessungAufgabe51}
   \sisetup{table-format=2.1}
   \begin{tabular}{S S S }
@@ -95,7 +95,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 300 Linien/mm.}
   \label{tab:MessungAufgabe52}
@@ -109,7 +109,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 100 Linien/mm.}
   \label{tab:MessungAufgabe53}
@@ -125,8 +125,28 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
 
 \subsection{Reflexion}
 \label{sec:reflexionauswertung}
+Die Ergebnisse der Untersuchung der Reflexion sind in Tabelle \ref{tab:MessungAufgabe1} abgebildet. Die maximale Genauigkeit der Messung liegt ungefähr bei einem Grad, da die Skalen, von denen abgelesen wurden, keine kleineren Unterteilungen besaßen. Nach dem Reflexionsgesetz
+\eqref{eqn:reflexion} beträgt die maximale Abweichung der Messung von der Theorie $\pm \SI{1}{\degree}$.
+Im der folgenden Abbildung sind der Einfallswinkel und der Reflexionswinkel gegeneinander aufgetragen.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale= 0.7]{auswertung/plot1.pdf}
+  \caption{Einfallswinkel $\alpha_1$ und Reflexionswinkel $\alpha_2$ gegeneinander aufgetragen.}
+  \label{fig:plot1}
+\end{figure}
+
 \subsection{Brechung}
 \label{sec:brechungauswertung}
+Die bestimmten Brechungswinkel sind in Tabelle \ref{tab.Aufgabe2} abgebildet.
+Der Brechungsindex berechnet nach dem Brechungsgesetz \eqref{eqn:brechung2} mit den gemessenen Daten beträgt
+\begin{equation}
+  n = 0.010 \pm 0.010.
+  \label{eqn:brechungsindexausw}
+\end{equation}
+Die Literaturwerte für den Brechnungsindex sind in Tabelle \ref{tab:brechungsind} angegeben.
+
+
 \subsection{Planparalle Platten}
 \label{sec:planplatteauswertung}
 \subsection{Prisma}
