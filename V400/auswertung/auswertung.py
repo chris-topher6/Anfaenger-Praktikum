@@ -60,7 +60,7 @@ print("Aufgabe 2")
 n   =  np.sin(a2)/np.sin(b2) #n berechnen
 nm  =  np.mean(n)
 nf  =  sem(n)
-nu  =  ufloat(nf,nf)
+nu  =  ufloat(nm,nf)
 nid =  1.4931 #vergleichen mit Literatur
 p   =  100*(nid-n)/nid
 
