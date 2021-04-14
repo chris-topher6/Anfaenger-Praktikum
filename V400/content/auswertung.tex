@@ -9,7 +9,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \sisetup{table-format=2.1}
   \begin{tabular}{S S}
     \toprule
-    {Einfallswinkel/\si{\degree}} & {Ausfallswinkel\si{\degree}} \\
+    {Einfallswinkel[\si{\degree}]} & {Ausfallswinkel[\si{\degree}]} \\
     \midrule
     69   &  69   \\
     42   &  43   \\
@@ -30,7 +30,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \sisetup{table-format=2.2}
   \begin{tabular}{S S}
     \toprule
-    {Einfallswinkel/\si{\degree}} & {Brechungswinkel/\si{\degree}} \\
+    {Einfallswinkel[\si{\degree}]} & {Brechungswinkel[\si{\degree}]} \\
     \midrule
     69 & 39    \\
      0 &  0    \\
@@ -51,7 +51,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \sisetup{table-format=2.1}
   \begin{tabular}{S S}
     \toprule
-    {Einfallswinkel/\si{\degree}} & {Brechungswinkel/\si{\degree}} \\
+    {Einfallswinkel[\si{\degree}]} & {Brechungswinkel[\si{\degree}]} \\
     \midrule
     0  &  0     \\
    45  & 28.5   \\
@@ -70,7 +70,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
   \sisetup{table-format=2.1}
   \begin{tabular}{S S S}
     \toprule
-    {Einfallswinkel/\si{\degree}} & {Ausfallswinkel $L_{Gruen}$/\si{\degree}} & {Ausfallswinkel $L_{Rot}$/\si{\degree}} \\
+    {Einfallswinkel[\si{\degree}]} & {Ausfallswinkel $L_{Gruen}$[\si{\degree}]} & {Ausfallswinkel $L_{Rot}$[\si{\degree}]} \\
     \midrule
     30  & 82   & 84   \\
     35  & 73.5 & 74.5 \\
@@ -83,56 +83,42 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
 
 \begin{table}
   \centering
-  \caption{Die gemessenen Beugungsmaxima der Brechung an einem Strichgitter mit 600 Linien/mm.}
+  \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 600 Linien/mm.}
   \label{tab:MessungAufgabe51}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{S S S }
+    \toprule
+    {Laserposition[\si{\degree}]} & $B_{max1,2}$[\si{\degree}] & $B_{max3}$[\si{\degree}]\\
+    \midrule
+    0  & \pm 22.5 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 300 Linien/mm.}
+  \label{tab:MessungAufgabe52}
   \sisetup{table-format=2.1}
   \begin{tabular}{S S S S}
     \toprule
-    {Laserposition/\si{\degree}} & $B_{max1}/\si{\degree}$ & $B_{max2}/\si{\degree}$ & $B_{max3}/\si{\degree}$ \\
+    {Laserposition[\si{\degree}]} & $B_{max1,2}$[\si{\degree}] & $B_{max3,4}$[\si{\degree}] & $B_{max5}$[\si{\degree}]\\
     \midrule
-    0  & 22.5 & 0 & 22.5 \\
+    0 & \pm 22 & \pm 10.7 & 0 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \begin{table}
   \centering
-  \caption{Die gemessenen Beugungsmaxima der Brechung an einem Strichgitter mit 300 Linien/mm.}
-  \label{tab:MessungAufgabe52}
-  \sisetup{table-format=2.1}
-  \begin{tabular}{S S S S S S}
-    \toprule
-    {Laserposition/\si{\degree}} & $B_{max1}/\si{\degree}$ & $B_{max2}/\si{\degree}$ & $B_{max3}/\si{\degree}$ & $B_{max4}/\si{\degree}$ & $B_{max5}/\si{\degree}$ \\
-    \midrule
-    0 & 22 & 10.7 & 0 & 10.7 & 22 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{table}
-  \centering
-  \caption{Die gemessenen Beugungsmaxima der Brechung an einem Strichgitter mit 100 Linien/mm. Der Laser steht wieder bei 0 \si{\degree}.}
+  \caption{Die gemessenen Beugungsmaxima der Beugung an einem Strichgitter mit 100 Linien/mm.}
   \label{tab:MessungAufgabe53}
   \sisetup{table-format=2.1}
-  \begin{tabular}{S S}
+  \begin{tabular}{S S S S S S S S S}
     \toprule
-    {Maximum} & {Position/\si{\degree}} \\
+    {Laserposition[\si{\degree}]} & $B_{1,2}$[\si{\degree}] & $B_{3,4}$[\si{\degree}] & $B_{5,6}$[\si{\degree}] & $B_{7,8}$[\si{\degree}] & $B_{9,10}$[\si{\degree}] & $B_{11,12}$[\si{\degree}]  & $B_{13,14}$[\si{\degree}] & $B_{15}$[\si{\degree}]\\
     \midrule
-    1   & 26 \\
-    2   & 22 \\
-    3   & 18 \\
-    4  & 14 \\
-    5   & 11 \\
-    6   & 7.2 \\
-    7   & 3.7 \\
-    8  &   0  \\
-    9  &   3.7\\
-    10  &   7.2\\
-    11   & 11 \\
-    12   & 14 \\
-    13   & 18 \\
-    14   & 22 \\
-    15   & 26 \\
+    0 & \pm 26 & \pm 22 & \pm 18 & \pm 14 & \pm 11 & \pm 7.2 & \pm 3.7 & 0 \\
     \bottomrule
   \end{tabular}
 \end{table}
