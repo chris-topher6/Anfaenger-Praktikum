@@ -205,11 +205,19 @@ bmax100 = bmax100*np.pi/180
 d100 = 1/100
 #definiere Formel für Beugungsmaxima
 def formelbmax(d,k,fi):
-    return d*(np.sin(fi)/k)
+    return d*(np.sin(fi)/k) *10**6 #in nm
 
 lambda600 = [formelbmax(d600, 1, bmax600[0]), formelbmax(d600, 2, bmax600[1])]
 lambda300 = [formelbmax(d300, 1, bmax300[0]), formelbmax(d300, 2, bmax300[1]), formelbmax(d300, 3, bmax300[2])]
 lambda100 = [formelbmax(d100, 1, bmax100[0]), formelbmax(d100, 2, bmax100[1]), formelbmax(d100, 3, bmax100[2]), formelbmax(d100, 4, bmax100[3]), formelbmax(d100, 5, bmax100[4]), formelbmax(d100, 6, bmax100[5]), formelbmax(d100, 7, bmax100[6]), formelbmax(d100, 8, bmax100[7])]
+#Literaturwerte
+lwert600 = np.array([635, 635]) #in nm
+lwert300 = np.array([635, 635, 635])
+lwert100 = np.array([635, 635, 635, 635, 635, 635, 635, 635])
+#Berechne Abweichungen
+p600 = 100*(lwert600-lambda600)/lwert600
+p300 = 100*(lwert300-lambda300)/lwert300
+p100 = 100*(lwert100-lambda100)/lwert100
 
 print()
 print("Aufgabe 5")
@@ -219,3 +227,10 @@ print("Wellenlänge auf Basis von 300Linien/mm: ")
 print(lambda300)
 print("Wellenlänge auf Basis von 100Linien/mm: ")
 print(lambda100)
+print("Die prozentuale Abweichung für...")
+print("...600Linien/mm: ")
+print(p600)
+print("...300Linien/mm: ")
+print(p300)
+print("...100Linien/mm: ")
+print(p100)
