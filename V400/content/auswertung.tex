@@ -177,7 +177,7 @@ Beide Ergebnisse sind in Abbildung \ref{fig:plot3ausw} dargestellt.
 Hierbei bezeichnet $s_1$ die Berechnung des Strahlversatzes auf Basis der Messung beider Winkel und $s_2$ die Berechnung auf Basis des Einfallswinkels und des Brechungsgesetzes.
 Die Werte sind in folgender Tabelle mit der prozentualen Abweichung voneinander aufgeführt.
 
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Werte für den Strahlversatz, mit zwei Methoden berechnet.}
   \label{tab:strahlversatzausw}
@@ -191,7 +191,7 @@ Die Werte sind in folgender Tabelle mit der prozentualen Abweichung voneinander 
     60 & {$2.941 \cdot 10^{-3}$} & {$2.947 \cdot 10^{-3}$} & {$0.215$} \\
     20 & {$6.811 \cdot 10^{-4}$} & {$6.916 \cdot 10^{-4}$} & {$1.547$} \\
     51 & {$2.290 \cdot 10^{-3}$} & {$2.267 \cdot 10^{-3}$} & {$1.024$} \\
-    3 & {$-5.115 \cdot 10^{-5}$} & {$9.893 \cdot 10^{-5}$} & {$293.4$} \\
+     3 & {$-5.115 \cdot 10^{-5}$} & {$9.893 \cdot 10^{-5}$} & {$293.4$} \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -208,5 +208,32 @@ Die Messergebnisse der Ein- und Ausfallswinkel sind in Tabelle \ref{tab:MessungA
   \label{fig:plot4ausw}
 \end{figure}
 Die Ablenkung wurde mit der Formel \eqref{eqn:ablenkwinkel} mit \textit{numpy} ermittelt. Der verwendete Brechungsindex beträgt $n = 1.61282$, siehe Tabelle \ref{tab:brechungsind}.
+
+
 \subsection{Beugung am Gitter}
 \label{sec:beugungauswertung}
+In folgender Tabelle sind die berechneten Wellenlängen sowie die prozentuale Abweichung von dem Literaturwert $\lambda = \SI{635}{\nano\meter}$ aufgeführt.
+\begin{table}[H]
+  \centering
+  \caption{Die aus der Beugung berechneten Wellenlängen.}
+  \label{tab:wellenlausw}
+  \sisetup{table-format=3.3}
+  \begin{tabular}
+    {S S S S S S}
+    \toprule
+    {$\lambda_{600} [\si{\nano\meter}]$} & $p_{600} [\si{\percent}]$ & {$\lambda_{300} [\si{\nano\meter}]$} & $p_{300} [\si{\percent}]$ & {$\lambda_{100} [\si{\nano\meter}$} & $p_{100} [\si{\percent}]$ \\
+    \midrule
+      0.0   &   100     &     0.0    &    100    &     0.0   &  100     \\
+    318.903 &   49.779  &   309.444  &    51.269 &   322.662 &  49.187  \\
+            &           &   416.230  &    34.452 &   417.777 &  34.208  \\
+            &           &            &           &   477.022 &  24.878  \\
+            &           &            &           &   483.844 &  23.804  \\
+            &           &            &           &   515.028 &  18.893  \\
+            &           &            &           &   535.152 &  15.724  \\
+            &           &            &           &   547.964 &  13.706  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\noindent
+Die Wellenlängen wurden nach \eqref{eqn:gitterintmax} mittels \textit{numpy} berechnet. Hier konnte nur der grüne Laser mit $\lambda = \SI{635}{\nano\meter}$ verwendet werden, da nur dieser aufgrund der
+Anordnung der Geräte auf das Gitter gerichtet werden konnte.
