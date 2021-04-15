@@ -186,15 +186,21 @@ for name, value, error in zip('ab', paramsr, errors):
 ############################################################################################################s
 #Aufgabe5
 #Gitter 600
-bmax600 = [0, 22.5]
+bmax600 = np.array([0, 22.5])
+#In Bogenmaß
+bmax600 = bmax600*np.pi/180
 #Gitterkonstante in mm
 d600 = 1/600
 #Gitter 300
-bmax300 = [0, 10.7, 22]
+bmax300 = np.array([0, 10.7, 22])
+#In Bogenmaß
+bmax300 = bmax300*np.pi/180
 #Gitterkonstante in mm
 d300 = 1/300
 #Gitter 100
-bmax100 = [0, 3.7, 7.2, 11, 14, 18, 22, 26]
+bmax100 = np.array([0, 3.7, 7.2, 11, 14, 18, 22, 26])
+#In Bogenmaß
+bmax100 = bmax100*np.pi/180
 #Gitterkonstante in mm
 d100 = 1/100
 #definiere Formel für Beugungsmaxima
