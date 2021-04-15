@@ -187,9 +187,29 @@ for name, value, error in zip('ab', paramsr, errors):
 #Aufgabe5
 #Gitter 600
 bmax600 = [0, 22.5]
+#Gitterkonstante in mm
+d600 = 1/600
+#Gitter 300
 bmax300 = [0, 10.7, 22]
+#Gitterkonstante in mm
+d300 = 1/300
+#Gitter 100
 bmax100 = [0, 3.7, 7.2, 11, 14, 18, 22, 26]
-l1 = (unumpy.sin(bmax600(0))/1) * 1/600
-lambda600 = []
+#Gitterkonstante in mm
+d100 = 1/100
+#definiere Formel für Beugungsmaxima
+def formelbmax(d,k,fi):
+    return d*(np.sin(fi)/k)
+
+lambda600 = [formelbmax(d600, 1, bmax600[0]), formelbmax(d600, 2, bmax600[1])]
+lambda300 = [formelbmax(d300, 1, bmax300[0]), formelbmax(d300, 2, bmax300[1]), formelbmax(d300, 3, bmax300[2])]
+lambda100 = [formelbmax(d100, 1, bmax100[0]), formelbmax(d100, 2, bmax100[1]), formelbmax(d100, 3, bmax100[2]), formelbmax(d100, 4, bmax100[3]), formelbmax(d100, 5, bmax100[4]), formelbmax(d100, 6, bmax100[5]), formelbmax(d100, 7, bmax100[6]), formelbmax(d100, 8, bmax100[7])]
+
 print()
 print("Aufgabe 5")
+print("Wellenlänge auf Basis von 600Linien/mm: ")
+print(lambda600)
+print("Wellenlänge auf Basis von 300Linien/mm: ")
+print(lambda300)
+print("Wellenlänge auf Basis von 100Linien/mm: ")
+print(lambda100)
