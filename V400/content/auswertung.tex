@@ -127,7 +127,7 @@ In den folgenden Tabellen sind die gemessenen Werte zusammenfassend dargestellt.
 \label{sec:reflexionauswertung}
 Die Ergebnisse der Untersuchung der Reflexion sind in Tabelle \ref{tab:MessungAufgabe1} abgebildet. Die maximale Genauigkeit der Messung liegt ungefähr bei einem Grad, da die Skalen, von denen abgelesen wurden, keine kleineren Unterteilungen besaßen. Nach dem Reflexionsgesetz
 \eqref{eqn:reflexion} beträgt die maximale Abweichung der Messung von der Theorie $\pm \SI{1}{\degree}$.
-Im der folgenden Abbildung sind der Einfallswinkel und der Reflexionswinkel gegeneinander aufgetragen.
+In der folgenden Abbildung sind der Einfallswinkel und der Reflexionswinkel gegeneinander aufgetragen.
 
 \begin{figure}[H]
   \centering
@@ -138,39 +138,41 @@ Im der folgenden Abbildung sind der Einfallswinkel und der Reflexionswinkel gege
 
 \subsection{Brechung}
 \label{sec:brechungauswertung}
-Die bestimmten Brechungswinkel sind in Tabelle \ref{tab.Aufgabe2} abgebildet.
-Der Brechungsindex berechnet nach dem Brechungsgesetz \eqref{eqn:brechung2} unter Zuhilfenahme von \textit{unumpy}
+Die bestimmten Brechungswinkel sind in Tabelle \ref{tab:MessungAufgabe2} abgebildet.
+Der Brechungsindex, berechnet nach dem Brechungsgesetz \eqref{eqn:brechung2} unter Zuhilfenahme von \textit{unumpy}\cite{numpy},
 beträgt
-\begin{equation}
+\begin{equation*}
   n = 1.476 \pm 0.010.
   \label{eqn:brechungsindexausw}
-\end{equation}
+\end{equation*}
 In folgender Grafik sind die berechneten Brechungsindizes für verschiedene Winkel angegeben.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{auswertung/plot2.pdf}
+  \caption{Die berechneten Brechungsindizes beim jeweiligen Einfallswinkel.}
   \label{fig:plot2ausw}
 \end{figure}
 \noindent
 Die Literaturwerte für den Brechungsindex sind in Tabelle \ref{tab:brechungsind} angegeben.
 Es ergibt sich eine prozentuale Abweichung des berechneten Wertes von dem Literaturwert von
-\begin{equation}
+\begin{equation*}
   p = 1.1 \pm 0.6 \si{\percent}.
   \label{eqn:abweichung}
-\end{equation}
-Für die Lichtgeschwindigkeit in Plexiglas ergibt sich dann
-\begin{equation}
-  v=(2.031 \pm 0.013) \cdot 10^8 \si{\meter\per\second}
+\end{equation*}
+Für die Lichtgeschwindigkeit in Plexiglas ergibt sich dann mit Gleichung \ref{eqn:brechung1}
+\begin{equation*}
+  v=(2.031 \pm 0.013) \cdot 10^8 \si{\meter\per\second}.
   \label{eqn:lichtgeschwausw}
-\end{equation}
+\end{equation*}
 
 \subsection{Planparalle Platten}
 \label{sec:planplatteauswertung}
-Die gemessenen Einfalls- und Brechungswinkel sind in Tabelle \ref{MessungAufgabe3} dargestellt. Der Strahlversatz wurde auf zweierlei Arten ermittelt: einmal unter Verwendung des gemessenen Einfalls- und Brechungswinkels sowie einmal unter Verwendung des gemessenen Einfallswinkels und des mit dem Brechungsgesetz berechneten Brechungswinkels.
+Die gemessenen Einfalls- und Brechungswinkel sind in Tabelle \ref{tab:MessungAufgabe3} dargestellt. Der Strahlversatz wurde auf zweierlei Arten ermittelt: einmal unter Verwendung des gemessenen Einfalls- und Brechungswinkels, sowie einmal unter Verwendung des gemessenen Einfallswinkels und des mit dem Brechungsgesetz berechneten Brechungswinkels.
 Beide Ergebnisse sind in Abbildung \ref{fig:plot3ausw} dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{auswertung/plot3.pdf}
+  \caption{Die berechneten Strahenversätze beim jeweiligen Einfallswinkel.}
   \label{fig:plot3ausw}
 \end{figure}
 \noindent
@@ -197,18 +199,19 @@ Die Werte sind in folgender Tabelle mit der prozentualen Abweichung voneinander 
 \end{table}
 \noindent
 Die Werte und Abweichung wurde unter Verwendung des Brechungsgesetzes \eqref{eqn:brechung1} sowie der Formel für den
-Strahlversatz \eqref{eqn:strahlenversatz} mithilfe von \textit{numpy} berechnet.
+Strahlversatz \eqref{eqn:strahlenversatz} mithilfe von \textit{numpy}\cite{numpy} berechnet.
 
 \subsection{Prisma}
 \label{sec:prismaauswertung}
-Die Messergebnisse der Ein- und Ausfallswinkel sind in Tabelle \ref{tab:MessungAufgabe4} dargestellt. In folgender Abbildung sind der eingestellte Winkel des Lasers gegen die erfahrene Ablenkung des Lichtstrahls aufgetragen.
+Die Messergebnisse der Ein- und Ausfallswinkel sind in Tabelle \ref{tab:MessungAufgabe4} dargestellt. In folgender Abbildung ist der eingestellte Winkel des Lasers gegen die erfahrene Ablenkung des Lichtstrahls aufgetragen.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{auswertung/plot4.pdf}
+  \caption{Der Ablenkwinkel beim jeweiligen Einfallswinkel.}
   \label{fig:plot4ausw}
 \end{figure}
 \noindent
-Die Ablenkung wurde mit der Formel \eqref{eqn:ablenkwinkel} mit \textit{numpy} ermittelt. Der verwendete Brechungsindex beträgt $n = 1.61282$, siehe Tabelle \ref{tab:brechungsind}.
+Die Ablenkung wurde mit der Formel \eqref{eqn:ablenkwinkel} mit \textit{numpy}\cite{numpy} ermittelt. Der verwendete Brechungsindex beträgt $n = 1.61282$, siehe Tabelle \ref{tab:brechungsind}.
 
 
 \subsection{Beugung am Gitter}
@@ -236,5 +239,5 @@ In folgender Tabelle sind die berechneten Wellenlängen sowie die prozentuale Ab
   \end{tabular}
 \end{table}
 \noindent
-Die Wellenlängen wurden nach \eqref{eqn:gitterintmax} mittels \textit{numpy} berechnet. Hier konnte nur der grüne Laser mit $\lambda = \SI{635}{\nano\meter}$ verwendet werden, da nur dieser aufgrund der
+Die Wellenlängen wurden nach \eqref{eqn:gitterintmax} mittels \textit{numpy}\cite{numpy} berechnet. Hier konnte nur der grüne Laser mit $\lambda = \SI{635}{\nano\meter}$ verwendet werden, da nur dieser aufgrund der
 Anordnung der Geräte auf das Gitter gerichtet werden konnte.
