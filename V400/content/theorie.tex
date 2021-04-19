@@ -4,13 +4,13 @@
 \subsection{Grundlagen}
 \label{sec:grundlagen}
 Aus den Maxwellgleichungen der Elektrodynamik wird schnell ersichtlich, dass es elektromagnetische Wellen
-gibt. In einem Bereich von ca. $\SI{100}{\nano\metre}$ bis $\SI{1}{\milli\metre}$ liegt das sogenannte
+gibt. In einem Bereich von ca. $\SI{1000}{\nano\metre}$ bis $\SI{1}{\milli\metre}$ liegt das sogenannte
 optische Spektrum, in welchem auch das für Menschen sichtbare Licht liegt (ca. $\SI{380}{\nano\metre}$
 bis $\SI{780}{\nano\metre}$). Mit der Strahlenoptik \label{sec:strahlen} können nun Phänomene wie Reflexion oder Brechung
 dieser Wellen beschrieben werden. Für die Beugung wird die Wellenoptik \label{sec:welle} benötigt.
 \subsection{Strahlenoptik}
-In der Strahlenoptik wird werden Lichtstrahlen als die Normalenvektoren der elektromagnetischen Welle
-definiert, die Strahlen stehen als immer senkrecht auf der Wellenfront und zeigen in Ausbreitungsrichtung.
+In der Strahlenoptik werden Lichtstrahlen als die Normalenvektoren der elektromagnetischen Welle
+definiert, die Strahlen stehen immer senkrecht auf der Wellenfront und zeigen in Ausbreitungsrichtung.
 Mit diesen können verschiedene Phänomene beschrieben werden.
 
 \subsubsection*{Reflexion}
@@ -31,14 +31,14 @@ Dieses Prinzip ist in Abbildung \ref{fig:reflexion} noch einmal veranschaulicht.
 
 \subsubsection*{Brechung}
 \label{sec:brechung}
-Die Ausbreitungsgeschwindigkeit von Licht hängt von dem Medium ab, in dem es sich bewegt. wechselt ein Lichtstrahl
+Die Ausbreitungsgeschwindigkeit von Licht hängt von dem Medium ab, in dem es sich bewegt. Wechselt ein Lichtstrahl
 nun an einer Grenzfläche das Medium, kommt es zur Brechung des Strahls, da sich die Ausbreitungsgeschwindigkeit
-ändert. Dabei verhält sich das Verhältnis der Geschwindigkeiten zu den Winkeln des Lichtstrahls wie
+ändert. Dabei berechnet sich das Verhältnis der Geschwindigkeiten zu den Winkeln des Lichtstrahls wie
 \begin{equation}
     \frac{v_1}{v_2}=\frac{\sin\alpha}{\sin\beta}=\frac{n_2}{n_1}.
     \label{eqn:brechung1}
 \end{equation}
-Dabei wurde der Brechungsindex $n$ eingeführt, welcher als Materialeingenschaft den Zusammenhang \ref{eqn:brechung1}
+Dabei wurde der Brechungsindex $n$ eingeführt, welcher als Materialeigenschaft den Zusammenhang \ref{eqn:brechung1}
 bestmöglich beschreibt. Die Brechung eines Lichtstrahls an einer Grenzfläche zwischen zwei Medien mit verschiedenen
 Brechungsindizes ist in Abbildung \ref{fig:brechung} dargestellt.
 \begin{figure}[H]
@@ -49,26 +49,26 @@ Brechungsindizes ist in Abbildung \ref{fig:brechung} dargestellt.
 \end{figure}
 \noindent
 Der Brechungsindex von Luft liegt bei ca. $\num{1.000292}$ \cite{AP01} und ist daher für unsere Zwecke als $1$
-zu setzen. Somit wird \ref{eqn:brechung1} für $n_1\approx1$ zu
+anzusehen. Somit wird \ref{eqn:brechung1} für $n_1\approx1$ zu
 \begin{equation}
     \frac{\sin\alpha}{\sin\beta}=n_2.
     \label{eqn:brechung2}
 \end{equation}
 Die Ausbreitungsgeschwindigkeit von Licht in einem Medium hängt jedoch nicht nur von dem Brechungsindex des Mediums
 ab, sondern auch von der Wellenlänge $\lambda$ des Lichtstrahls. Somit verändert sich auch das Brechungsverhalten.
-Diese Abhängigkeit wird Disperion genannt und wird erneut in Kapitel \ref{sec:prisma} aufgegriffen.
+Diese Abhängigkeit wird Dispersion genannt und wird erneut in Kapitel \ref{sec:prisma} aufgegriffen.
 
 \subsubsection*{Reflexion und Transmission}
 \label{sec:RefTrans}
-Allgemein finden sowohl Reflexion als auch Brechung statt, wenn ein Lichtstrahl auf eine Grenzfläche zweier
+Allgemein finden sowohl Reflexion, als auch Transmission und Brechung statt, wenn ein Lichtstrahl auf eine Grenzfläche zweier
 Medien trifft. Ein gewisser Anteil der Intensität $R$ wird an der Grenzfläche reflektiert und der restliche
 Teil der Intensität $T$ transmittiert durch die Grenzfläche und wird gebrochen. Da bei diesem Prozess die
 Summe der Intensität erhalten bleibt gilt
 \begin{equation}
-    R+T=1
+    R+T=1.
 \end{equation}
-Wie groß nun die Intensität verteilt wird ist von den Materialien abhängig. In Abbildung \ref{fig:RefTrans}
-sind die beiden Prozesse aus Abbildung \ref{fig:reflexion} und \ref{fig:brechung} zusammengetragen.
+Wie nun die Intensität verteilt ist, hängt von den Materialien ab. In Abbildung \ref{fig:RefTrans}
+sind die beiden Prozesse aus Abbildung \ref{fig:reflexion} und \ref{fig:brechung} zusammen dargestellt.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{pictures/ReflexionTransmission.png}
@@ -80,7 +80,7 @@ sind die beiden Prozesse aus Abbildung \ref{fig:reflexion} und \ref{fig:brechung
 \label{sec:beugung}
 Um das Phänomen der Beugung zu erklären, reicht die einfache Strahlenoptik nicht aus. Hier muss auf die Wellenoptik
 zurückgegriffen werden. Als Beugung oder auch Diffraktion wird das Ausbreiten einer Welle hinter einem
-Hindernis bezeichnet. In diesem Raum hinter dem Hindernis kann sich ein geradliniger Strahl nicht ausbreiten, die Beugung ist 
+Hindernis bezeichnet. In diesem Raum hinter dem Hindernis kann sich ein geradliniger Strahl nicht ausbreiten, die Beugung ist
 also ein Wellenphänomen. Um Aussagen über das Verhalten der Welle bei einer Beugung zu machen, wird das Huygensche
 Prinzip verwendet. Dieses besagt, dass jeder Punkt der Wellenfront ein Ausgangspunkt für eine sich um den Punkt kreisförmig
 ausbreitenden Welle ist. Diese sich ausbreitende Welle besitzt diesselbe Frequenz wie die, aus der sie hervorgegangen
@@ -89,14 +89,14 @@ entstandenen Sekundärwellen bildet sich die neue Wellenfront. Bei einem Spalt d
 im Abstand $L$ das $k$-te Intensitätsmaximum der gebeugten Welle bei
 \begin{equation}
   \label{eqn:spaltintmax}
-  a \cdot sin(\alpha) = k \cdot \lambda
+  a \cdot \sin(\alpha) = k \cdot \lambda
 \end{equation}
 gemessen. Hierbei bezeichnet $\alpha$ den Winkel relativ zur orthogonal zum Schirm verlaufenden Ausbreitungsrichtung
 und $\lambda$ die Wellenlänge der einlaufenden Welle.
 Im Falle eines Gitters mit senkrecht einlaufenden Wellen wird das $k$-te Intensitätsmaximum auf dem Schirm bei
 \begin{equation}
   \label{eqn:gitterintmax}
-  d \cdot sin(\alpha) = k \cdot \lambda
+  d \cdot \sin(\alpha) = k \cdot \lambda
 \end{equation}
 gemessen, wobei hier $d$ den Gitterparameter oder die Gitterkonstante bezeichnet.
 
@@ -106,12 +106,12 @@ gemessen, wobei hier $d$ den Gitterparameter oder die Gitterkonstante bezeichnet
 \subsubsection*{Planparallele Platten}
 \label{sec:platten}
 Bei einer planparallenen Platte handelt es sich um einen flachen, transparenten Quader. Tritt Licht in die Platte ein, wird
-es gemäß \ref{sec:brechung} bebrochen. Zudem wird es jedoch auch beim Austritt gebrochen, sodass der Strahl seinen Winkel und
-somit auch seine Richtung nicht verändert. Es entsteht lediglich ein Strahlenversatz, der durch 
+es gemäß \ref{sec:brechung} gebrochen. Zudem wird es auch beim Austritt gebrochen, sodass der Strahl seinen Winkel und
+somit auch seine Richtung nicht verändert. Es entsteht lediglich ein Strahlenversatz, der durch
 \begin{equation}
     s=d\frac{\sin(\alpha-\beta)}{\cos\beta}
     \label{eqn:strahlenversatz}
-\end{equation} 
+\end{equation}
 berechnet werden kann. In Abbildung \ref{fig:platten} ist der Strahlenverlauf noch einmal schematisch dargestellt.
 \begin{figure}[H]
     \centering
@@ -124,11 +124,11 @@ berechnet werden kann. In Abbildung \ref{fig:platten} ist der Strahlenverlauf no
 \label{sec:prisma}
 Ein Prisma ist ein optisches Element, welches die geometrische Form eines Prismas mit einem Dreieck als Grundfläche
 besitzt. Somit besitzt das Prisma nicht parallele Flächen, welche im sogenannten
-brechenden Winkel $\gamma$ zueinander stehen. 
+brechenden Winkel $\gamma$ zueinander stehen.
 \\\noindent
 Trifft ein Lichtstrahl auf eine der Flächen, wird ein Teil nach Kapitel
-\ref{sec:brechung} gebrochen. Dies geschieht sowohl beim Eintritt in das Prisma als auch beim Austritt. Dabei wird 
-der Lichtstrahl um den Winkel $\delta$ abgelenkt. Dieser lässt sich durch 
+\ref{sec:brechung} gebrochen. Dies geschieht sowohl beim Eintritt als auch beim Austritt aus dem Prisma. Dabei wird
+der Lichtstrahl um den Winkel $\delta$ abgelenkt. Dieser lässt sich durch
 \begin{equation}
     \delta=(\alpha_1+\alpha_2)-(\beta_1-\beta_2)
     \label{eqn:ablenkwinkel}
@@ -142,5 +142,5 @@ berechnen. In Abbildung \ref{fig:prisma2} ist dies nocheinmal schematisch verdeu
 \end{figure}
 \noindent
 Wie bereits in Kapitel \ref{sec:brechung} beschrieben, hat die Wellenlänge einen Einfluss auf das Brechungsverhalten.
-Gerade bei einem Prisma wird dies besonders deutlich, da durch die geometrische Form die Ablenkwinkel verschiedener 
+Gerade bei einem Prisma wird dies besonders deutlich, da durch die geometrische Form die Ablenkwinkel verschiedener
 Wellenlängen so unterschiedlich sind, dass polychromatisches Licht beim Einfall in seine Spektralfarben zerlegt wird.
