@@ -19,6 +19,7 @@ n = 1                 # Beugungsordnung
 #Literaturwerte
 E_alit = 8.048*10**3 #eV 
 E_blit = 8.907*10**3 #eV 
+lc     = 2.2426      #pm
 
 # Naturkonstanten
 h = 4.136*10**(-15) # eV s
@@ -136,13 +137,13 @@ I_2 = 1024.0                        #Al-Absorber zwischen Streuer und Zählrohr
 T_1 = I_1/I_0                       #Transmissionen
 T_2 = I_2/I_0
 
-l1 = (T_1 - params[1])/params[0]    #entsprechende Wellengröße
+l1 = (T_1 - params[1])/params[0]    #entsprechende Wellenlänge
 l2 = (T_2 - params[1])/params[0]
-
 dl = l2 - l1
-
+pdl= 100*(lc-dl)/lc
 #Ausgabe
 print(f'T_1 = {T_1:.3f}, T_2 = {T_2:.3f}')
-print(f'Lambda 1 = {l1}')
-print(f'Lambda 2 = {l2}')
-print(f'Compton  = {dl}')
+print(f'Lambda 1   = {l1}pm')
+print(f'Lambda 2   = {l2}pm')
+print(f'Compton    = {dl}pm')
+print(f'Abweichung = {pdl}%')
