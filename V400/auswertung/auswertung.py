@@ -219,6 +219,10 @@ p600 = 100*(lwert600-lambda600)/lwert600
 p300 = 100*(lwert300-lambda300)/lwert300
 p100 = 100*(lwert100-lambda100)/lwert100
 
+lm  =  np.mean(lambda100)
+lf  =  sem(lambda100)
+lu  =  ufloat(lm,lf)
+
 print()
 print("Aufgabe 5")
 print("Wellenlänge auf Basis von 600Linien/mm: ")
@@ -234,3 +238,4 @@ print("...300Linien/mm: ")
 print(p300)
 print("...100Linien/mm: ")
 print(p100)
+print(f"berechnete Wellenlänge:{lu:.8f}")
