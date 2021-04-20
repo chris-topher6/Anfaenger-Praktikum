@@ -12,9 +12,9 @@ def gerade(x, m, b):
     return m*x+b
 
 # Konstanten der Messung
-t = 90 * 10**(-6) # s Totzeit des GM-Zählers
+t = 90 * 10**(-6)     # s Totzeit des GM-Zählers
 d = 201.4 * 10**(-12) # m Gitterkonstante LiF
-n = 1 # Beugungsordnung
+n = 1                 # Beugungsordnung
 
 #Literaturwerte
 E_alit = 8.048*10**3 #eV 
