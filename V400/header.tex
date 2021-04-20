@@ -30,8 +30,9 @@
 \recalctypearea{}
 
 % deutsche Spracheinstellungen
-\usepackage[main=ngerman]{babel}
-
+\usepackage[ngerman]{babel}
+%BUG in Biblatex wird hiermit gefixt
+\providetoggle{blx@lang@captions@english}
 
 \usepackage[
   math-style=ISO,    % ┐
@@ -137,4 +138,3 @@
   \href{mailto:henry.kraemerkaemper@tu-dortmund.de}{henry.kraemerkaemper@tu-dortmund.de}%
 }
 \publishers{TU Dortmund – Fakultät Physik}
-
