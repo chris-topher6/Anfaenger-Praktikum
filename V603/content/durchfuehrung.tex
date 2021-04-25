@@ -1,13 +1,13 @@
 \section{Durchführung}
 \label{sec:Durchführung}
-\subsection{Vorbereitungsaufgabe}
+\subsection{Vorbereitungsaufgaben}
 \label{sec:vorbereitung}
 In folgender Tabelle sind die recherchierten Werte für die Energien der Kupfer $K_{alpha}$ und $K_{beta}$
 Linien zusammengefasst.
 \begin{table}[H]
     \centering
     \caption{Literaturwerte der Energien der Spektrallinien von Kupfer. \cite{AP03}.}
-    \label{tab:brechungsind}
+    \label{tab:Literaturwerte}
     \sisetup{table-format=1.8}
     \begin{tabular}{S S}
       \toprule
@@ -19,17 +19,31 @@ Linien zusammengefasst.
     \end{tabular}
   \end{table}
 \noindent
-\subsection{Notizen für Später}
-Die Transmission eines Aluminium-Absorbers lässt sich aus dem gemessenen Emissionspektrum nach
-\begin{equation}
-	T(\lambda) = \frac{I_{Al}}{I_0}
-	\label{eqn:trans}
-\end{equation}
-bestimmen.
-%
-Um die Intensität zu messen, wird mittels eines Geiger-Müller-Zählrohres die Anzahl der gestreuten Photonen aufgenommen.
-Um bei der Messung der Intensität die Totzeit des Geiger-Müller-Zählrohres zu beachten, muss folgende Korrektur vorgenommen werden:
+
+\subsection{Der Versuchsaufbau}
+Für die Erzeugung der benötigten Röntgenstrahlung wird eine Kupfer-Röntgenröhre verwendet. Die Röntgenstrahlung wird aus dieser auf den LiF-Kristall oder den Plexiglasstreuer geschossen. Der Winkel des
+LiF-Kristalls oder Plexiglasstreuers kann verstellt werden. Hinter dem LiF-Kristall/Plexiglasstreuers befindet sich ein Geiger-Müller-Zählrohr, welches ebenfalls auf unterschiedliche Winkel einstellbar ist.
+Dies ist in Abbildung \ref{fig:versuchsaufbau1} dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{content/versuchsaufbau1.png}
+  \caption{Der Versuchsaufbau.}
+  \label{fig:versuchsaufbau1}
+\end{figure}
+
+\subsection{Durchführung des Versuches}
+Zu Beginn wird das Emissionspektrum bei einer Blendenbreite von $2 \si{\milli\meter}$ und dem LiF-Kristall gemessen. Dabei wird in $0.2 \si{\degree}$-Schritten bei der Beugungsordnung $n = 1$ eine Messung des
+Röntgenspektrums vorgenommen. Dann wird die Transmission an einem Aluminium-Absorber gemessen. Dabei wird eine $2 \si{\milli\meter}$ -Blende verwendet. Es wird auch eine Messung ohne Aluminium-Absorber
+durchgeführt.
+Um bei der Messung die Totzeit des Geiger-Müller-Zählrohres zu beachten, muss folgende Korrektur vorgenommen werden:
 \begin{equation*}
 	I = \frac{N}{1 - \tau \cdot N}.
 \end{equation*}
 Hierbei bezeichnet $\tau = 90 \mu \si{\second}$ die Totzeit des Geiger-Müller-Zählrohres und $N$ die Anzahl der Photonen.
+Die gemessenen Spektren $I_{Al}$ und $I_0$ ergeben nach
+\begin{equation}
+	T(\lambda) = \frac{I_{Al}}{I_0}
+	\label{eqn:trans}
+\end{equation}
+die Transmission an dem LiF-Kristall in Abhängigkeit der Wellenlänge.
+Es wird eine zweite Messung durchgeführt, wobei der LiF-Kristall durch den Plexiglas-Absorber und die $2 \si{\milli\meter}$-Blende gegen eine $\SI{5}{\milli\meter}$-Blende getauscht wird.
