@@ -4,11 +4,12 @@
 \label{sec:messdaten}
 Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1} und \ref{tab:mess2}
 dargestellt. 
-\\\noindent
-\vfill
+\newpage%\noindent
+%\vfill
 \captionof{table}{Messung des Kupfer-Emissionsspektrums. \cite{AP02}}
 \label{tab:mess1}
 \begin{minipage}{0.2\textwidth}
+  \small
   \begin{tabular}{S S}
   \toprule
   {$\theta [°]$} & {$N [\si{\per\second}]$} \\
@@ -60,6 +61,7 @@ dargestellt.
   \end{tabular}
   \end{minipage}
   \begin{minipage}{0.2\textwidth}
+  \small
   \begin{tabular}{|S S}
   \toprule
   {$\theta [°]$} & {$N [\si{\per\second}]$} \\
@@ -111,6 +113,7 @@ dargestellt.
   \end{tabular}
   \end{minipage}
   \begin{minipage}{0.2\textwidth}
+  \small
   \begin{tabular}{|S S}
   \toprule
   {$\theta [°]$} & {$N [\si{\per\second}]$} \\
@@ -162,6 +165,7 @@ dargestellt.
   \end{tabular}
   \end{minipage}
   \begin{minipage}{0.2\textwidth}
+  \small
   \begin{tabular}{|S S}
   \toprule
   {$\theta [°]$} & {$N [\si{\per\second}]$} \\
@@ -212,6 +216,7 @@ dargestellt.
   \bottomrule
   \end{tabular}
 \end{minipage}
+\newpage\noindent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionof{table}{Die gemessenen Röntgenquanten mit und ohne Aluminum-Absorber. \cite{AP02}}
 \label{tab:mess2}
@@ -268,7 +273,7 @@ dargestellt.
 %Wie zum Henker soll das passen??
 \subsection{Das Emissionsspektrum der Kupfer Rontgenröhre}
 \label{sec:emission}
-Das nach Kaptiel \ref{sec:emissionsmessung} gemessene Emissionsspektrum wurde mittels \textit{matplotlib}\cite{matplotlib} 
+Das nach Kaptiel \ref{sec:Durchführung} gemessene Emissionsspektrum wurde mittels \textit{matplotlib}\cite{matplotlib} 
 als $\theta-N$ Diagramm in Abbildung \ref{fig:plot1} dargestellt. Dabei sind Bremsberg und die Spektrallinien $K_{\alpha}$ und 
 $K_{\beta}$ des Kupfers makiert. Die Punkte der jeweiligen Extrema sind in Tabelle \ref{tab:hp} dargestellt und in Abbildung 
 \ref{fig:plot1} rot unterlegt. Bei $K_{\alpha}$ und $K_{\beta}$ sind zudem noch die charakteristischen Spektrallinien des Kupfers
@@ -347,11 +352,11 @@ Die Messung ergab
     I_1 &= 1180 \si{Imp}\\
     I_2 &= 1024 \si{Imp}.
 \end{align*}  
-Durch diese werden die Transmissionen $T_1=I_1/I_0$ und  $T_2=I_2/I_0$ berechnet, womit sich dann die Wellenlänge durch Gleichung
-\eqref{eqn:lambda} berechnen lässt. Dafür werden die Parameter der linearen Regression verwendet, also wird \eqref{eqn:lambda} zu
+Durch diese werden die Transmissionen $T_1=I_1/I_0$ und  $T_2=I_2/I_0$ berechnet, womit sich dann die Wellenlänge mit
 \begin{equation*}
     \lambda_i = \frac{T_i -b}{a}. 
 \end{equation*}
+bestimmen lässt. Dabei werden die Parameter der linearen Regression verwendet.
 Einsetzen der berechneten Werte ergibt dann
 \begin{align*}
     \lambda_1 &= \SI{52.189}{\pico\metre}\\
