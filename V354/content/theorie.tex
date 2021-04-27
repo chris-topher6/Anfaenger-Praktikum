@@ -1,2 +1,69 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Der RCL-Schwingkreis}
+\label{sec:RCL}
+Ein Schwingkreis ist eine elektrische Schaltung bei welcher Energie in Form eines elektrischen Stroms zwischen zwei Energiespeichern hin 
+und der oszilieren. Diese Energiespeicher sind gegeben durch eine Induktivität $L$ und einen Kondensator $C$. Bei einem CL-Kreis gilt dabei
+Energieerhaltung, die Schwingung wird also nicht gedämpft. Wird in die Schaltung jedoch ein ohmscher Widerstand $R$ eingebaut, so geht über 
+diesen Energie in Form von Wärme verloren, die Energie ist im Schwinkreis also nicht mehr erhalten. Ein solcher RCL-Schwinkreis führt demnach
+gedämpfte Schwingungen aus.\\\noindent
+Zusätzlich kann noch eine Spannungsquelle hinzugefügt werden, sodass dem Schwingkreis Energie zugeführt wird. Ein solcher getriebener 
+Schwingkreis führt dann gezwungene Schwingungen aus.
+Im Folgenden werden die beiden letztgenannten Schwinkreise weiter beleuchtet.
+%Bilder einfügen
+
+\subsection{Gedämpft Schwingung}
+\label{sec:gedämpft}
+Um die Differentialgleichung für einen gedämpften Schwinkreis zu erhalten, geht man von dem 2. Kirchhoffschen Gestz
+\begin{equation}
+    U_R(t)+U_C(t)+U_L(t)=0
+    \label{eqn:kirchhoff2}
+\end{equation}
+mit
+\begin{align*}
+U_R(t)&=RI(t)                           \\
+U_C(t)&=\frac{Q(t)}{C}                  \\
+U_L(t)&=L\frac{\text{d}I(t)}{\text{d}t}    .
+\end{align*}
+Mit dem Zusammenhang 
+\begin{equation*}
+    I=\frac{dQ}{dt}
+\end{equation*}
+kann durch Einsetzen in das 2. Kirchhoffsche Gesetz \eqref{eqn:kirchhoff2} und durch einmaliges Ableiten nach der Zeit
+die Differentialgleichung
+\begin{equation}
+    \ddot(I)+\frac{R}{L}\dot{I}+\frac{1}{LC}I=0
+    \label{eqn:DGL1}
+\end{equation}
+erhalten werden. Die Lösung der Differentialgleichung ist dabei gegeben durch
+\begin{equation}
+    I=e^{-2\pi\mu t}\left(Ae^{i2\pi\nu t}+Be^{-i2\pi\nu t}\right), \qquad A,B\in\mathbb{C}
+    \ref{eqn:Lösung1}
+\end{equation}
+mit
+\begin{equation*}
+    2\pi=\frac{R}{2L} 
+    \qquad\text{und}\qquad 
+    2\pi \nu=\sqrt{\frac{1}{LC}-\frac{R^2}{4L^2}} .
+\end{equation*}
+Offensichtlich wird $\nu$ für $1/LC<R^2/(4L^2)$ komplex, weswegen in einer Fallunterscheidung die drei Möglichen Fälle 
+diskutiert werden.
+\subsubsection*{1.Fall: $1/LC>R^2/(4L^2)$}
+In dem ersten Fall ist $\nu$ reell und somit die Exponentialfunktionen in \eqref{eqn:Lösung1} komplex. Damit die Lösung trotzdem reell ist muss
+für die Konstanten $A=B*$ gelten. Somit wird \eqref{eqn:Lösung1} zu
+\begin{equation}
+    I=A_0E^{-2\pi\mu t} cos(2\pi\nu t+\eta).
+    \label{eqn:Fall1}
+\end{equation}
+Wie in Abbildung \ref{fig:Fall1} zu erkennen ist, handelt es sich bei dieser Lösung um eine gedämpfte Schwingung, die mit zunehmender Zeit 
+exponentiell gegen 0 geht. Die Schwingungsdauer ist dabei gegeben durch
+\begin{equation*}
+    T=\frac{1}{\nu} ,
+\end{equation*}
+$\nu$ ist also eine Frequenz. Die Abklingdauer ist dabei ziemlich analog
+\begin{equation*}
+    T_{ex}=\frac{1}{2\pi\mu}
+\end{equation*}
+%Bild einfügen
+\subsubsection*{2.Fall: $1/LC<R^2/(4L^2)$}
+\subsubsection*{3.Fall: $1/LC=R^2/(4L^2)$}
