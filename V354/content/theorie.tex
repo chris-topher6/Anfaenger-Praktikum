@@ -42,10 +42,15 @@ erhalten werden. Die Lösung der Differentialgleichung ist dabei gegeben durch
 \end{equation}
 mit
 \begin{equation*}
-    2\pi=\frac{R}{2L} 
+    2\pi \mu=\frac{R}{2L} 
     \qquad\text{und}\qquad 
     2\pi \nu=\sqrt{\frac{1}{LC}-\frac{R^2}{4L^2}} .
 \end{equation*}
+Auflösen der ersten Gleichung nach $R$ liefert den effektiven Dämpfungswiderstand 
+\begin{equation}
+    R_{eff}=4\pi\mu L 
+    \label{eqn:Reff}
+\end{equation}
 Offensichtlich wird $\nu$ für $1/LC<R^2/(4L^2)$ komplex, weswegen in einer Fallunterscheidung die drei Möglichen Fälle 
 diskutiert werden.
 
@@ -62,9 +67,10 @@ exponentiell gegen 0 geht. Die Schwingungsdauer ist dabei gegeben durch
     T=\frac{1}{\nu} ,
 \end{equation*}
 $\nu$ ist also eine Frequenz. Die Abklingdauer ist dabei beinahe analog
-\begin{equation*}
+\begin{equation}
     T_{ex}=\frac{1}{2\pi\mu}
-\end{equation*}
+    \label{eqn:Tex}
+\end{equation}
 %Bild einfügen
 
 \subsubsection*{2.Fall: $1/LC<R^2/(4L^2)$}
@@ -98,14 +104,42 @@ rechten Seite die Spannung $U(t)=U_0\exp(i\omega t)$ der Spanungsquelle ergänzt
 Die allgemeine Lösung dieser Differentialgleichung lautet
 \begin{equation}
     U(t)=\frac{U_0(1-LC\omega^2-i\omega RC)}{(1-LC\omega^2)^2+\omega^2R^2C^2}   ,
-    \label{ref:Losung2}
+    \label{eqn:Losung2}
 \end{equation}
 wobei $U_C$ als reelle Messgröße mit der komplexen Gleichung \eqref{eqn:Losung2} in dem Zusammenhang
-\begin{equation*}
-    U_C(\omega,t)=U(\omega)e^{i\omega t}
-\end{equation*} 
+\begin{equation}
+    U_C(\omega,t)=U(\omega)e^{i\omega t} \label{eqn:UuUC}
+\end{equation} 
 stehen. Nun werden von dem komplexen $U(t)$ der Betrag $|U|$ sowie die Phase $\phi(\omega)$ gebildet:
-\begin{align}
-    |U|          &= \sqrt{\Re^2(U)+\Im^2(U)}&=& \frac{U_0}{\sqrt{(1-LC\omega^2)^2+\omega^2R^2C^2}} \\
-    \phi(\omega) &= \arctan{\frac{\Im(U)}{\Re(U)}}&=& \arctan{\frac{-\omega RC}{1-LC\omega^2}}
+\begin{align} %Das geht bestimmt auch schöner :(
+    |U|          &= \sqrt{\Re^2(U)+\Im^2(U)}      & &=& &\frac{U_0}{\sqrt{(1-LC\omega^2)^2+\omega^2R^2C^2}} \label{eqn:ubetrag} \\
+    \phi(\omega) &= \arctan{\frac{\Im(U)}{\Re(U)}}& &=& &\arctan{\frac{-\omega RC}{1-LC\omega^2}} \label{eqn:uphase}
 \end{align}
+Aus dem Zusammenhang \eqref{eqn:UuUC} folgt dabei, dass $U_C(\omega)=|U|$ ist. Somit beschreibt Gleichung \eqref{eqn:ubetrag} die Kondensatorspannung
+$U_C$ in Abhängigkeit der Frequenz $\omega$. Es existiert nun ein $\omega$, für welches $U_C$ maximal und dabei größer als $U_0$ ist. Diese 
+sogennante Resonanzfrequenz ist dabei 
+\begin{equation*}
+    \omega_{res}=\sqrt{\frac{1}{LC}-\frac{R^2}{2L^2}}   .
+\end{equation*}
+Für eine schwache Dämpfung dominiert der erste Teil unter der Wurzel, sodass $\omega_{res}\approx 1/(LC)=\omega_0$ gilt. Für die maximale Amplitude
+der Kondensatorspannung folgt damit
+\begin{equation*}
+    U_{C, \text{max}} = \frac{1}{\omega_0 RC} U_0  .
+\end{equation*}
+Um das Maß der Überhöhung der Kondensatorspannung $U_C$ im Vergleich zu der Erregeramplitude $U_0$ zu beschreiben, wird der Faktor der die beiden
+Größen verbindet als Güte $q$ definiert. Es gilt also
+\begin{equation}
+    q=\frac{1}{\omega_0RC}
+    \label{eqn:gute}
+\end{equation}
+Als Maß für die Schärfe der Resonanz, werden die Frequenzen $\omega_-$ und $\omega_+$ als die Frequenzen definiert, bei das Maximum $U_C(\omega_res)$
+um den Faktor $1/\sqrt{2}$ abgesunken ist. $\omega_-$ und $\omega_+$ erfüllen somit die Gleichung
+\begin{equation*}
+    q\frac{U_0}{\sqrt{2}}=\frac{U_0}{c\sqrt{\omega_{\pm}^2R^2+(\omega_{\pm}^2L-1/C)^2}} .
+\end{equation*}
+Für $R^2/L^2<<\omega_0^2$ vereinfacht sich die Gleichung zu
+\begin{align*}
+                    &\omega_+-\omega_-\approx \frac{R}{L} \\
+    \Leftrightarrow \qquad &q=\frac{\omega_0}{\omega_+-\omega_-}    .
+\end{align*}
+Für eine starke Dämpfung fällt $U_C$ von $U_0$ aus monoton gegen null, sodass $U_C$ die Erregeramplitude nicht überhöhen kann. 
