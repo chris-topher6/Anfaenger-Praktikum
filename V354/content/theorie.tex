@@ -8,13 +8,26 @@ Energieerhaltung, die Schwingung wird also nicht gedämpft. Wird in die Schaltun
 diesen Energie in Form von Wärme verloren, die Energie ist im Schwinkreis also nicht mehr erhalten. Ein solcher RCL-Schwinkreis führt demnach
 gedämpfte Schwingungen aus.\\\noindent
 Zusätzlich kann noch eine Spannungsquelle hinzugefügt werden, sodass dem Schwingkreis Energie zugeführt wird. Ein solcher getriebener 
-Schwingkreis führt dann gezwungene Schwingungen aus.
-Im Folgenden werden die beiden letztgenannten Schwinkreise weiter beleuchtet.
-%Bilder einfügen
-
+Schwingkreis führt dann gezwungene Schwingungen aus. Der Aufbau der beiden Schwingkreise ist in den Abbildungen \ref{fig:gedampft} und 
+\ref{fig:getrieben} noch einmal skizziert.
+\begin{figure}[H]
+    \begin{minipage}[b]{.5\linewidth} % [b] => Ausrichtung an \caption
+       \includegraphics[width=\linewidth]{pictures/gedampft.png}
+       \caption{Der geämpfte Schwingkreis. \cite{AP01}}
+       \label{fig:gedampft}
+    \end{minipage}
+    \hspace{.1\linewidth}% Abstand zwischen Bilder
+    \begin{minipage}[b]{.4\linewidth} % [b] => Ausrichtung an \caption
+       \includegraphics[width=\linewidth]{pictures/getrieben.png}
+       \caption{Der getreibene Schwingkreis. \cite{AP01}}
+       \label{fig:getrieben}
+    \end{minipage}
+  \end{figure}
+\noindent
+Im Folgenden werden diese beiden Schwinkreise näher beleuchtet.
 \subsection{Gedämpft Schwingungen}
 \label{sec:gedämpft}
-Um die Differentialgleichung für einen gedämpften Schwinkreis zu erhalten, geht man von dem 2. Kirchhoffschen Gestz
+Um die Differentialgleichung für einen gedämpften Schwinkreis zu erhalten, wird von dem 2. Kirchhoffschen Gestz
 \begin{equation}
     U_R(t)+U_C(t)+U_L(t)=0
     \label{eqn:kirchhoff2}
@@ -23,9 +36,9 @@ mit
 \begin{align*}
 U_R(t)&=RI(t)                           \\
 U_C(t)&=\frac{Q(t)}{C}                  \\
-U_L(t)&=L\frac{\text{d}I(t)}{\text{d}t}    .
+U_L(t)&=L\frac{\text{d}I(t)}{\text{d}t}    
 \end{align*}
-Mit dem Zusammenhang 
+ausgegangen. Mit dem Zusammenhang 
 \begin{equation*}
     I=\frac{dQ}{dt}
 \end{equation*}
@@ -71,7 +84,12 @@ $\nu$ ist also eine Frequenz. Die Abklingdauer ist dabei beinahe analog
     T_{ex}=\frac{1}{2\pi\mu}
     \label{eqn:Tex}
 \end{equation}
-%Bild einfügen
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{pictures/Fall1.png}
+    \caption{Die Stromstärke als Funktion der Zeit für $1/LC>R^2/(4L^2)$. Die einhülende Exponentialfunktion ist in rot skizziert.\cite{AP01}}
+    \label{fig:Fall1}
+\end{figure}
 
 \subsubsection*{2.Fall: $1/LC<R^2/(4L^2)$}
 In diesem Fall ist $\nu$ rein imaginär, die Exponentialfunktionen in \eqref{eqn:Losung1} sind also alle reell. Demnach findet keine Oszillation
@@ -81,7 +99,12 @@ ange Zeiten liegt jedoch immer bei null. Es gilt dabei
 \begin{equation*}
     I(t)\propto \exp\left(\left(\frac{R}{2L}-\sqrt{\frac{R^2}{4L^2}-\frac{1}{LC}}\right)t\right)    .
 \end{equation*}
-%Bild einfügen
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{pictures/Fall2.png}
+    \caption{Verschiedene Verläufe der Stromstärke für $1/LC<R^2/(4L^2)$. Der aperiodische Grenzfall ist gestrichelt skizziert.\cite{AP01}}
+    \label{fig:Fall2}
+\end{figure}
 
 \subsubsection*{3.Fall: $1/LC=R^2/(4L^2)$}
 Dieser Fall wird auch aperiodischer Grenzfall genannt, da $\nu$ für $1/LC=R^2/(4L^2)$ gerade null ist. Dadurch vereinfacht sich \eqref{eqn:Losung1}
