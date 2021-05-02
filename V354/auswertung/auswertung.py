@@ -79,7 +79,7 @@ print("R_eff = ", R_eff, "[Ohm]")
 print("Abweichung R_eff von R1: ", rabw, "%")#Hä
 
 #Abklingdauer
-T_ex = 1/2*np.pi*mu
+T_ex = 1/(2*np.pi*mu)
 
 print("T_ex = ", T_ex, "[s]")
 
