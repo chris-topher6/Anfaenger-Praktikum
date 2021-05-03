@@ -54,6 +54,7 @@ plt.close()
 
 #Plot der Einhüllenden der zweiten Messreihe
 plt.plot(t2h, Uc2h, label="Einhüllende")
+plt.plot(t2, Uc2, label = "Schwingungskurve")
 plt.plot(t2, Uc2, "r.", label="Peaks")
 plt.legend()
 plt.xlabel(r"$t[\mu s]$")
@@ -69,14 +70,14 @@ plt.plot(t2h, Uc2h, "k.", label="Peaks")
 plt.xlabel(r"$t[\mu s]$")
 plt.ylabel(r"$U_c [V]$")
 
-params, cov_matrix = curve_fit(e_fit, t2h, Uc2h, method="trf")
+params, cov_matrix = curve_fit(e_fit, t2h, Uc2h, bounds = (-20, 20))#bounds helfen
 errors = np.sqrt(np.diag(cov_matrix))
 print('A = ', params[0], '+/-', errors[0])
 print('B = ', params[1], '+/-', errors[1])
 
 plt.plot(t2h, e_fit(t2h, *params), "r-", label="Ausgleichsrechnung")
 plt.legend()
-plt.savefig("plot100.pdf")
+plt.savefig("plot3.pdf")
 plt.close()
 
 #mu erhält man aus dem Exponenten des Fits/2pi
