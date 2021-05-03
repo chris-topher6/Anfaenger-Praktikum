@@ -143,7 +143,7 @@ plt.savefig("plot4.pdf")
 plt.close()
 
 #halblogarithmischer Plot der Frequenz
-plt.plot(np.log(f), quotient(Uc, U), label="Halblogarithmisch")
+plt.plot(np.log(f), quotient(Uc, U), label="Diagramm der Resonanzkurve")
 plt.legend()
 plt.xlabel(r"$log(\nu) [kHz]$")
 plt.ylabel(r"$\frac{U_C}{U}$")
@@ -151,7 +151,7 @@ plt.savefig("plot42.pdf")
 plt.close()
 
 #linearer Plot um die (vermutete) Resonanzfrequenz w_0 = 100kHz
-plt.plot(f[0:5], quotient(Uc[0:5], U[0:5]), label="Linear")
+plt.plot(f[0:5], quotient(Uc[0:5], U[0:5]), label="lineares Diagramm")
 plt.legend()
 plt.xlabel(r"$\nu [kHz]$")
 plt.ylabel(r"$log(\frac{U_C}{U})$")
