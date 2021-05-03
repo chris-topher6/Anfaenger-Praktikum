@@ -2,8 +2,8 @@
 \label{sec:Theorie}
 \subsection{Der RCL-Schwingkreis}
 \label{sec:RCL}
-Ein Schwingkreis ist eine elektrische Schaltung bei welcher Energie in Form eines elektrischen Stroms zwischen zwei Energiespeichern hin 
-und der oszillieren. Diese Energiespeicher sind gegeben durch eine Induktivität $L$ und einen Kondensator $C$. Bei einem CL-Kreis gilt dabei
+Ein Schwingkreis ist eine elektrische Schaltung, bei welcher Energie in Form eines elektrischen Stroms zwischen zwei Energiespeichern hin 
+und her oszillieren. Diese Energiespeicher sind gegeben durch eine Induktivität $L$ und einen Kondensator $C$. Bei einem CL-Kreis gilt dabei
 Energieerhaltung, die Schwingung wird also nicht gedämpft. Wird in die Schaltung jedoch ein ohmscher Widerstand $R$ eingebaut, so geht über 
 diesen Energie in Form von Wärme verloren, die Energie ist im Schwinkreis also nicht mehr erhalten. Ein solcher RCL-Schwinkreis führt demnach
 gedämpfte Schwingungen aus.\\\noindent
@@ -13,21 +13,22 @@ Schwingkreis führt dann gezwungene Schwingungen aus. Der Aufbau der beiden Schw
 \begin{figure}[H]
     \begin{minipage}[b]{.5\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{pictures/gedampft.png}
-       \caption{Der geämpfte Schwingkreis. \cite{AP01}}
+       \caption{Der gedämpfte Schwingkreis. \cite{AP01}}
        \label{fig:gedampft}
     \end{minipage}
     \hspace{.1\linewidth}% Abstand zwischen Bilder
     \begin{minipage}[b]{.4\linewidth} % [b] => Ausrichtung an \caption
        \includegraphics[width=\linewidth]{pictures/getrieben.png}
-       \caption{Der getreibene Schwingkreis. \cite{AP01}}
+       \caption{Der getriebene Schwingkreis. \cite{AP01}}
        \label{fig:getrieben}
     \end{minipage}
   \end{figure}
 \noindent
 Im Folgenden werden diese beiden Schwinkreise näher beleuchtet.
+
 \subsection{Gedämpft Schwingungen}
 \label{sec:gedämpft}
-Um die Differentialgleichung für einen gedämpften Schwinkreis zu erhalten, wird von dem 2. Kirchhoffschen Gestz
+Um die Differentialgleichung für einen gedämpften Schwinkreis zu erhalten, wird von dem 2. Kirchhoffschen Gesetz
 \begin{equation}
     U_R(t)+U_C(t)+U_L(t)=0
     \label{eqn:kirchhoff2}
@@ -36,7 +37,8 @@ mit
 \begin{align*}
 U_R(t)&=RI(t)                           \\
 U_C(t)&=\frac{Q(t)}{C}                  \\
-U_L(t)&=L\frac{\text{d}I(t)}{\text{d}t}    
+%U_L(t)&=L\frac{\text{d}I(t)}{\text{d}t}
+U_L(t)&=L\dot{I}    
 \end{align*}
 ausgegangen. Mit dem Zusammenhang 
 \begin{equation*}
@@ -64,16 +66,16 @@ Auflösen der ersten Gleichung nach $R$ liefert den effektiven Dämpfungswiderst
     R_{eff}=4\pi\mu L 
     \label{eqn:Reff}
 \end{equation}
-Offensichtlich wird $\nu$ für $1/LC<R^2/(4L^2)$ komplex, weswegen in einer Fallunterscheidung die drei Möglichen Fälle 
+Offensichtlich wird $\nu$ für $1/LC<R^2/(4L^2)$ komplex, weswegen in einer Fallunterscheidung drei Möglichen Fälle 
 diskutiert werden.
 
 \subsubsection*{1.Fall: $1/LC>R^2/(4L^2)$}
 In dem ersten Fall ist $\nu$ reell und somit die Exponentialfunktionen in \eqref{eqn:Losung1} komplex. Damit die Lösung trotzdem reell ist muss
-für die Konstanten $A=B*$ gelten. Somit wird \eqref{eqn:Losung1} zu
-\begin{equation}
+für die Konstanten $A=B^{*}$ gelten. Somit wird \eqref{eqn:Losung1} zu
+\begin{equation*}
     I=A_0E^{-2\pi\mu t} cos(2\pi\nu t+\eta).
     \label{eqn:Fall1}
-\end{equation}
+\end{equation*}
 Wie in Abbildung \ref{fig:Fall1} zu erkennen ist, handelt es sich bei dieser Lösung um eine gedämpfte Schwingung, die mit zunehmender Zeit 
 exponentiell gegen 0 geht. Die Schwingungsdauer ist dabei gegeben durch
 \begin{equation*}
@@ -93,9 +95,9 @@ $\nu$ ist also eine Frequenz. Die Abklingdauer ist dabei beinahe analog
 
 \subsubsection*{2.Fall: $1/LC<R^2/(4L^2)$}
 In diesem Fall ist $\nu$ rein imaginär, die Exponentialfunktionen in \eqref{eqn:Losung1} sind also alle reell. Demnach findet keine Oszillation
-statt, wie in Abbildung \ref{fig:Fall2} zu sehen ist. Dabei kann die Funktion sowohl das Vorzeichen welchseln (vgl. grün\ref{fig:Fall2}), als
-auch Extremwwerte annehmen (vgl. rot, grün \ref{fig:Fall2}) oder monoton gegen null fallen (vgl. blau\ref{fig:Fall2}). Der Grenzwert für l
-ange Zeiten liegt jedoch immer bei null. Es gilt dabei
+statt, wie in Abbildung \ref{fig:Fall2} zu sehen ist. Dabei kann die Funktion sowohl das Vorzeichen welchseln (vgl. grün \ref{fig:Fall2}), als
+auch Extremwerte annehmen (vgl. rot, grün \ref{fig:Fall2}) oder monoton gegen null fallen (vgl. blau \ref{fig:Fall2}). Der Grenzwert für lange
+Zeiten liegt jedoch immer bei null. Es gilt dabei
 \begin{equation*}
     I(t)\propto \exp\left(\left(\frac{R}{2L}-\sqrt{\frac{R^2}{4L^2}-\frac{1}{LC}}\right)t\right)    .
 \end{equation*}
@@ -118,13 +120,13 @@ Abbildung \ref{fig:Fall2} als gestrichelte Linie eingezeichnet.
 
 \subsection{Erzwungene Schwingungen}
 Wird der Schwingkreis an eine externe Spannungsquelle angeschlossen, können damit Schwingungen erzwungen werden. Der Aufbau eines solchen Schwinkreises
-ist in Abbildung \ref{fig:erzwungen} dargestellt. Die neue Differentialgleichung wird recht analog zu \eqref{eqn:DGL1} hergeleitet, wobei auf der 
+ist in Abbildung \ref{fig:getrieben} dargestellt. Die neue Differentialgleichung wird recht analog zu \eqref{eqn:DGL1} hergeleitet, wobei auf der 
 rechten Seite die Spannung $U(t)=U_0\exp(i\omega t)$ der Spanungsquelle ergänzt wird. Wegen dieser wird nun auch die Spannung $U_C(t)$ auf dem Kondensator
- und nicht mehr $I(t)$ betrachtet. Es ergibt sich demnach
-\begin{equation}
+und nicht mehr $I(t)$ betrachtet. Es ergibt sich demnach
+\begin{equation*}
     LC\ddot{U}_C+RC\dot{U}_C+U_C=U_0e^{i\omega t}   .
     \label{eqn:DGL2}
-\end{equation}
+\end{equation*}
 Die allgemeine Lösung dieser Differentialgleichung lautet
 \begin{equation}
     U(t)=\frac{U_0(1-LC\omega^2-i\omega RC)}{(1-LC\omega^2)^2+\omega^2R^2C^2}   ,
@@ -132,7 +134,8 @@ Die allgemeine Lösung dieser Differentialgleichung lautet
 \end{equation}
 wobei $U_C$ als reelle Messgröße mit der komplexen Gleichung \eqref{eqn:Losung2} in dem Zusammenhang
 \begin{equation}
-    U_C(\omega,t)=U(\omega)e^{i\omega t} \label{eqn:UuUC}
+    U_C(\omega,t)=U(\omega)e^{i\omega t} 
+    \label{eqn:UuUC}
 \end{equation} 
 stehen. Nun werden von dem komplexen $U(t)$ der Betrag $|U|$ sowie die Phase $\phi(\omega)$ gebildet:
 \begin{align} %Das geht bestimmt auch schöner :(
@@ -156,7 +159,7 @@ Größen verbindet als Güte $q$ definiert. Es gilt also
     q=\frac{1}{\omega_0RC}
     \label{eqn:gute}
 \end{equation}
-Als Maß für die Schärfe der Resonanz, werden die Frequenzen $\omega_-$ und $\omega_+$ als die Frequenzen definiert, bei das Maximum $U_C(\omega_res)$
+Als Maß für die Schärfe der Resonanz, werden die Frequenzen $\omega_-$ und $\omega_+$ als die Frequenzen definiert, bei denen das Maximum $U_C(\omega_res)$
 um den Faktor $1/\sqrt{2}$ abgesunken ist. $\omega_-$ und $\omega_+$ erfüllen somit die Gleichung
 \begin{equation*}
     q\frac{U_0}{\sqrt{2}}=\frac{U_0}{c\sqrt{\omega_{\pm}^2R^2+(\omega_{\pm}^2L-1/C)^2}} .
