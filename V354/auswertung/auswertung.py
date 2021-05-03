@@ -16,7 +16,15 @@ R_N = ufloat(0, 0) #in Ohm, Innenwiderstand des Netzgerätes (unbekannt)
 L = L*10**(-3) #in H
 C = C*10**(-9) #in F
 
+#Zur Überprüfung
+print("Gerätedaten")
+print("L = ", L, "[H]")
+print("C = ", C, "[F]")
+print("R1 = ", R1, "[Ohm]")
+print("R2 = ", R2, "[Ohm]")
+
 #Aufgabe 5 a)
+print(" ")
 print("Aufgabenteil 5 a):")
 #Einhüllende der Schwingungskurve plotten
 #Ausgleichsgerade der Kurve, Exponent der e-Funktion bestimmen
@@ -27,6 +35,12 @@ print("Aufgabenteil 5 a):")
 #Daten aus den zwei Messreihen zu Teil a)
 t1, Uc1 = np.genfromtxt("datena1.txt", unpack = True)
 t2, Uc2 = np.genfromtxt("datena2.txt", unpack = True)
+t2h, Uc2h = np.genfromtxt("datena2einh.txt", unpack = True)
+
+#Zeiten richtig machen
+#t2 = t2*10**(-6)#in Sekunden
+#t2h = t2h*10**(-6)#in Sekunden
+
 
 
 #Plot der Einhüllenden der ersten Messreihe
@@ -39,7 +53,7 @@ plt.savefig("plot1.pdf")
 plt.close()
 
 #Plot der Einhüllenden der zweiten Messreihe
-plt.plot(t2, Uc2, label="Einhüllende")
+plt.plot(t2h, Uc2h, label="Einhüllende")
 plt.plot(t2, Uc2, "r.", label="Peaks")
 plt.legend()
 plt.xlabel(r"$t[\mu s]$")
@@ -51,30 +65,30 @@ plt.close()
 def e_fit(t, A, B):
     return(A*np.exp(-B*t))
 
-plt.plot(t2, Uc2, "k.", label="Peaks")
+plt.plot(t2h, Uc2h, "k.", label="Peaks")
 plt.xlabel(r"$t[\mu s]$")
 plt.ylabel(r"$U_c [V]$")
 
-params, cov_matrix = curve_fit(e_fit, t2, Uc2)
+params, cov_matrix = curve_fit(e_fit, t2h, Uc2h, method="trf")
 errors = np.sqrt(np.diag(cov_matrix))
 print('A = ', params[0], '+/-', errors[0])
 print('B = ', params[1], '+/-', errors[1])
 
-plt.plot(t2, e_fit(t2, *params), "r-", label="Ausgleichsrechnung")
-
-#Exponent der gefitteten e-Funktion (mu ist nach Theorie Koeffizient/2pi)
-mu =ufloat(params[1], errors[1])/(2 * np.pi)
-print("mu = ", mu.n ,"+/-", mu.s)
+plt.plot(t2h, e_fit(t2h, *params), "r-", label="Ausgleichsrechnung")
 plt.legend()
-plt.savefig("plot3.pdf")
+plt.savefig("plot100.pdf")
 plt.close()
+
+#mu erhält man aus dem Exponenten des Fits/2pi
+mu = ufloat(params[0]/(2*np.pi), errors[0]/(2*np.pi))
+print("mu = ", mu)
 
 #effektiver Dämpfungswiderstand
 R_eff = 4*np.pi*mu*L
 
 #Vergleich R_eff und R1, R_eff weicht um rabw von R1 ab
 rabw = (unp.sqrt((R1 - R_eff)**2)/R1)*100
-
+print("R = ", R1)
 print("R_eff = ", R_eff, "[Ohm]")
 print("Abweichung R_eff von R1: ", rabw, "%")#Hä
 
@@ -84,6 +98,7 @@ T_ex = 1/(2*np.pi*mu)
 print("T_ex = ", T_ex, "[s]")
 
 #Aufgabe 5 b)
+print(" ")
 print("Aufgabenteil 5 b):")
 #gemessenes R_ap mit dem berechneten vergleichen
 
@@ -104,6 +119,7 @@ print("gemessener R_ap = ", R_ap, "[Ohm]")
 print("Abweichung R_ap von R_ap Theorie: ", R_apabw, "%" )
 
 #Aufgabe 5 c)
+print(" ")
 print("Aufgabenteil 5 c):")
 #Plot U_c/U gegen v (halb- oder doppellogarithmisch)
 #Umgebung der Resonanzfrequenz auch linear plotten
@@ -123,6 +139,14 @@ plt.legend()
 plt.xlabel(r"$\nu [kHz]$")
 plt.ylabel(r"$log(\frac{U_C}{U})$")
 plt.savefig("plot4.pdf")
+plt.close()
+
+#halblogarithmischer Plot der Frequenz
+plt.plot(np.log(f), quotient(Uc, U), label="Halblogarithmisch")
+plt.legend()
+plt.xlabel(r"$log(\nu) [kHz]$")
+plt.ylabel(r"$\frac{U_C}{U}$")
+plt.savefig("plot42.pdf")
 plt.close()
 
 #linearer Plot um die (vermutete) Resonanzfrequenz w_0 = 100kHz
