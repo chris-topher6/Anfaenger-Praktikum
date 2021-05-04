@@ -1,24 +1,47 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die Ergebnisse des Experimentes sind in folgenden Tabellen zusammengefasst:
+
+\begin{table}[H]
+  \centering
+    \caption{Die aus den Messwerten errechneten Ergebnisse.}
+    \label{tab:ergdisk}
+    $\begin{array}{|c|c|c|c|}
+      \hline
+      \text{Parameter} & \text{Wert} & \text{Fehler}  & \text{Einheit} \\
+      A         &  17.976               &   0.078                &               \\
+      B         &  3.866 \cdot 10^{-3}  &   2.957 \cdot 10^{-5}  &               \\
+      \mu       &  2.861                &   0.012                &               \\
+      R_{eff}   &  0.603                &   0.004                &  \si{\ohm}    \\
+      T_{ex}    &  0.05563              &   0.00024              &  \si{\second} \\
+      R_{apTh}  &  11400                &   35                   &  \si{\ohm}     \\
+      w_{res}   &  1.674 \cdot 10^5     &   0.005 \cdot 10^5     &  \si{\hertz}   \\
+      w_0       &  1.698 \cdot 10^5     &   0.005 \cdot 10^5     &  \si{\hertz}   \\
+      q         &  4.179                &   0.014                &                \\
+      w_{+}     &  2.399 \cdot 10^4     &   0.007 \cdot 10^4     &  \si{\hertz}   \\
+      w_{-}     &  3.046 \cdot 10^4     &   0.010 \cdot 10^4     &  \si{\hertz}   \\
+      \hline
+    \end{array}$
+\end{table}
 
 \begin{itemize}
-  \item \textit{Der gedämpfte Schwingkreis}
+  \item \textit{Der gedämpfte Schwingkreis} \\
   Durch die Regression auf Basis einer e-Funktion lassen sich die vorliegenden Daten gut
   annähern. Jedoch scheint entweder beim Ablesen vom Oszilloskop ein systematischer
   Fehler aufgetreten zu sein oder eines der Geräte hat einen technischen Fehler, da der
-  gemessene effektive Widerstand sehr viel geringer ist als der berechnete.
+  gemessene effektive Widerstand sehr viel geringer ist als der Berechnete.
   Alternativ könnte  auch der Wert für den Widerstand $R_1$ falsch aufgeschrieben worden
   sein. Bei der Berechnung des effektiven Widerstandes wurden Faktoren wie der
-  Innenwiderstand des Oszilloskops oder der Widerstand der Kabel nicht berückscihtigt,
+  Innenwiderstand des Oszilloskops oder der Widerstand der Kabel nicht berücksichtigt,
   weshalb der errechnete effektive Widerstand höher sein sollter als der gemessene
   Widerstand. Dies ist hier nicht der Fall, der errechnete effektive Widerstand ist etwa
   um einen Faktor $10^2$ zu klein.
 
-  \item \textit{Der aperiodische Grenzfall}
+  \item \textit{Der aperiodische Grenzfall} \\
   Die Abweichung des gemessene Widerstand $R_{ap}$ von dem theoretisch errechneten Wert
-  deutet auf ein Problem bei der Messung von $R_{ap}$ hin. EIn technischer Fehler des
+  deutet auf ein Problem bei der Messung von $R_{ap}$ hin. Ein technischer Fehler des
   Oszilloskops oder auch des Messfühlers könnte hier der Grund für die Diskrepanz
-  ziwschen den Werten sein. Während des Experimentes kam es zu mehreren Fehlern
+  zwischen den Werten sein. Während des Experimentes kam es zu mehreren Fehlern
   dergestalt, dass sich durch Berühren der Kabel durch die Experimentierenden die
   angezeigte Kurve grundlegend veränderte oder auch gar nicht mehr sichtbar war. Auch
   schien der Tastkopf zu Beginn nicht richtig in der Fassung zu sitzen, dies fiel leider
@@ -26,6 +49,13 @@
   Oszilloskop, Netzgerät und Schwingkreis einen Wackelkontakt. Dies könnte weitere
   Probleme verursacht haben.
 
-  \item \textit{Der Serienresonanzkreis}
-  Die theoretische errechneten Werte können hier nicht mit dem Experiment verglichen werden, da die durchgeführte Messreihe nicht in dem richtigen Intervall liegt. Wenn man von den errechneten Werten ausgeht, wäre ein Hochpunkt bei 
+  \item \textit{Der Serienresonanzkreis} \\
+  Die theoretisch errechneten Werte können hier nicht mit dem Experiment verglichen werden, da die durchgeführte Messreihe nicht in dem richtigen
+  Intervall liegt. Wenn man von den errechneten Werten ausgeht, wäre ein Hochpunkt bei $(167.4 \pm 0.5) \si{\kilo\hertz}$ zu erwarten. Dies entspricht
+  jedoch nicht der Beobachtung, wobei diese auch als nicht sehr belastbar einzustufen ist, aufgrund der technischen Probleme die während des
+  Experimentes vorlagen. Eine weitere Diskrepanz, die auf Fehler in den Gerätedaten hinweisen könnten, ist das Ergebnis der Berechnung der
+  Resonanzkurvenbreite. Die berechneten Grenzen $w_+$ und $w_-$ schließen den Hochpunkt nicht ein. Da die Grenzen und der Hochpunkt nur auf Basis der
+  Geräteparameter berechnet werden, kann der Fehler nur in diesen liegen. Dies würde auch die Diskrepanzen in den anderen Aufgabenteilen erklären, da
+  diese ebenfalls teilweise auf den Geräteparametern fußen. Ebenfalls konnte hier der Innenwiderstand des Oszilloskops nicht mit eingerechnet werden,
+  da diese Daten nicht vorlagen.
 \end{itemize}
