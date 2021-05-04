@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+from uncertainties import unumpy
 import scipy.constants as const
 from scipy.stats import sem
 from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
@@ -123,8 +124,10 @@ plt.savefig('plot2.pdf')
 #Parameter
 print('Die Parameter der Regression sind:')
 for name, value, error in zip('ab', params, errs):
-    print(f'{name} = {value:.3f} +- {error:.3f}')
-
+    print(f'{name} = {value:.3f} +- {error:.5f}')
+#params_err=unumpy.uarray([params], [errs])
+params_err0=ufloat(params[0], errs[0])
+params_err1=ufloat(params[1], errs[1])
 #############################################################################################################
 #Aufgabe3 - Compton-Wellenlänge bestimmen
 print()
@@ -137,13 +140,13 @@ I_2 = 1024.0                        #Al-Absorber zwischen Streuer und Zählrohr
 T_1 = I_1/I_0                       #Transmissionen
 T_2 = I_2/I_0
 
-l1 = (T_1 - params[1])/params[0]    #entsprechende Wellenlänge
-l2 = (T_2 - params[1])/params[0]
+l1 = (T_1 - params_err1)/params_err0    #entsprechende Wellenlänge
+l2 = (T_2 - params_err1)/params_err0
 dl = l2 - l1
 pdl= 100*(lc-dl)/lc
 #Ausgabe
 print(f'T_1 = {T_1:.3f}, T_2 = {T_2:.3f}')
-print(f'Lambda 1   = {l1}pm')
-print(f'Lambda 2   = {l2}pm')
-print(f'Compton    = {dl}pm')
+print(f'Lambda 1   = {l1:.4f}pm')
+print(f'Lambda 2   = {l2:.4f}pm')
+print(f'Compton    = {dl:.4f}pm')
 print(f'Abweichung = {pdl}%')
