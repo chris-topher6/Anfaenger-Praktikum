@@ -313,7 +313,7 @@ Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \e
           {Spektrallinie} & {Energie $[\si{\kilo\electronvolt}]$} & {Literaturwert \cite{AP03} $[\si{\kilo\electronvolt}]$} & {Abweichung [\%]}\\
           \midrule
           {$K_{\alpha}$} & 8.044 & 8.048 & 0.0472 \\
-          {$K_{\beta} $} & 8.915 & 8.907 & -0.091 \\
+          {$K_{\beta} $} & 8.915 & 8.907 & 0.091 \\
           \bottomrule
         \end{tabular}
       \end{table}
@@ -338,8 +338,8 @@ Die eingezeichnete Regression hat dabei eine Funktionsgleichung der Form
   \end{equation*} 
 mit
   \begin{align*}
-    a &= \SI{-0.015 \pm 0.000}{\per\pico\metre}\\
-    b &= \SI{1.225 \pm 0.014}.
+    a &= \SI{-0.015 \pm 0.00024}{\per\pico\metre}\\
+    b &= \SI{1.225 \pm 0.01431}.
   \end{align*}
 Die Unsicherheiten wurden dabei von  \textit{numpy} \cite{numpy} berechnet.
 
@@ -359,10 +359,10 @@ Durch diese werden die Transmissionen $T_1=I_1/I_0$ und  $T_2=I_2/I_0$ berechnet
 bestimmen lässt. Dabei werden die Parameter der linearen Regression verwendet.
 Einsetzen der berechneten Werte ergibt dann
 \begin{align*}
-    \lambda_1 &= \SI{52.189}{\pico\metre}\\
-    \lambda_2 &= \SI{55.948}{\pico\metre}.
+    \lambda_1 &= \SI{52.189 \pm 1.250}{\pico\metre}\\
+    \lambda_2 &= \SI{55.948 \pm 1.289}{\pico\metre}.
 \end{align*}
 Somit ist die berechnete Compton-Wellenlänge
 \begin{equation*}
-    \lambda_c=\lambda_2-\lambda_1= \SI{3.7593}{\pico\metre}.
+    \lambda_c=\lambda_2-\lambda_1= \SI{3.7593 \pm 0.0592}{\pico\metre}.
 \end{equation*}

@@ -11,7 +11,7 @@ Die Ergebnisse aus Kapitel \ref{sec:Auswertung} sind im Folgenden noch einmal zu
           {Spektrallinie} & {Energie $[\si{\kilo\electronvolt}]$} & {Literaturwert \cite{AP03} $[\si{\kilo\electronvolt}]$} & {Abweichung [\%]}\\
           \midrule
           {$K_{\alpha}$} & 8.044 & 8.048 & 0.0472 \\
-          {$K_{\beta} $} & 8.915 & 8.907 & -0.091 \\
+          {$K_{\beta} $} & 8.915 & 8.907 & 0.091 \\
           \bottomrule
         \end{tabular}
       \end{table}
@@ -20,23 +20,24 @@ Die Ergebnisse aus Kapitel \ref{sec:Auswertung} sind im Folgenden noch einmal zu
         \centering
             \caption{Die Compton-Wellenlänge des Elektrons}
             \label{tab:comptondiss}
-            \sisetup{table-format=2.4}
-            \begin{tabular}{S S S}
+            \sisetup{table-format=1.4}
+            \begin{tabular}{S @{${}\pm{}$} S S S}
               \toprule
-              {$\lambda_c [\si{\pico\metre}]$} & {$\lambda_{Lit}$ \cite{AP04} $[\si{\pico\metre}]$} & {Abweichung [\%]}\\
+              \multicolumn{2}{c}{$\lambda_c [\si{\pico\metre}]$} & {$\lambda_{Lit}$ \cite{AP04} $[\si{\pico\metre}]$} & {Abweichung [\%]}\\
               \midrule
-              3.7593 & 2.2426 & -67.63\\
+              3.7593 & 0.0592 & 2.2426 & 67.63\\
               \bottomrule
             \end{tabular}
           \end{table}
-
-Die brechnete Energien der $K_{\alpha}$ und $K_{\beta}$ \ref{tab:energiediss} gleichen den Literaturwerten in sehr hohem
+\noindent
+Die brechneten Energien der $K_{\alpha}$ und $K_{\beta}$ \ref{tab:energiediss} gleichen den Literaturwerten in sehr hohem
 Maße, was auf eine präzise Messung schließen lässt. \\
 Auch die Compton-Wellenlänge des Elektrons stimmt von der Größenordnung mit dem Literaturwert überein, wobei die Abweichung 
 wesentlich größer ist, als bei bei den Spektrallinien. 
 \\\noindent
-Ein mögicher Grund für die Abweichung besteht in der Tatsache, dass 
-die berechnete Compton-Wellenlänge sehr klein ist. So führen kleine Ungenauigkeiten bei der Messung zu großen Fehlern bei 
-dem Ergebnis. Diese Ungenauigkeiten können sowohl bei dem Aufnehmen der Daten, als auch durch die verwendeten Materialien, wie 
-dem LiF-Kristall, aufgetreten sein. Eine weitere Fehlerquelle könnte in einer unzureichenden Abschirmung des Geiger-Müller-Zählrohrs von äußerer
-Strahlung sein. 
+Durch die geringe Unsicherheit der gemessenen Compton-Wellenlänge ist eher von einem systematischen als von einem 
+statistischen Fehler auszugehen. Ein mögicher Grund für die Abweichung besteht in der Tatsache, dass 
+die berechnete Compton-Wellenlänge sehr klein ist. So führen kleine Ungenauigkeiten, sowohl systematischer als auch statistischer
+Natur, bei der Messung zu großen Fehlern bei dem Ergebnis. Diese Ungenauigkeiten können sowohl bei dem Aufnehmen der Daten, als 
+auch durch die verwendeten Materialien, wie dem LiF-Kristall, aufgetreten sein. Eine weitere Fehlerquelle könnte in einer 
+unzureichenden Abschirmung des Geiger-Müller-Zählrohrs von äußerer Strahlung sein.
