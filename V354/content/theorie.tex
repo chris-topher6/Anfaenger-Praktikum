@@ -24,11 +24,11 @@ Schwingkreis führt dann gezwungene Schwingungen aus. Der Aufbau der beiden Schw
     \end{minipage}
   \end{figure}
 \noindent
-Im Folgenden werden diese beiden Schwinkreise näher beleuchtet.
+Im Folgenden werden diese beiden Schwingkreise näher beleuchtet.
 
-\subsection{Gedämpft Schwingungen}
+\subsection{Gedämpfte Schwingungen}
 \label{sec:gedämpft}
-Um die Differentialgleichung für einen gedämpften Schwinkreis zu erhalten, wird von dem 2. Kirchhoffschen Gesetz
+Um die Differentialgleichung für einen gedämpften Schwingkreis zu erhalten, wird von dem 2. Kirchhoffschen Gesetz
 \begin{equation}
     U_R(t)+U_C(t)+U_L(t)=0
     \label{eqn:kirchhoff2}
@@ -66,11 +66,11 @@ Auflösen der ersten Gleichung nach $R$ liefert den effektiven Dämpfungswiderst
     R_{eff}=4\pi\mu L
     \label{eqn:Reff}
 \end{equation}
-Offensichtlich wird $\nu$ für $1/LC<R^2/(4L^2)$ komplex, weswegen in einer Fallunterscheidung drei Möglichen Fälle
+Offensichtlich wird $\nu$ für $1/LC<R^2/(4L^2)$ komplex, weswegen in einer Fallunterscheidung die drei möglichen Fälle
 diskutiert werden.
 
 \subsubsection*{1.Fall: $1/LC>R^2/(4L^2)$}
-In dem ersten Fall ist $\nu$ reell und somit die Exponentialfunktionen in \eqref{eqn:Losung1} komplex. Damit die Lösung trotzdem reell ist muss
+In dem ersten Fall ist $\nu$ reell und somit die Exponentialfunktionen in \eqref{eqn:Losung1} komplex. Damit die Lösung trotzdem reell ist, muss
 für die Konstanten $A=B^{*}$ gelten. Somit wird \eqref{eqn:Losung1} zu
 \begin{equation*}
     I=A_0E^{-2\pi\mu t} cos(2\pi\nu t+\eta).
@@ -89,13 +89,13 @@ $\nu$ ist also eine Frequenz. Die Abklingdauer ist dabei beinahe analog
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{pictures/Fall1.png}
-    \caption{Die Stromstärke als Funktion der Zeit für $1/LC>R^2/(4L^2)$. Die einhülende Exponentialfunktion ist in rot skizziert.\cite{AP01}}
+    \caption{Die Stromstärke als Funktion der Zeit für $1/LC>R^2/(4L^2)$. Die einhüllende Exponentialfunktion ist in rot skizziert.\cite{AP01}}
     \label{fig:Fall1}
 \end{figure}
 
 \subsubsection*{2.Fall: $1/LC<R^2/(4L^2)$}
 In diesem Fall ist $\nu$ rein imaginär, die Exponentialfunktionen in \eqref{eqn:Losung1} sind also alle reell. Demnach findet keine Oszillation
-statt, wie in Abbildung \ref{fig:Fall2} zu sehen ist. Dabei kann die Funktion sowohl das Vorzeichen welchseln (vgl. grün \ref{fig:Fall2}), als
+statt, wie in Abbildung \ref{fig:Fall2} zu sehen ist. Dabei kann die Funktion sowohl das Vorzeichen wechseln (vgl. grün \ref{fig:Fall2}), als
 auch Extremwerte annehmen (vgl. rot, grün \ref{fig:Fall2}) oder monoton gegen null fallen (vgl. blau \ref{fig:Fall2}). Der Grenzwert für lange
 Zeiten liegt jedoch immer bei null. Es gilt dabei
 \begin{equation*}
@@ -119,9 +119,9 @@ Für genau diesen Fall geht die Amplitude von $I(t)$ am schnellsten gegen null, 
 Abbildung \ref{fig:Fall2} als gestrichelte Linie eingezeichnet.
 
 \subsection{Erzwungene Schwingungen}
-Wird der Schwingkreis an eine externe Spannungsquelle angeschlossen, können damit Schwingungen erzwungen werden. Der Aufbau eines solchen Schwinkreises
+Wird der Schwingkreis an eine externe Spannungsquelle angeschlossen, können damit Schwingungen erzwungen werden. Der Aufbau eines solchen Schwingkreises
 ist in Abbildung \ref{fig:getrieben} dargestellt. Die neue Differentialgleichung wird recht analog zu \eqref{eqn:DGL1} hergeleitet, wobei auf der
-rechten Seite die Spannung $U(t)=U_0\exp(i\omega t)$ der Spanungsquelle ergänzt wird. Wegen dieser wird nun auch die Spannung $U_C(t)$ auf dem Kondensator
+rechten Seite die Spannung $U(t)=U_0\exp(i\omega t)$ der Spannungsquelle ergänzt wird. Wegen dieser wird nun auch die Spannung $U_C(t)$ auf dem Kondensator
 und nicht mehr $I(t)$ betrachtet. Es ergibt sich demnach
 \begin{equation*}
     LC\ddot{U}_C+RC\dot{U}_C+U_C=U_0e^{i\omega t}   .
