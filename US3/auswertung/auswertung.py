@@ -15,6 +15,8 @@ def grad(rad): #rad in grad
     return rad*180/np.pi
 def gerade(x, m, b): #Geraden für Plots
     return m*x+b
+def unsicherheit(f): #Sollte für arrays erweitert werden
+    return ufloat(f, 10)
 
 #Konstanten der Messung
 f0      = 2    * 10**(6)   #1/s
@@ -65,78 +67,75 @@ print(f'a45 = {grad(a45):.4}°')
 
 #############################################################################################################
 ##Aufgabe1
+
+"""
+Das Problem bei der Aufgabe ist, dass die Plots sich komplett im Kreis drehen. Das erklärt auch den extrem niedrigen Fehler und das b
+praktisch null ist. Die einzige Information die man in die Plots rein steckt sind nämlich die f. Alles andere sind Konstanten. Denn sowohl
+die x-, als auch die y-Achse setzten sich Konstanten mal f zusammen. Von daher sind alle Plots nicht aussagekräftig!
+"""
 print()
 print('Aufgabe1')
 c=(cl+cp)/2                                     #das ist so nicht richtig!!! aber vielleicht erstmal keine schlechte Näherung
 
+def doppler(f, a):
+    return f/np.cos(a)
 def stroemung(f, theta): #Strömgeschwindigkeit 
     return (c/2)*(f/f0)/np.cos(theta)             #wie kommt man an das c? das sollte sich ja aus cl und cp zusammensetzten oder nicht?
 
-def doppler(f, a):
-    return f/np.cos(a)
-
 #Parameter
 print('Die Parameter der Regression sind:')
-
-#das hier muss noch ordentlich repariert werden 
-params15s, cov15s = np.polyfit(doppler(f15s, a15), stroemung(f15s, a15), deg=1, cov=True)
+params15s, cov15s = np.polyfit(doppler(f15s, a15), stroemung(f15s, a15), deg=1, cov=True) #Parameter berechnen
 errs15s     = np.sqrt(np.diag(cov15s))
 params30s, cov30s = np.polyfit(doppler(f30s, a30), stroemung(f30s, a30), deg=1, cov=True)
 errs30s     = np.sqrt(np.diag(cov30s))
 params45s, cov45s = np.polyfit(doppler(f45s, a45), stroemung(f45s, a45), deg=1, cov=True)
 errs45s     = np.sqrt(np.diag(cov45s))
 
-for name, value, error in zip('ab', params15s, errs15s):
-    print(f'{name} = {value*1000:.3f} +- {error*1000:.5f} k')
-params15su=ufloat(params15s[0], errs15s[0])
-params15su=ufloat(params15s[1], errs15s[1])
+params15s0=ufloat(params15s[0], errs15s[0]) #Parameter als ufloat
+params15s1=ufloat(params15s[1], errs15s[1])
+params30s0=ufloat(params30s[0], errs30s[0])
+params30s1=ufloat(params30s[1], errs30s[1])
+params45s0=ufloat(params45s[0], errs45s[0])
+params45s1=ufloat(params45s[1], errs45s[1])
 
-for name, value, error in zip('ab', params30s, errs30s):
-    print(f'{name} = {value*1000:.3f} +- {error*1000:.5f} k')
-params30su=ufloat(params30s[0], errs30s[0])
-params30su=ufloat(params30s[1], errs30s[1])
-
-for name, value, error in zip('ab', params45s, errs45s):
-    print(f'{name} = {value*1000:.3f} +- {error*1000:.5f} k')
-params45su=ufloat(params45s[0], errs45s[0])
-params45su=ufloat(params45s[1], errs45s[1])
+print(f'a15={params15s0}') #Ausgabe
+print(f'b15={params15s1}')
+print(f'a30={params30s0}')
+print(f'b30={params30s1}')
+print(f'a45={params45s0}')
+print(f'b45={params45s1}')
 
 #Plots
 plt.figure()#Plot 15s
 x=np.linspace(-600, 500)
 x15=np.linspace(-3000, -1600) 
-plt.plot(x15, gerade(x15, *params15s), 'r', label="Regression 15")
-plt.plot(doppler(f15s, a15), stroemung(f15s, a15), 'r.', label='15')
-plt.xlabel(r"dopplerwinkel")
-plt.ylabel(r"strömungsgeschwindigkeit")
+plt.plot(x15, gerade(x15, *params15s), 'r', label="Regression")
+plt.plot(doppler(f15s, a15), stroemung(f15s, a15), 'r.', label='Messdaten')
+plt.xlabel(r"$\Delta\nu/cos(\pi/12)$")
+plt.ylabel(r"v [m/s]")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot1.pdf')
 
 plt.figure()#Plot 30s
 x30=np.linspace(1300, 2500)
-plt.plot(x30, gerade(x30, *params30s), 'g', label="Regression 30")
-plt.plot(doppler(f30s, a30), stroemung(f30s, a30), 'g.', label='30')
-plt.xlabel(r"dopplerwinkel")
-plt.ylabel(r"strömungsgeschwindigkeit")
+plt.plot(x30, gerade(x30, *params30s), 'g', label="Regression")
+plt.plot(doppler(f30s, a30), stroemung(f30s, a30), 'g.', label='Messdaten')
+plt.xlabel(r"$\Delta\nu/cos(\pi/6)$")
+plt.ylabel(r"v [m/s]")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot2.pdf')
 
 plt.figure()#Plot 45s
 x45=np.linspace(-3060, -1560)
-plt.plot(x45, gerade(x45, *params45s), 'b', label="Regression 45")
-plt.plot(doppler(f45s, a45), stroemung(f45s, a45), 'b.', label='45')
-plt.xlabel(r"dopplerwinkel")
-plt.ylabel(r"strömungsgeschwindigkeit")
+plt.plot(x45, gerade(x45, *params45s), 'b', label="Regression")
+plt.plot(doppler(f45s, a45), stroemung(f45s, a45), 'b.', label='Messdaten')
+plt.xlabel(r"$\Delta\nu/cos(\pi/4)$")
+plt.ylabel(r"v [m/s]")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot3.pdf')
-
-#print(doppler(f30s, a30))
-print(params15s[0])
-print(params30s[0])
-print(params45s[0])
 
 #############################################################################################################
 ##Aufgabe2
