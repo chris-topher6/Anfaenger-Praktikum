@@ -51,12 +51,12 @@ d           = d          * 0.000001 #s
 print()
 print('Vorbereitung')
 
-def dopplerwinkel(theta):
+def alpha(theta): #Dopplerwinkel
     return np.pi/2-np.arcsin(np.sin(theta)*cl/cp)
 
-a15 = dopplerwinkel(theta15)
-a30 = dopplerwinkel(theta30)
-a45 = dopplerwinkel(theta45)
+a15 = alpha(theta15)
+a30 = alpha(theta30)
+a45 = alpha(theta45)
 
 print('Dopplerwinkel')
 print(f'a15 = {grad(a15):.4}°')
@@ -67,31 +67,78 @@ print(f'a45 = {grad(a45):.4}°')
 ##Aufgabe1
 print()
 print('Aufgabe1')
-c=(cl+cp)/2                             #das ist so nicht richtig!!! aber vielleicht erstmal keine schlechte Näherung
-def stroemung(f, theta):    
-    return f*c/(2*f0*np.cos(theta))     #wie kommt man an das c? das sollte sich ja aus cl und cp zusammensetzten oder nicht?
+c=(cl+cp)/2                                     #das ist so nicht richtig!!! aber vielleicht erstmal keine schlechte Näherung
+
+def stroemung(f, theta): #Strömgeschwindigkeit 
+    return (c/2)*(f/f0)/np.cos(theta)             #wie kommt man an das c? das sollte sich ja aus cl und cp zusammensetzten oder nicht?
+
+def doppler(f, a):
+    return f/np.cos(a)
 
 
 #das hier muss noch ordentlich repariert werden 
+params15s, cov15s = np.polyfit(doppler(f15s, a15), stroemung(f15s, a15), deg=1, cov=True)
+params30s, cov30s = np.polyfit(doppler(f30s, a30), stroemung(f30s, a30), deg=1, cov=True)
+params45s, cov45s = np.polyfit(doppler(f45s, a45), stroemung(f45s, a45), deg=1, cov=True)
 
-print()
-print('Aufgabe2')
-plt.figure()#Plot
+#Parameter
+print('Die Parameter der Regression sind:')
+
+errs15s     = np.sqrt(np.diag(cov15s))
+for name, value, error in zip('ab', params15s, errs15s):
+    print(f'{name} = {value*1000:.3f} +- {error*1000:.5f} k')
+params15su=ufloat(params15s[0], errs15s[0])
+params15su=ufloat(params15s[1], errs15s[1])
+
+errs30s     = np.sqrt(np.diag(cov30s))
+for name, value, error in zip('ab', params30s, errs30s):
+    print(f'{name} = {value*1000:.3f} +- {error*1000:.5f} k')
+params30su=ufloat(params30s[0], errs30s[0])
+params30su=ufloat(params30s[1], errs30s[1])
+
+errs45s     = np.sqrt(np.diag(cov45s))
+for name, value, error in zip('ab', params45s, errs45s):
+    print(f'{name} = {value*1000:.3f} +- {error*1000:.5f} k')
+params45su=ufloat(params45s[0], errs45s[0])
+params45su=ufloat(params45s[1], errs45s[1])
+
+
+plt.figure()#Plot 15s
 x=np.linspace(-600, 500)
-params15s, covariance_matrix15s=np.polyfit(f15s/np.cos(a15), stroemung(f15s, theta15), deg=1, cov=True)
-params30s, covariance_matrix30s=np.polyfit(f30s/np.cos(a30), stroemung(f30s, theta30), deg=1, cov=True)
-params45s, covariance_matrix45s=np.polyfit(f45s/np.cos(a45), stroemung(f45s, theta45), deg=1, cov=True)
-plt.plot(x/np.cos(a15), gerade(x/np.cos(a15), *params15s), "k", label="Regression")
-plt.plot(x/np.cos(a30), gerade(x/np.cos(a30), *params30s), "k", label="Regression")
-plt.plot(x/np.cos(a45), gerade(x/np.cos(a45), *params45s), "k", label="Regression")
-plt.plot(f15s/np.cos(a15), stroemung(f15s, theta15), '.', label='Messdaten')
-plt.plot(f30s/np.cos(a30), stroemung(f15s, theta30), '.', label='Messdaten')
-plt.plot(f45s/np.cos(a45), stroemung(f15s, theta45), '.', label='Messdaten')
-plt.xlabel(r"$???$")
-plt.ylabel(r"$???$")
+x15=np.linspace(-3000, -1600) 
+plt.plot(x15, gerade(x15, *params15s), 'r', label="Regression 15")
+plt.plot(doppler(f15s, a15), stroemung(f15s, a15), 'r.', label='15')
+plt.xlabel(r"dopplerwinkel")
+plt.ylabel(r"strömungsgeschwindigkeit")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot1.pdf')
 
+plt.figure()#Plot 30s
+x30=np.linspace(1300, 2500)
+plt.plot(x30, gerade(x30, *params30s), 'g', label="Regression 30")
+plt.plot(doppler(f30s, a30), stroemung(f15s, a30), 'g.', label='30')
+plt.xlabel(r"dopplerwinkel")
+plt.ylabel(r"strömungsgeschwindigkeit")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot2.pdf')
+
+plt.figure()#Plot 45s
+x45=np.linspace(-3060, -1560)
+plt.plot(x45, gerade(x45, *params45s), 'b', label="Regression 45")
+plt.plot(doppler(f45s, a45), stroemung(f15s, a45), 'b.', label='45')
+plt.xlabel(r"dopplerwinkel")
+plt.ylabel(r"strömungsgeschwindigkeit")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot3.pdf')
+
+#print(doppler(f30s, a30))
+print(params15s[0])
+print(params30s[0])
+print(params45s[0])
 #############################################################################################################
 ##Aufgabe2
+print()
+print('Aufgabe2')
