@@ -48,6 +48,13 @@ d           = d          * 0.000001 #s
 #f      [1/s]
 #V_pump [rpm]
 
+
+#Herrausnahme der Ausreißer
+v_stroem45neu = v_stroem45[np.where(v_stroem45!=0)] 
+I45neu        = I45[np.where(I45<400000)]
+dvneu         = d[np.where(d>13*0.000001)]
+dIneu         = d[np.where(d<19*0.000001)]
+
 #############################################################################################################
 ##Vorbereitung
 print()
@@ -68,11 +75,6 @@ print(f'a45 = {grad(a45):.4}°')
 #############################################################################################################
 ##Aufgabe1
 
-"""
-Das Problem bei der Aufgabe ist, dass die Plots sich komplett im Kreis drehen. Das erklärt auch den extrem niedrigen Fehler und das b
-praktisch null ist. Die einzige Information die man in die Plots rein steckt sind nämlich die f. Alles andere sind Konstanten. Denn sowohl
-die x-, als auch die y-Achse setzten sich Konstanten mal f zusammen. Von daher sind alle Plots nicht aussagekräftig!
-"""
 print()
 print('Aufgabe1')
 c=(cl+cp)/2                                     #das ist so nicht richtig!!! aber vielleicht erstmal keine schlechte Näherung
@@ -93,35 +95,35 @@ params45m, cov45m = np.polyfit(v_pump, doppler(f45m, a45), deg=1, cov=True)
 params15l, cov15l = np.polyfit(v_pump, doppler(f15l, a15), deg=1, cov=True) #l
 params30l, cov30l = np.polyfit(v_pump, doppler(f30l, a30), deg=1, cov=True)
 params45l, cov45l = np.polyfit(v_pump, doppler(f45l, a45), deg=1, cov=True)
-errs15s     = np.sqrt(np.diag(cov15s))
-errs30s     = np.sqrt(np.diag(cov30s))
-errs45s     = np.sqrt(np.diag(cov45s))
-errs15m     = np.sqrt(np.diag(cov15m))
-errs30m     = np.sqrt(np.diag(cov30m))
-errs45m     = np.sqrt(np.diag(cov45m))
-errs15l     = np.sqrt(np.diag(cov15l))
-errs30l     = np.sqrt(np.diag(cov30l))
-errs45l     = np.sqrt(np.diag(cov45l))
+errs15s = np.sqrt(np.diag(cov15s))
+errs30s = np.sqrt(np.diag(cov30s))
+errs45s = np.sqrt(np.diag(cov45s))
+errs15m = np.sqrt(np.diag(cov15m))
+errs30m = np.sqrt(np.diag(cov30m))
+errs45m = np.sqrt(np.diag(cov45m))
+errs15l = np.sqrt(np.diag(cov15l))
+errs30l = np.sqrt(np.diag(cov30l))
+errs45l = np.sqrt(np.diag(cov45l))
 
 #Parameter als ufloat
-params15s0=ufloat(params15s[0], errs15s[0]) #s
-params15s1=ufloat(params15s[1], errs15s[1])
-params30s0=ufloat(params30s[0], errs30s[0])
-params30s1=ufloat(params30s[1], errs30s[1])
-params45s0=ufloat(params45s[0], errs45s[0])
-params45s1=ufloat(params45s[1], errs45s[1])
-params15m0=ufloat(params15m[0], errs15m[0]) #m
-params15m1=ufloat(params15m[1], errs15m[1])
-params30m0=ufloat(params30m[0], errs30m[0])
-params30m1=ufloat(params30m[1], errs30m[1])
-params45m0=ufloat(params45m[0], errs45m[0])
-params45m1=ufloat(params45m[1], errs45m[1])
-params15l0=ufloat(params15l[0], errs15l[0]) #l
-params15l1=ufloat(params15l[1], errs15l[1])
-params30l0=ufloat(params30l[0], errs30l[0])
-params30l1=ufloat(params30l[1], errs30l[1])
-params45l0=ufloat(params45l[0], errs45l[0])
-params45l1=ufloat(params45l[1], errs45l[1])
+params15s0 = ufloat(params15s[0], errs15s[0]) #s
+params15s1 = ufloat(params15s[1], errs15s[1])
+params30s0 = ufloat(params30s[0], errs30s[0])
+params30s1 = ufloat(params30s[1], errs30s[1])
+params45s0 = ufloat(params45s[0], errs45s[0])
+params45s1 = ufloat(params45s[1], errs45s[1])
+params15m0 = ufloat(params15m[0], errs15m[0]) #m
+params15m1 = ufloat(params15m[1], errs15m[1])
+params30m0 = ufloat(params30m[0], errs30m[0])
+params30m1 = ufloat(params30m[1], errs30m[1])
+params45m0 = ufloat(params45m[0], errs45m[0])
+params45m1 = ufloat(params45m[1], errs45m[1])
+params15l0 = ufloat(params15l[0], errs15l[0]) #l
+params15l1 = ufloat(params15l[1], errs15l[1])
+params30l0 = ufloat(params30l[0], errs30l[0])
+params30l1 = ufloat(params30l[1], errs30l[1])
+params45l0 = ufloat(params45l[0], errs45l[0])
+params45l1 = ufloat(params45l[1], errs45l[1])
 
 print(f'a15s={params15s0}') #s
 print(f'b15s={params15s1}')
@@ -187,22 +189,65 @@ plt.savefig('plot3.pdf')
 ##Aufgabe2
 print()
 print('Aufgabe2')
+print(v_stroem45neu)
+print(dvneu)
+print(I45neu)
+print(dIneu)
+#Parameter
+print('Die Parameter der Regression sind:')
+params45V, cov45V = np.polyfit(dvneu,   v_stroem45neu, deg=1, cov=True)
+params70V, cov70V = np.polyfit(d,       v_stroem70,    deg=1, cov=True)
+params45I, cov45I = np.polyfit(dIneu,   I45neu,        deg=1, cov=True)
+params70I, cov70I = np.polyfit(d,       I70,           deg=1, cov=True)
+errs45V = np.sqrt(np.diag(cov45V))
+errs70V = np.sqrt(np.diag(cov70V))
+errs45I = np.sqrt(np.diag(cov45I))
+errs70I = np.sqrt(np.diag(cov70I))
 
-params45V, cov45V = np.polyfit(d, v_stroem45, deg=1, cov=True)
-params70V, cov70V = np.polyfit(d, v_stroem70, deg=1, cov=True)
-params45I, cov45I = np.polyfit(d, I45,        deg=1, cov=True)
-params70I, cov70I = np.polyfit(d, I70,        deg=1, cov=True)
+params45V0 = ufloat(params45V[0], errs45V[0])
+params70V0 = ufloat(params70V[0], errs70V[0])
+params45I0 = ufloat(params45I[0], errs45I[0])
+params70I0 = ufloat(params70I[0], errs70I[0])
+params45V1 = ufloat(params45V[1], errs45V[1])
+params70V1 = ufloat(params70V[1], errs70V[1])
+params45I1 = ufloat(params45I[1], errs45I[1])
+params70I1 = ufloat(params70I[1], errs70I[1])
 
-errs45V     = np.sqrt(np.diag(cov45V))
-errs70V     = np.sqrt(np.diag(cov70V))
-errs45I     = np.sqrt(np.diag(cov45I))
-errs70I     = np.sqrt(np.diag(cov70I))
+print(f'a45V={params45V0}')
+print(f'b45V={params45V1}')
+print(f'a70V={params70V0}')
+print(f'b70V={params70V1}')
+print(f'a45I={params45I0}')
+print(f'b45I={params45I1}')
+print(f'a70I={params70I0}')
+print(f'b70I={params70I1}')
 
-params45V0=ufloat(params45V[0], errs45V[0])
-params70V0=ufloat(params70V[0], errs70V[0])
-params45I0=ufloat(params45I[0], errs45I[0])
-params70I0=ufloat(params70I[0], errs70I[0])
-params45V1=ufloat(params45V[1], errs45V[1])
-params70V1=ufloat(params70V[1], errs70V[1])
-params45I1=ufloat(params45I[1], errs45I[1])
-params70I1=ufloat(params70I[1], errs70I[1])
+#Plot
+plt.figure()#v_stroem
+x=np.linspace(np.min(d), np.max(d))
+xvneu=np.linspace(np.min(dvneu), np.max(dvneu))
+xIneu=np.linspace(np.min(dIneu), np.max(dIneu))
+
+plt.plot(xvneu, gerade(xvneu, *params45V),     'r',  label="Regression 45%")
+plt.plot(x,     gerade(x, *params70V),         'g',  label="Regression 70%")
+plt.plot(d,     v_stroem45,                    'r.', label='Messdaten 45%')
+plt.plot(d[0],  v_stroem45[0],                   'r*', label='Ausreißer 45%')
+plt.plot(d[1],  v_stroem45[1],                   'r*')
+plt.plot(d,     v_stroem70,                    'g.', label='Messdaten 70%')
+plt.xlabel(r"$d [s]$")
+plt.ylabel(r"$v_{ström}[m/s]$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot4.pdf')
+
+plt.figure()#v_stroem
+plt.plot(xIneu, gerade(xIneu, *params45I), 'r', label="Regression 45%")
+plt.plot(x, gerade(x, *params70I), 'g', label="Regression 70%")
+plt.plot(d,     I45,    'r.',  label='Messdaten 45%')
+plt.plot(d[7],  I45[7], 'r*', label='Ausreißer 45%')
+plt.plot(d,     I70,    'g.',  label='Messdaten 70%')
+plt.xlabel(r"$d [s]$")
+plt.ylabel(r"$I [V^2/s]$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot5.pdf')
