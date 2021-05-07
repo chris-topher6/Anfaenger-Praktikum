@@ -1,3 +1,102 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Messdaten}
+\label{sec:Messdaten}
+Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab_mess1} und \ref{tab:mess2} dargestellt. 
+\begin{table}[H]
+    \centering
+        \caption{Die Frequnzverschiebung $\Delta\nu$ bei verschiedenen Pumpleistungen $P$ und Rohrdurchmessern $d_{Rohr}$}
+        \label{tab:mess1}
+        \sisetup{table-format=5.0}
+        \begin{tabular}{S S S S S S S S S S}
+          \toprule
+          &
+          \multicolumn{9}{c}{$\Delta\nu [\si{\hertz}]$}\\
+          \cmidrule(lr){2-10}
+          &
+          \multicolumn{3}{c}{$d_{Rohr}=\SI{7}{\milli\metre} $}& %\quad\text{Rohr}$} & 
+          \multicolumn{3}{c}{$d_{Rohr}=\SI{10}{\milli\metre}$}& %\quad\text{Rohr}$} &
+          \multicolumn{3}{c}{$d_{Rohr}=\SI{16}{\milli\metre}$}\\ %\quad\text{Rohr}$} \\
+          \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+          {$P [rpm]$} &
+          {$15°$} & {$30°$} & {$45°$} &
+          {$15°$} & {$30°$} & {$45°$} &
+          {$15°$} & {$30°$} & {$45°$} \\
+          \midrule
+          6000 & -281 & 439 & -732  & -122 & 208 & -378 & -73 & 85  & -146 \\
+          6500 & -317 & 482 & -879  & -134 & 200 & -415 & -73 & 98  & -159 \\
+          7000 & -354 & 549 & -1038 & -171 & 281 & -525 & -73 & 110 & -183 \\
+          7500 & -385 & 671 & -1172 & -183 & 305 & -635 & -98 & 122 & -220 \\
+          8000 & -433 & 708 & -1227 & -195 & 391 & -647 & -98 & 159 & -269 \\
+          8500 & -500 & 806 & -1440 & -244 & 415 & -745 & -110& 195 & -330 \\
+          \bottomrule
+        \end{tabular}
+      \end{table}
 
+\begin{table}[H]
+  \centering
+      \caption{Die Momentangeschwindigkeit $v$ und die Streuintensität $I$ bei Pumpleistungen von $45\%$ und $70\%$}
+      \label{tab:mess2}
+      \sisetup{table-format=3.0}
+      \begin{tabular}{S S S S S}
+        \toprule
+        &
+        \multicolumn{2}{c}{$P=45\%P_{max}$}&
+        \multicolumn{2}{c}{$P=70\%P_{max}$}\\
+        \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+        {$d_{mess} [\si{\micro\second}]$} &
+        {$v [\si{\centi\metre\per\second}]$} & {$I[\si{\square\kilo\volt\per\second}]$} &
+        {$v [\si{\centi\metre\per\second}]$} & {$I[\si{\square\kilo\volt\per\second}]$} \\
+        \midrule
+        12 &     0 & 11  & 0 & 5  \\
+        13 &     0 & 33  & 0 & 6  \\
+        14 & -28.7 & 73  & 0 & 8  \\
+        15 & -35.0 & 108 & 0 & 15 \\
+        16 & -36.6 & 125 & 0 & 26 \\
+        17 & -31.8 & 111 & 0 & 24 \\
+        18 & -31.8 & 117 & 0 & 17 \\
+        19 & -31.8 & 470 & 0 & 75 \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+
+\subsection{Frequnzverschiebung bei verschiedenen Rohrdurchmessern}
+\label{sec:a1}
+In den Abbildungen \ref{fig:plot1}, \ref{fig:plot2} und \ref{fig:plot3} sind die Messwerte aus Tabelle \ref{tab:mess1} graphisch ausgewertet. 
+Dabei sind auf die x-Achsen die Pumpleistungen $P$ und auf die y-Achsen $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
+Dopplerwinkel aus \ref{sec:vorbereitung} ist. In jeder Abbildung ist dann für jeden Rohrdurchmesser eine lineare Regression eingetragen.
+Diese wurde von \textit{nummeric python} \cite{numpy} berechnet und haben die Form 
+\begin{equation}
+    y=mx+b  . 
+    \label{eqn:gleichung}
+\end{equation}
+Die Parameter sind in Tabelle \ref{tab:params1} aufgelistet.
+
+
+%Die Tabelle sieht total kacke aus...
+%nochmal überarbeiten
+\begin{table}[H]
+    \centering
+        \caption{Die Parameter der linearen Regressionen in den Abbildungen \ref{fig:plot1}-\ref{fig:plot3}}
+        \label{tab:mess1}
+        \sisetup{table-format=2.3}
+        \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S}
+          \toprule
+          &
+          \multicolumn{4}{c}{$d_{Rohr}=\SI{7}{\milli\metre}$}&
+          \multicolumn{4}{c}{$d_{Rohr}=\SI{10}{\milli\metre}$}&
+          \multicolumn{4}{c}{$d_{Rohr}=\SI{16}{\milli\metre}$}\\
+          \cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}
+          {$\theta [°]$} &
+          {$a[\si{\hertz\per\second}]$} & {$b[\si{\kilo\hertz}]$} &  %Einheiten unbedingt in rpm ändern
+          {$a[\si{\hertz\per\second}]$} & {$b[\si{\kilo\hertz}]$} &
+          {$a[\si{\hertz\per\second}]$} & {$b[\si{\kilo\hertz}]$} \\
+          \midrule
+            15 & -0.488 & 0.035 &   1.35 & 0.25  & -0.267 & 0.030  &  0.92 & 0.22 & -0.094 & 0.019 &  0.18 & 0.14 \\
+            30 &  0.452 & 0.031  & -1.45 & 0.23  &  0.280 & 0.034  & -1.13 & 0.25 &  0.128 & 0.018 & -0.54 & 0.13 \\
+            45 &  -0.57 & 0.04   &  1.85 & 0.26  & -0.320 & 0.028  &  1.14 & 0.21 & -0.156 & 0.019 &  0.67 & 0.14 \\
+          \bottomrule
+        \end{tabular}
+      \end{table}
+\subsection{Strömungsprofil}
+\label{sec:a2}
