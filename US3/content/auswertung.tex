@@ -5,7 +5,7 @@
 Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1} und \ref{tab:mess2} dargestellt. 
 \begin{table}[H]
     \centering
-        \caption{Die Frequnzverschiebung $\Delta\nu$ bei verschiedenen Pumpleistungen $P$ und Rohrdurchmessern $d_{Rohr}$}
+        \caption{Die Frequnzverschiebung $\Delta\nu$ bei verschiedenen Pumpleistungen $P$ und Rohrdurchmessern $d_{Rohr}$.}
         \label{tab:mess1}
         \sisetup{table-format=5.0}
         \begin{tabular}{S S S S S S S S S S}
@@ -35,7 +35,7 @@ Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1}
 
 \begin{table}[H]
   \centering
-      \caption{Die Momentangeschwindigkeit $v$ und die Streuintensität $I$ bei Pumpleistungen von $45\%$ und $70\%$}
+      \caption{Die Momentangeschwindigkeit $v$ und die Streuintensität $I$ bei Pumpleistungen von $45\%$ und $70\%$.}
       \label{tab:mess2}
       \sisetup{table-format=3.0}
       \begin{tabular}{S S S S S}
@@ -63,7 +63,7 @@ Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1}
 \subsection{Frequnzverschiebung bei verschiedenen Rohrdurchmessern}
 \label{sec:a1}
 In den Abbildungen \ref{fig:plot1}, \ref{fig:plot2} und \ref{fig:plot3} sind die Messwerte aus Tabelle \ref{tab:mess1} graphisch ausgewertet. 
-Dabei sind auf die x-Achsen die Pumpleistungen $V_{pump}$ und auf die y-Achsen $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
+Dabei sind auf die x-Achsen die Pumpleistungen $P$ und auf die y-Achsen $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
 Dopplerwinkel aus \ref{sec:vorbereitung} ist. In jeder Abbildung ist dann für jeden Rohrdurchmesser eine lineare Regression eingetragen.
 Diese wurde von \textit{nummeric python} \cite{numpy} berechnet und haben die Form 
 \begin{equation}
@@ -75,12 +75,12 @@ Die Parameter sind in den Tabellen \ref{tab:params1} - \ref{tab:params3} aufgeli
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.8]{auswertung/plot1.pdf}
-  \caption{$\Delta\nu/\cos(\alpha_{15})$ als Funktion der Pumpleistungen für $\theta=15°$ und für verschiedene Rohrdurchmesser}
+  \caption{$\Delta\nu/\cos(\alpha_{15})$ als Funktion der Pumpleistungen für $\theta=15°$ und für verschiedene Rohrdurchmesser.}
   \label{fig:plot1}
 \end{figure}
 \begin{table}[H]
   \centering
-      \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot1}}
+      \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot1}.}
       \label{tab:params1}
       \sisetup{table-format=2.3}
       \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
@@ -96,12 +96,12 @@ Die Parameter sind in den Tabellen \ref{tab:params1} - \ref{tab:params3} aufgeli
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.8]{auswertung/plot2.pdf}
-  \caption{$\Delta\nu/\cos(\alpha_{30})$ als Funktion der Pumpleistungen für $\theta=30°$ und für verschiedene Rohrdurchmesser}
+  \caption{$\Delta\nu/\cos(\alpha_{30})$ als Funktion der Pumpleistungen für $\theta=30°$ und für verschiedene Rohrdurchmesser.}
   \label{fig:plot2}
 \end{figure}
 \begin{table}[H]
   \centering
-      \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot2}}
+      \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot2}.}
       \label{tab:params2}
       \sisetup{table-format=2.3}
       \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
@@ -117,12 +117,12 @@ Die Parameter sind in den Tabellen \ref{tab:params1} - \ref{tab:params3} aufgeli
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.8]{auswertung/plot3.pdf}
-  \caption{$\Delta\nu/\cos(\alpha_{45})$ als Funktion der Pumpleistungen für $\theta=45°$ und für verschiedene Rohrdurchmesser}
+  \caption{$\Delta\nu/\cos(\alpha_{45})$ als Funktion der Pumpleistungen für $\theta=45°$ und für verschiedene Rohrdurchmesser.}
   \label{fig:plot3}
 \end{figure}
 \begin{table}[H]
 \centering
-    \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot3}}
+    \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot3}.}
     \label{tab:params3}
     \sisetup{table-format=2.3}
     \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
@@ -147,12 +147,12 @@ Pumpleistungen in Prozent
 In Abbildung \ref{fig:plot4} ist die Messtiefe $\mu$ gegen die Momentangeschwindigkeit $v_ström$ aufgetragen. Die Regression ist dabei wieder
 der Form von Gleichung \eqref{eqn:gerade}. Die Parameter sind in Tabelle \ref{tab:params4} aufgelistet. Aufgrund technischer Schwierigkeiten
 (vgl.Kapitel \ref{sec:Diskussion}) ist sind für die Daten von $P_{70}$ zwei Regressionen erstellt worden. Die graue Regression ist dabei aus allen 
-Messdaten berechnet, bei der roten Gerade sind jene Werte aus der Berechnung ausgeschlossen, für welche $v_{ström}=\SI{0}{\metre\per\second}$
+Messdaten berechnet, bei der roten Gerade sind jene Werte aus der Berechnung ausgeschlossen, für welche $v_{stroem}=\SI{0}{\metre\per\second}$
 ist. Diese Werte sind zudem noch mit einem Stern markiert. 
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.8]{auswertung/plot4.pdf}
-  \caption{Die Momentangeschwindigkeit $v_{ström}$ als Funktion der Messtiefe $\mu$ für verschiedene Pumpleistungen}
+  \caption{Die Momentangeschwindigkeit $v_{stroem}$ als Funktion der Messtiefe $\mu$ für verschiedene Pumpleistungen.}
   \label{fig:plot4}
 \end{figure}
 \begin{table}[H]
@@ -178,7 +178,7 @@ Die Regressionen sind wieder linear und die Parameter sind in Tabelle \ref{tab:p
 \begin{figure}[H]
   \centering
   \includegraphics[scale= 0.8]{auswertung/plot5.pdf}
-  \caption{Die Streuintensität $I$ als Funktion der Messtiefe $\mu$ für verschiedene Pumpleistungen}
+  \caption{Die Streuintensität $I$ als Funktion der Messtiefe $\mu$ für verschiedene Pumpleistungen.}
   \label{fig:plot5}
 \end{figure}
 \begin{table}[H]
