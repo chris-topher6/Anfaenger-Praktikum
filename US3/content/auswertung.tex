@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 \subsection{Messdaten}
 \label{sec:Messdaten}
-Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab_mess1} und \ref{tab:mess2} dargestellt. 
+Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1} und \ref{tab:mess2} dargestellt. 
 \begin{table}[H]
     \centering
         \caption{Die Frequnzverschiebung $\Delta\nu$ bei verschiedenen Pumpleistungen $P$ und Rohrdurchmessern $d_{Rohr}$}
@@ -63,40 +63,136 @@ Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab_mess1}
 \subsection{Frequnzverschiebung bei verschiedenen Rohrdurchmessern}
 \label{sec:a1}
 In den Abbildungen \ref{fig:plot1}, \ref{fig:plot2} und \ref{fig:plot3} sind die Messwerte aus Tabelle \ref{tab:mess1} graphisch ausgewertet. 
-Dabei sind auf die x-Achsen die Pumpleistungen $P$ und auf die y-Achsen $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
+Dabei sind auf die x-Achsen die Pumpleistungen $V_{pump}$ und auf die y-Achsen $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
 Dopplerwinkel aus \ref{sec:vorbereitung} ist. In jeder Abbildung ist dann für jeden Rohrdurchmesser eine lineare Regression eingetragen.
 Diese wurde von \textit{nummeric python} \cite{numpy} berechnet und haben die Form 
 \begin{equation}
     y=mx+b  . 
-    \label{eqn:gleichung}
+    \label{eqn:gerade}
 \end{equation}
-Die Parameter sind in Tabelle \ref{tab:params1} aufgelistet.
+Die Parameter sind in den Tabellen \ref{tab:params1} - \ref{tab:params3} aufgelistet.
 
-
-%Die Tabelle sieht total kacke aus...
-%nochmal überarbeiten
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.8]{auswertung/plot1.pdf}
+  \caption{$\Delta\nu/\cos(\alpha_{15})$ als Funktion der Pumpleistungen für $\theta=15°$ und für verschiedene Rohrdurchmesser}
+  \label{fig:plot1}
+\end{figure}
 \begin{table}[H]
-    \centering
-        \caption{Die Parameter der linearen Regressionen in den Abbildungen \ref{fig:plot1}-\ref{fig:plot3}}
-        \label{tab:mess1}
-        \sisetup{table-format=2.3}
-        \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S S @{${}\pm{}$} S}
-          \toprule
-          &
-          \multicolumn{4}{c}{$d_{Rohr}=\SI{7}{\milli\metre}$}&
-          \multicolumn{4}{c}{$d_{Rohr}=\SI{10}{\milli\metre}$}&
-          \multicolumn{4}{c}{$d_{Rohr}=\SI{16}{\milli\metre}$}\\
-          \cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}
-          {$\theta [°]$} &
-          {$a[\si{\hertz\per\second}]$} & {$b[\si{\kilo\hertz}]$} &  %Einheiten unbedingt in rpm ändern
-          {$a[\si{\hertz\per\second}]$} & {$b[\si{\kilo\hertz}]$} &
-          {$a[\si{\hertz\per\second}]$} & {$b[\si{\kilo\hertz}]$} \\
-          \midrule
-            15 & -0.488 & 0.035 &   1.35 & 0.25  & -0.267 & 0.030  &  0.92 & 0.22 & -0.094 & 0.019 &  0.18 & 0.14 \\
-            30 &  0.452 & 0.031  & -1.45 & 0.23  &  0.280 & 0.034  & -1.13 & 0.25 &  0.128 & 0.018 & -0.54 & 0.13 \\
-            45 &  -0.57 & 0.04   &  1.85 & 0.26  & -0.320 & 0.028  &  1.14 & 0.21 & -0.156 & 0.019 &  0.67 & 0.14 \\
-          \bottomrule
-        \end{tabular}
-      \end{table}
+  \centering
+      \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot1}}
+      \label{tab:params1}
+      \sisetup{table-format=2.3}
+      \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
+        \toprule
+        {$d_{Rohr} [\si{\milli\metre}]$} & \multicolumn{2}{c}{$a [\si{\hertz}/\text{rpm}]$} & \multicolumn{2}{c}{$b [\si{\kilo\hertz}]$} \\
+        \midrule
+        7  & -0.488 & 0.035 &  1.35 & 0.25 \\
+        10 & -0.267 & 0.030 &  0.92 & 0.22 \\
+        16 & -0.094 & 0.019 &  0.18 & 0.14 \\
+        \bottomrule
+     \end{tabular}
+  \end{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.8]{auswertung/plot2.pdf}
+  \caption{$\Delta\nu/\cos(\alpha_{30})$ als Funktion der Pumpleistungen für $\theta=30°$ und für verschiedene Rohrdurchmesser}
+  \label{fig:plot2}
+\end{figure}
+\begin{table}[H]
+  \centering
+      \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot2}}
+      \label{tab:params2}
+      \sisetup{table-format=2.3}
+      \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
+        \toprule
+        {$d_{Rohr} [\si{\milli\metre}]$} & \multicolumn{2}{c}{$a [\si{\hertz}/\text{rpm}]$} & \multicolumn{2}{c}{$b [\si{\kilo\hertz}]$} \\
+        \midrule
+        7  & 0.452 & 0.031  & -1.45 & 0.23 \\
+        10 & 0.280 & 0.034  & -1.13 & 0.25 \\
+        16 & 0.128 & 0.018  & -0.54 & 0.13 \\
+        \bottomrule
+     \end{tabular}
+  \end{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.8]{auswertung/plot3.pdf}
+  \caption{$\Delta\nu/\cos(\alpha_{45})$ als Funktion der Pumpleistungen für $\theta=45°$ und für verschiedene Rohrdurchmesser}
+  \label{fig:plot3}
+\end{figure}
+\begin{table}[H]
+\centering
+    \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot3}}
+    \label{tab:params3}
+    \sisetup{table-format=2.3}
+    \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
+      \toprule
+      {$d_{Rohr} [\si{\milli\metre}]$} & \multicolumn{2}{c}{$a [\si{\hertz}/\text{rpm}]$} & \multicolumn{2}{c}{$b [\si{\kilo\hertz}]$} \\
+      \midrule
+      7  & -0.57  & 0.04   &  1.85 & 0.26 \\
+      10 & -0.320 & 0.028  &  1.14 & 0.21 \\
+      16 & -0.156 & 0.019  &  0.67 & 0.14 \\
+      \bottomrule
+   \end{tabular}
+\end{table}
+
 \subsection{Strömungsprofil}
 \label{sec:a2}
+Die Messwerte aus Tabelle \ref{tab:mess2} sind in den Abbildungen \ref{fig:plot4} und \ref{fig:plot5} dargestellt. Dabei entsprechen die 
+Pumpleistungen in Prozent
+\begin{align*}
+  P_{45}&=45\%P_{max}=3870\text{rpm}\\
+  P_{70}&=70\%P_{max}=6000\text{rpm}.
+\end{align*}
+In Abbildung \ref{fig:plot4} ist die Messtiefe $\mu$ gegen die Momentangeschwindigkeit $v_ström$ aufgetragen. Die Regression ist dabei wieder
+der Form von Gleichung \eqref{eqn:gerade}. Die Parameter sind in Tabelle \ref{tab:params4} aufgelistet. Aufgrund technischer Schwierigkeiten
+(vgl.Kapitel \ref{sec:Diskussion}) ist sind für die Daten von $P_{70}$ zwei Regressionen erstellt worden. Die graue Regression ist dabei aus allen 
+Messdaten berechnet, bei der roten Gerade sind jene Werte aus der Berechnung ausgeschlossen, für welche $v_{ström}=\SI{0}{\metre\per\second}$
+ist. Diese Werte sind zudem noch mit einem Stern markiert. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.8]{auswertung/plot4.pdf}
+  \caption{Die Momentangeschwindigkeit $v_{ström}$ als Funktion der Messtiefe $\mu$ für verschiedene Pumpleistungen}
+  \label{fig:plot4}
+\end{figure}
+\begin{table}[H]
+\centering
+    \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot4}. Die letzt Zeile enthält die bereinigte Regression.}
+    \label{tab:params4}
+    \sisetup{table-format=1.3}
+    \begin{tabular}{S[table-format=4.0] S @{${}\pm{}$} S S @{${}\pm{}$} S}
+      \toprule
+      {$P [\text{rpm}]$} & \multicolumn{2}{c}{$a [\si{\kilo\metre\per\square\second}]$} & \multicolumn{2}{c}{$b [\si{\metre\per\second}]$} \\
+      \midrule
+      3870 &  0.00 & 0.00 & 0.000  & 0.000 \\
+      6000 & -4.73 & 1.69 & 0.048  & 0.026 \\
+      6000 & -0.03 & 0.75 & -0.032 & 0.012 \\
+      \bottomrule
+   \end{tabular}
+\end{table}
+\noindent
+Die Streuintensität $I$ ist in Abbildung \ref{fig:plot5} gegen die Messtiefe $\mu$ aufgetragen. Auch die Regression der Messdaten von $P_{70}$
+wurde zweimal durchgeführt, in grau mit allen Daten und in rot mit allen Daten, außer dem mit Stern markierten Messwert (vgl. Kapitel\ref{sec:Diskussion}).
+Die Regressionen sind wieder linear und die Parameter sind in Tabelle \ref{tab:params5} aufgeführt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale= 0.8]{auswertung/plot5.pdf}
+  \caption{Die Streuintensität $I$ als Funktion der Messtiefe $\mu$ für verschiedene Pumpleistungen}
+  \label{fig:plot5}
+\end{figure}
+\begin{table}[H]
+\centering
+    \caption{Die Parameter der linearen Regressionen in Abbildung \ref{fig:plot4}. Die letzt Zeile enthält die bereinigte Regression.}
+    \label{tab:params5}
+    \sisetup{table-format=3.1}
+    \begin{tabular}{S[table-format=4.0] S[table-format=2.2] @{${}\pm{}$} S[table-format=2.2] S[table-format=4.1] @{${}\pm{}$} S}
+      \toprule
+      {$P [\text{rpm}]$} & \multicolumn{2}{c}{$a [\si{\giga\square\volt\per\square\second}]$} & \multicolumn{2}{c}{$b [\si{\square\kilo\volt\per\square\second}]$} \\
+      \midrule
+      3870 &  7.19 &  2.42 & -89.5 &  37.9 \\
+      6000 & 44.81 & 15.32 & -563.5 & 240.0 \\
+      6000 & 18.79 & 3.99  &  187.9 &  39.9 \\
+      \bottomrule
+   \end{tabular}
+\end{table}
