@@ -33,7 +33,7 @@ ausgesendet. Diese werden an den Bestandteilen der Strömung (z.b. Blutkörper)
 reflektiert. Dabei wird die Frequenz $\nu_0$ nach dem Doppler-Effekt verschoben.
 Aus der Frequenzverschiebung lässt sich dann nach
 \begin{equation}
-\increment \nu = \nu_0 \frac{v}{c}(cos(\alpha) + cos(\beta))
+\increment \nu = \nu_0 \frac{v}{c}(\cos(\alpha) + \cos(\beta))
 \label{eqn:gleichung3}
 \end{equation}
 die Geschwindigkeit der Strömung bestimmen.
@@ -44,16 +44,26 @@ In diesem Versuch wird das Impuls-Echo-Verfahren verwendet. Bei diesem sind ein-
 und auslaufende Welle gleich gerichtet, weshalb $\alpha = \beta$ gilt. Dadurch
 vereinfacht sich \eqref{eqn:gleichung3} zu
 \begin{equation*}
-\increment \nu = 2 \nu_0 \frac{v}{c} cos(\alpha).
+\increment \nu = 2 \nu_0 \frac{v}{c} \cos(\alpha).
 \end{equation*}
 Ein nach diesem Prinzip arbeitender Doppler-Sonograph ist im Folgenden schematisch
 dargestellt.
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{content/dopplersonograph.png}
   \caption{Schematische Abbildung eines Doppler-Sonographen.}
   \label{fig:dopplersonographtheorie}
 \end{figure}
+\noindent
+Bei dem verwendeten Versuchsaufbau mit Doppler-Prismen ergibt sich der Dopplerwinkel $\alpha$
+zu
+\begin{equation}
+  \alpha = \SI{90}{\degree} - \arcsin( \sin{\theta} \cdot \frac{c_L}{c_P}).
+  \label{eqn:gleichung5theorie}
+\end{equation}
+Hierbei bezeichnet $c_L$ die Schallgeschwindigkeit in der Doppler-Flüssigkeit
+und $c_P$ die Schallgeschwindigkeit in dem Prismenmaterial.
+
 
 \subsection{Erzeugung von Ultraschallwellen}
 Die Doppler-Sonographie verwendet Ultraschallwellen. Diese haben Frequenzen
