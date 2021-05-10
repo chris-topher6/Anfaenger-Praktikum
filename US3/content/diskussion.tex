@@ -1,5 +1,6 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Es folgt eine Zusammenfassung der Messergebnisse aus Kapitel \ref{sec:Auswertung}.
 \begin{table}[H]
     \centering
         \caption{Zusammenfassung aller Parameter der Regressionen aus Kapitel \ref{sec:a1}.}
@@ -51,25 +52,25 @@
 
 Die in Kapitel \ref{sec:a1} dargestellten Abbildungen \ref{fig:plot1}, \ref{fig:plot2} und \ref{fig:plot3} zeigen deutlich ein lineares Verhältnis
 zwischen der Pumpleistung, und damit der Strömungsgeschwindigkeit, und der Frequenzverschiebung. Auffällig ist zudem, dass sich die Steigungen der 
-Regressionsgeraden bei gleichem Rohrdurchmesser in sehr hohem Maße gleichen. Dadurch, dass die Vorzeichen Abhängig von der Strömungsrichtung sind,
+Regressionsgeraden bei gleichem Rohrdurchmesser in sehr hohem Maße gleichen. Dadurch, dass die Vorzeichen abhängig von der Strömungsrichtung sind,
 können diese dabei vernachlässigt werden. Vermutlich bewirkt das Teilen der Frequenzverschiebung durch $\cos(\alpha)$ eine Unabhängigkeit der 
 Funktion von dem Prismawinkel $\theta$. Die vergleichsweise geringen Unsicherheiten der Parameter, welche durch \textit{nummeric python} \cite{numpy}
-berechnt wurden, lassen auf keine systematischen Fehler bei dem Aufnehmen der Messdaten schließen. 
+berechnt wurden, lassen auf keine großen Fehler bei dem Aufnehmen der Messdaten schließen. 
 \\\\\noindent
 Die in Kapitel \ref{sec:a2} ausgewerteten Daten hingegen zeigen starke Auffälligkeiten. In Abbildung \ref{fig:plot4} ist zu erkennen, dass die 
 Messreihe für eine Pumpleistung von $45\%$ eine konstante Momentangeschwindigkeit von $v_{stroem}=0$ ergab. Da die Pumpe die Flüssigkeit jedoch
 offensichtlich bewegte, sind diese Messdaten grundlegend falsch. Dies erklärt auch die Parameter der Regression, die allesamt null sind. Eine 
 mögliche Erklärung ist, dass das Messgerät nicht sensibel genug reagierte, um die Momentangeschwindigkeit der Flüssigkeit messen zu können. 
-bei einer Pumpleistung von $70\%$ verschwand das Problem auch teilweise. Hier sind nur die ersten beiden Messwerte betroffen. Damit die 
+Bei einer Pumpleistung von $70\%$ verschwand das Problem auch teilweise. Hier sind nur die ersten beiden Messwerte betroffen. Damit die 
 Messung trotzdem Aussagekraft besitzt, wurden in der Auswertung zwei Regressionsgeraden berechnet, wobei bei einer die offensichtlich fehlerhaften
 Messdaten nicht mit in die Berechnung einflossen. Die großen Unsicherheiten der Parameter dieser bereinigten Regression deuten jedoch deutlich auf
 weitere statistische Fehler bei der Messung hin.
 \\\noindent
 Die Messung der Intensität in Abhängigkeit von der Messtiefe zeigt deutlich geringere Unsicherheiten der Parameter. Zudem sind keine systematischen
-Messfehler zu vermuten. Nur bei der Messung bei einer Pumpleistung von $70\%$ liegt ein Messwert deutlich Abseits eines linearen Zusammenhangs, der 
+Messfehler zu vermuten. Nur bei der Messung bei einer Pumpleistung von $70\%$ liegt ein Messwert deutlich abseits eines linearen Zusammenhangs, der 
 aus allen anderen Messdaten unmissverständlich hervorgeht. Deswegen wurden auch diesmal zwei Regressionen für diese Messreihe durchgeführt. Dabei 
 ist augenfällig zu erkennen, dass die Unsicherheit der Parameter durch den Außschluss dieses Messwertes stark sinkt.
 \\\noindent
 Die Unsicherheiten, welche bei diesem Versuch generell recht gewichtig sind, lassen sich durch starke Fluktuationen während der Messung erklären,
-die das Ablesen der zu messenden Werte stark erschwerte. Hinzu kommt, dass sich die Pumpleistung während der Messung unkontrolliert änderte. Dies
+die das Ablesen der zu messenden Werte stark erschwerten. Hinzu kommt, dass sich die Pumpleistung während der Messung unkontrolliert änderte. Dies
 führt zu einer weiteren Verzerrung der Messergebnisse.

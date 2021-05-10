@@ -14,9 +14,9 @@ Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1}
           \multicolumn{9}{c}{$\Delta\nu [\si{\hertz}]$}\\
           \cmidrule(lr){2-10}
           &
-          \multicolumn{3}{c}{$d_{Rohr}=\SI{7}{\milli\metre} $}& %\quad\text{Rohr}$} & 
-          \multicolumn{3}{c}{$d_{Rohr}=\SI{10}{\milli\metre}$}& %\quad\text{Rohr}$} &
-          \multicolumn{3}{c}{$d_{Rohr}=\SI{16}{\milli\metre}$}\\ %\quad\text{Rohr}$} \\
+          \multicolumn{3}{c}{$d_{Rohr}=\SI{7}{\milli\metre} $}& 
+          \multicolumn{3}{c}{$d_{Rohr}=\SI{10}{\milli\metre}$}&
+          \multicolumn{3}{c}{$d_{Rohr}=\SI{16}{\milli\metre}$}\\ 
           \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
           {$P [rpm]$} &
           {$15°$} & {$30°$} & {$45°$} &
@@ -63,14 +63,14 @@ Die bei dem Versuch aufgenommenen Messdaten sind in den Tabellen \ref{tab:mess1}
 \subsection{Frequnzverschiebung bei verschiedenen Rohrdurchmessern}
 \label{sec:a1}
 In den Abbildungen \ref{fig:plot1}, \ref{fig:plot2} und \ref{fig:plot3} sind die Messwerte aus Tabelle \ref{tab:mess1} graphisch ausgewertet. 
-Dabei sind auf die x-Achsen die Pumpleistungen $P$ und auf die y-Achsen $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
+Dabei sind auf die Abzissen die Pumpleistungen $P$ und auf die Ordinaten $\Delta\nu/\cos(\alpha)$ aufgetragen, wobei $\alpha$ der jeweilige
 Dopplerwinkel aus \ref{sec:vorbereitung} ist. In jeder Abbildung ist dann für jeden Rohrdurchmesser eine lineare Regression eingetragen.
-Diese wurde von \textit{nummeric python} \cite{numpy} berechnet und haben die Form 
+Diese wurde von \textit{numeric python} \cite{numpy} berechnet und haben die Form 
 \begin{equation}
     y=mx+b  . 
     \label{eqn:gerade}
 \end{equation}
-Die Parameter sind in den Tabellen \ref{tab:params1} - \ref{tab:params3} aufgelistet.
+Die Parameter sind in den Tabellen \ref{tab:params1}, \ref{tab:params2} \ref{tab:params3} aufgelistet.
 
 \begin{figure}[H]
   \centering
@@ -146,7 +146,7 @@ Pumpleistungen in Prozent
 \end{align*}
 In Abbildung \ref{fig:plot4} ist die Messtiefe $\mu$ gegen die Momentangeschwindigkeit $v_ström$ aufgetragen. Die Regression ist dabei wieder
 der Form von Gleichung \eqref{eqn:gerade}. Die Parameter sind in Tabelle \ref{tab:params4} aufgelistet. Aufgrund technischer Schwierigkeiten
-(vgl.Kapitel \ref{sec:Diskussion}) ist sind für die Daten von $P_{70}$ zwei Regressionen erstellt worden. Die graue Regression ist dabei aus allen 
+(vgl.Kapitel \ref{sec:Diskussion}) sind für die Daten von $P_{70}$ zwei Regressionen erstellt worden. Die graue Regression ist dabei aus allen 
 Messdaten berechnet, bei der roten Gerade sind jene Werte aus der Berechnung ausgeschlossen, für welche $v_{stroem}=\SI{0}{\metre\per\second}$
 ist. Diese Werte sind zudem noch mit einem Stern markiert. 
 \begin{figure}[H]
