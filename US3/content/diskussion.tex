@@ -29,47 +29,47 @@ Es folgt eine Zusammenfassung der Messergebnisse aus Kapitel \ref{sec:Auswertung
         \caption{Zusammenfassung der Parameter aus Kapitel \ref{sec:a2}.}
         \label{tab:diss2}
         \sisetup{table-format=3.1}
-        \begin{tabular}{S[table-format=4.0] 
-            S[table-format=1.2] @{${}\pm{}$} S[table-format=1.2] 
+        \begin{tabular}{S[table-format=4.0]
+            S[table-format=1.2] @{${}\pm{}$} S[table-format=1.2]
             S[table-format=1.3] @{${}\pm{}$} S[table-format=1.3]
-            S[table-format=2.2] @{${}\pm{}$} S[table-format=2.2] 
+            S[table-format=2.2] @{${}\pm{}$} S[table-format=2.2]
             S @{${}\pm{}$} S}
           \toprule
           & \multicolumn{4}{c}{$v_{stroem}$} & \multicolumn{4}{c}{$I$} \\
           \cmidrule(lr){2-5}\cmidrule(lr){6-9}
-          {$P [\text{rpm}]$} & 
-          \multicolumn{2}{c}{$a [\si{\kilo\metre\per\square\second}]$} & 
-          \multicolumn{2}{c}{$b [\si{\metre\per\second}]$} & 
-          \multicolumn{2}{c}{$a [\si{\giga\square\volt\per\square\second}]$} & 
+          {$P [\text{rpm}]$} &
+          \multicolumn{2}{c}{$a [\si{\kilo\metre\per\square\second}]$} &
+          \multicolumn{2}{c}{$b [\si{\metre\per\second}]$} &
+          \multicolumn{2}{c}{$a [\si{\giga\square\volt\per\square\second}]$} &
           \multicolumn{2}{c}{$b [\si{\square\kilo\volt\per\square\second}]$} \\
           \midrule
-          3870 &  0.00 & 0.00 & 0.000  & 0.000 &  7.19 &  2.42 & -89.5  &  37.9 \\ 
-          6000 & -4.73 & 1.69 & 0.048  & 0.026 & 44.81 & 15.32 & -563.5 & 240.0 \\ 
-          6000 & -0.03 & 0.75 & -0.032 & 0.012 & 18.79 & 3.99  &  187.9 &  39.9 \\ 
+          3870 &  0.00 & 0.00 & 0.000  & 0.000 &  7.19 &  2.42 & -89.5  &  37.9 \\
+          6000 & -4.73 & 1.69 & 0.048  & 0.026 & 44.81 & 15.32 & -563.5 & 240.0 \\
+          6000 & -0.03 & 0.75 & -0.032 & 0.012 & 18.79 & 3.99  &  187.9 &  39.9 \\
           \bottomrule
        \end{tabular}
     \end{table}
 
 Die in Kapitel \ref{sec:a1} dargestellten Abbildungen \ref{fig:plot1}, \ref{fig:plot2} und \ref{fig:plot3} zeigen deutlich ein lineares Verhältnis
-zwischen der Pumpleistung, und damit der Strömungsgeschwindigkeit, und der Frequenzverschiebung. Auffällig ist zudem, dass sich die Steigungen der 
+zwischen der Pumpleistung, und damit der Strömungsgeschwindigkeit, und der Frequenzverschiebung. Auffällig ist zudem, dass sich die Steigungen der
 Regressionsgeraden bei gleichem Rohrdurchmesser in sehr hohem Maße gleichen. Dadurch, dass die Vorzeichen abhängig von der Strömungsrichtung sind,
-können diese dabei vernachlässigt werden. Vermutlich bewirkt das Teilen der Frequenzverschiebung durch $\cos(\alpha)$ eine Unabhängigkeit der 
+können diese dabei vernachlässigt werden. Vermutlich bewirkt das Teilen der Frequenzverschiebung durch $\cos(\alpha)$ eine Unabhängigkeit der
 Funktion von dem Prismawinkel $\theta$. Die vergleichsweise geringen Unsicherheiten der Parameter, welche durch \textit{nummeric python} \cite{numpy}
-berechnt wurden, lassen auf keine großen Fehler bei dem Aufnehmen der Messdaten schließen. 
+berechnt wurden, lassen auf keine großen Fehler bei der Aufnahme der Messdaten schließen.
 \\\\\noindent
-Die in Kapitel \ref{sec:a2} ausgewerteten Daten hingegen zeigen starke Auffälligkeiten. In Abbildung \ref{fig:plot4} ist zu erkennen, dass die 
+Die in Kapitel \ref{sec:a2} ausgewerteten Daten hingegen zeigen starke Auffälligkeiten. In Abbildung \ref{fig:plot4} ist zu erkennen, dass die
 Messreihe für eine Pumpleistung von $45\%$ eine konstante Momentangeschwindigkeit von $v_{stroem}=0$ ergab. Da die Pumpe die Flüssigkeit jedoch
-offensichtlich bewegte, sind diese Messdaten grundlegend falsch. Dies erklärt auch die Parameter der Regression, die allesamt null sind. Eine 
-mögliche Erklärung ist, dass das Messgerät nicht sensibel genug reagierte, um die Momentangeschwindigkeit der Flüssigkeit messen zu können. 
-Bei einer Pumpleistung von $70\%$ verschwand das Problem auch teilweise. Hier sind nur die ersten beiden Messwerte betroffen. Damit die 
+offensichtlich bewegte, sind diese Messdaten grundlegend falsch. Dies erklärt auch die Parameter der Regression, die allesamt null sind. Eine
+mögliche Erklärung ist, dass das Messgerät nicht sensibel genug reagierte, um die Momentangeschwindigkeit der Flüssigkeit messen zu können.
+Bei einer Pumpleistung von $70\%$ verschwand das Problem auch teilweise. Hier sind nur die ersten beiden Messwerte betroffen. Damit die
 Messung trotzdem Aussagekraft besitzt, wurden in der Auswertung zwei Regressionsgeraden berechnet, wobei bei einer die offensichtlich fehlerhaften
-Messdaten nicht mit in die Berechnung einflossen. Die großen Unsicherheiten der Parameter dieser bereinigten Regression deuten jedoch deutlich auf
+Messdaten nicht mit in die Berechnung einflossen. Die großen Unsicherheiten der Parameter dieser bereinigten Regression deuten jedoch stark auf
 weitere statistische Fehler bei der Messung hin.
 \\\noindent
 Die Messung der Intensität in Abhängigkeit von der Messtiefe zeigt deutlich geringere Unsicherheiten der Parameter. Zudem sind keine systematischen
-Messfehler zu vermuten. Nur bei der Messung bei einer Pumpleistung von $70\%$ liegt ein Messwert deutlich abseits eines linearen Zusammenhangs, der 
-aus allen anderen Messdaten unmissverständlich hervorgeht. Deswegen wurden auch diesmal zwei Regressionen für diese Messreihe durchgeführt. Dabei 
-ist augenfällig zu erkennen, dass die Unsicherheit der Parameter durch den Außschluss dieses Messwertes stark sinkt.
+Messfehler zu vermuten. Nur bei der Messung bei einer Pumpleistung von $70\%$ liegt ein Messwert deutlich abseits eines linearen Zusammenhangs, der
+aus allen anderen Messdaten unmissverständlich hervorgeht. Deswegen wurden auch diesmal zwei Regressionen für diese Messreihe durchgeführt. Dabei
+ist augenfällig zu erkennen, dass die Unsicherheit der Parameter durch den Ausschluss dieses Messwertes stark sinkt.
 \\\noindent
 Die Unsicherheiten, welche bei diesem Versuch generell recht gewichtig sind, lassen sich durch starke Fluktuationen während der Messung erklären,
 die das Ablesen der zu messenden Werte stark erschwerten. Hinzu kommt, dass sich die Pumpleistung während der Messung unkontrolliert änderte. Dies
