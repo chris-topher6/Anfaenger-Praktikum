@@ -1,21 +1,22 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+t = np.genfromtxt("Temps.dat", unpack=True)#In Grad
+#In Kelvin umrechnen
+t =  t+273.15
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+#Funktion für Sättigungsdampfdruck für p in mbar
+def psst(T):
+    return(5.5 * 10**7*np.exp(-6876/T))
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+#Funktion für Weglänge
+def www(psaett):
+    return(0.0029/psaett)
 
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+#Abstand Beschleunigerelektrode und Affängerelektrode in m
+a = 1*10**-2
+
+print("Temperaturen: ", t, "[K]")
+print("Sättigungsdampfdruck: ", psst(t), "[mbar]")
+print("mittlere freie Weglänge: ", www(psst(t)), "[cm]")
+print("Verhältnis a/w: ", a/www(psst(t)))
