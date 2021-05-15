@@ -20,3 +20,6 @@ print("Temperaturen: ", t, "[K]")
 print("Sättigungsdampfdruck: ", psst(t), "[mbar]")
 print("mittlere freie Weglänge: ", www(psst(t)), "[cm]")
 print("Verhältnis a/w: ", a/www(psst(t)))
+
+intv1, intbr1 = np.genfromtxt("skalierung1.dat", unpack=True)
+intv2, intbr2 = np.genfromtxt("skalierung2.dat", unpack=True)
