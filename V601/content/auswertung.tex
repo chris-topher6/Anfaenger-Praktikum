@@ -168,7 +168,8 @@ Nach der Theorie müsste der Peak eigentlich nur eine verschwindende Breite besi
 Das sich dies hier nicht zeigt, liegt an der Fermi-Dirac Statistik (siehe \ref{sec:fermidirac}).
 Der Einfluss der Temperatur auf den Kurvenverlauf lässt sich so erklären, dass bei erhöhten
 Temperaturen mehr Zusammenstöße der Elektronen mit dem Quecksilber entstehen.
-Die beginnende Abwärtstendenz bei ca. $\SI{3}{\volt}$ rührt daher, dass  (HIER ERGÄNZEN).
+Die beginnende Abwärtstendenz bei ca. $\SI{3}{\volt}$ rührt daher, dass dies genau die
+Differenz aus der ersten Anregungsenergie (siehe \ref{sec:anrhgat}) und dem Kontaktpotential.
 \noindent
 Das Kontaktpotential ergibt sich nach \eqref{eqn:effpottheorie} zu
 \begin{align}
@@ -178,8 +179,23 @@ Das Kontaktpotential ergibt sich nach \eqref{eqn:effpottheorie} zu
 \end{align}
 \noindent
 wobei hier $K_1$ aus dem ersten Messdurchlauf und $K_2$ aus dem zweiten Messdurchlauf bestimmt wurde.
+Die Graphen, welche die Basis für die Bestimmung der differentiellen Energieverteilung liefern, sind
+im Folgenden abgebildet.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{content/kurve1.jpeg}
+  \caption{Die Aufnahme der Energieverteilung bei verschiedenen Temperaturen aus dem ersten Messdurchgang.}
+  \label{fig:franckhertz1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{content/kurv2.jpeg}
+  \caption{Die Aufnahme der Energieverteilung bei verschiedenen Temperaturen im zweiten Messdurchgang.}
+  \label{fig:franckhertz2}
+\end{figure}
 
 \subsection{Die Anregungsenergie des Hg-Atoms}
+\label(sec:anrhgat)
 Die Skalierung der aufgenommenen Franck-Hertz Kurven muss muss zuerst bestimmt werden
 und ist in folgender Tabelle dargestellt.
 
@@ -244,3 +260,25 @@ Die erste Anregungsenergie ergibt sich also zu
   U_{12}  & = 5.340 \pm 0.082 \si{\electronvolt}
   \label{eqn:erstanr}
 \end{align}
+Um die Wellenlänge des emittierten Photonen zu erhalten, wird \eqref{eqn:photon}
+verwendet und $\lambda = \frac{c}{\nu}$ eingesetzt. Dann erhält man
+\begin{align}
+  \lambda_1 & = 244 \pm 8  \si{\nano\meter} \\
+  \lambda_2 & = 229.6 \pm 3.5 \si{\nano\meter}.
+  \label{eqn:wellenl}
+\end{align}
+Damit liegen die Wellenlängen der Photonen im ultravioletten Bereich.
+Im Folgenden sind die beiden Franck-Hertz Kurven, welche die Grundlage für die
+Bestimmung der Anregungsenergie und der Wellenlänge liefern, abgebildet.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{content/kurv3.jpeg}
+  \caption{Die Aufnahme der Franck-Hertz Kurve aus dem ersten Messdurchgang.}
+  \label{fig:franckhertz1}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{content/kurve4.jpeg}
+  \caption{Die Aufnahme der Franck-Hertz Kurve im zweiten Messdurchgang.}
+  \label{fig:franckhertz2}
+\end{figure}

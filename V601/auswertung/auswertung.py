@@ -2,6 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import uncertainties.unumpy as unp
 from uncertainties import ufloat
+import scipy.constants as const
+from uncertainties import ufloat
+
 
 print("Aufgabenteil a)")
 t = np.genfromtxt("temps.dat", unpack=True)#In Grad
@@ -99,3 +102,18 @@ stdabst2 = np.std(abst2, ddof=1)/np.sqrt(len(abst2))
 
 print("Der mittlere Abstand zwischen zwei Maxima in Kurve 1 beträgt: ", meanabst1, "+-", stdabst1)
 print("Der mittlere Abstand zwischen zwei Maxima in Kurve 2 beträgt: ", meanabst2, "+-", stdabst2)
+#Definiere Energiedifferenz E_1-E_0
+energiediff1 = ufloat(meanabst1, stdabst1)
+energiediff2 = ufloat(meanabst2, stdabst2)
+#Wandle Volt in eVolt um durch Multiplikation mit Elementarladung
+energiediff1 = energiediff1*const.e
+energiediff2 = energiediff2*const.e
+#Teile durch Plancksches Wirkunsgquantum
+energiediff1 = energiediff1/const.Planck
+energiediff2 = energiediff2/const.Planck
+#Berechnung der Wellenlänge
+lambda1 = const.speed_of_light/energiediff1
+lambda2 = const.speed_of_light/energiediff2
+
+print("Die Wellenlänge des emittierten Photons beträgt nach der ersten Messreihe: ", lambda1, "[m]")
+print("Die Wellenlänge des emittierten Photons beträgt nach der zweiten Messreihe: ", lambda2, "[m]")
