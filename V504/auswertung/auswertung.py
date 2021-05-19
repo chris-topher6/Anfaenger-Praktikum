@@ -15,8 +15,13 @@ def grad(rad): #rad in grad
     return rad*180/np.pi
 def gerade(x, m, b): #Geraden für Plots
     return m*x+b
-#hier noch die anderen beiden Funktionen ergänzen
+def richardson(T, js):
+    return -np.log(js/(c1*T**2))*k*T#=e0*Phi mit c1=4*pi*e0*m0*k^2/h^3
+def leistung(If, Uf):
+    return ((If*Uf-Nwl)/c2)**(1/4)#=T mit c2=f*eta*sigma
 
+#Konstanten der Messung
+c1 = 4*np.pi*const.e*const.m_e*const.k**2/const.h**3 # was ist k??
 #Messwerte 
 Ua, I1, I2, I3, I4, I5 = np.genfromtxt('a.dat', unpack=True)
 Uc, Ic                 = np.genfromtxt('c.dat', unpack=True)
@@ -33,11 +38,11 @@ plt.plot(Ua, I2, 'g.', label='I=2.2')
 plt.plot(Ua, I3, 'c.', label='I=2.3')
 plt.plot(Ua, I4, 'b.', label='I=2.4')
 plt.plot(Ua, I5, 'y.', label='I=2.5')
-plt.plot(Ua, I1, 'r', linewidth=0.2)
-plt.plot(Ua, I2, 'g', linewidth=0.2)
-plt.plot(Ua, I3, 'c', linewidth=0.2)
-plt.plot(Ua, I4, 'b', linewidth=0.2)
-plt.plot(Ua, I5, 'y', linewidth=0.2)
+plt.plot(Ua, I1, 'r', linewidth=0.08)
+plt.plot(Ua, I2, 'g', linewidth=0.08)
+plt.plot(Ua, I3, 'c', linewidth=0.08)
+plt.plot(Ua, I4, 'b', linewidth=0.08)
+plt.plot(Ua, I5, 'y', linewidth=0.08)
 plt.xlabel(r"Anodenspannung $U_a [V]$")
 plt.ylabel(r"Anodenstromstärke $I_a [A]$")
 plt.legend(loc='best')
