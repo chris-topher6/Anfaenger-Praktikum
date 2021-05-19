@@ -1,3 +1,144 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Messdaten}
+\label{sec:mess}
+Im Folgenden sind die bei der Messung aufgenommenen Daten tabellarisch dargestellt.
+\begin{table}[H]
+    \centering
+    \caption{Der Anodenstrom $I_A$ für verschiedene Anodenspannungen $U_A$ und Heizströme $I_H$.}
+    \label{tab:mess1}
+    \sisetup{table-format=1.2}
+    \begin{tabular}{S[table-format=3.0] S S S S S}
+        \toprule
+        &
+        \multicolumn{5}{c}{$I_A [\si{\milli\ampere}]$}\\
+        \cmidrule(lr){2-6}
+        {$V_A [\si{\volt}]$} &
+        {$I_H=\SI{2.1}{\ampere}$} & {$I_H=\SI{2.2}{\ampere}$} & {$I_H=\SI{2.3}{\ampere}$} & {$I_H=\SI{2.4}{\ampere}$} & {$I_H=\SI{2.5}{\ampere}$} \\
+        \midrule
+        0    &  0.00  &  0.00  &  0.00  &  0.00  &  0.00 \\
+        10   &  0.02  &  0.02  &  0.02  &  0.03  &  0.03 \\
+        20   &  0.05  &  0.06  &  0.06  &  0.08  &  0.07 \\
+        30   &  0.09  &  0.11  &  0.12  &  0.14  &  0.14 \\
+        40   &  0.13  &  0.16  &  0.18  &  0.21  &  0.21 \\
+        50   &  0.16  &  0.22  &  0.26  &  0.29  &  0.30 \\
+        60   &  0.19  &  0.28  &  0.34  &  0.37  &  0.40 \\
+        100  &  0.25  &  0.50  &  0.65  &  0.79  &  0.83 \\
+        125  &  0.26  &  0.57  &  0.85  &  1.06  &  1.17 \\
+        150  &  0.27  &  0.61  &  0.98  &  1.36  &  1.56 \\
+        175  &  0.27  &  0.63  &  1.07  &  1.58  &  1.88 \\
+        200  &  0.28  &  0.64  &  1.12  &  1.80  &  2.21 \\
+        225  &  0.28  &  0.65  &  1.16  &  1.99  &  2.55 \\
+        250  &  0.28  &  0.65  &  1.18  &  2.15  &  2.86 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\begin{table}[H]
+    \centering
+    \caption{Die Heizspannung $U_H$ für verschiedene Heizströme $I_H$.}
+    \label{tab:mess2}
+    \sisetup{table-format=1.1}
+    \begin{tabular}{S S}
+      \toprule
+      {$I_H [\si{\ampere}]$} & {$U_H [\si{\volt}]$}\\
+      \midrule
+      2.1 & 4.0 \\
+      2.2 & 4.1 \\
+      2.3 & 4.9 \\
+      2.4 & 5.0 \\
+      2.5 & 5.5 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+    \caption{Die Anodenstromstärke $I_A$ für niedrige Anodenspannungen $U_A$ bei $I_A=\SI{2.5}{\ampere}$.}
+    \label{tab:mess3}
+    \sisetup{table-format=3.1}
+    \begin{tabular}{S[table-format=1.2] S}
+      \toprule
+      {$U_A [\si{\volt}]$} & {$ I_A [\si{\nano\ampere}]$}\\
+      \midrule
+      0.0  &   14.5 \\
+      0.1  &   23.6 \\
+      0.2  &   33.0 \\
+      0.3  &   51.0 \\
+      0.4  &   75.0 \\
+      0.5  &   90.0 \\
+      0.6  &  130.0 \\
+      0.7  &  171.0 \\
+      0.8  &  216.0 \\
+      0.9  &  268.0 \\
+      0.96 &  300.0 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
 
+\subsection{Kennlinien}
+\label{sec:kenn}
+Die Daten aus Tabelle \ref{tab:mess1} sind in Abbildung \ref{fig:plot1} graphisch dargestellt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale= 0.8]{auswertung/plot1.pdf}
+    \caption{Die Kennlinien für verschiedene Heizströme.}
+    \label{fig:plot1}
+\end{figure}
+Die aus der Abbildung abgeschätzten Sättigungsströme $I_S$ sind in Tabelle \ref{tab:satt} aufgelistet. Da für die Heizströme $I_A=\SI{2.4}{\ampere}$
+und $I_A=\SI{2.5}{\ampere}$ der Sättigungsstrom nicht direkt abgelesen werden kann, wurde der Wendepunkt der Kennlinie geschätzt und die dabei
+abgelesene Stromstärke verdoppelt. Die geschätzten Wendepunkte sind dabei $(\SI{125}{\volt}, \SI{1.06}{\milli\ampere})$ für $I_A=\SI{2.4}{\ampere}$
+und $(\SI{150}{\volt}, \SI{1.56}{\milli\ampere})$ für $I_A=\SI{2.5}{\ampere}$. 
+\begin{table}[H]
+    \centering
+      \caption{Die Sättigungsströme für verschiedene Heizströme.}
+      \label{tab:satt}
+      \sisetup{table-format=1.2}
+      \begin{tabular}{S[table-format=1.1] S}
+        \toprule
+        {$U_H [\si{\ampere}]$} & {$ I_S [\si{\milli\ampere}]$}\\
+        \midrule
+        2.1 & 0.28 \\
+        2.2 & 0.65 \\
+        2.3 & 1.18 \\
+        2.4 & 2.12 \\
+        2.5 & 3.12 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Der Exponent des Langmuir-Schottkyschen Gesetzes}
+\label{sec:langschott}
+Der Geltungsbereich des Langmuir-Schottkyschen Gesetzes reicht von dem Ursprung bis zu dem Wendepunkt der Kennlinie. Für den maximalen Heizstrom
+von $I_H=\SI{2.5}{\ampere}$ kann das Intervall demnach auf $[\SI{0}{\volt}, \SI{150}{\volt}]$ geschätzt werden. In Abbildung \ref{fig:plot2} sind 
+die Messwerte in diesem Intervall in log-log-Darstellung aufgetragen. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale= 0.8]{auswertung/plot2-2.pdf}
+    \caption{Die Kennlinien für $I_A=\SI{2.5}{\ampere}$ im Intervall $[\SI{0}{\volt}, \SI{150}{\volt}]$ in doppellogarithmischer Darstellung.}
+    \label{fig:plot2}
+\end{figure}
+Das Langmuir-Schottkysche Gesetz ist durch die logarithmischen Darstellung in der Form 
+\begin{align*}
+    \log(I)&=a\cdot \log(U)+b\\
+    \Leftrightarrow
+    I&=\text{e}^bU^{a},  
+\end{align*}
+sodass die eingezeichnete Regression der Form 
+\begin{equation}
+    y=my+b
+    \label{eqn:gerade}
+\end{equation}
+ist. Die Regression wurde von \textit{numeric python} \cite{scipy} mit den Parametern
+\begin{align*}
+    a = \SI{1.48   \pm 0.020}{}
+    b = \SI{-13.90 \pm 0.080}{} %Hier Einheit ergänzen
+\end{align*}
+berechnet.
+Der gefragte Exponent des Langmuir-Schottkyschen Gesetzes ist gerade der Parameter $a$. Verglichen mit dem Theoriewert von $3/2$ ergibt sich eine 
+prozentuale Abweichung von $p=\num{1.35}\%$
+\subsection{Anlaufstromgebiet}
+\label{sec:anlauf}
+
+\subsection{Kathodentemperatur}
+\label{sec:temp}
+\subsection{Austrittsarbeit}   
+\label{sec:phi}
