@@ -72,8 +72,8 @@ plt.plot(Ua, I2, 'g', linewidth=0.08)
 plt.plot(Ua, I3, 'c', linewidth=0.08)
 plt.plot(Ua, I4, 'b', linewidth=0.08)
 plt.plot(Ua, I5, 'y', linewidth=0.08)
-plt.xlabel(r"Anodenspannung $U_a [V]$")
-plt.ylabel(r"Anodenstromstärke $I_a [A]$")
+plt.xlabel(r"Anodenspannung $U_a/V$")
+plt.ylabel(r"Anodenstromstärke $I_a/A$")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot1.pdf')
@@ -140,9 +140,9 @@ print(f"die Abweichung vom Literaturwert beträgt: p={abweichung(3/2, param[0]):
 #__________________________________________________________________________________________________________________________________________
 #Aufgabe c
 print("\nAufgabe c")
-
-x  = Uc+Ic/Ri
-y  = np.log(Ic*10**(-9))
+Ic = Ic*10**(-9)
+x  = Uc+Ic*Ri
+y  = np.log(Ic)
 
 param, cov = np.polyfit(x, y, deg=1, cov=True)
 err = np.sqrt(np.diag(cov))
@@ -152,22 +152,22 @@ for name, value, error in zip('ab', param, err):
 
 plt.figure()
 x_plot = np.linspace(np.min(x), np.max(x))
-plt.plot(x_plot, gerade(x_plot, *param), 'b-', label='Fit')
+plt.plot(x_plot, gerade(x_plot, *param), 'b-', label='Regression')
 plt.plot(x, y, 'r.', label='Messwerte')
-plt.xlabel(r'$U \,/\, \mathrm{V}$')
-plt.ylabel(r'$\log{(I)}$')
+plt.xlabel(r'$U/V$')
+plt.ylabel(r'$\log{(I/A)}$')
 plt.legend()
 plt.savefig('plot3.pdf')
 
 paramerr0 = ufloat(param[0], err[0])
-T         = e/(k*paramerr0)
-print(f'Die Temperatur beträgt nach dem Anlaufstromgebiet: T={T:.6}K')
+T1         = e/(k*paramerr0)
+print(f'Die Temperatur beträgt nach dem Anlaufstromgebiet: T={T1:.6}K')
 
 #__________________________________________________________________________________________________________________________________________
 #Aufgabe d
 print("\nAufgabe d")
 
-Uf=Uf+If/Ri
+#Uf=Uf+If/Ri
 T  = leistung(Uf, If)
 print("Die Temperaturen betragen nach der Leistungsbilanz:")
 print(f'{T[0]:.2f}')
@@ -176,6 +176,7 @@ print(f'{T[2]:.2f}')
 print(f'{T[3]:.2f}')
 print(f'{T[4]:.2f}')
 
+print(f'Die Abweichung der Temperaturen beträgt {abweichung(T[4], T1):.4}%')
 #__________________________________________________________________________________________________________________________________________
 #Aufgabe e
 print("\nAufgabe e")
