@@ -76,13 +76,15 @@ Im Folgenden sind die bei der Messung aufgenommenen Daten tabellarisch dargestel
 
 \subsection{Kennlinien}
 \label{sec:kenn}
-Die Daten aus Tabelle \ref{tab:mess1} sind in Abbildung \ref{fig:plot1} graphisch dargestellt.
+Die Daten aus Tabelle \ref{tab:mess1} sind in Abbildung \ref{fig:plot1} graphisch dargestellt. Um die Lesbarkeit zu erhöhen, wurden die Messdaten
+farbig verbunden.
 \begin{figure}[H]
     \centering
     \includegraphics[scale= 0.8]{auswertung/plot1.pdf}
     \caption{Die Kennlinien für verschiedene Heizströme.}
     \label{fig:plot1}
 \end{figure}
+\noindent
 Die aus der Abbildung abgeschätzten Sättigungsströme $I_S$ sind in Tabelle \ref{tab:satt} aufgelistet. Da für die Heizströme $I_A=\SI{2.4}{\ampere}$
 und $I_A=\SI{2.5}{\ampere}$ der Sättigungsstrom nicht direkt abgelesen werden kann, wurde der Wendepunkt der Kennlinie geschätzt und die dabei
 abgelesene Stromstärke verdoppelt. Die geschätzten Wendepunkte sind dabei $(\SI{125}{\volt}, \SI{1.06}{\milli\ampere})$ für $I_A=\SI{2.4}{\ampere}$
@@ -94,7 +96,7 @@ und $(\SI{150}{\volt}, \SI{1.56}{\milli\ampere})$ für $I_A=\SI{2.5}{\ampere}$.
       \sisetup{table-format=1.2}
       \begin{tabular}{S[table-format=1.1] S}
         \toprule
-        {$U_H [\si{\ampere}]$} & {$ I_S [\si{\milli\ampere}]$}\\
+        {$I_H [\si{\ampere}]$} & {$ I_S [\si{\milli\ampere}]$}\\
         \midrule
         2.1 & 0.28 \\
         2.2 & 0.65 \\
@@ -116,29 +118,102 @@ die Messwerte in diesem Intervall in log-log-Darstellung aufgetragen.
     \caption{Die Kennlinien für $I_A=\SI{2.5}{\ampere}$ im Intervall $[\SI{0}{\volt}, \SI{150}{\volt}]$ in doppellogarithmischer Darstellung.}
     \label{fig:plot2}
 \end{figure}
+\noindent
 Das Langmuir-Schottkysche Gesetz ist durch die logarithmischen Darstellung in der Form 
 \begin{align*}
-    \log(I)&=a\cdot \log(U)+b\\
+    \log(I/A)&=a\cdot \log(U/V)+b\\
     \Leftrightarrow
-    I&=\text{e}^bU^{a},  
+    (I/A)&=\text{e}^b(U/V)^{a},  %großes Uff bei den Einheiten
 \end{align*}
 sodass die eingezeichnete Regression der Form 
 \begin{equation}
-    y=my+b
+    y=m\cdot x+b
     \label{eqn:gerade}
 \end{equation}
-ist. Die Regression wurde von \textit{numeric python} \cite{scipy} mit den Parametern
+ist. Die Regression wurde von \textit{numpy} \cite{numpy} mit den Parametern
 \begin{align*}
     a &= \SI{1.48   \pm 0.020}{} \\
     b &= \SI{-13.90 \pm 0.080}{} %Hier Einheit ergänzen
 \end{align*}
-berechnet.
-Der gefragte Exponent des Langmuir-Schottkyschen Gesetzes ist gerade der Parameter $a$. Verglichen mit dem Theoriewert von $3/2$ ergibt sich eine 
-prozentuale Abweichung von $p=\num{1.35}\%$
+berechnet. Der gefragte Exponent des Langmuir-Schottkyschen Gesetzes ist gerade der Parameter $a$. Verglichen mit dem Theoriewert von $3/2$ 
+ergibt sich eine prozentuale Abweichung von $p=\num{1.35}\%$
+
 \subsection{Anlaufstromgebiet}
 \label{sec:anlauf}
+Die Messwerte der Anodenspannung und Stromstärke für die maximale Heizleistung von $I_H=\SI{2.5}{\ampere}$ sind in Tabelle \ref{tab:mess3}
+aufgelistet. Da die Messung mit einem Amperemeter mit einem Innenwiderstand von $R_i=\SI{1}{\mega\ohm}$ verwendet wurde, müssen die Messwerte
+zu 
+\begin{equation*}
+    U_k=U+I\cdot R_i
+\end{equation*}
+In Abbildung \ref{fig:plot3} sind die Messdaten in einer log-lin-Darstellung abgebildet. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale= 0.8]{auswertung/plot3.pdf}
+    \caption{Kennlinie für $I_H=2.5$ im Anlaufstrmgebiet.}
+    \label{fig:plot3}
+\end{figure}
+\noindent
+Die von \textit{scipy} \cite{scipy} berechnete Regression ist somit wieder linear, also der Form von Gleichung \eqref{eqn:gerade} mit den Parametern
+\begin{align*}
+    a &= \SI{  3.11 \pm 0.127}{\per\volt}\\
+    b &= \SI{-38.56 \pm 0.074}{}    .       %Hier Einheit ergänzen
+\end{align*}
+Die Gerade entspricht dabei dem Logarithmus der Gleichung \eqref{eqn:anlaufstrom}.
+Mit der Steigung $a$ der Geraden lässt sich nun mittels
+\begin{equation*}
+    T=\frac{\symup{e_0}V}{ka}
+\end{equation*}
+die Kathodentemperatur bestimmen. Durch Einsetzen ergibt sich 
+\begin{equation*}
+    T=\SI{3736.62 \pm 152.79}{\kelvin}  .
+\end{equation*}
+Die Unsicherheit wurde dabei von \textit{uncertainties} \cite{uncertainties} berechnet. 
 
-\subsection{Kathodentemperatur}
+\subsection{Berechnung der Kathodentemperatur mittels Heizleistung}
 \label{sec:temp}
+Die Katohdentemperatur kann auch mit der Heizleistung durch Ausnutzen von Gleichung \eqref{eqn:heizleistung} berechnet werden. Das Umstellen
+der Gleichung \eqref{eqn:heizleistung} liefert
+\begin{equation*}
+    T=\sqrt[4]{\frac{I_H U_H-N_{WL}}{f\eta\sigma}}
+\end{equation*}
+mit den Konstanten
+\begin{align*}
+    N_{WL} &= \SI{0.95      }{\watt} \\
+    f      &= \SI{0.32 e-4}{\square\metre}\\ 
+    \sigma &= \SI{5.7  e-8}{\watt\per\square\metre\per\kelvin\tothe{4}}\\
+    \eta   &= \num{0.28      }  .
+\end{align*}
+Die Kathodentemperaturen in Tabelle \ref{tab:katodentemp} werden durch Einsetzten der Messdaten für die Heizleistung aus Tabelle \ref{tab:mess2}
+berechnet. 
+\begin{table}[H]
+    \centering
+      \caption{Die berechnete Katohdentemperatur für verschiedene Heizleistungen.}
+      \label{tab:T}
+      \sisetup{table-format=4.2}
+      \begin{tabular}{S[table-format=1.1] S[table-format=1.2] S}
+        \toprule
+        {$I_H [\si{\ampere}]$} & {$ U_H [\si{\volt}]$} & {$T [\si{\kelvin}]$}\\
+        \midrule
+        2.1 & 4.0 & 1954.31 \\
+        2.2 & 4.1 & 1993.76 \\
+        2.3 & 4.9 & 2120.19 \\
+        2.4 & 5.0 & 2156.73 \\
+        2.5 & 5.5 & 2237.47 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \subsection{Austrittsarbeit}   
 \label{sec:phi}
+Mit der Richardson-Gleichung \eqref{eqn:richard} kann nun die Austrittsarbeit $\Phi_W$ von Wolfram bestimmt werden, indem diese zu 
+\begin{equation*}
+    \Phi=\frac{-kT}{\symup{e_0}}\log{\left(\frac{I_Sh^3}{4\pi\symup{e_0}m_0fk^2T^2}\right)}
+\end{equation*}
+umgestellt wird. Dabei sind $I_S$ die geschätzten Sättigungsströme aus Tabelle \ref{tab:satt} $T$ die berechneten Kathodentemperaturen
+aus Tabelle \ref{tab:T}. Die somit berechnete Austrittsarbeit $\Phi_W$ wurde für alle fünf Heizleistungen berechnet. Dann wurde von
+\textit{numpy} \cite{numpy} der Mittelwert, sowie die Unsicherheit berechnet
+\begin{equation*}
+    \Phi_W=\SI{5.26 \pm 0.07}{\electronvolt}    .
+\end{equation*} 
+Die prozentuale Abweichung zu dem Literaturwert $\Phi_{lit}=\SI{4.54}{\electronvolt}$ \cite{AP02} beträgt $p=\num{15.9}\%$.
