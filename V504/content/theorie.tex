@@ -112,3 +112,23 @@ Hochvakuum-Diode bezeichnet. Sie ist in folgender Abbildung dargestellt.
   \caption{Schematische Darstellung einer Hochvakuum-Diode.}
 \end{figure}
 \noindent
+
+\subsection{Die Langmuir-Schottkysche Raumladungsgleichung}
+\label{sec:langmuirschottky}
+Der Strom, welcher zu der Anode fließt, ist abhängig von der angelegten
+Anodenspannung. Wenn diese zu niedrig ist, kann es passieren, dass nicht alle
+von der Diode emittierten Elektronen die Anode erreichen. Bei höheren Strömen
+kann eine Unabhängigkeit des Anodenstroms von der Anodenspannung erreicht werden.
+Da die Elektronen auf die Anode zu beschleunigt werden, gilt auch für niedrige
+Spannungen das Ohmsche Gesetz nicht. Aufgrund dieser Tatsache ist die
+Raumladungsdichte $\rho$ der Elektronen abhängig von dem Ort, sie nimmt zu der
+Anode hin ab. Für die Stromdichte $j$ gilt nach der Kontinuitätsbedingung, dass
+sie konstant ist. Zwischen $j$ und $\rho$ gilt jedoch folgende Relation:
+\begin{equation}
+  j = -\rho v.
+  \label{eqn:anodenstromdichte}
+\end{equation}
+Daraus folgt, dass $\rho$ den Verlauf der Feldstärke zwischen Anode und Kathode
+beeinflusst. Das Feld der Anode wird abgeschirmt. Aus diesem Grund ist der
+gemessene Diodenstrom kleiner als nach Gleichung \eqref{eqn:richardson} zu
+erwarten wäre. 
