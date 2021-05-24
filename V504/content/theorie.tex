@@ -87,7 +87,7 @@ die gilt:
 Die Sättigungsstromdichte ergibt sich nun durch Abzählen aller Elektronen,
 deren Geschwindigkeitskomponente in $z$-Richtung Gleichung
 \eqref{eqn:elektronengeschwkomponente} erfüllen. Dieser Wert muss dann mit $e_0$
-multipliziert werden. Hierraus ergibt sich die Richardson-Gleichung:
+multipliziert werden. Hierraus folgt die Richardson-Gleichung:
 \begin{equation}
     j_s(T) = 4 \pi \frac{e_0 m_0 k^2}{h^3}T^2 \text{exp}\left(\frac{-e_0 \Phi}{k T}\right).
     \label{eqn:richardson}
@@ -131,4 +131,39 @@ sie konstant ist. Zwischen $j$ und $\rho$ gilt jedoch folgende Relation:
 Daraus folgt, dass $\rho$ den Verlauf der Feldstärke zwischen Anode und Kathode
 beeinflusst. Das Feld der Anode wird abgeschirmt. Aus diesem Grund ist der
 gemessene Diodenstrom kleiner als nach Gleichung \eqref{eqn:richardson} zu
-erwarten wäre. 
+erwarten wäre.
+Um einen quantitativen Zusammenhang zu erhalten, wird mit der Potentialgleichung
+begonnen:
+\begin{equation}
+  \Delta V = -\frac{1}{\epsilon_0} \rho.
+  \label{eqn:Potentialgleichung}
+\end{equation}
+Nun wird die Vereinfachung vorgenommen, dass Anode und Kathode unendlich ausgedehnt
+sind und sich in einem festen Abstand gegenüberstehen. Dann sind $V$ und $\rho$
+nur von der Ortskoordinate $x$ abhängig. Mithilfe von Gleichung
+\eqref{eqn:richardson} und Gleichung \eqref{eqn:anodenstromdichte} sowie dem
+Energiesatz $e_0 V = \frac{m_0}{2} v^2$ ergibt sich
+\begin{equation}
+  \sqrt[4]{V^3(x)} = \frac{3}{4} \sqrt{\frac{4 j}{\epsilon_0 \sqrt{2 e_0/m_0}}}x.
+  \label{eqn:gleichung11}
+\end{equation}
+Also wächst das Potential nach einem $\sqrt[3]{x^4}$-Gesetz. Die Feldstärke
+wächst daher nach einen $x^{\frac{1}{3}}$-Gesetz und $\rho$ proportional zu
+$x^{-\frac{2}{3}}$. Dies ist in folgender Abbildung dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{content/langmuirschottky.png}
+  \label{fig:langmuirschottky1}
+  \caption{Die Ortsabhängigkeit des Potentials, der Feldstärke und der
+  Raumladungsdichte im Raumladungsgebiet einer Hochvakuumdiode.}
+\end{figure}
+\noindent
+Für die Raumladungsdichte gilt nun das Langmuir-Schottkysche Raumladungsgesetz:
+\begin{equation}
+  j = \frac{4}{9} \epsilon_0 \sqrt{2 e_0/m_0} \frac{V^{3/2}}{a^2}.
+  \label{eqn:langmuirschottky2}
+\end{equation}
+An \eqref{eqn:langmuirschottky2} ist erkennbar, dass $j$ hier mit
+$V^{\frac{3}{2}}$ wächst.
+
+\subsection{Das Anlaufstromgebiet der Hochvakuumdiode}
