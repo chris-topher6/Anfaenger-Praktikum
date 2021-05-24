@@ -167,3 +167,39 @@ An \eqref{eqn:langmuirschottky2} ist erkennbar, dass $j$ hier mit
 $V^{\frac{3}{2}}$ wächst.
 
 \subsection{Das Anlaufstromgebiet der Hochvakuumdiode}
+Entgegen Gleichung \eqref{eqn:gleichung11} wird auch bei $V = 0$ ein
+geringer Anodenstrom gemessen. Der Anodenstrom entsteht hier durch die
+Eigengeschwindigkeit der Elektronen. Nach Gleichung \eqref{eqn:fermidirac} gibt
+es eine endliche Anzahl an Elektronen, die bei $T = 0$ eine Energie besitzen,
+die größer als die Austrittsarbeit ist. Der hierraus resultierenden
+Energieüberschuss kann als kinetische Energie der Elektronen gemessen werden.
+Der Energieüberschuss beträgt
+\begin{equation}
+  \Delta E = E - (\xi + e_0 \Phi).
+  \label{eqn:energieübersch}
+\end{equation}
+Aufgrund dieser Energie können die Elektronen auch ein geringes Gegenfeld
+überwinden. Aufgrund dieser Tatsache bezeichnet man diesen Strom auch als
+Anlaufstrom. Auch die Anode besitzt eine Austrittsarbeit $\Phi_A$, diese ist
+jedoch größer als die der Kathode. Durch die elektrisch leitende Verbindung
+zwischen Anode und Kathode außerhalb der Diode werden die Fermi-Oberflächen
+(d.h. die Stelle E = \xi auf der Energieachse) der Metalle auf die gleiche Höhe
+gebracht. Daher werden sie mit einem äußeren Potential $V$ um $e_0 V$
+gegeneinander verschoben. Dies ist in folgender Abbildung dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{content/anlaufstrompot.png}
+  \caption{Die Potentialverhältnisse im Anlaufstromgebiet der Diode.}
+  \label{fig:anlaufstrompot}
+\end{figure}
+\noindent
+Daher besitzen diejenigen Elektronen, welche die Anode erreichen, eine Energie
+$E > e_0 \Phi + e_0 V$. Die Zahl der Leitungselektronen mit einer Energie zwischen
+$E$ und $E + dE$ kann durch folgende Gleichung angenähert werden:
+\begin{align}
+  j(V) & = j_0 \cdot \text{exp}\left(-\frac{e_0 \Phi_A + e_0 V}{kT}\right) \\
+       & = \text{const} \cdot  \text{exp}\left(-\frac{e_0 V}{kT}\right).     \\
+  \label{eqn:anlaufstrom}
+\end{align}
+
+\subsection{Die Kennlinie der Hochvakuumdiode}
