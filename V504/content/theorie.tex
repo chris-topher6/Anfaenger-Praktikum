@@ -17,7 +17,7 @@ Dieser Sachverhalt lässt sich gut mit einem Potentialtopf-Modell illustrieren:
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{content/potentialtopf.png}
-  \caption{Potentialtopf-Modell eines Metalls.}
+  \caption{Potentialtopf-Modell eines Metalls. \cite{AP01}}
   \label{fig:potentialtopf}
 \end{figure}
 \noindent
@@ -40,14 +40,15 @@ Abbildung zu entnehmen:
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{content/fermidirac.png}
-  \caption{Verlauf der Fermi-Dirac Verteilung.}
+  \caption{Verlauf der Fermi-Dirac Verteilung. \cite{AP01}}
   \label{fig:fermidirac}
 \end{figure}
 \noindent
 Ein Elektron benötigt daher zum Verlassen des Metalls eine Energie von
 $\xi + e_0 \Phi$. Für diesen Wert gilt auch am Schmelzpunkt des Wolframs
-$\xi + e_0 \Phi >> kT$. Aus diesem Grund kann man für die Elektronen, welche
-das Metall verlassen, die Gleichung \eqref{eqn:fermidirac} durch Folgende nähern:
+$\xi + e_0 \Phi >> kT$. Aus diesem Grund kann für die Elektronen, welche
+das Metall verlassen, die Gleichung \eqref{eqn:fermidirac} durch Folgende
+angenähert werden:
 \begin{equation}
   \centering
   f(E) \approx e^{\frac{\xi -E}{kt}}.
@@ -62,7 +63,7 @@ und Flächeneinheit aus der Metalloberfläche heraustreten in Abhängigkeit von
 der Temperatur. Hierfür wird ein Koordinatensystem mit Z-Achse orthogonal zu der
 Metalloberfläche eingeführt. Mithilfe von Gleichung \eqref{eqn:approxfermidirac}
 sowie der Anzahl $d\alpha$ der Elektronen aus dem Volumenelement des Impulsraumes
-kann man zeigen, das folgendes gilt:
+kann gezeigt werden, das folgendes gilt:
 \begin{equation}
     d\alpha = \frac{\partial E}{\partial p_z} n(E) dp_x dp_y
     dp_z = n(E) dE dp_x dp_y dp_z.
@@ -98,9 +99,9 @@ multipliziert werden. Hierraus folgt die Richardson-Gleichung:
 Um den in Abschnitt \ref{sec:sättstromd} beschriebenen Sättigungstrom, der aus
 einer Metalloberfläche emittiert wird, messen zu können, muss ein Hochvakuum
 vorliegen, weil die Wechselwirkungen der freien Elektronen mit einem Gas die
-Messung unmöglich machen würden. Ebenfalls benötigt man ein elektrisches Feld,
-welches die emittierten Elektronen absaugt. Daher legt man in einem evakuierten
-Glaskörper mit einem darin eingeschmolzenen Draht einen Strom an diesen Draht an,
+Messung unmöglich machen würden. Ebenfalls wird ein elektrisches Feld benötigt,
+welches die emittierten Elektronen absaugt. Daher wird in einem evakuierten
+Glaskörper mit einem darin eingeschmolzenen Draht einen Strom an diesen Draht angelegt,
 sodass dieser auf Temperaturen zwischen $1000 \si{\kelvin}$ bis $3000 \si{\kelvin}$
 erhitzt werden kann. Gegenüber dieser Kathode steht eine Anode, welche die aus
 dem Draht austretenden Elektronen absaugt. Diese Apparatur wird als
@@ -109,7 +110,7 @@ Hochvakuum-Diode bezeichnet. Sie ist in folgender Abbildung dargestellt.
   \centering
   \includegraphics[scale=0.5]{content/hochvakuumdiode.png}
   \label{fig:hochvakuumd}
-  \caption{Schematische Darstellung einer Hochvakuum-Diode.}
+  \caption{Schematische Darstellung einer Hochvakuum-Diode. \cite{AP01}}
 \end{figure}
 \noindent
 Für die Heizleistung der Kathode gilt folgende Relation:
@@ -163,7 +164,7 @@ $x^{-\frac{2}{3}}$. Dies ist in folgender Abbildung dargestellt.
   \includegraphics[scale=0.5]{content/langmuirschottky.png}
   \label{fig:langmuirschottky1}
   \caption{Die Ortsabhängigkeit des Potentials, der Feldstärke und der
-  Raumladungsdichte im Raumladungsgebiet einer Hochvakuumdiode.}
+  Raumladungsdichte im Raumladungsgebiet einer Hochvakuumdiode. \cite{AP01}}
 \end{figure}
 \noindent
 Für die Raumladungsdichte gilt nun das Langmuir-Schottkysche Raumladungsgesetz:
@@ -187,8 +188,8 @@ Der Energieüberschuss beträgt
   \label{eqn:energieübersch}
 \end{equation}
 Aufgrund dieser Energie können die Elektronen auch ein geringes Gegenfeld
-überwinden. Aufgrund dieser Tatsache bezeichnet man diesen Strom auch als
-Anlaufstrom. Auch die Anode besitzt eine Austrittsarbeit $\Phi_A$, diese ist
+überwinden. Aufgrund dieser Tatsache wird dieser Strom auch als
+Anlaufstrom bezeichnet. Auch die Anode besitzt eine Austrittsarbeit $\Phi_A$, diese ist
 jedoch größer als die der Kathode. Durch die elektrisch leitende Verbindung
 zwischen Anode und Kathode außerhalb der Diode werden die Fermi-Oberflächen
 (d.h. die Stelle E = \xi auf der Energieachse) der Metalle auf die gleiche Höhe
@@ -197,7 +198,7 @@ gegeneinander verschoben. Dies ist in folgender Abbildung dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{content/anlaufstrompot.png}
-  \caption{Die Potentialverhältnisse im Anlaufstromgebiet der Diode.}
+  \caption{Die Potentialverhältnisse im Anlaufstromgebiet der Diode. \cite{AP01}}
   \label{fig:anlaufstrompot}
 \end{figure}
 \noindent
@@ -222,5 +223,5 @@ Eine solche Kennlinie einer Hochvakuumdiode ist in folgender Abbildung dargestel
   \centering
   \includegraphics[scale=0.5]{content/kennlinie.png}
   \label{fig:kennlinie}
-  \caption{Die Kennlinie einer Hochvakuumdiode.}
+  \caption{Die Kennlinie einer Hochvakuumdiode. \cite{AP01}}
 \end{figure}

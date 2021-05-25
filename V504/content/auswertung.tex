@@ -130,10 +130,10 @@ sodass die eingezeichnete Regression der Form
     y=m\cdot x+b
     \label{eqn:gerade}
 \end{equation}
-ist. Die Regression wurde von \textit{numpy} \cite{numpy} mit den Parametern
+ist. Die Regression wurde von \textit{scipy} \cite{scipy} mit den Parametern
 \begin{align*}
     a &= \SI{1.48   \pm 0.020}{} \\
-    b &= \SI{-13.90 \pm 0.080}{} 
+    b &= \SI{-13.90 \pm 0.080}{}
 \end{align*}
 berechnet. Der gefragte Exponent des Langmuir-Schottkyschen Gesetzes ist gerade der Parameter $a$. Verglichen mit dem Theoriewert von $3/2$
 ergibt sich eine prozentuale Abweichung von $p=\num{1.35}\%$
@@ -142,11 +142,11 @@ ergibt sich eine prozentuale Abweichung von $p=\num{1.35}\%$
 \label{sec:anlauf}
 Die Messwerte der Anodenspannung und Stromstärke für die maximale Heizleistung von $I_H=\SI{2.5}{\ampere}$ sind in Tabelle \ref{tab:mess3}
 aufgelistet. Da für die Messung ein Amperemeter mit einem Innenwiderstand von $R_i=\SI{1}{\mega\ohm}$ verwendet wurde, muss die Spannung
-zu 
+zu
 \begin{equation*}
     U_k=U+I\cdot R_i
 \end{equation*}
-korrigiert werden. In Abbildung \ref{fig:plot3} sind die Daten in einer log-lin-Darstellung abgebildet. 
+korrigiert werden. In Abbildung \ref{fig:plot3} sind die Daten in einer log-lin-Darstellung abgebildet.
 \begin{figure}[H]
     \centering
     \includegraphics[scale= 0.8]{auswertung/plot3.pdf}
@@ -186,7 +186,7 @@ mit den Konstanten
 \end{align*}
 <<<<<<< HEAD
 Die Kathodentemperaturen in Tabelle \ref{tab:T} werden durch Einsetzten der Messdaten für die Heizleistung aus Tabelle \ref{tab:mess2}
-berechnet. 
+berechnet.
 \begin{table}[H]
     \centering
       \caption{Die berechnete Katohdentemperatur für verschiedene Heizleistungen.}
@@ -207,7 +207,7 @@ berechnet.
 
 \subsection{Austrittsarbeit}
 \label{sec:phi}
-Mit der Richardson-Gleichung \eqref{eqn:richardson} kann nun die Austrittsarbeit $\Phi_W$ von Wolfram bestimmt werden, indem diese zu 
+Mit der Richardson-Gleichung \eqref{eqn:richardson} kann nun die Austrittsarbeit $\Phi_W$ von Wolfram bestimmt werden, indem diese zu
 \begin{equation*}
     \Phi=\frac{-kT}{\symup{e_0}}\log{\left(\frac{I_Sh^3}{4\pi\symup{e_0}m_0fk^2T^2}\right)}
 \end{equation*}
