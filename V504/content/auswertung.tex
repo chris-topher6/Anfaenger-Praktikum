@@ -52,7 +52,7 @@ Im Folgenden sind die bei der Messung aufgenommenen Daten tabellarisch dargestel
 \end{table}
 \begin{table}[H]
   \centering
-    \caption{Die Anodenstromstärke $I_A$ für niedrige Anodenspannungen $U_A$ bei $I_A=\SI{2.5}{\ampere}$.}
+    \caption{Die Anodenstromstärke $I_A$ für niedrige Anodenspannungen $U_A$ bei $I_H=\SI{2.5}{\ampere}$.}
     \label{tab:mess3}
     \sisetup{table-format=3.1}
     \begin{tabular}{S[table-format=1.2] S}
@@ -150,7 +150,7 @@ korrigiert werden. In Abbildung \ref{fig:plot3} sind die Daten in einer log-lin-
 \begin{figure}[H]
     \centering
     \includegraphics[scale= 0.8]{auswertung/plot3.pdf}
-    \caption{Kennlinie für $I_H=2.5$ im Anlaufstrmgebiet.}
+    \caption{Kennlinie für $I_H=2.5$ im Anlaufstromgebiet.}
     \label{fig:plot3}
 \end{figure}
 \noindent
@@ -172,7 +172,7 @@ Die Unsicherheit wurde dabei von \textit{uncertainties} \cite{uncertainties} ber
 
 \subsection{Berechnung der Kathodentemperatur mittels Heizleistung}
 \label{sec:temp}
-Die Katohdentemperatur kann auch mit der Heizleistung durch Ausnutzen von Gleichung \eqref{eqn:heizleistung} berechnet werden. Das Umstellen
+Die Kathodentemperatur kann auch mit der Heizleistung durch Ausnutzen von Gleichung \eqref{eqn:heizleistung} berechnet werden. Das Umstellen
 der Gleichung \eqref{eqn:heizleistung} liefert
 \begin{equation*}
     T=\sqrt[4]{\frac{I_H U_H-N_{WL}}{f\eta\sigma}}
@@ -184,7 +184,6 @@ mit den Konstanten
     \sigma &= \SI{5.7  e-8}{\watt\per\square\metre\per\kelvin\tothe{4}}\\
     \eta   &= \num{0.28      }  .
 \end{align*}
-<<<<<<< HEAD
 Die Kathodentemperaturen in Tabelle \ref{tab:T} werden durch Einsetzten der Messdaten für die Heizleistung aus Tabelle \ref{tab:mess2}
 berechnet.
 \begin{table}[H]
@@ -211,9 +210,9 @@ Mit der Richardson-Gleichung \eqref{eqn:richardson} kann nun die Austrittsarbeit
 \begin{equation*}
     \Phi=\frac{-kT}{\symup{e_0}}\log{\left(\frac{I_Sh^3}{4\pi\symup{e_0}m_0fk^2T^2}\right)}
 \end{equation*}
-umgestellt wird. Dabei sind $I_S$ die geschätzten Sättigungsströme aus Tabelle \ref{tab:satt} $T$ die berechneten Kathodentemperaturen
+umgestellt wird. Dabei sind $I_S$ die geschätzten Sättigungsströme aus Tabelle \ref{tab:satt} und $T$ die berechneten Kathodentemperaturen
 aus Tabelle \ref{tab:T}. Die somit berechnete Austrittsarbeit $\Phi_W$ wurde für alle fünf Heizleistungen berechnet. Dann wurde von
-\textit{numpy} \cite{numpy} der Mittelwert, sowie die Unsicherheit berechnet
+\textit{numpy} \cite{numpy} der Mittelwert sowie die Unsicherheit berechnet:
 \begin{equation*}
     \Phi_W=\SI{5.26 \pm 0.07}{\electronvolt}    .
 \end{equation*}
