@@ -19,7 +19,7 @@ def psst(T):
 def www(psaett):
     return(0.0029/psaett)
 
-#Abstand Beschleunigerelektrode und Affängerelektrode in m
+#Abstand Beschleunigerelektrode und Auffängerelektrode in cm umgerechnet
 a = 1*10**-2
 
 print("Temperaturen: ", t, "[K]")
