@@ -1,2 +1,114 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Grundlagen}
+\label{sec:grundlagen}
+Beugung tritt immer dann auf, wenn Licht auf ein Hindernis bzw. ein Öffnung trifft, welche von den Abmessungen die Größenordnung der Wellenlänge $\lambda$ des Lichts
+besitzt. Die Beugung kann dabei nicht mehr wie Rexlexion oder Brechnung über die Strahlenoptik beschrieben werden, sondern wird als Wellenvorgang
+aufgefasst.
+\\\noindent
+Elementar für die Beschreibung des Lichts ist dabei das Huygenssche Prinzip. Dieses besagt, dass jeder Punkt der Wellenfront wieder als Elemantarwelle
+aufgefasst werden kann. Durch die Superposition dieser Elementarwellen ergibt sich dann die neue Wellenfront. Aus diesem Prinzip werden in den nachfolgenden
+Kapiteln die Beugungsbilder der Fernfeldbeugung (Frauenhoferbeugung) und der Nahfeldbeugung (Fresnelbeugung) hergeleitet. 
+
+\subsection{Beugung am Einzelspalt}
+\label{sec:einzel}
+Trifft eine Wellenfront auf ein Hindernis mit einem Spalt, so kann nach dem Huygensschen Prinzip jeder Punkt der Spaltöffnung als Quelle für eine Elemantarwelle
+aufgefasst werden. Diese Wellen breiten sich dann kugelförmig aus und interferieren mit einander. Es wird bei der Beugung zwischen zwei Näherungen unterschieden, 
+die nun weiter erläutert werden.
+
+\subsubsection*{Frauenhoferbeugung}
+Die Frauenhoferbeugung nähert die Entfernung der Lichtquelle von dem Spalt als unendlich, weswegen die Lichtstrahlen alle prallel nebeneinander verlaufen, also 
+eine ebene Wellenfront bilden. Somit werden alle Strahlen unter dem selben Winkel $\phi$ gebeugt. In Abbildung \ref{fig:frauenhofer} ist der Verlauf der 
+Lichtstrahlen skizziert.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.45]{pictures/frauenhofer.png}
+    \caption{Frauenhoferbeugung am Einzelspalt. \cite{AP02}}
+    \label{fig:frauenhofer}
+\end{figure}
+\noindent
+
+\subsubsection*{Fresnelbeugung}
+Bei der Fresnelbeugung ist der Abstand der Lichtquelle zu dem Spalt endlich. Die Wellenfront ist also nicht eben, sondern kugelförmig. Die Lichtstrahlen sind also
+nicht parallel und werden unter unterschiedlichen Winkeln gebeugt. Dadurch ist die Fresnelbeugung mathematisch deutlich anspruchsvoller als die Frauenhoferbeugung.
+In Abbildung \ref{fig:fresnel} ist die Fresnelbeugung noch einmal schematisch dargestellt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.45]{pictures/fresnel.png}
+    \caption{Fresnelbeugung am Einzelspalt. \cite{AP02}}
+    \label{fig:fresnel}
+\end{figure}
+\noindent
+
+\subsubsection*{Berechnung der Intensitätsverteilung}
+\label{sec:intensität}
+Da die Frauenhoferbeugung aufgrund der gleichen Beugungswinkel mathematisch einfacher ist, wird im Folgenden die Intensitätsverteilung $I(\phi)$ 
+nur für die Frauenhoferbeugung hergeleitet. Zudem wird ein Spalt betrachtet, dessen Breite $b$ sehr viel kleiner als seine Länge ist. Somit findet
+die Beugung nur in einer Dimension statt.
+\\\noindent
+Wie bereits beschrieben lassen sich die einfallenden Wellen als ebene Wellen nähern. Die Amplitude der Welle ist gegeben durch 
+\begin{equation*}
+    A(z,t)=A_0\exp{(i(\omega t-2\pi z/\lambda))}    ,
+    \label{eqn:ebenewelle}
+\end{equation*}
+wobei das Koordinatensystem entsprechend zu Abbildung \ref{fig:frauenhofer2} gelegt wurde. Weiter in der Abbildung zu sehen ist, dass zwei 
+Lichtstrahlen im Abstand $x$ von einander, einen Wegunterschied $s$ besitzen. Dieser führ zu einem Phasenunterschied $\delta$, der durch 
+\begin{equation*}
+    \delta=\frac{2\pi s}{\lambda}=\frac{2\pi x \sin{\phi}}{\lambda}
+    \label{eqn:phase}
+\end{equation*} 
+beschrieben werden kann. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.45]{pictures/frauenhofer2.png}
+    \caption{Skizze zum Gangunterschied zweier Lichtstrahlen bei derFrauenhoferbeugung. \cite{AP01}}
+    \label{fig:frauenhofer2}
+\end{figure}
+
+\noindent
+Nach dem Huygensschen Prinzip kann nun die Amplitude $B(z,t,\phi)$ bestimmt werden, indem über alle Elemantarwellen 
+in der Spaltenöffnung summiert wird. Wegen der infinitisimalen Breite der Strahlen und der kontinuierlichen Verteilung geht die Summe in ein 
+Integral über die Spaltöffnung über
+\begin{equation*}
+    B(z,t,\phi)=A_0\int_0^b{\exp{\left(i\left(\omega t-\frac{2\pi z}{\lambda}+\delta\right)\right)}\symup{dx}}    .
+\end{equation*}
+Dieses Integral lässt sich lösen zu 
+\begin{equation*}
+    B(z,t,\phi) = A_0\exp{\left(i\left(\omega t-\frac{2 \pi z}{\lambda}\right)\right)}
+                \cdot\exp{\left(\frac{\pi \symup{i} b \sin{(\pi)}}{\lambda}\right)}
+                \cdot\frac{\sin{\eta}}{\eta}
+\end{equation*}
+mit
+\begin{equation*}
+    \eta=\frac{\pi b \sin{\phi}}{\lambda}   .
+\end{equation*}
+Die beiden Exponentialfunktionen sind aufgrund ihrer Komplexwertigkeit bei dem Experiment nicht von Belang, da ohnehin nur
+die Intensität $I(\phi)\propto |B(z,t,\phi)|^2$ gemessen werden kann. Da der Betrag einer komplexen Exponentialfunktion $\num{1}$ ist, muss 
+demnach nurnoch 
+\begin{equation}
+    B(\phi)=A_0b\sinc{\eta}
+    \label{eqn:B}
+\end{equation}
+betrachtet werden. Die Nullstellen der Funktion \eqref{eqn:B} liegen bei $\pm n\lambda/b$ mit $n \in \mathbb{N}$.
+Wie bereits angedeutet gilt 
+\begin{equation}
+    I(\phi)\propto B(\phi)^2=
+    A_0b^2\left(\frac{\lambda}{\pi b \sin{\phi}}\right)^2 \cdot \sin^2{\left(\frac{\pi b \sin{\phi}}{\lambda}\right)}
+    \geq 0  .
+    \label{eqn:intensität1}
+\end{equation}
+Somit liegen bei den Nullstellen der Amplitudenfunktion \ref{eqn:B} Minima in der Intensität $I(\phi)$ vor. Die Höhe der Maxima fällt in 
+Näherung mit $\phi^2$ ab.   
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 1.0]{pictures/intensität1.png}
+    \caption{Theoriekurve der Intensitätsverteilung, wobei $\alpha=\phi$ und $d=b$. \cite{AP03}}
+    \label{fig:frauenhofer2}
+\end{figure}
+
+\subsection{Beugung am Doppelspalt}
+\label{sec:doppel}
+\subsection{Berechnung des Intensitätsverteilung durch Fouriertransformation}
+\label{sec:fourier}
