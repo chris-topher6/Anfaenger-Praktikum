@@ -94,7 +94,7 @@ betrachtet werden. Die Nullstellen der Funktion \eqref{eqn:B} liegen bei $\pm n\
 Wie bereits angedeutet gilt 
 \begin{equation}
     I(\phi)\propto B(\phi)^2=
-    A_0b^2\left(\frac{\lambda}{\pi b \sin{\phi}}\right)^2 \cdot \sin^2{\left(\frac{\pi b \sin{\phi}}{\lambda}\right)}
+    A_0b^2\sinc^2{\left(\frac{\pi b \sin{\phi}}{\lambda}\right)}
     \geq 0  .
     \label{eqn:intensität1}
 \end{equation}
@@ -110,5 +110,53 @@ Näherung mit $\phi^2$ ab.
 
 \subsection{Beugung am Doppelspalt}
 \label{sec:doppel}
+Für einen Doppelspalt kann die Intensität $I(\phi)$ recht analog bestimmt werden. Der Doppelspalt wird dabei als Überlagerung zweier Einzelspalte im 
+Abstand $s$ verstanden. In Abbildung \ref{fig:doppel} ist ein solcher Doppelspalt skizziert. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.4]{pictures/doppel.png}
+    \caption{Schematische darstellung der Beugung am Doppelspalt. \cite{AP01}}
+    \label{fig:doppel}
+\end{figure}
+
+\noindent
+Die Intensitätsverteilung ist dann gegeben durch
+\begin{equation}
+    I_d(\phi)\propto B_d(\phi)^2
+    =4\cdot \cos{\left(\frac{\pi s\sin{\phi}}{\lambda}\right)}\cdot \sinc^2{\left(\frac{\pi b \sin{\phi}}{\lambda}\right)}  .
+    \label{eqn:intensität2}
+\end{equation}
+Im Vergleich zu der Intensitätsverteilung \eqref{eqn:intensität1} des Einzelspalts ist bei der des Doppelspalts \eqref{eqn:intensität2} ein 
+$\cos^2$ Term hinzugekommen. Dadruch entstehen zusätzliche Minima an den stellen $\arcsin{((2k+1)/2s)}$ mit $k\in\mathbb{N_0}$. Die Dadruch 
+entstehende Funktion ist in Abbildung \ref{fig:intensität2} dargestellt. Die Einhüllende ist die Intensitätsverteilung \ref{eqn:intensität1}
+des Einzelspalts.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 1.0]{pictures/intensität2.png}
+    \caption{Intensitätsverteilung eines Doppelspalts mit willkürlicher Skala. Die Einhüllende ist die Verteilung eines Einzelspalts. \cite{AP04}}
+    \label{fig:intensität2}
+\end{figure}
+
 \subsection{Berechnung des Intensitätsverteilung durch Fouriertransformation}
 \label{sec:fourier}
+Die Amplitudenverteilung kann auch durch eine Fouriertransformation berechnet werden. Dieser Weg ist in sofern eleganter, dass er sich ohne 
+größeren Aufwand auf mehrere Dimensionen erweitern lässt. Die Berechnung der Amplitudenfunktion wird nachfolgend kurz erläutert.
+\\\noindent
+Das Huygenssche Prinzip beruht auf der Superposition einzelner Elemantarwellen. Diese Superposition kann wie in Abschnitt \ref{sec:einzel} 
+angedeutet durch das Integral
+\begin{equation}
+    g(\xi)=\int_{-\infty}^{\infty}f(x)\exp{(ix\xi)}\symup{dx}
+    \label{eqn:fouriertrafo}
+\end{equation}
+erfolgen. Dabei ist die Funktion $f(x)$ die Aperturfunktion, also die Amplitudenverteilung der einfallenden Welle in der Beugungsebene. 
+Der Faktor $\exp{(ix\xi)}$ beschreibt dann gerade die Phasendifferenz einer Elemantarwelle mit Quelle $x$ zu der ausgehenden Welle von $x=0$.
+Das Integral \ref{eqn:fouriertrafo} beschreibt nun gerade die Fouriertransformierte $g(\xi)=\hat{f}(\xi)$ der Aperturfunktion. Das Auswerten
+des Integrals ergibt 
+\begin{equation*}
+    g(\xi)=\frac{2A_0}{\xi}\exp{\left(\frac{i\xi b}{2}\right)}\sin{\left(\frac{\xi b}{2}\right)}    .
+\end{equation*}
+Mit der Definition 
+\begin{equation*}
+    \xi=\frac{2 \pi \sin{\phi}}{\lambda}    
+\end{equation*}
+wird der Zusammenhang zu Gleichung \ref{eqn:B} deutlich.
