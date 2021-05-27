@@ -102,18 +102,37 @@ stdabst2 = np.std(abst2, ddof=1)/np.sqrt(len(abst2))
 
 print("Der mittlere Abstand zwischen zwei Maxima in Kurve 1 beträgt: ", meanabst1, "+-", stdabst1)
 print("Der mittlere Abstand zwischen zwei Maxima in Kurve 2 beträgt: ", meanabst2, "+-", stdabst2)
+anrege1 = ufloat(meanabst1, stdabst1)
+anrege2 = ufloat(meanabst2, stdabst2)
+#Berechne Abweichung zu Literaturwert U = 4.9eV
+def abweichung(lit, mess):
+    return abs(100*(lit-mess)/lit)
+
+abweichung1 = abweichung(4.9, anrege1)
+abweichung2 = abweichung(4.9, anrege2)
+
+print("Der Wert für die Anregungsenergie weicht um ", abweichung1, "% respektive ", abweichung2, "% von dem Literaturwert ab")
 #Definiere Energiedifferenz E_1-E_0
-energiediff1 = ufloat(meanabst1, stdabst1)
-energiediff2 = ufloat(meanabst2, stdabst2)
+energiediff1 = anrege1
+energiediff2 = anrege2
+litwert = 4.9*const.e #in eV
 #Wandle Volt in eVolt um durch Multiplikation mit Elementarladung
 energiediff1 = energiediff1*const.e
 energiediff2 = energiediff2*const.e
 #Teile durch Plancksches Wirkunsgquantum
 energiediff1 = energiediff1/const.Planck
 energiediff2 = energiediff2/const.Planck
+litwertw = litwert/const.Planck
 #Berechnung der Wellenlänge
 lambda1 = const.speed_of_light/energiediff1
 lambda2 = const.speed_of_light/energiediff2
+lambdalit = const.speed_of_light/litwertw
 
 print("Die Wellenlänge des emittierten Photons beträgt nach der ersten Messreihe: ", lambda1, "[m]")
 print("Die Wellenlänge des emittierten Photons beträgt nach der zweiten Messreihe: ", lambda2, "[m]")
+print("Die Wellenlänge des emittierten Photons beträgt nach dem Literaturwert: ", lambdalit, "[m]")
+#Abweichung der Werte vom Literaturwert
+abweichung3 = abweichung(lambdalit, lambda1)
+abweichung4 = abweichung(lambdalit, lambda2)
+
+print("Der Wert für die Wellenlänge weicht um ", abweichung3, "% respektive ", abweichung4, "% von der Literatur ab")
