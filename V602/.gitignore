@@ -1,0 +1,17 @@
+build
+Anleitung
+
+main.aux
+main.bcf
+main.log
+main.pdf
+main.toc
+main.run.xml
+main.fdb_latexmk
+main.fls
+main.bbl
+main.blg
+main.tex.bbl
+main.tex.blg
+x.log
+.DS_Store
