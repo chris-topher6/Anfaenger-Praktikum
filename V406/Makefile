@@ -1,10 +1,10 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: skript/ matplotlibrc header-matplotlib.tex | build
+build/plot.pdf: $(wildcard skript/*.py) matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python skript/auswertung.py
 
-# hier weitere Abhängigkeiten für build/main.pdf deklarieren:
+#hier main Zeug
 build/main.pdf: build/plot.pdf
 
 build/main.pdf: FORCE | build
