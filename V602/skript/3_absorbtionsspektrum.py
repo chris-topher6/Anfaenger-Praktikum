@@ -46,28 +46,28 @@ d = ureg('201.4 pm') # Gitterebenenabstand
 for name, s_data in data.items():
     print(f"→ {name}")
     ## Daten einlesen
-    θ_bounds = s_data['θ_bounds']
+    theta_bounds = s_data['θ_bounds']
     Z = s_data['Z']
-    θ, N = np.genfromtxt(f'data/{name}.dat', unpack=True)
-    θ *= ureg.deg
+    theta, N = np.genfromtxt(f'data/{name}.dat', unpack=True)
+    theta *= ureg.deg
     # N ist in Imp/s gegeben
 
     ## Berechnungen
-    θ_middle = (θ_bounds[0] + θ_bounds[1])/2
+    theta_middle = (theta_bounds[0] + theta_bounds[1])/2
 
-    E = (ureg.h * ureg.c / (2 * d * np.sin(θ_middle.to('rad')))).to('keV')
+    E = (ureg.h * ureg.c / (2 * d * np.sin(theta_middle.to('rad')))).to('keV')
     R_y = 1 * ureg.h * ureg.c * ureg.R_inf # Rydberg-Energie
-    σ_K = (Z - (E/R_y - (((1*ureg.α)**2 * Z**4) / 4))**.5).to('dimensionless')
+    sigma_K = (Z - (E/R_y - (((1*ureg.α)**2 * Z**4) / 4))**.5).to('dimensionless')
 
-    print(f"θ_middle = {θ_middle:.2f}")
+    print(f"θ_middle = {theta_middle:.2f}")
     print(f"E = {E}")
-    print(tools.fmt_compare_to_ref(σ_K, s_data['σ_K_lit'], name="σ_K"))
+    print(tools.fmt_compare_to_ref(sigma_K, s_data['σ_K_lit'], name="σ_K"))
 
     ## Plots
     plt.figure()
-    plt.axvline(θ_middle, linestyle='-', color='blue', label='Mitte der Absorptionskante')
-    plt.plot(θ, N, 'x')
-    plt.axvspan(*θ_bounds, alpha=0.25, label='Absorptionskante')
+    plt.axvline(theta_middle, linestyle='-', color='blue', label='Mitte der Absorptionskante')
+    plt.plot(theta, N, 'x')
+    plt.axvspan(*theta_bounds, alpha=0.25, label='Absorptionskante')
     plt.xlabel(r'$θ \;/\; °$')
     plt.ylabel(r'$N$')
     plt.grid()
@@ -77,16 +77,16 @@ for name, s_data in data.items():
     # plt.show()
 
     s_data['E'] = E
-    s_data['σ_K'] = σ_K
-    s_data['σ_K_rel_err'] = tools.fmt_rel_err_percent(σ_K, s_data['σ_K_lit'])
-    s_data['θ_middle'] = θ_middle
+    s_data['σ_K'] = sigma_K
+    s_data['σ_K_rel_err'] = tools.fmt_rel_err_percent(sigma_K, s_data['σ_K_lit'])
+    s_data['θ_middle'] = theta_middle
 
     print('–'*10)
 
 
 E_list = tools.pintify([s['E'] for s in data.values()])
-σ_K_list = tools.pintify([s['σ_K'] for s in data.values()])
-σ_K_lit_list = np.array([s['σ_K_lit'] for s in data.values()])
+sigma_K_list = tools.pintify([s['σ_K'] for s in data.values()])
+sigma_K_lit_list = np.array([s['σ_K_lit'] for s in data.values()])
 z = np.array([s['Z'] for s in data.values()]) * ureg('dimensionless')
 
 sqrt_E_list = (E_list**.5).to('eV**0.5')
