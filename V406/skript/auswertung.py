@@ -50,32 +50,31 @@ phi22 = phi2[1:60]
 A11  = A1[1:60]
 A22  = A2[1:60]
 
-
 #Umrechnung der Winkel von grad in rad
 phi11 = rad(phi11)
 phi22 = rad(phi22)
 
-#print("Länge vor Nullelement-Entfernung")
-#print(len(phi11))
-#print(len(phi22))
-#print(len(A11))
-#print(len(A22))
-#print(A11!=A11[30])
-#print(A11)
-#Entferne Elemente = 0
-#phi11 = phi11[np.where(phi11!=0)]#Element [30] ist null
-#phi22 = phi22[np.where(phi22!=0)]#Element [30] ist null
-#A11 = A11[np.where(A11!=A11[30])]
-#A22 = A22[np.where(A22!=A22[30])]
-#print("Länge nach Nullelement-Entfernung")
-#print(len(phi11))
-#print(len(phi22))
-#print(len(A11))
-#print(len(A22))
+#Liefert Index für zu entfernende Elemente
+print("Nullindexe in phi11:")
+for i in range(len(phi11)):
+    if phi11[i] == 0:
+        print(i)
+print("Nullindexe in phi22:")
+for i in range(len(phi22)):
+    if phi22[i] == 0:
+        print(i)
 
-#Workaround, psst nicht verraten
-phi11 = phi11 +1
-phi22 = phi22 +1
+#Entferne Elemente = 0
+phi11 = phi11[np.where(phi11!=0)]
+phi22 = phi22[np.where(phi22!=0)]
+A11 = np.delete(A11, 30)
+A22 = np.delete(A22, 30)
+
+#Scheide Untergrundrauschen ab
+phi11ab = phi11[20:40]
+A11ab   = A11[20:40]
+phi22ab = phi22[15:45]
+A22ab   = A22[15:45]
 
 #Theoretische Verteilung für den Einzelspalt
 def theorieeinzel(phi,b, a):
@@ -91,8 +90,7 @@ def theoriedoppel(phi, b, A_0, s):
     return(teil1*teil2*teil3)
 
 #Fit der Theorie an die Messwerte des Einzelspaltes
-params, covariance = curve_fit(theorieeinzel, phi11, A11, p0=[0.0015, 2250])
-#Bisher bester Versuch : p0=[0.0015, 2250]
+params, covariance = curve_fit(theorieeinzel, phi11ab, A11ab)
 errors = np.sqrt(np.diag(covariance))
 print("Spaltbreite: ", params[0],'+-',errors[0])
 print("Abweichung", abweichung(0.00015, params[0]), "%")
@@ -114,7 +112,7 @@ plt.ylabel(r"Intensität$/ A$")
 plt.savefig("plot1.pdf")
 plt.close()
 
-#Plotte Verteilung für den Doppelspalt
+##Plotte Verteilung für den Doppelspalt
 plt.plot(phi22, A22, "r+", label="Messreihe Doppelspalt")
 plt.plot(phi22, theoriedoppel(phi22, *params2), label="Fit der Theoriekurve")
 plt.xlabel("Position des Detektors [mm]")
