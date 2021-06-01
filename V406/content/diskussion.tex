@@ -1,2 +1,42 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die Ergebnisse aus \ref{sec:Auswertung} sind im Folgenden zusammengefasst:
+\begin{align*}
+  A_{0,1} & = 1983280.617 \pm 2471197.372 \si{\ampere\per\meter}\\
+  b_1     & = 8.301 \cdot 10^{-5} \pm 6.230 \cdot 10^{-7} \si{\milli\meter}\\
+  A_{0,2} & =  1983280.617 \pm 2471197.372 \si{\ampere\per\meter}\\
+  b_2     & = 0.00104 \pm 1.052 \cdot 10^{-8} \si{\milli\meter}.
+\end{align*}
+
+\begin{itemize}
+  \item \textit{Der Fit} \\
+    Die Abweichungen der Berechnung der Spaltbreite sind mit $44.7 \si{\percent}$
+    sowie $4.02 \si{\percent}$ nicht besonders hoch. Trotzdem ähneln die gefitteten
+    Funktionen den nach der Theorie erwarteten eher nicht. Das liegt an der sehr
+    komplizierten Funktion, bei derer \textit{Scientific Python} und die Methode
+    \textit{curve_fit} nur sehr eingeschränkt funktioniert. Ohne Angabe eines
+    Intervalles für die Parameter ergibt sich kein sinnvoller Fit, und auch die
+    angegebenen Intervalle sorgen nur für mäßige Ergebnisse. Problematisch ist ebenso,
+    dass hier die Qualität des Fits von der Geschicklichkeit des Experimentierenden
+    abhängt, sodass hier nicht ausgeschlossen werden kann, dass die Wahl der Intervalle
+    nicht ideal ist.
+
+  \item \textit{Die Umgebung}
+    Bei der Aufnahme der Messwerte konnte keine vollständige Dunkelheit garantiert
+    werden, da das Ablesen und Notieren der Messwerte zwingend eine Lichtquelle
+    benötigte. Dies ließe sich durch eine digitale Aufnahme der Daten beheben.
+    Alternativ könnte der Zeiger des Amperemeters fluoreszierend sein, was zumindest
+    die Lichtquelle in der Nähe des Detektors eliminieren würde. Auch ist die
+    Abdunkelung des Raumes nur begrenzt erfolgreich.
+
+  \item \textit{Die Messgenauigkeit}
+    Die Skala des Amperemeters hat aufgrund ihrer analogen Beschaffenheit eine
+    begrenzte Genauigkeit. Dies könnte mit einer digitalen Anzeige gelöst werden.
+    Auch die Messung der Abstände zwischen dem Detektor, der Blende und dem Laser
+    sind mit einer gewissen Ungenauigkeit versehen. Außerdem war unklar, wo genau
+    der Laser in dem Gehäuse montiert ist, wodurch die Messung der Abstände
+    möglicherweise einen weiteren Fehler aufweisen. Auch das händische Verstellen
+    des Detektors könnte weitere Unsicherheiten erzeugt haben.
+
+
+\begin{itemize}

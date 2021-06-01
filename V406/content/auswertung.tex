@@ -67,9 +67,18 @@ nicht gebeugt ist. $L = 125 \si{\centi\meter}$ meint den Abstand zwischen Beugun
 Unter Verwendung von \textit{Scientific Python} wird eine Funktion der Form \eqref{eqn:intensität1}
 an die Messwerte aus Tabelle \ref{tab:einzelspalt1} gefittet. Als Parameter ergeben sich
 \begin{align*}
-  A_0 & = \\
-  b   & = .
+  A_0 & = 1983280.617 \pm 2471197.372 \si{\ampere\per\meter}\\
+  b   & = 8.301 \cdot 10^{-5} \pm 6.230 \cdot 10^{-7} \si{\milli\meter}.
 \end{align*}
+Der berechnete Spaltbreite weicht also um $44.7 \si{\percent}$ von den Herstellerangaben ab.
+Die Messwerte und der Fit sind in folgender Abbildung dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{"plot1.pdf"}
+  \caption{Die Messwerte am Einzelspalt sowie ein Fit.}
+  \label{fig:einzel}
+\end{figure}
+\noindent
 
 \subsection{Der Doppelspalt}
 Der verwendete Doppelspalt besitzt nach den Herstellerangaben eine Spaltbreite von
@@ -85,38 +94,53 @@ In folgender Tabelle sind die aufgenommenen Messwerte dargestellt.
       \toprule
       {$l / \si{\milli\meter}$} & {$I / \si{\micro\ampere}$} & {$l / \si{\milli\meter}$} & {$I / \si{\micro\ampere}$} \\
       \midrule
-      0.0  &    & 25.5 &   \\
-      1.0  &    & 26.0 &   \\
-      2.0  &    & 26.5 &   \\
-      3.0  &    & 27.0 &   \\
-      4.0  &    & 27.5 &   \\
-      5.0  &    & 28.0 &   \\
-      6.0  &    & 28.5 &   \\
-      7.0  &    & 29.0 &   \\
-      8.0  &    & 29.5 &   \\
-      9.0  &    & 30.0 &   \\
-      10.0 &    & 31.0 &   \\
-      11.0 &    & 32.0 &   \\
-      12.0 &    & 33.0 &   \\
-      13.0 &    & 34.0 &   \\
-      14.0 &    & 35.0 &   \\
-      15.0 &    & 36.0 &   \\
-      16.0 &    & 37.0 &   \\
-      17.0 &    & 38.0 &   \\
-      18.0 &    & 39.0 &   \\
-      19.0 &    & 40.0 &   \\
-      20.0 &    & 41.0 &   \\
-      20.5 &    & 42.0 &   \\
-      21.0 &    & 43.0 &   \\
-      21.5 &    & 44.0 &   \\
-      22.0 &    & 45.0 &   \\
-      22.5 &    & 46.0 &   \\
-      23.0 &    & 47.0 &   \\
-      23.5 &    & 48.0 &   \\
-      24.0 &    & 49.0 &   \\
-      24.5 &    & 50.0 &   \\
-      25.0 &    &      &   \\
+      0.0  & 0.007    & 25.5 & 0.79  \\
+      1.0  & 0.0045   & 26.0 & 0.72  \\
+      2.0  & 0.0035   & 26.5 & 0.47  \\
+      3.0  & 0.002    & 27.0 & 0.62  \\
+      4.0  & 0.0015   & 27.5 & 0.64  \\
+      5.0  & 0.0065   & 28.0 & 0.39  \\
+      6.0  & 0.009    & 28.5 & 0.36  \\
+      7.0  & 0.01     & 29.0 & 0.4  \\
+      8.0  & 0.0105   & 29.5 & 0.25  \\
+      9.0  & 0.0065   & 30.0 & 0.18  \\
+      10.0 & 0.004    & 31.0 & 0.105  \\
+      11.0 & 0.004    & 32.0 & 0.03  \\
+      12.0 & 0.005    & 33.0 & 0.014  \\
+      13.0 & 0.0125   & 34.0 & 0.0095  \\
+      14.0 & 0.0145   & 35.0 & 0.015  \\
+      15.0 & 0.0145   & 36.0 & 0.013  \\
+      16.0 & 0.015    & 37.0 & 0.0165  \\
+      17.0 & 0.01     & 38.0 & 0.012  \\
+      18.0 & 0.006    & 39.0 & 0.01  \\
+      19.0 & 0.0147   & 40.0 & 0.005  \\
+      20.0 & 0.017    & 41.0 & 0.0065  \\
+      20.5 & 0.029    & 42.0 & 0.0065  \\
+      21.0 & 0.205    & 43.0 & 0.01  \\
+      21.5 & 0.155    & 44.0 & 0.009  \\
+      22.0 & 0.3      & 45.0 & 0.001  \\
+      22.5 & 0.48     & 46.0 & 0.006  \\
+      23.0 & 0.35     & 47.0 & 0.004  \\
+      23.5 & 0.42     & 48.0 & 0.0025  \\
+      24.0 & 0.72     & 49.0 & 0.0035  \\
+      24.5 & 0.59     & 50.0 & 0.0057  \\
+      25.0 & 0.49     &      &   \\
       \bottomrule
     \end{tabular}
   \end{table}
+\noindent
+An den obigen Messwerten wurde ein Fit der Form \eqref{eqn:intensität2} mittels \textit{Scientific Python}
+durchgeführt. Als Parameter ergeben sich hier
+\begin{align*}
+  A_0 & =  1983280.617 \pm 2471197.372 \si{\ampere\per\meter}\\
+  b   & = 0.00104 \pm 1.052 \cdot 10^{-8} \si{\milli\meter}.
+\end{align*}
+Die Breite des Spaltes weicht um $4.02 \si{\percent}$ von den Herstellerangaben ab.
+Die gemessenen Werte sowie der Fit der Funktion sind in folgender Abbildung dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{"plot2.pdf"}
+  \caption{Die Messwerte am Doppelspalt sowie ein Fit.}
+  \label{fig:doppelausw}
+\end{figure}
 \noindent

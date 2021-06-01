@@ -50,6 +50,33 @@ phi22 = phi2[1:60]
 A11  = A1[1:60]
 A22  = A2[1:60]
 
+
+#Umrechnung der Winkel von grad in rad
+phi11 = rad(phi11)
+phi22 = rad(phi22)
+
+#print("Länge vor Nullelement-Entfernung")
+#print(len(phi11))
+#print(len(phi22))
+#print(len(A11))
+#print(len(A22))
+#print(A11!=A11[30])
+#print(A11)
+#Entferne Elemente = 0
+#phi11 = phi11[np.where(phi11!=0)]#Element [30] ist null
+#phi22 = phi22[np.where(phi22!=0)]#Element [30] ist null
+#A11 = A11[np.where(A11!=A11[30])]
+#A22 = A22[np.where(A22!=A22[30])]
+#print("Länge nach Nullelement-Entfernung")
+#print(len(phi11))
+#print(len(phi22))
+#print(len(A11))
+#print(len(A22))
+
+#Workaround, psst nicht verraten
+phi11 = phi11 +1
+phi22 = phi22 +1
+
 #Theoretische Verteilung für den Einzelspalt
 def theorieeinzel(phi,b, a):
     teil1=(a**2)*(b**2)*((lambdalaser/(np.pi*b*np.sin(phi)))**2)
@@ -64,31 +91,33 @@ def theoriedoppel(phi, b, A_0, s):
     return(teil1*teil2*teil3)
 
 #Fit der Theorie an die Messwerte des Einzelspaltes
-params, covariance = curve_fit(theorieeinzel, phi11, A11, p0=[0.00015, 70])
+params, covariance = curve_fit(theorieeinzel, phi11, A11, p0=[0.0015, 2250])
+#Bisher bester Versuch : p0=[0.0015, 2250]
 errors = np.sqrt(np.diag(covariance))
 print("Spaltbreite: ", params[0],'+-',errors[0])
-print("Abweichung", abweichung(params[0],0.00015), "%")
+print("Abweichung", abweichung(0.00015, params[0]), "%")
 print("A_0:", params[1],'+-',errors[1])
 
 #Fit der Theorie an die Messwerte des Doppelspaltes
-params2, covariance2 =curve_fit(theoriedoppel, phi22, A22, p0=[0.00015,10, 0.00065])
+params2, covariance2 =curve_fit(theoriedoppel, phi22, A22, p0=[0.001, 10, 0.00065])
 errors2 = np.sqrt(np.diag(covariance2))
 print("Spaltbreite: ", params2[0],'+-',errors2[0])
-print("Abweichung", abweichung(params2[0],0.00015), "%")
+print("Abweichung", abweichung(0.001, params2[0]), "%")
 print("A_0:", params2[1],'+-',errors2[1])
 print(params2[2], '+-', errors2[2])
 
 #Plotte Verteilung für Einzelspalt
-#plt.plot(x1, A1, "r+", label="Messreihe Einzespalt")
-#plt.plot(xx1, theorieeinzel(xx1, *params), label="Fit der Theoriekurve")
-#plt.xlabel("APosition des Detektors [mm]")
-#plt.ylabel("Intensität [A]")
-#plt.savefig("plot1.pdf")
-#plt.close()
+plt.plot(phi11, A11, "r+", label="Messreihe Einzespalt")
+plt.plot(phi11, theorieeinzel(phi11, *params), label="Fit der Theoriekurve")
+plt.xlabel(r"$\phi /rad$")
+plt.ylabel(r"Intensität$/ A$")
+plt.savefig("plot1.pdf")
+plt.close()
 
 #Plotte Verteilung für den Doppelspalt
-#plt.plot(x2, A2, label="Messreihe Doppelspalt")
-#plt.xlabel("Position des Detektors [mm]")
-#plt.ylabel("Intensität [A]")
-#plt.savefig("plot2.pdf")
-#plt.close()
+plt.plot(phi22, A22, "r+", label="Messreihe Doppelspalt")
+plt.plot(phi22, theoriedoppel(phi22, *params2), label="Fit der Theoriekurve")
+plt.xlabel("Position des Detektors [mm]")
+plt.ylabel("Intensität [A]")
+plt.savefig("plot2.pdf")
+plt.close()
