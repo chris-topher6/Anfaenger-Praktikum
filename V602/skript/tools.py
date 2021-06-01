@@ -112,14 +112,14 @@ def bounds(vals):
     return pintify([min(vals), max(vals)])
 
 #Gerade
-def rad(grad):
-    return grad*np.pi/180
-
-#Winkelumrechnung
-def grad(rad):
-    return rad*180/np.pi
 def gerade(x, m, b):
     return m*x+b
+
+#Winkelumrechnung
+def rad(grad):
+    return grad*np.pi/180
+def grad(rad):
+    return rad*180/np.pi
 
 #Literaturwert
 def abweichung(lit, mess):
