@@ -55,7 +55,7 @@ plt.xlabel(r'$\theta [°]$')
 plt.ylabel('N [Imps/s]')
 plt.legend(loc='best')
 plt.tight_layout()
-plt.savefig('plot1.pdf')
+plt.savefig('build/plot1.pdf')
 
 #Theoriewert
 theta_theorie = 28
@@ -140,7 +140,7 @@ plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
 plt.legend()
 plt.tight_layout()
-plt.savefig('plot2.pdf')
+plt.savefig('build/plot2.pdf')
 
 #_____________________________________________________________________________________________________________________________
 #Aufgabe 3
@@ -156,37 +156,37 @@ plt.figure()
 plt.plot(thetaZn, NZn, 'b.', label='Messdaten Zn')
 plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
-plt.savefig('Zn.pdf')
+plt.savefig('build/Zn.pdf')
 
 plt.figure()
 plt.plot(thetaGe, NGe, 'g.', label='Messdaten Ge')
 plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
-plt.savefig('Ge.pdf')
+plt.savefig('build/Ge.pdf')
 
 plt.figure()
 plt.plot(thetaBr, NBr, 'r.', label='Messdaten Br')
 plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
-plt.savefig('Br.pdf')
+plt.savefig('build/Br.pdf')
 
 plt.figure()
 plt.plot(thetaRb, NRb, 'c.', label='Messdaten Rb')
 plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
-plt.savefig('Rb.pdf')
+plt.savefig('build/Rb.pdf')
 
 plt.figure()
 plt.plot(thetaSr, NSr, 'm.', label='Messdaten Sr')
 plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
-plt.savefig('Sr.pdf')
+plt.savefig('build/Sr.pdf')
 
 plt.figure()
 plt.plot(thetaZr, NZr, 'y.', label='Messdaten Zr')
 plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
-plt.savefig('Zr.pdf')
+plt.savefig('build/Zr.pdf')
 
 plt.figure()
 plt.plot(thetaZn, NZn, 'b.', label='Messdaten Zn')
@@ -199,6 +199,6 @@ plt.xlabel(r'$θ \;[°]$')
 plt.ylabel(r'$N$')
 plt.legend()
 plt.tight_layout()
-plt.savefig('plot3.pdf')
+plt.savefig('build/plot3.pdf')
 
 #Mitten der Kanten
