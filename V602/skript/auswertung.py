@@ -51,6 +51,7 @@ i_max  = argrelextrema(N, np.greater, order=20)[0]
 plt.figure()
 plt.plot(theta, N, 'b.', label='Messdaten')
 plt.plot(theta[i_max], N[i_max], 'r.', label='Maximum')
+plt.plot([theta[i_max], theta[i_max]], [53, N[i_max]], color='red', linestyle='--')
 plt.xlabel(r'$\theta [°]$')
 plt.ylabel('N [Imps/s]')
 plt.legend(loc='best')
