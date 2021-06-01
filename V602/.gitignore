@@ -2,6 +2,7 @@ build
 Anleitung
 
 generate_table.cpython-38.pyc
+tools.cpython-38.pyc
 main.aux
 main.bcf
 main.log
@@ -16,3 +17,14 @@ main.tex.bbl
 main.tex.blg
 x.log
 .DS_Store
+
+test.pdf
+plot1.pdf
+plot2.pdf
+plot3.pdf
+Zn.pdf
+Ge.pdf
+Br.pdf
+Rb.pdf
+Sr.pdf
+Zr.pdf
