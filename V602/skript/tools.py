@@ -110,3 +110,17 @@ def remove_nans(*inputs):
 # Hilfreich, um z.B. eine Gerade zu plotten…
 def bounds(vals):
     return pintify([min(vals), max(vals)])
+
+#Gerade
+def rad(grad):
+    return grad*np.pi/180
+
+#Winkelumrechnung
+def grad(rad):
+    return rad*180/np.pi
+def gerade(x, m, b):
+    return m*x+b
+
+#Literaturwert
+def abweichung(lit, mess):
+    return abs(100*(lit-mess)/lit)
