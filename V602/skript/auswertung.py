@@ -106,17 +106,16 @@ E_a = E[1]
 E_b  = E[0]
 assert E_a < E_b
 
-# nach Formeln von YanickKi
 sigma_1 = Z - sqrt(E_abs / R_y)
 sigma_2 = Z - 2 * sqrt((Z - sigma_1)**2 - (E_a / R_y))
 sigma_3 = Z - 3 * sqrt((Z - sigma_1)**2 - (E_b  / R_y))
 
-print(f"sigma1={sigma_1}")
-print(f"sigma2={sigma_2}")
-print(f"sigma3={sigma_3}")
+print(f"sigma1={sigma_1:.3f}")
+print(f"sigma2={sigma_2:.3f}")
+print(f"sigma3={sigma_3:.3f}")
 
 plt.figure()
-#plt.hlines(w_h, l, r, color="green", label='Halbwertsbreiten')
+plt.hlines(w_h, l, r, color="green", label='Halbwertsbreiten')
 #K-Linien
 plt.scatter([20.2], [1599.0], s=25, marker='o', color='red')
 plt.scatter([22.5], [5050.0], s=25, marker='o', color='red')
