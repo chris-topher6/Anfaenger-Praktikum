@@ -3,6 +3,7 @@ all: build/main.pdf
 # hier Python-Skripte:
 build/plot.pdf: $(wildcard skript/*.py) matplotlibrc header-matplotlib.tex | build
 #TEXINPUTS=$$(pwd): python skript/test.py
+	TEXINPUTS=$$(pwd): python skript/0_messwerte.py
 	TEXINPUTS=$$(pwd): python skript/auswertung.py
 	TEXINPUTS=$$(pwd): python skript/3_absorbtionsspektrum.py
 
