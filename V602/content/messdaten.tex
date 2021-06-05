@@ -2,12 +2,35 @@
     \centering
     \caption{Messwerte zur Bragg-Reflektion.}
     % \label{tab:werte_bragg}
-    \begin{tabular}{S[table-format=2.1] c}
+    \begin{tabular}{S[table-format=2.1] c | S[table-format=2.1] c}
     \toprule
+    {$\theta_\text{GM} [\si{\degree}]$} &
+    {$N$} &
     {$\theta_\text{GM} [\si{\degree}]$} &
     {$N$} \\
     \midrule
-    \expandableinput{build/table_mess_bragg.tex}
+    %\expandableinput{build/table_mess_bragg.tex}
+    \num{26.0} & \num{56}  & \num{28.1} & \num{215} \\
+    \num{26.1} & \num{58}  & \num{28.2} & \num{218} \\
+    \num{26.2} & \num{54}  & \num{28.3} & \num{215} \\
+    \num{26.3} & \num{62}  & \num{28.4} & \num{208} \\
+    \num{26.4} & \num{58}  & \num{28.5} & \num{189} \\
+    \num{26.5} & \num{68}  & \num{28.6} & \num{189} \\
+    \num{26.6} & \num{72}  & \num{28.7} & \num{176} \\
+    \num{26.7} & \num{83}  & \num{28.8} & \num{164} \\
+    \num{26.8} & \num{89}  & \num{28.9} & \num{149} \\
+    \num{26.9} & \num{95}  & \num{29.0} & \num{138} \\
+    \num{27.0} & \num{105} & \num{29.1} & \num{125} \\
+    \num{27.1} & \num{119} & \num{29.2} & \num{111} \\
+    \num{27.2} & \num{125} & \num{29.3} & \num{107} \\
+    \num{27.3} & \num{141} & \num{29.4} & \num{95}  \\
+    \num{27.4} & \num{154} & \num{29.5} & \num{77}  \\
+    \num{27.5} & \num{157} & \num{29.6} & \num{73}  \\
+    \num{27.6} & \num{166} & \num{29.7} & \num{58}  \\
+    \num{27.7} & \num{180} & \num{29.8} & \num{56}  \\
+    \num{27.8} & \num{188} & \num{29.9} & \num{53}  \\
+    \num{27.9} & \num{211} & \num{30.0} & \num{53}  \\
+    \num{28.0} & \num{212} &            &           \\
     \bottomrule
     \end{tabular}
   \end{table}
@@ -161,3 +184,46 @@
   \bottomrule
   \end{tabular}
 \end{table}
+
+\captionof{table}{Messung des Kupfer-Emissionsspektrums. \cite{AP02}}
+\label{tab:mess1}
+\begin{minipage}{0.2\textwidth}
+  \small
+  \begin{tabular}{S S}
+  \toprule
+  {$\theta [°]$} & {$N$} \\
+  \midrule
+  \expandableinput{build/table_mess_zink.tex}
+  \bottomrule
+  \end{tabular}
+  \end{minipage}
+  \begin{minipage}{0.2\textwidth}
+  \small
+  \begin{tabular}{|S S}
+  \toprule
+  {$\theta [°]$} & {$N$} \\
+  \midrule
+  \expandableinput{build/table_mess_gallium.tex}
+  \bottomrule
+  \end{tabular}
+  \end{minipage}
+  \begin{minipage}{0.2\textwidth}
+  \small
+  \begin{tabular}{|S S}
+  \toprule
+  {$\theta [°]$} & {$N$} \\
+  \midrule
+  \expandableinput{build/table_mess_brom.tex}
+  \bottomrule
+  \end{tabular}
+  \end{minipage}
+  \begin{minipage}{0.2\textwidth}
+  \small
+  \begin{tabular}{|S S}
+  \toprule
+  {$\theta [°]$} & {$N$} \\
+  \midrule
+  \expandableinput{build/table_mess_rubidium.tex}
+  \bottomrule
+  \end{tabular}
+\end{minipage}
