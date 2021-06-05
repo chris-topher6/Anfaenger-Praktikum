@@ -112,7 +112,7 @@ for name, s_data in data.items():
     # plt.axvspan(*θ_bounds, alpha=0.25, label='Absorptionskante')
     if not i_exact:
         plt.plot(θ[i:i+2], N[i:i+2], color='gray', label='Interpolation')
-    plt.axvline(θ_middle, linestyle='--', color='blue',  linewidth=0.6, label=r'gesuchtes $\theta$')
+    plt.axvline(θ_middle, linestyle='--', color='blue',  linewidth=0.6, label=r'$\theta_K$')
     plt.axhline(I_K,      linestyle='--', color='green', linewidth=0.6, label=r'$I_K$')
     plt.xlabel(r'$θ [°]$')
     plt.ylabel(r'$N$')
