@@ -1,16 +1,16 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Messdaten}
-Im Folgenden sind die nach Kapitel \ref{sec:Durchführung} aufgenommenen Messdaten tabellarisch aufgelistet. 
+Im Folgenden sind die nach Kapitel \ref{sec:Durchführung} aufgenommenen Messdaten tabellarisch aufgelistet.
 
 \input{content/messdaten.tex}
 
 \subsection{Bragg Bedinugung}
 \label{sec:brag}
-Nahc der Bragg'schen Bedingung \eqref{eqn:bragg} tritt das Intensitätsmaximum bei dem Glanzwinkel $\theta_{glanz}=\SI{28}{\degree}$ auf. 
-In Abbildung \ref{fig:plot1} sind die Messdaten mittels \textit{matplotlib} \cite{matplotlib} graphisch dargestellt. Das Maximum befindet 
+Nach der Bragg'schen Bedingung \eqref{eqn:bragg} tritt das Intensitätsmaximum bei dem Glanzwinkel $\theta_{glanz}=\SI{28}{\degree}$ auf.
+In Abbildung \ref{fig:plot1} sind die Messdaten mittels \textit{matplotlib} \cite{matplotlib} graphisch dargestellt. Das Maximum befindet
 sich bei $\theta=\SI{28.2}{\degree}$. Die totale Abweichung zu dem Theoriewert beträgt somit $\Delta\theta_{glanz}=\SI{0.2}{\degree}$,
-was einer porzentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
+was einer prozentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plot1.pdf}
@@ -20,15 +20,15 @@ was einer porzentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
 
 \subsection{Emissionspektrum}
 \label{sec:emission}
-Das nach Kaptiel \ref{sec:Durchführung} gemessene Emissionsspektrum wurde in Abbildung \ref{fig:plot2}
-als $\theta-N$ Diagramm  dargestellt. Dabei sind Bremsberg und die Spektrallinien $K_{\alpha}$ und 
-$K_{\beta}$ des Kupfers makiert. Die Punkte der jeweiligen Extrema sind in Tabelle \ref{tab:emission} dargestellt und in Abbildung 
+Das nach Kapitel \ref{sec:Durchführung} gemessene Emissionsspektrum wurde in Abbildung \ref{fig:plot2}
+als ($\theta-N$)-Diagramm  dargestellt. Dabei sind Bremsberg und die Spektrallinien $K_{\alpha}$ und
+$K_{\beta}$ des Kupfers markiert. Die Punkte der jeweiligen Extrema sind in Tabelle \ref{tab:emission} dargestellt und in Abbildung
 \ref{fig:plot1} rot unterlegt. Zudem sind in grün die Halbwertsbreiten $\Delta\theta$ der $K_\alpha$ und $K_\beta$-Kante eingezeichnet.
 Auch diese finden sich in Tabelle \ref{tab:emission}
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 1.0]{build/plot2.pdf}
-    \caption{$\theta-N$ Darstellung des Emissionsspektrums.}
+    \caption{($\theta-N$)-Darstellung des Emissionsspektrums.}
     \label{fig:plot2}
 \end{figure}
 \begin{table}[H]
@@ -47,13 +47,13 @@ Auch diese finden sich in Tabelle \ref{tab:emission}
         \end{tabular}
       \end{table}
 \noindent
-Sowohl die Maxima, als auch die Halbwertsbreiten wurden dabei mittels \textit{scipy} \cite{scipy} bestimmt. 
+Sowohl die Maxima als auch die Halbwertsbreiten wurden dabei mittels \textit{scipy} \cite{scipy} bestimmt.
 \\\noindent
 Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \eqref{eqn:(3)} berechnet und mit dem Zusammenhang
 \eqref{eqn:E=hc/lambda} als Energie $E$ angegeben. Die Ergebnisse finden sich in Tabelle \ref{tab:energie}.
 \begin{table}[H]
     \centering
-        \caption{Photonenergie bei $K_{\alpha}$ und $K_{\beta}$}
+        \caption{Photonenenergie bei $K_{\alpha}$ und $K_{\beta}$}
         \label{tab:energie}
         \sisetup{table-format=1.4}
         \begin{tabular}{S S S S}
@@ -65,7 +65,7 @@ Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \e
           \bottomrule
         \end{tabular}
       \end{table}
-Dabei beträgt die Energeidifferenz über die Halbwertsbreite
+Dabei beträgt die Energiedifferenz über die Halbwertsbreite
 \begin{align*}
     \Delta E_{K_\beta}  &= \SI{0.199}{\kilo\electronvolt}\\
     \Delta E_{K_\alpha} &= \SI{0.164}{\kilo\electronvolt}   .
@@ -73,18 +73,18 @@ Dabei beträgt die Energeidifferenz über die Halbwertsbreite
 Die Berechnung des Auflösevermögens $A=E/\Delta E$ ergibt
 \begin{align*}
     A_{K_\beta}  &= \num{44.85}\\
-    A_{K_\alpha} &= \num{48.92} . 
+    A_{K_\alpha} &= \num{48.92} .
 \end{align*}
 
 Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} kann durch Umstellen der Gleichungen \eqref{eqn:(8)},
-\eqref{eqn:(9)} und \eqref{eqn:10} zu 
+\eqref{eqn:(9)} und \eqref{eqn:10} zu
 \begin{align*}
     \sigma_1&=Z-\sqrt{\frac{E_{abs}}{R_\infty}}\\
     \sigma_2&=Z-\sqrt{\left(\frac{m}{n}\right)^2(Z-\sigma_1)^2-\frac{E_\alpha}{R_\infty}}\\
     \sigma_3&=Z-\sqrt{\left(\frac{l}{n}\right)^2(Z-\sigma_1)^2-\frac{E_\alpha}{R_\infty}}
 \end{align*}
-Die jeweilige Abschirmkonstante $\sigma$ berechnet werden. Dabei gilt für Kupfer $Z=\num{29}$. Desweiteren ist $n=1$, $m=2$, $l=3$
-und $R_infty$ die Rydberg-Energie. Durch Einsetzten ergibt sich
+Die jeweilige Abschirmkonstante $\sigma$ berechnet werden. Dabei gilt für Kupfer $Z=\num{29}$. Des Weiteren ist $n=1$, $m=2$, $l=3$
+und $R_\infty$ die Rydberg-Energie. Durch Einsetzen ergibt sich
 \begin{align*}
     \sigma_1&=\num{3.30  \pm 0.021}\\
     \sigma_2&=\num{12.34 \pm 0.13 }\\
@@ -93,40 +93,40 @@ und $R_infty$ die Rydberg-Energie. Durch Einsetzten ergibt sich
 
 \subsection{Absorbtionsspektrum}
 \label{sec:absorb}
-Das Absorbtionsspektrum wurde für die Elemente $\ce{_{30}Zn}$, $\ce{_{33}Ga}$, $\ce{_{35}Br}$, $\ce{_{37}Rb}$, $\ce{_{38}Sr}$ und 
-$\ce{_{40}Zr}$ aufgenommen. In den folgenden Abbildungen \ref{fig:Zn}-\ref{fig:Zr} sind die Absorbtionsspektren für das jeweilige
-Absorbermaterial als $\theta-N$ Diagramm dargestellt. Dabei sind die lokalen Extermwerte, die wieder \textit{scipy} \cite{scipy}
-berechnet wurden, farblich hervorgehoben. Der näherungsweise linerare Abschnitt zwischen Tief- und Hochpunkt entspricht nun der 
-K-Kante. In der Mitte dieser, beträgt die Intensität
+Das Absorbtionsspektrum wurde für die Elemente $\ce{_{30}Zn}$, $\ce{_{33}Ga}$, $\ce{_{35}Br}$, $\ce{_{37}Rb}$, $\ce{_{38}Sr}$ und
+$\ce{_{40}Zr}$ aufgenommen. In den folgenden Abbildungen \ref{fig:zink}-\ref{fig:zirkonium} sind die Absorbtionsspektren für das jeweilige
+Absorbermaterial als ($\theta-N$)-Diagramm dargestellt. Dabei sind die lokalen Extremwerte, die wieder mit \textit{scipy} \cite{scipy}
+berechnet wurden, farblich hervorgehoben. Der näherungsweise lineare Abschnitt zwischen Tief- und Hochpunkt entspricht nun der
+$K$-Kante. In der Mitte dieser beträgt die Intensität
 \begin{equation*}
     I_K=\frac{1}{2}(I_{K,min}+I_{K,max})   .
 \end{equation*}
-Der Winkel $\theta_K$ der für die gefragte Intensität wurde mittls linerarer Interpolation dargestellt. Diese ist der Form 
+Der Winkel $\theta_K$ der für die gefragte Intensität wurde mittels linerarer Interpolation dargestellt. Diese ist der Form
 \begin{equation*}
     \theta_K=\theta_i+(I_K-N_i)\frac{\theta_{i+1}-\theta_i}{N_{i+1}-N_i},
 \end{equation*}
-wobei $N_i<I_k<N_{i+1}$ gilt. Analog zu Abschnitt \ref{sec:emission} kann für $\theta_K$ wieder die Absorbtionsenergie berechnet werden. 
+wobei $N_i<I_k<N_{i+1}$ gilt. Analog zu Abschnitt \ref{sec:emission} kann für $\theta_K$ wieder die Absorbtionsenergie berechnet werden.
 
 \input{content/absorbtion.tex}
 
 \subsection{Mosely'sches Gesetz}
 \label{sec:Mosely}
-Mit den berechneten Daten wird nun das Mosely'sche Gesetz \eqref{eqn:mosely} überprüft. Dazu wird das Gesetz zu 
+Mit den berechneten Daten wird nun das Mosely'sche Gesetz \eqref{eqn:mosely} überprüft. Dazu wird das Gesetz zu
 \begin{align*}
     E_K &= R h (z - \sigma)^2 \\
     \Leftrightarrow\sqrt{E_K} &= \sqrt{R h}\cdot Z - \sqrt{R h}\cdot\sigma_k
-\end{align*} 
-umgeform. In Abbildung \ref{fig:mosely} sind die Daten in einem $Z-\sqrt{E_K}$ Diagramm aufgetragen. 
+\end{align*}
+umgeformt. In Abbildung \ref{fig:mosely} sind die Daten in einem ($Z-\sqrt{E_K}$)-Diagramm aufgetragen.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{build/plot_moseley.pdf}
-    \caption{Darstellung des Mosely'schen Gesetzes als $Z-\sqrt{E_K}$ Diagramm.}
-    \label{fig:moseley}
+    \caption{Darstellung des Mosely'schen Gesetzes als ($Z-\sqrt{E_K}$)-Diagramm.}
+    \label{fig:mosely}
 \end{figure}
-Die von \textit{numpy} \cite{numpy} berechneten Parameter der Regression sind nun gerade 
+Die von \textit{numpy} \cite{numpy} berechneten Parameter der Regression sind nun gerade
 \begin{align*}
     a&=\sqrt{R h}              6=\SI{3.539\pm 0.018}{\sqrt{\electronvolt}}\\
     b&=\sqrt{R h}\cdot\sigma_k 6=\SI{-8.0 \pm 0.6}{\sqrt{\electronvolt}}.
 \end{align*}
 Daraus lässt sich die Rydbergenergie $Ry=a^2=\SI{12.52\pm 0.13}{\electronvolt}$ und die Rydbergfrequenz $R=a^2/h=\SI{3.03\pm 0.03}{\peta\hertz}$
-berechnen. 
+berechnen.
