@@ -9,8 +9,9 @@ Im Folgenden sind die nach Kapitel \ref{sec:Durchführung} aufgenommenen Messdat
 \label{sec:brag}
 Nahc der Bragg'schen Bedingung \eqref{eqn:bragg} tritt das Intensitätsmaximum bei dem Glanzwinkel $\theta_{glanz}=\SI{28}{\degree}$ auf. 
 In Abbildung \ref{fig:plot1} sind die Messdaten mittels \textit{matplotlib} \cite{matplotlib} graphisch dargestellt. Das Maximum befindet 
-sich bei $\theta=\SI{28.2}{\degree}$. Die prozentuale Abweichung zu dem Theoriewert beträgt $p=\SI{0.71}{\percent}$.
-\begin{figure}
+sich bei $\theta=\SI{28.2}{\degree}$. Die totale Abweichung zu dem Theoriewert beträgt somit $\Delta\theta_{glanz}=\SI{0.2}{\degree}$,
+was einer porzentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plot1.pdf}
     \caption{Zählrate $N$ in Abhängigkeit vom Winkel $\theta$.}
@@ -21,7 +22,7 @@ sich bei $\theta=\SI{28.2}{\degree}$. Die prozentuale Abweichung zu dem Theoriew
 \label{sec:emission}
 Das nach Kaptiel \ref{sec:Durchführung} gemessene Emissionsspektrum wurde in Abbildung \ref{fig:plot2}
 als $\theta-N$ Diagramm  dargestellt. Dabei sind Bremsberg und die Spektrallinien $K_{\alpha}$ und 
-$K_{\beta}$ des Kupfers makiert. Die Punkte der jeweiligen Extrema sind in Tabelle \ref{tab:hp} dargestellt und in Abbildung 
+$K_{\beta}$ des Kupfers makiert. Die Punkte der jeweiligen Extrema sind in Tabelle \ref{tab:emission} dargestellt und in Abbildung 
 \ref{fig:plot1} rot unterlegt. Zudem sind in grün die Halbwertsbreiten $\Delta\theta$ der $K_\alpha$ und $K_\beta$-Kante eingezeichnet.
 Auch diese finden sich in Tabelle \ref{tab:emission}
 \begin{figure}[H]
@@ -71,8 +72,8 @@ Dabei beträgt die Energeidifferenz über die Halbwertsbreite
 \end{align*}
 Die Berechnung des Auflösevermögens $A=E/\Delta E$ ergibt
 \begin{align*}
-    A_{K_\beta}  &= \num{44.85} .
-    A_{K_\alpha} &= \num{48.92} \\
+    A_{K_\beta}  &= \num{44.85}\\
+    A_{K_\alpha} &= \num{48.92} . 
 \end{align*}
 
 Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} kann durch Umstellen der Gleichungen \eqref{eqn:(8)},
@@ -85,9 +86,9 @@ Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} 
 Die jeweilige Abschirmkonstante $\sigma$ berechnet werden. Dabei gilt für Kupfer $Z=\num{29}$. Desweiteren ist $n=1$, $m=2$, $l=3$
 und $R_infty$ die Rydberg-Energie. Durch Einsetzten ergibt sich
 \begin{align*}
-    \sigma_1=\SI{3.30  \pm 0.021}
-    \sigma_2=\SI{12.34 \pm 0.13 }
-    \sigma_3=\SI{22.02 \pm 0.71 }   .
+    \sigma_1&=\num{3.30  \pm 0.021}\\
+    \sigma_2&=\num{12.34 \pm 0.13 }\\
+    \sigma_3&=\num{22.02 \pm 0.71 }   .
 \end{align*}
 
 \subsection{Absorbtionsspektrum}
@@ -107,3 +108,25 @@ Der Winkel $\theta_K$ der für die gefragte Intensität wurde mittls linerarer I
 wobei $N_i<I_k<N_{i+1}$ gilt. Analog zu Abschnitt \ref{sec:emission} kann für $\theta_K$ wieder die Absorbtionsenergie berechnet werden. 
 
 \input{content/absorbtion.tex}
+
+\subsection{Mosely'sches Gesetz}
+\label{sec:Mosely}
+Mit den berechneten Daten wird nun das Mosely'sche Gesetz \eqref{eqn:mosely} überprüft. Dazu wird das Gesetz zu 
+\begin{align*}
+    E_K &= R h (z - \sigma)^2 \\
+    \Leftrightarrow\sqrt{E_K} &= \sqrt{R h}\cdot Z - \sqrt{R h}\cdot\sigma_k
+\end{align*} 
+umgeform. In Abbildung \ref{fig:mosely} sind die Daten in einem $Z-\sqrt{E_K}$ Diagramm aufgetragen. 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{build/plot_moseley.pdf}
+    \caption{Darstellung des Mosely'schen Gesetzes als $Z-\sqrt{E_K}$ Diagramm.}
+    \label{fig:moseley_regression}
+\end{figure}
+Die von \textit{numpy} \cite{numpy} berechneten Parameter der Regression sind nun gerade 
+\begin{align*}
+    a&=\sqrt{R h}              6=\SI{3.539\pm 0.018}{\sqrt{\electronvolt}}\\
+    b&=\sqrt{R h}\cdot\sigma_k 6=\SI{-8.0 \pm 0.6}{\sqrt{\electronvolt}}.
+\end{align*}
+Daraus lässt sich die Rydbergenergie $Ry=a^2=\SI{12.52\pm 0.13}{\electronvolt}$ und die Rydbergfrequenz $R=a^2/h=\SI{3.03\pm 0.03}{\peta\hertz}$
+berechnen. 
