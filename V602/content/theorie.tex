@@ -26,9 +26,10 @@ Dabei entstehen Lücken in den inneren Schalen der Atome. In diese Lücken könn
 Elektronen mit höheren Energien zurückfallen, was zu einer Energieabgabe in Form
 von ausgesandten Photonen führt. Die abgegebene Energie entspricht genau der
 Energiedifferenz zwischen den Schalen:
-\begin{equation*}
+\begin{equation}
   h \nu = E_m - E_n.
-\end{equation*}
+  \label{eqn:absorptionskantentheorie}
+\end{equation}
 Aufgrund dieser von dem Anodenmaterial abhängigen Differenzen ergibt sich ein
 diskretes, für das Material charakteristisches Spektrum. Dieses weist scharfe
 Absorptionskanten auf, welche mit $K_{\alpha}, K_{\beta}, L_{\alpha}, ...$
@@ -50,8 +51,6 @@ Abschirmkonstante. Konkret für die $K_{\alpha}$-Kante ergibt sich nach
   E_{K_\alpha} = R_{\infty} (z - \sigma_1)^2 \cdot \frac{1}{1^2} - R_{\infty} (z - \sigma_2)^2 \cdot \frac{1}{2^2}.
   \label{eqn:energiekalphatheorie}
 \end{equation}
-
-\subsection{Die Absorption der Röntgenstrahlung}
 Aufgrund der inhomogenen Energieverteilung der äußeren Elektronen, welche durch
 den Bahndrehimpuls und den Elektronenspin verursacht wird, ist jede der
 charakteristischen Absorptionskanten in mehrere nebeneinander liegende Kanten
@@ -69,3 +68,44 @@ der Hauptquantenzahl $n = 1$ ergibt sich dann nach \eqref{eqn:sommerfeldtheorie}
   \sigma_K = Z - \sqrt{\frac{E_K}{R_\infty} - \frac{\alpha^2 Z^4}{4}}.
   \label{abschirmktheorie}
 \end{equation}
+Aufgrund der Komplexität der Bestimmung der Abschirmkonstante $\sigma_L$ wird durch
+die Bestimmung der Differenz $\Delta E_L = E_{L_{II}} - E_{L_{III}}$ zwischen
+zwei $L$-Kanten vereinfacht. Die $L_{I}$- sowie $L_{II}$-Kante kann in diesem
+Versuch nicht gemessen werden. Daher ergibt sich für $\sigma_L$:
+\begin{equation}
+  \sigma_L = Z - \left( \frac{4}{\alpha} \sqrt{\frac{\Delta E_L}{R_{\infty}}} - \frac{5 \Delta E_L}{R_{\infty}} \right)^{\frac{1}{2}} \left( 1 + \frac{19}{32} \alpha^2 \frac{\Delta E_L}{R_{\infty}} \right)^{\frac{1}{2}}
+  \label{eqn:sigmaktheorie}
+\end{equation}
+Hierbei bezeichnet $Z$ die Ordnungszahl.
+
+
+\subsection{Die Absorption der Röntgenstrahlung}
+Bei Energien geringer als $1 \si{\mega\electronvolt}$ läuft die Absorption
+hauptsächlich durch den Photoelektrischen Effekt und den Compton-Effekt ab.
+Bei dem Auftreffen der Elektronen auf das Absorbermaterial nimmt der
+Absorptionskoeffizient mit zunehmender Energie ab, er ist also antiproportional.
+Wenn die Photonenenergie jedoch gerade größer ist als die Bindungsenergie eines
+Elektrons aus einer inneren Schale steigt der Absorptionskoeffizient stark an.
+Daher liegen die Absorptionskanten nach \eqref{eqn:absorptionskantentheorie} mit
+$n = \infty$ gerade bei der Bindungsenergie des Elektrons. Diese Kanten sind in
+folgender Abbildung dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{"content/absorptionskanten.png"}
+  \caption{Die Energie aufgetragen gegen die Größe der Absorptionskonstanten.}
+  \label{fig:absorptionskanten}
+\end{figure}
+\noindent
+
+\subsection{Die Braggsche Reflexion}
+Um die Wellenlänge $\lambda$ der emittierten Röntgenstrahlung zu untersuchen,
+kann die Braggsche Reflexion verwendet werden. Hierfür lässt man die Röntgenstrahlung
+auf ein dreidimensionales Gitter treffen, was zu einer Beugung der Röntgenquanten
+an den einzelnen Atomen des Gitters führt.  Bei dem Glanwinkel $\Theta$ interferieren
+die gebeugten Röntgenquanten konstruktiv. Aus dem Glanzwinkel lässt sich dann
+nach der Braggschen Bedingung die Wellenlänge bestimmen:
+\begin{equation}
+  2 d \sin \Theta = n \lambda.
+  \label{eqn:braggtheorie}
+\end{equation}
+Hierbei bezeichnet $d$ die Gitterkonstante und $n$ die Beugungsordnung.
