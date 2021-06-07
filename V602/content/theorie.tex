@@ -31,7 +31,7 @@ Energiedifferenz zwischen den Schalen:
 \end{equation*}
 Aufgrund dieser von dem Anodenmaterial abhängigen Differenzen ergibt sich ein
 diskretes, für das Material charakteristisches Spektrum. Dieses weist scharfe
-Absoprtionskanten auf, welche mit $K_{\alpha}, K_{\beta}, L_{\alpha}, ...$
+Absorptionskanten auf, welche mit $K_{\alpha}, K_{\beta}, L_{\alpha}, ...$
 bezeichnet werden. Hierbei steht das $K, L, ...$ für die Schale, auf der die
 Übergänge enden und $\alpha, \beta, ...$ für den Ursprung des Elektrons.
 Aufgrund der Abschirmung der Hüllenelektronen und der Wechselwirkung der
@@ -52,3 +52,20 @@ Abschirmkonstante. Konkret für die $K_{\alpha}$-Kante ergibt sich nach
 \end{equation}
 
 \subsection{Die Absorption der Röntgenstrahlung}
+Aufgrund der inhomogenen Energieverteilung der äußeren Elektronen, welche durch
+den Bahndrehimpuls und den Elektronenspin verursacht wird, ist jede der
+charakteristischen Absorptionskanten in mehrere nebeneinander liegende Kanten
+aufgteilt. Dies wird als Feinstruktur bezeichnet. Die Energien der einzelnen
+Linien lassen sich nach der Sommerfeldschen Feinstrukturformel berechnen:
+\begin{equation}
+  E_{n,j} = -R_{\infty} \left( z_{eff,1}^2 \cdot \frac{1}{n^2} + \alpha^2 z_{eff,2}^4 \cdot \frac{1}{n^3} \left(  \frac{1}{j + \frac{1}{2}} - \frac{3}{4n} \right) \right).
+  \label{eqn:sommerfeldtheorie}
+\end{equation}
+$\alpha$ bezeichnet hier die Sommerfeldsche Feinstrukturkonstante, $n$ die
+Hauptquantenzahl und $j$ den Gesamtdrehimpuls.
+Die Abschirmkonstante $\sigma_{K, abs}$ für Elektronen aus der $K$-Schale mit
+der Hauptquantenzahl $n = 1$ ergibt sich dann nach \eqref{eqn:sommerfeldtheorie}:
+\begin{equation}
+  \sigma_K = Z - \sqrt{\frac{E_K}{R_\infty} - \frac{\alpha^2 Z^4}{4}}.
+  \label{abschirmktheorie}
+\end{equation}
