@@ -7,7 +7,7 @@ Im Folgenden sind die nach Kapitel \ref{sec:Durchführung} aufgenommenen Messdat
 
 \subsection{Bragg Bedinugung}
 \label{sec:brag}
-Nach der Bragg'schen Bedingung \eqref{eqn:bragg} tritt das Intensitätsmaximum bei dem Glanzwinkel $\theta_{glanz}=\SI{28}{\degree}$ auf.
+Nach der Bragg'schen Bedingung \eqref{eqn:braggtheorie} tritt das Intensitätsmaximum bei dem Glanzwinkel $\theta_{glanz}=\SI{28}{\degree}$ auf.
 In Abbildung \ref{fig:plot1} sind die Messdaten mittels \textit{matplotlib} \cite{matplotlib} graphisch dargestellt. Das Maximum befindet
 sich bei $\theta=\SI{28.2}{\degree}$. Die totale Abweichung zu dem Theoriewert beträgt somit $\Delta\theta_{glanz}=\SI{0.2}{\degree}$,
 was einer prozentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
@@ -49,8 +49,8 @@ Auch diese finden sich in Tabelle \ref{tab:emission}
 \noindent
 Sowohl die Maxima als auch die Halbwertsbreiten wurden dabei mittels \textit{scipy} \cite{scipy} bestimmt.
 \\\noindent
-Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \eqref{eqn:(3)} berechnet und mit dem Zusammenhang
-\eqref{eqn:E=hc/lambda} als Energie $E$ angegeben. Die Ergebnisse finden sich in Tabelle \ref{tab:energie}.
+Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \eqref{eqn:energiekalphatheorie} berechnet und mit dem 
+Zusammenhang $E=hc/\lambda$ als Energie $E$ angegeben. Die Ergebnisse finden sich in Tabelle \ref{tab:energie}.
 \begin{table}[H]
     \centering
         \caption{Photonenenergie bei $K_{\alpha}$ und $K_{\beta}$}
@@ -65,6 +65,7 @@ Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \e
           \bottomrule
         \end{tabular}
       \end{table}
+\noindent
 Dabei beträgt die Energiedifferenz über die Halbwertsbreite
 \begin{align*}
     \Delta E_{K_\beta}  &= \SI{0.199}{\kilo\electronvolt}\\
@@ -76,14 +77,13 @@ Die Berechnung des Auflösevermögens $A=E/\Delta E$ ergibt
     A_{K_\alpha} &= \num{48.92} .
 \end{align*}
 
-Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} kann durch Umstellen der Gleichungen \eqref{eqn:(8)},
-\eqref{eqn:(9)} und \eqref{eqn:10} zu
+Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} kann durch Umstellen der Gleichungen \eqref{eqn:8} zu
 \begin{align*}
     \sigma_1&=Z-\sqrt{\frac{E_{abs}}{R_\infty}}\\
     \sigma_2&=Z-\sqrt{\left(\frac{m}{n}\right)^2(Z-\sigma_1)^2-\frac{E_\alpha}{R_\infty}}\\
     \sigma_3&=Z-\sqrt{\left(\frac{l}{n}\right)^2(Z-\sigma_1)^2-\frac{E_\alpha}{R_\infty}}
 \end{align*}
-Die jeweilige Abschirmkonstante $\sigma$ berechnet werden. Dabei gilt für Kupfer $Z=\num{29}$. Des Weiteren ist $n=1$, $m=2$, $l=3$
+die jeweilige Abschirmkonstante $\sigma$ berechnet werden. Dabei gilt für Kupfer $Z=\num{29}$. Des Weiteren ist $n=1$, $m=2$, $l=3$
 und $R_\infty$ die Rydberg-Energie. Durch Einsetzen ergibt sich
 \begin{align*}
     \sigma_1&=\num{3.30  \pm 0.021}\\
@@ -94,7 +94,7 @@ und $R_\infty$ die Rydberg-Energie. Durch Einsetzen ergibt sich
 \subsection{Absorbtionsspektrum}
 \label{sec:absorb}
 Das Absorbtionsspektrum wurde für die Elemente $\ce{_{30}Zn}$, $\ce{_{33}Ga}$, $\ce{_{35}Br}$, $\ce{_{37}Rb}$, $\ce{_{38}Sr}$ und
-$\ce{_{40}Zr}$ aufgenommen. In den folgenden Abbildungen \ref{fig:zink}-\ref{fig:zirkonium} sind die Absorbtionsspektren für das jeweilige
+$\ce{_{40}Zr}$ aufgenommen. In den folgenden Abbildungen \ref{fig:zink} - \ref{fig:zirkonium} sind die Absorbtionsspektren für das jeweilige
 Absorbermaterial als ($\theta-N$)-Diagramm dargestellt. Dabei sind die lokalen Extremwerte, die wieder mit \textit{scipy} \cite{scipy}
 berechnet wurden, farblich hervorgehoben. Der näherungsweise lineare Abschnitt zwischen Tief- und Hochpunkt entspricht nun der
 $K$-Kante. In der Mitte dieser beträgt die Intensität
@@ -109,24 +109,24 @@ wobei $N_i<I_k<N_{i+1}$ gilt. Analog zu Abschnitt \ref{sec:emission} kann für $
 
 \input{content/absorbtion.tex}
 
-\subsection{Mosely'sches Gesetz}
-\label{sec:Mosely}
-Mit den berechneten Daten wird nun das Mosely'sche Gesetz \eqref{eqn:mosely} überprüft. Dazu wird das Gesetz zu
+\subsection{Moseley'sches Gesetz}
+\label{sec:Moseley}
+Mit den berechneten Daten wird nun das Moseley'sche Gesetz \eqref{eqn:Moseley} überprüft. Dazu wird das Gesetz zu
 \begin{align*}
     E_K &= R h (z - \sigma)^2 \\
     \Leftrightarrow\sqrt{E_K} &= \sqrt{R h}\cdot Z - \sqrt{R h}\cdot\sigma_k
 \end{align*}
-umgeformt. In Abbildung \ref{fig:mosely} sind die Daten in einem ($Z-\sqrt{E_K}$)-Diagramm aufgetragen.
-\begin{figure}
+umgeformt. In Abbildung \ref{fig:moseley} sind die Daten in einem ($Z-\sqrt{E_K}$)-Diagramm aufgetragen.
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plot_moseley.pdf}
-    \caption{Darstellung des Mosely'schen Gesetzes als ($Z-\sqrt{E_K}$)-Diagramm.}
-    \label{fig:mosely}
+    \caption{Darstellung des Moseley'schen Gesetzes als ($Z-\sqrt{E_K}$)-Diagramm.}
+    \label{fig:moseley}
 \end{figure}
 Die von \textit{numpy} \cite{numpy} berechneten Parameter der Regression sind nun gerade
 \begin{align*}
-    a&=\sqrt{R h}              6=\SI{3.539\pm 0.018}{\sqrt{\electronvolt}}\\
-    b&=\sqrt{R h}\cdot\sigma_k 6=\SI{-8.0 \pm 0.6}{\sqrt{\electronvolt}}.
+    a&=\sqrt{R h}              &=\SI{3.539\pm 0.018}{\sqrt{\electronvolt}}\\
+    b&=\sqrt{R h}\cdot\sigma_k &=\SI{-8.0 \pm 0.6}{\sqrt{\electronvolt}}.
 \end{align*}
-Daraus lässt sich die Rydbergenergie $Ry=a^2=\SI{12.52\pm 0.13}{\electronvolt}$ und die Rydbergfrequenz $R=a^2/h=\SI{3.03\pm 0.03}{\peta\hertz}$
+Daraus lässt sich die Rydbergenergie $R_y=a^2=\SI{12.52\pm 0.13}{\electronvolt}$ und die Rydbergfrequenz $R=a^2/h=\SI{3.03\pm 0.03}{\peta\hertz}$
 berechnen.
