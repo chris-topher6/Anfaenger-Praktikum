@@ -1,0 +1,3 @@
+#R3 [Ohm]   R4 [Ohm]  R2 [Ohm]  L2 [mega Henry]   Rx [Ohm]  Lx [mega Henry]
+403         597       722       20.1              487.38    13.57
+408         592       700       20.1              482.43    13.85
