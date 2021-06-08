@@ -7,7 +7,7 @@ $\theta_K$ und der Abschirmkonstante $\sigma$ sind im Folgenden tabellarisch dar
 \begin{table}[H]
     \centering
         \caption{Die gefragten Literaturwerte zu verschiedenen Elementen.\cite{AP05}}
-        \label{tab:diss1}
+        \label{tab:diss11}
         \sisetup{table-format=1.2}
         \begin{tabular}{S S[table-format=2.0] S[table-format=2.2] S[table-format=2.1] S}
           \toprule
@@ -37,4 +37,28 @@ ausgerichtet ist. Der Kristall lässt sich auf verschiedene Winkel einstellen,
 wodurch die Intensität der Röntgenstrahlung sich für verschiedene Glanzwinkel
 messen lässt. Zur Intensitätsmessung wird ein Geiger-Müller Zählrohr verwendet.
 Die Messung sowie die Winkeleinstellung lassen sich über die Bedienelemente des
-Gerätes steuern. 
+Gerätes steuern. Die Röntgenröhre wird auf eine Beschleunigungsspannung von
+$U_B = 35 \si{\kilo\volt}$ und einen Emissionstrom von $I = 1 \si{\milli\ampere}$
+eingestellt. Um dann die Absorptionsmessung durchzuführen, werden verschiedene
+Blenden mit verschiedenen Absorbern vor dem Geiger-Müller Zählrohr angebracht.
+Dabei muss die Schlitzblende in Drehrichtung senkrecht ausgerichtet sein.
+
+\subsection{Überprüfung der Bragg Bedingung}
+Zur Überprüfung der Bragg Bedingung wird der LiF-kristall auf einen festen Winkel
+von $\Theta = 14 \si{\degree}$ eingestellt. Dann wird mit dem Geiger-Müller Zählrohr
+in einem Winkelbereich von $\alpha_{GM} = 26 \si{\degree}$ bis $\alpha_{GM} = 30 \si{\degree}$
+bei einem Zuwachs von $\Delta \alpha = 0.1 \si{\degree}$ die Intensität gemessen.
+Die Integrationszeit pro Winkel beträgt $\Delta t = 5 \si{\second}$.
+
+\subsection{Das Emissionspektrum der Cu-Röntgenröhre}
+Um das Emissionsspektrum der Kuperröhre aufzunehmen, wird im Programm der \textit{2:1 Koppelmodus}
+ausgewählt. Dann wird das Röntgenspektrum bei einer Beugunsgordnung $n=1$ im Bereich
+$4 \si{\degree} <= \Theta <= 26 \si{\degree}$ aufgenommen. Die Integrationszeit
+beträgt pro Winkel $\Delta t = 5 \si{\second}$.
+
+\subsection{Das Absorptionsspektrum}
+Für die Messung des Absorptionspektrums wird der Zinkabsorber vor dem Geiger-Müller
+Zählrohr positioniert. Das Absorptionsspektrum wird in $0.1 \si{\degree}$ ausgemessen.
+Die Integrationszeit beträgt hierbei $\Delta t = 20 \si{\second}$.
+Die Messungen werden für vier weitere Absorber mit Kernladungszahlen im Bereich
+$30 <= Z <= 50$ wiederholt.
