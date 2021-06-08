@@ -8,7 +8,7 @@ Diese wird in den folgenden Abschnitten noch erläutert.
 \label{sec:allg}
 Eine Brückenschaltung besteht prizipell aus vier Widerständen. Diese sind so angeordnet, dass je zwei Widerstände in Reihe und 
 die in Reihe geschalteten Widerstände parallel geschaltet sind. Die Schaltung ist dabei an eine Speisespannung $U_S$ engeschlossen. 
-In Abbildung \ref{fig:allg} ist dieses Prinip an einem Schaltbild verdeutlicht. 
+In Abbildung \ref{fig:allg} ist dieses Prinzip an einem Schaltbild verdeutlicht. 
 
 \begin{figure}[H]
     \centering
@@ -34,10 +34,10 @@ kann über die Kirchhoff'schen Regeln hergeleitet werden. Die Kirchhoff'schen Re
     \item\textbf{Maschenregel}
     \\\noindent
     Die Maschenregel besagt, dass die Summe aller Spannungen in einer Masche null ist. Eine Masche ist dabei ein geschlossener Stromkreis. 
-    Das Vorzeichen ist dabei abhängig von der Stromrichtung. So ist $I_K>0$ für einen mathematisch negativen Drehsinn und $I_K<0$ für einen
+    Das Vorzeichen ist dabei abhängig von der Stromrichtung. So ist $U_K>0$ für einen mathematisch negativen Drehsinn und $I_K<0$ für einen
     positiven Drehsinn.Die Maschenregel ist äquivalent zu der Energieerhaltung. Sie wird beschrieben durch
     \begin{equation}
-        \sum_k E_k=\sum_k I_k R_K \;.
+        \sum_k U_k=0 \;.
         \label{eqn:kirchhoff2}
     \end{equation}
 \end{enumerate}
@@ -57,7 +57,7 @@ führen. Mittels
 \end{equation*}
 kann die Brückenspannung $U$ dann vollständig über die Widerstände und die Speisespannung $U_S$ ausgedrückt werden 
 \begin{equation}
-    U=\frac{R_2R_3-R_1R_4}{(R_1+R_2)(R_3+R_4)}U_S
+    U=\frac{R_2R_3-R_1R_4}{(R_1+R_2)(R_3+R_4)}U_S\;.
     \label{eqn:brücke}
 \end{equation}
 Der Ausdruck \eqref{eqn:brücke} wird offensichtlich für 
@@ -68,14 +68,14 @@ Der Ausdruck \eqref{eqn:brücke} wird offensichtlich für
 null. Für dieses Verhältnis an Widerständen wird von einer abgeglichenen Brücke gesprochen. Mit dieser kann ein unbekannter Widstand 
 ermittelt werden, indem mindestens einer der anderen drei so lange variiert wird, bis $U=0$ gilt. 
 \\\noindent
-Die Brückenschaltung kann nun für Wechselströme  auch auf komplexe Impedanzen $Z=X+jY$ erweitert werden, um neben Widerständen $R$ auch 
+Die Brückenschaltung kann nun für Wechselströme auch auf komplexe Impedanzen $Z=X+jY$ erweitert werden, um neben Widerständen $R$ auch 
 Induktivitäten $L$ und Kondensatoren $C$ zuzulassen. Die verschiedenen Impedanzen sind dabei gegeben durch
 \begin{align*}
     Z_C=-\frac{j}{\omega}C \qquad\quad
     Z_L=j\omega L          \qquad\quad
     Z_R=R \;,
 \end{align*}  
-wobei $j$ ist imaginäre Einheit und $\omega$ di Kreisfrequenz ist. Die Abgleichbedingung ist analog zu jener mit reellen Widerständen
+wobei $j$ ist imaginäre Einheit und $\omega$ die Kreisfrequenz ist. Die Abgleichbedingung ist analog zu jener mit reellen Widerständen
 \eqref{eqn:abgleich} $Z_1Z_4=Z_2Z_3$. Für die Realteile folgt demnach 
 \begin{equation*}
     X_1X_4-Y_1Y_4=X_2X_3-Y_2Y_3
@@ -94,6 +94,7 @@ Die Abgleichbedingung für Impedanzen besteht demnach aus zwei Gleichungen, welc
     \caption{Wheatstone'sche Brückenschaltung. \cite{AP01}}
     \label{fig:wheatstone}
 \end{figure}
+\noindent
 Die Wheatstone'sche Brückenschaltung besitzt nur reelle Widerstände $R$ und kann somit für Gleich- und Wechselstrom verwendet werden.
 Ziel ist es den unbekannten Widerstand $R_x$ zu bestimmen, indem die Abgleichbedingung \eqref{eqn:abgleich} ausgenutzt wird. Umstellen
 ergibt
@@ -101,8 +102,8 @@ ergibt
     R_x=R_2\frac{R_3}{R_4} \;.
     \label{eqn:wheatstone}
 \end{equation}
-Da es auf $R_3$ und $R_4$ im speziellen nicht ankommt, sondern nur das Verhältnis relevant ist, sind diese beiden Widerstände wie in 
-Abblindung \ref{fig:wheatstone} zu erkennen aös Potentiometer realisiert. 
+Da es auf $R_3$ und $R_4$ im Speziellen nicht ankommt, sondern nur das Verhältnis relevant ist, sind diese beiden Widerstände wie in 
+Abbildung \ref{fig:wheatstone} zu erkennen als Potentiometer realisiert. 
 
 \subsection{Kapazitätsmessbrücke}            
 \label{sec:Cbrücke}
@@ -112,8 +113,9 @@ Abblindung \ref{fig:wheatstone} zu erkennen aös Potentiometer realisiert.
     \caption{Kapazitätsmessbrücke für reale Kondensatoren. \cite{AP01}}
     \label{fig:Cbrücke}
 \end{figure}
+\noindent
 Bei der Kapazitätsbrücke (vgl. Abb. \ref{fig:Cbrücke}) wird ein unbekannter, realer Kondensator $C_x$ ausgemessen. Ein realer Kondensator 
-weist dabei im Gegensatz zu einem Idealen den dielektrische Verluste auf, sodass er einen gewissen Widerstand $R$ besitzt. Die Impedanz 
+weist dabei im Gegensatz zu einem Idealen dielektrische Verluste auf, sodass er einen gewissen Widerstand $R$ besitzt. Die Impedanz 
 eines realen Kondensators ist also gegeben durch 
 \begin{equation}
     Z_{C,\text{real}}=R-\frac{j}{\omega}C \;.
@@ -134,6 +136,7 @@ Da $Z_C$ sowohl Real- als auch Imaginärteil besitzt, kommen nun zwei Abgleichbe
     \caption{Induktivitätsmessbrücke für reale Induktivitäten. \cite{AP01}}
     \label{fig:Lbrücke}
 \end{figure}
+\noindent
 Die Induktivitätsmessbrücke (vgl. Abb. \ref{fig:Lbrücke}) ist prinzipell ähnlich zu der Kapazitätsbrücke \ref{sec:Cbrücke}, nur dass anstatt
 eines realen Kondensators eine reale Induktivität $L_x$ ausgemessen wird. Eine reale Induktivität ist dabei analog zu dem realen Kondensator 
 verlustbehaftet, wobei diesmal magnetische Feldenergie in Wärme umgewandelt wird. Die reale Induktivität kann wieder über einen reeller 
@@ -160,6 +163,7 @@ wie die Maxwell-Brücke \ref{sec:maxwell} verwendet.
     \caption{Maxwell-Brücke für reale Induktivitäten. \cite{AP01}}
     \label{fig:maxwell}
 \end{figure}
+\noindent
 Auch mit der Maxwell-Brücke (vgl. Abb. \ref{fig:maxwell}) kann wie bei der Induktivitätsmessbrücke \ref{sec:Lbrücke} eine unbekannte, 
 reale Induktivität $L_x$ ausgemessen werden. Der Vorteil der Maxwellbrücke besteht jedoch darin, dass keine zweite Induktivität $L_2$
 benötigt wird. Dafür ist ein Kondensator $C_4$ verbaut, welcher möglichst verlustarm sein sollte. Die regelbaren Widerstände $R_3$ und 
@@ -185,7 +189,7 @@ Für große Frequenzen $\nu$ wird jedoch die Streukapazität in der Schaltung so
 möglich sind. Ist die Frequenz zu gering, kann der Abgleich erst nach einer längeren Einschwingphase erfolgen. Die optimale Frequenz liegt 
 dann vor, wenn der Wirkwiderstand $X$ die gleiche Größenordnung wie der Blindwiderstand $Y$ besitzt.
 \\\noindent 
-Es gibt auch Schaltungen bei denen ein Abgleich nur bei diskreten Frequenzen möglich ist. Zwei solcher Schaltungen werden im Folgenden
+Es gibt auch Schaltungen bei denen ein Abgleich nur bei diskreten Frequenzen möglich ist. Eine solche Schaltung wird im Folgenden
 betrachtet.  
 
 \subsection{Wien-Robinson-Brücke}             
@@ -196,6 +200,7 @@ betrachtet.
     \caption{Wien-Robinson-Brücke. \cite{AP01}}
     \label{fig:wien-robinson}
 \end{figure}
+\noindent
 Die Wien-Robinson-Brücke (vgl. Abb. \ref{fig:wien-robinson}) besitzt keine Abgleichelemente. Es ist desweiteren darauf zu achten, dass
 $C$, $R$ und $R'$ möglichst genau bekannt sind und dass $C$ möglichst verlustfrei ist. Die Impedanzen in dieser Schaltung sind gegeben durch 
 \begin{equation*}
