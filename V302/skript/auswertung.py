@@ -48,7 +48,7 @@ def abweichung(lit, mess):
     return abs(100*(lit-mess)/lit)
 
 #Relative Fehler in ufloats speichern
-#Bei a): "Das Verhäprint("--------------------------------------------------------")ltnis R3/R4 zeigt unsystematische Abweichungen bis +/- 0.5%"
+#Bei a): "Das Verhältnis R3/R4 zeigt unsystematische Abweichungen bis +/- 0.5%"
 R3R4a0 = ufloat(R3a[0]/R4a[0], R3a[0]/R4a[0]*0.5/100)
 R3R4a1 = ufloat(R3a[1]/R4a[1], R3a[1]/R4a[1]*0.5/100)
 #Bei b): "Hier muss für R2 [...]. Seine Toleranz [...] beträgt [...] nur +/- 3%."
@@ -70,18 +70,18 @@ print("--------------------------------------------------------")
 
 #Aufgabenteil b)
 print("Aufgabenteil b)")
-Rxb0, Cxb0 = kapazbrücke(C2b[0], R2b[0], R3b[0], R4b[0])
-Rxb1, Cxb1 = kapazbrücke(C2b[1], R2b[1], R3b[1], R4b[1])
+Rxb0, Cxb0 = kapazbrücke(C2b[0], R2b0, R3b[0], R4b[0])
+Rxb1, Cxb1 = kapazbrücke(C2b[1], R2b1, R3b[1], R4b[1])
 print("Messung 1")
 print("Der Widerstand von Wert 15 beträgt: ", Rxb0, "[Ohm]")
 print("Damit weicht der Wert um ", abweichung(473, Rxb0), "% von 473 Ohm ab")
 print("Die Kapazität beträgt ", Cxb0, "[nF]")
 print("Damit weicht der Wert um ", abweichung(652, Cxb0), "% von 652 nF ab")
 print("Messung 2")
-print("Der Widerstand von Wert 15 beträgt: ", Rxb0, "[Ohm]")
-print("Damit weicht der Wert um ", abweichung(473, Rxb0), "% von 473 Ohm ab")
-print("Die Kapazität beträgt ", Cxb0, "[nF]")
-print("Damit weicht der Wert um ", abweichung(652, Cxb0), "% von 652 nF ab")
+print("Der Widerstand von Wert 15 beträgt: ", Rxb1, "[Ohm]")
+print("Damit weicht der Wert um ", abweichung(473, Rxb1), "% von 473 Ohm ab")
+print("Die Kapazität beträgt ", Cxb1, "[nF]")
+print("Damit weicht der Wert um ", abweichung(652, Cxb1), "% von 652 nF ab")
 print("--------------------------------------------------------")
 
 #Aufgabenteil c)
@@ -102,8 +102,8 @@ print("--------------------------------------------------------")
 
 #Aufgabenteil d)
 print("Aufgabenteil d)")
-Rxd0, Lxd0 = maxwellbrücke(R2d[0], R3d[0], R4d[0], Cd[0])
-Rxd1, Lxd1 = maxwellbrücke(R2d[1], R3d[1], R4d[1], Cd[1])
+Rxd0, Lxd0 = maxwellbrücke(R2d[0], R3d0, R4d[0], Cd[0])
+Rxd1, Lxd1 = maxwellbrücke(R2d[1], R3d1, R4d[1], Cd[1])
 #C ist in nF (nano=10^-9) angeben, daher muss die Induktivität um 10^-6 korrigiert werden um auf mH (milli = 10^-3) zu kommen
 Lxd0, Lxd1 = Lxd0*10**(-6), Lxd1*10**(-6)
 print("Messung 1")

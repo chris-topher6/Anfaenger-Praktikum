@@ -1,69 +1,147 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-Die Messergebnisse der Wheatstoneschen Brückenschaltung für den Wert 11 sind in
-folgender Tabelle dargestellt. $R_x$ berechnet sich nach \eqref{eqn:wheatstone}.
 
-\begin{table}
+\subsection{Die Wheatstonesche Brückenschaltung}
+Die Messwerte und Ergebnisse der Wheatstoneschen Brückenschaltung für den Wert 11 sind in
+folgender Tabelle dargestellt. $R_x$ berechnet sich nach \eqref{eqn:wheatstone}.
+Der Koeffizient $\frac{R_3}{R_4}$ besitzt eine Unsicherheit von $\pm 0.5 \si{\percent}$.
+Die Unsicherheit wurde nach der Gaußschen Fehlerfortpflanzung mittels \textit{uncertainties}
+in \textit{python} berechnet.
+
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Wheatstoneschen Brückenschaltung.}
+  \caption{Die Messwerte und Ergebnisse der Messung mittels Wheatstonescher Brückenschaltung.}
   \label{tab:ausw:a}
   \sisetup{table-format=3.0}
-  \begin{tabular}{S S S[table-format=3.2] S[table-format=4.0]}
+  \begin{tabular}{S[table-format=4.0] S S S[table-format=1.3] S[table-format=3.1]S[table-format=1.1]}
     \toprule
-    ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_x [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ \\
+    ${R_2 [\si{\ohm}]}$ & ${R_3 [\si{\ohm}]}$ & ${R_4 [\si{\ohm}]}$ & ${\Delta \frac{R_3}{R_4}}$ & ${R_x [\si{\ohm}]}$ & ${\Delta R_x [\si{\ohm}]}$ \\
     \midrule
-     333 &     667 &  499.25 &    1000 \\
-     601 &     399 &  500.08 &     332 \\
+     1000 & 333 & 667 & 3.335 & 499.3  & 2.5 \\
+      332 & 601 & 399 & 1.995 & 500.1  & 2.5 \\
     \bottomrule
   \end{tabular}
 \end{table}
+\noindent
+Die Abweichungen von dem Literaturwert sind in folgender Tabelle wiedergegeben.
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Kapazitätsmessbrücke.}
+  \caption{Die Abweichungen der Berechnung von Wert 11.}
+  \label{tab:aus:aA}
+  \sisetup{table-format=3.3}
+  \begin{tabular}{S S S S}
+    \toprule
+    $R_{xLit} [\si{\ohm}]$ & $R_x [\si{\ohm}]$ & $\Delta R_x [\si{\ohm}]$ & ${\text{Abweichung} [\si{\percent}]}$ \\
+    \midrule
+    489.9 & 499.3 & 2.5 & 1.9 \\
+    489.9 & 500.1 & 2.5 & 2.1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\noindent
+
+\subsection{Die Kapazitätsmessbrücke}
+Die Messwerte und die nach \eqref{eqn:Cbrücke} berechneten Ergebnisse sind in folgender Tabelle zusammengefasst. Bei der Messung wurde der Wert 15
+verwendet. Der Widerstand $R_2$ besitzt eine Unsicherheit von $3 \si{\percent}$. Die Unsicherheiten wurden ebenfalls mit \textit{uncertainties}
+berechnet.
+\begin{table}[H]
+  \centering
+  \caption{Die Messwerte und Ergebnisse der Berechnung mittels Kapazitätsmessbrücke.}
   \label{tab:ausw:b}
   \sisetup{table-format=3.0}
-  \begin{tabular}{S S S S S[table-format=3.2] S[table-format=3.2]}
+  \begin{tabular}{S S[table-format=2.2] S S S S[table-format=3.2] S S[table-format=3.2]}
   \toprule
-     ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ &   ${C_2}$ &   ${R_x [\si{\ohm}]}$ &   ${C_x}$ \\
+     ${R_2 [\si{\ohm}]}$ & ${\Delta R_2 [\si{\ohm}]}$ & ${R_3 [\si{\ohm}]}$ &  ${R_4 [\si{\ohm}]}$ & ${C_2 [\si{\nano\farad}]}$ & ${R_x [\si{\ohm}]}$ & ${\Delta R_x [\si{\ohm}]}$ & ${C_x [\si{\nano\farad}]}$ \\
   \midrule
-       411 &     589 &     684 &     450 &  477.29 &  644.89 \\
-       605 &     395 &     316 &     992 &  487.06 &  647.67 \\
+       684 & 20.25 & 411 & 589 & 450 &  477.29 & 14 & 644.89 \\
+       316 &  9.48 & 605 & 395 & 992 &  484.0  & 15 & 647.67 \\
   \bottomrule
   \end{tabular}
 \end{table}
+\noindent
+Die Abweichungen der errechneten Werte von den Literaturwerten sind in folgender Tabelle wiedergegeben.
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Induktivitätsmessbrücke.}
+  \caption{Die Abweichungen der Berechnung von Wert 15.}
+  \label{tab:aus:bB}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{S S S[table-format=1.2] S[table-format=3.0] S S[table-format=1.2]}
+    \toprule
+    $R_{xLit} [\si{\ohm}]$ & $R_x [\si{\ohm}]$ & ${\text{Abw} [\si{\percent}]}$ & $C_{xLit} [\si{\nano\farad}]$ & $C_x [\si{\nano\farad}]$ & ${\text{Abw} [\si{\percent}]}$ \\
+    \midrule
+    473 & 477.29  & 0.9  & 652 & 644.89 & 1.09 \\
+    473 & 484.0   & 2.32 & 652 & 647.67 & 0.66 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\noindent
+
+\subsection{Die Induktivitätsmessbrücke}
+Die Messwerte und die nach \eqref{eqn:Lbrücke} berechneten Ergebnisse sind in folgender Tabelle wiedergegeben.
+Es wurde der Wert 18 verwendet.
+
+\begin{table}[H]
+  \centering
+  \caption{Die Messwerte und Ergebnisse der Berechnung mittels Induktivitätsmessbrücke.}
   \label{tab:ausw:c}
   \sisetup{table-format=3.0}
-  \begin{tabular}{S S S S[table-format=2.1] S[table-format=3.2] S[table-format=2.2]}
+  \begin{tabular}{S S S S[table-format=2.2] S[table-format=3.2] S[table-format=2.2]}
   \toprule
-     ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ &   ${L_2}$ &   ${R_x [\si{\ohm}]}$ &   ${L_x}$ \\
+     ${R_2 [\si{\ohm}]}$ & ${R_3 [\si{\ohm}]}$ &  ${R_4 [\si{\ohm}]}$ & ${L_2 [\si{\milli\henry}]}$ & ${R_x [\si{\ohm}]}$ & ${L_x [\si{\milli\henry}]}$ \\
   \midrule
-       403 &     597 &     722 &    20.1 &  487.38 &   13.57 \\
-       408 &     592 &     700 &    20.1 &  482.43 &   13.85 \\
+       722 & 403 & 597 & 20.1 &  487.38 &  13.57 \\
+       700 & 408 & 592 & 20.1 &  482.43 &  13.85 \\
   \bottomrule
   \end{tabular}
 \end{table}
+\noindent
+Die Abweichungen der errechneten Werte von den Literaturwerten sind in folgender Tabelle wiedergegeben.
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Die Messwerte der Maxwell-Brücke.}
-  \label{tab:ausw:d}
-  \sisetup{table-format=3.0}
-  \begin{tabular}{S S S[table-format=4.0] S S[table-format=3.2] S}
-    \hline
-   ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ &   ${C_d}$ &   ${R_x [\si{\ohm}]}$ &   ${L_x}$ \\
-   \hline
-     340 &     307 &    1000 &     450 &  373.37 &     nan \\
-     115 &     308 &    1000 &     450 &  373.38 &     nan \\
-     \hline
+  \caption{Die Abweichungen der Berechnung von Wert 18.}
+  \label{tab:aus:cC}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{S[table-format=3.0] S S[table-format=2.2] S[table-format=2.2] S[table-format=2.2] S[table-format=2.2]}
+    \toprule
+    $R_{xLit} [\si{\ohm}]$ & $R_x [\si{\ohm}]$ & ${\text{Abw} [\si{\percent}]}$ & $L_{xLit} [\si{\milli\henry}]$ & $L_x [\si{\milli\henry}]$ & ${\text{Abw} [\si{\percent}]}$ \\
+    \midrule
+    360 & 487.38   & 35.38  & 49.82 & 13.57 & 72.77 \\
+    360 & 482.43   & 34.0   & 49.82 & 13.85 & 72.19 \\
+    \bottomrule
   \end{tabular}
 \end{table}
+\noindent
 
-\begin{table}
+\subsection{Die Maxwellbrücke}
+Die Messwerte und die nach \eqref{eqn:maxwell} berechneten Ergebnisse sind in folgender Tabelle wiedergegeben.
+Hierbei besitzen die Widerstände $R_3$ und $R_4$ eine Unsicherheit von $\pm 3 \si{\percent}$. Die resultierenden
+Unsicherheiten wurden hier ebenfalls mit \textit{uncertainties} berechnet.
+
+\begin{table}[H]
+  \centering
+  \caption{Die Messwerte und Ergebnisse der Berechnung mittels Maxwellbrücke.}
+  \label{tab:ausw:d}
+  \sisetup{table-format=3.0}
+  \begin{tabular}{S[table-format=4.0] S S[table-format=2.2] S S[table-format=1.2] S S[table-format=4.0] S[table-format=2.0] S[table-format=3.2] S[table-format=1.1]}
+  \toprule
+     ${R_2 [\si{\ohm}]}$ & ${R_3 [\si{\ohm}]}$ & ${\Delta R_3 [\si{\ohm}]}$ & ${R_4 [\si{\ohm}]}$ & ${\Delta R_4 [\si{\ohm}]}$ & ${C_4 [\si{\nano\farad}]}$ & ${R_x [\si{\ohm}]}$ & ${\Delta R_x [\si{\ohm}]}$ & ${L_x [\si{\milli\henry}]}$ & ${\Delta L_x [\si{\milli\henry}]}$ \\
+  \midrule
+       1000 & 340 & 10.2 & 307 & 9.21 & 450 &  1107 & 33 &  153.0 & 5 \\
+       1000 & 115 & 3.45 & 308 & 9.24 & 450 &  373  & 11 &  51.8  & 1.6\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+\noindent
+Die Abweichungen der Werte von den Literaturwerten ist in folgender Tabelle angegeben.
+
+
+
+\subsection{Die Wien-Robinson Brücke}
+
+\begin{table}[H]
   \centering
   \caption{Die Messwerte der Wien-Robinson-Brücke.}
   \label{tab:ausw:e}
