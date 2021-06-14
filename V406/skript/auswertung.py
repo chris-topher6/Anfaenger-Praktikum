@@ -54,7 +54,7 @@ A22  = A2[1:60]
 phi11 = rad(phi11)
 phi22 = rad(phi22)
 
-#Liefert Index für zu entfernende Elemente
+#Liefert Index für zu entfernende (Null)Elemente
 print("Nullindexe in phi11:")
 for i in range(len(phi11)):
     if phi11[i] == 0:
