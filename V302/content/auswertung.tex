@@ -1,3 +1,101 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-Die Messergebnisse sind in folgenden Tabellen dargestellt.
+Die Messergebnisse der Wheatstoneschen Brückenschaltung für den Wert 11 sind in
+folgender Tabelle dargestellt. $R_x$ berechnet sich nach \eqref{eqn:wheatstone}.
+
+\begin{table}
+  \centering
+  \caption{Die Messwerte der Wheatstoneschen Brückenschaltung.}
+  \label{tab:ausw:a}
+  \sisetup{table-format=3.0}
+  \begin{tabular}{S S S[table-format=3.2] S[table-format=4.0]}
+    \toprule
+    ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_x [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ \\
+    \midrule
+     333 &     667 &  499.25 &    1000 \\
+     601 &     399 &  500.08 &     332 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Die Messwerte der Kapazitätsmessbrücke.}
+  \label{tab:ausw:b}
+  \sisetup{table-format=3.0}
+  \begin{tabular}{S S S S S[table-format=3.2] S[table-format=3.2]}
+  \toprule
+     ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ &   ${C_2}$ &   ${R_x [\si{\ohm}]}$ &   ${C_x}$ \\
+  \midrule
+       411 &     589 &     684 &     450 &  477.29 &  644.89 \\
+       605 &     395 &     316 &     992 &  487.06 &  647.67 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Die Messwerte der Induktivitätsmessbrücke.}
+  \label{tab:ausw:c}
+  \sisetup{table-format=3.0}
+  \begin{tabular}{S S S S[table-format=2.1] S[table-format=3.2] S[table-format=2.2]}
+  \toprule
+     ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ &   ${L_2}$ &   ${R_x [\si{\ohm}]}$ &   ${L_x}$ \\
+  \midrule
+       403 &     597 &     722 &    20.1 &  487.38 &   13.57 \\
+       408 &     592 &     700 &    20.1 &  482.43 &   13.85 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Die Messwerte der Maxwell-Brücke.}
+  \label{tab:ausw:d}
+  \sisetup{table-format=3.0}
+  \begin{tabular}{S S S[table-format=4.0] S S[table-format=3.2] S}
+    \hline
+   ${R_3 [\si{\ohm}]}$ &   ${R_4 [\si{\ohm}]}$ &   ${R_2 [\si{\ohm}]}$ &   ${C_d}$ &   ${R_x [\si{\ohm}]}$ &   ${L_x}$ \\
+   \hline
+     340 &     307 &    1000 &     450 &  373.37 &     nan \\
+     115 &     308 &    1000 &     450 &  373.38 &     nan \\
+     \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Die Messwerte der Wien-Robinson-Brücke.}
+  \label{tab:ausw:e}
+  \sisetup{table-format=5.0}
+  \begin{tabular}{S S[table-format=1.2]}
+  \toprule
+   ${f [\si{\hertz}]}$ &   ${U [\si{\volt}]}$ \\
+   \midrule
+         20 &     3     \\
+        100 &     1     \\
+        120 &     0.65  \\
+        140 &     0.31  \\
+        150 &     0.16  \\
+        160 &     0.011 \\
+        170 &     0.17  \\
+        180 &     0.25  \\
+        200 &     0.5   \\
+        250 &     1     \\
+        300 &     1.35  \\
+        350 &     1.6   \\
+        400 &     1.9   \\
+        500 &     2.2   \\
+        600 &     2.5   \\
+        800 &     2.9   \\
+       1000 &     3     \\
+       2000 &     3.2   \\
+       3000 &     3.3   \\
+       4000 &     3.25  \\
+       5000 &     3.3   \\
+      10000 &     3.3   \\
+      15000 &     3.2   \\
+      20000 &     3.2   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
