@@ -137,6 +137,21 @@ Unsicherheiten wurden hier ebenfalls mit \textit{uncertainties} berechnet.
 \noindent
 Die Abweichungen der Werte von den Literaturwerten ist in folgender Tabelle angegeben.
 
+\begin{table}[H]
+  \centering
+  \caption{Die Abweichungen der Berechnung von Wert 18 aus der Berechnung mittels Maxwellbrücke.}
+  \label{tab:aus:dD}
+  \sisetup{table-format=3.0}
+  \begin{tabular}{S S[table-format=4.0] S S[table-format=2.2] S[table-format=3.1] S[table-format=3.1]}
+    \toprule
+    $R_{xLit} [\si{\ohm}]$ & $R_x [\si{\ohm}]$ & ${\text{Abw} [\si{\percent}]}$ & $L_{xLit} [\si{\milli\henry}]$ & $L_x [\si{\milli\henry}]$ & ${\text{Abw} [\si{\percent}]}$ \\
+    \midrule
+    360 & 1107   & 208  & 49.82 & 153  & 207 \\
+    360 &  373   & 3.7  & 49.82 & 51.8 & 3.9 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\noindent
 
 
 \subsection{Die Wien-Robinson Brücke}
@@ -177,3 +192,17 @@ Die Abweichungen der Werte von den Literaturwerten ist in folgender Tabelle ange
     \bottomrule
   \end{tabular}
 \end{table}
+
+Die in Tabelle \ref{tab:ausw:e} aufgeführten Messwerte sind in folgender
+Abbildung grafisch dargestellt.
+
+\begin{figure}[H]
+  \centering
+  \label{fig:ausw:e}
+  \caption{Die Messwerte und die an diese gefittete Theoriekurve.}
+  \includegraphics[scale=0.8]{build/plotE.pdf}
+\end{figure}
+\noindent
+Die Theoriekurve wurde mittels \textit{Scientific Python} an die Messwerte gefittet.
+Aus dem Fit lässt sich eine Sperrfrequenz von $v_0 = 160.43 \si{\hertz}$ ermitteln.
+Der Klirrfaktor berechnet sich zu $k = 7.379 \cdot 10^{3}$.
