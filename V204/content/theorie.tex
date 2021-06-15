@@ -1,2 +1,35 @@
 \section{Theorie}
 \label{sec:theorie}
+Bei Existenz eines Temperaturgefälles kommt es zu Wärmetransport hin zu
+abnehmender Temperatur. Wärmetransport kann durch Konvektion, Wärmestrahlung oder
+Wärmeleitung geschehen. Im folgenden Versuch wird nur die Wärmeleitung betrachtet.
+
+Die Wärmemenge, die durch einen Stab der Länge $L$ und Querschnittsfläche $A$
+mit einer Dichte $\rho$ und einer spezifischen Wärme $c$ transportiert wird,
+lässt sich mit folgender Gleichung beschreiben:
+\begin{equation}
+  dQ = - \kappa A \frac{\partial T}{\partial x} dt.
+  \label{eqn:wärmemenge}
+\end{equation}
+Hierbei bezeichnet $\kappa$ die materialabhängige Wärmeleitfähigkeit.
+Daher folgt für die Wärmestromdichte
+\begin{equation}
+  j_w = - \kappa \frac{\partial T}{\partial x}.
+  \label{eqn:wärmestromdichte}
+\end{equation}
+Unter Verwendung der Kontinuitätsgleichung ergibt sich die eindimensionale
+Wärmeleitungsgleichung:
+\begin{equation}
+  \frac{\partial T}{\partial t} = \frac{\kappa}{\rho c} \frac{\partial^2 T}{\partial x^2}.
+  \label{eqn:wärmeleitungsgleichung}
+\end{equation}
+Diese beschreibt die räumliche und zeitliche Entwicklung der Temperaturverteilung.
+Die Temperaturverteilung $\sigma_T = \frac{\kappa}{\rho c}$ beschreibt die
+Geschwindigkeit, mit der ein Temperaturgefälle ausgeglichen wird.
+Durch eine periodische Erwärmung und Abkühlung eines sehr langen Stabes mit einer
+festen Periode $T$ entsteht eine räumliche und zeitliche Temperaturwelle.
+Diese lässt sich dann mit folgender Gleichung beschreiben:
+\begin{equation}
+  T(x,t) = T_{max} e^{-\sqrt{\frac{\omega \rho c}{2 \kappa}} x} \cos{\left(\omega t - \sqrt{\frac{\omega \rho c}{2 \kappa}} x \right)}.
+  \label{eqn:temperaturwelle}
+\end{equation}
