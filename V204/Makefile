@@ -2,7 +2,8 @@ all: build/main.pdf
 
 # hier Python-Skripte:
 build/plot.pdf: $(wildcard skript/*.py) matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python skript/auswertung.py
+#	TEXINPUTS=$$(pwd): python skript/statisch.py
+	TEXINPUTS=$$(pwd): python skript/dynamisch.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
