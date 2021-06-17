@@ -3,19 +3,44 @@
 \subsection{Statische Methode}
 \label{sec:as}
 
+Im Folgenden werden die nach Kapitel \ref{sec:durchführung} aufgenommenen Messdaten der statischen Methode ausgewertet.
+In Abbildung \ref{fig:temp} sind die Messdaten der fernen Thermoelemente für die verschiedenen Stäbe als $t-T$-Diagramm dargestellt.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plot1.pdf}
     \caption{Temperaturverlauf der fernen Thermoelemente.}
-    \label{fig:messing}
+    \label{fig:temp}
 \end{figure}
 \noindent
+
+Es ist zu erkennen, dass alle Graphen zu beginn exponentiell ansteigen und dann stark abflachen. Dabei nimmmt die Temperatur von Aluminium
+am schnellsten, gefolgt von dem breiteren Messingstab. Die Temperaturkurve des schmalen Messingstabes steigt dabei noch langsamer, als die 
+von Edelstahl. Nach der Abflachung der Kurven, ist die Steigung für alle Metalle ähnlich. In Tabelle \ref{tab:T(700)} sind die Temperaturen 
+der fernen Thermoelemente nach einer Messzeit von $t=\SI[]{700}[]{\second}$ aufgelistet.
+
+\begin{table}[H]                                                                                   
+  \centering                                                                                     
+      \caption{Temperaturen an den fernen Thermoelementen bei $t=\SI{700}{second}$.}                      
+      \label{tab:T(700)}                                                                        
+      \sisetup{table-format=2.2}                                                                 
+      \begin{tabular}{S S S S}                                                   
+        \toprule                                                                                 
+        {$T_\text{messing,b}[\si{\celsius}]$} & {$T_\text{messing,s}[\si{\celsius}]$} & {$T_\text{Alu}[\si{\celsius}]$} & {$T_\text{Stahl} [\si{\celsius}]$}\\                                            
+        \midrule                                                                                 
+        19.50&     19.35&     21.58&     18.88\\
+        \bottomrule                                                                              
+      \end{tabular}                                                                              
+    \end{table}
+\noindent             
+
+Die Messdaten aus Tabelle \ref{tab:T(700)} stützen die Beobachtung
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plot2.pdf}
     \caption{Temperaturdifferenz $T_{St}$ zwischen dem breiten Messingstab und dem Edelstahlstab.}
-    \label{fig:temp}
+    \label{fig:diff}
 \end{figure}
 \noindent
 
