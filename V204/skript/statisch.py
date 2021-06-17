@@ -8,7 +8,7 @@ from uncertainties import ufloat
 I, T1, T2, T3, T4, T5, T6, T7, T8 = np.genfromtxt('data/stat.dat', unpack=True)
 #hier bei der Reihnfolge unbedingt überpüfen!!!
 
-t=5*I
+t=I/5
 plt.plot(t, T1, 'k.', markersize=1, label='Messing breit')
 plt.plot(t, T4, 'g.', markersize=1, label='Messing schmal')
 plt.plot(t, T5, 'b.', markersize=1, label='Aluminium')
@@ -28,7 +28,7 @@ plt.savefig('build/plot2.pdf')
 
 np.savetxt('build/intervalla.txt',np.column_stack( [t, T1, T2, T3, T4, T5, T6, T7, T8] ), fmt='%10.2f' , delimiter='&',header='t statisch', newline='\\\\\n' )
 
-np.savetxt('build/tabelle1.txt',np.column_stack( [ T1[139],T4[139],T5[139],T8[139] ] ), fmt='%10.2f' , delimiter='&',header='T1 T4 T5 T8', newline='\\\\\n' )
+np.savetxt('build/tabelle1.txt',np.column_stack( [ T1[139],T4[139],T5[139],T8[139] ] ), fmt='%10.2f' , delimiter='&',header='T(700s) T1 T4 T5 T8', newline='\\\\\n' )
 d_x=0.03
 k_messing=120 #W/mk
 rho_messing=8520 #kg/m^3
@@ -45,7 +45,7 @@ c_edelstahl=400
 A_edelstahl=0.012*0.004
 
 #zeitpunkte: 100s, 200s, 300s, 400s, 500s
-i=np.array([19,39,59,79,99])                #was sind das für komische Zeiten?
+i=np.array([19,39,59,79,99])                #n/5-1
 j=0
 while j < 5:
     dQ=np.array([-k_messing*A_messingb*(T2[i[j]]-T1[i[j]])/d_x, -k_messing*A_messings*(T3[i[j]]-T4[i[j]])/d_x,-k_aluminium*A_aluminium*(T6[i[j]]-T5[i[j]])/d_x,  -k_edelstahl*A_edelstahl*(T7[i[j]]-T8[i[j]])/d_x])
