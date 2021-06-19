@@ -4,6 +4,7 @@ import scipy.constants as const
 import sympy 
 from sympy import *
 from uncertainties import ufloat
+from scipy.signal import find_peaks
 
 #Konstanten
 d_x=0.03
@@ -28,13 +29,28 @@ print()
 I, T1, T2, T3, T4, T5, T6, T7, T8 = np.genfromtxt('data/dyn1.dat', unpack=True)
 #I, T1, T2, T3, T4, T5, T6, T7, T8 = np.genfromtxt('data/d1.dat', unpack=True)
 
-t=2*I 
+t=I/2 
 np.savetxt('build/intervallb.txt',np.column_stack( [t, T1, T2, T3, T4, T5, T6, T7, T8] ), fmt='%10.2f' , delimiter='&',header='t statisch', newline='\\\\\n' )
 
+#Amplituden 
+#print()
+#print(find_peaks(T1, height=0))
+#print()
+#print(find_peaks(T2, height=0))
+#print()
+#print(find_peaks(T5, height=0))
+#print()
+#print(find_peaks(T6, height=0))
+#print()
+
+A1max=np.array([30.06, 40.15, 44.77, 48.54, 51.65, 54.30, 56.54, 75.61, 59.51, 61.11])
+A2max=np.array([41.65, 47.72, 52.15, 55.83, 58.97, 61.63, 63.85, 63.97, 66.98, 68.51])
+A5max=np.array([40.22, 47.83, 52.33, 55.75, 58.56, 61.11, 63.02, 63.15, 65.61, 67.25])
+A6max=np.array([46.6 , 53.7 , 57.98, 61.32, 64.14, 66.58, 68.6 , 68.33, 71.37, 72.92])
 
 plt.figure()
-plt.plot(I*2, T1, 'k.', markersize=1, label = '$T_{fern}$')
-plt.plot(I*2, T2, 'r.', markersize=1, label = '$T_{nah}$')
+plt.plot(I/2, T1, 'k.', markersize=1, label = '$T_{fern}$')
+plt.plot(I/2, T2, 'r.', markersize=1, label = '$T_{nah}$')
 plt.xlabel('t/$s$')
 plt.ylabel('T/ °C')
 plt.legend(loc='best')
@@ -43,12 +59,12 @@ plt.savefig('build/plot3.pdf')
 
 
 plt.figure()
-plt.plot(I*2, T5, 'k.', markersize=1, label = '$T_{fern}$')
-plt.plot(I*2, T6, 'r.', markersize=1, label = '$T_{nah}$')
+plt.plot(I/2, T5, 'k.', markersize=1, label = '$T_{fern}$')
+plt.plot(I/2, T6, 'r.', markersize=1, label = '$T_{nah}$')
 plt.xlabel('t/$s$')
 plt.ylabel('T/ °C')
 plt.legend(loc='best')
-#plt.grid()
+plt.grid()
 plt.savefig('build/plot4.pdf')
 
 #########################################################################################################################################
@@ -57,17 +73,26 @@ plt.savefig('build/plot4.pdf')
 #I, T1, T2, T3, T4, T5, T6, T7, T8 = np.genfromtxt('data/d2.dat', unpack=True)
 I, T1, T2, T3, T4, T5, T6, T7, T8 = np.genfromtxt('data/dyn2.dat', unpack=True)
 
-t=2*I 
+t=I/2 
 np.savetxt('build/intervallc.txt',np.column_stack( [t, T1, T2, T3, T4, T5, T6, T7, T8] ), fmt='%10.2f' , delimiter='&',header='t statisch', newline='\\\\\n' )
 
 plt.figure()
-plt.plot(I*2, T7, 'k.', markersize=1, label = '$T_{nah}$')
-plt.plot(I*2, T8, 'r.', markersize=1, label = '$T_{fern}$')
+plt.plot(I/2, T7, 'k.', markersize=1, label = '$T_{nah}$')
+plt.plot(I/2, T8, 'r.', markersize=1, label = '$T_{fern}$')
 plt.xlabel('t/$s$')
 plt.ylabel('T/ °C')
 plt.legend(loc='best')
-#plt.grid()
+plt.grid()
 plt.savefig('build/plot5.pdf')
+
+print()
+print(find_peaks(T7, height=0))
+print()
+print(find_peaks(T8, height=0))
+print()
+
+A7max=np.array([57.79, 64.39, 69.56, 73.49, 76.50, 78.65, 80.35, 81.74])
+A8max=np.array([36.13, 42.89, 46.91, 50.79, 53.91, 56.25, 58.12, 59.63])
 
 #Amplituden:
 A1=np.array([3.83,4.23,4.16,3.39,3.96,3.60,3.31,3.08,2.91,2.73])
