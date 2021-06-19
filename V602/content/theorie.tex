@@ -55,18 +55,18 @@ Aufgrund der inhomogenen Energieverteilung der äußeren Elektronen, welche durc
 den Bahndrehimpuls und den Elektronenspin verursacht wird, ist jede der
 charakteristischen Absorptionskanten in mehrere nebeneinander liegende Kanten
 aufgteilt. Dies wird als Feinstruktur bezeichnet. Die Energien der einzelnen
-Linien lassen sich nach der Sommerfeldschen Feinstrukturformel berechnen:
+Linien lassen sich nach der Sommerfeldschen Feinstrukturformel
 \begin{equation}
   E_{n,j} = -R_{\infty} \left( z_{eff,1}^2 \cdot \frac{1}{n^2} + \alpha^2 z_{eff,2}^4 \cdot \frac{1}{n^3} \left(  \frac{1}{j + \frac{1}{2}} - \frac{3}{4n} \right) \right).
   \label{eqn:sommerfeldtheorie}
 \end{equation}
-$\alpha$ bezeichnet hier die Sommerfeldsche Feinstrukturkonstante, $n$ die
+berechnen. $\alpha$ bezeichnet hier die Sommerfeldsche Feinstrukturkonstante, $n$ die
 Hauptquantenzahl und $j$ den Gesamtdrehimpuls.
 Die Abschirmkonstante $\sigma_{K, abs}$ für Elektronen aus der $K$-Schale mit
-der Hauptquantenzahl $n = 1$ ergibt sich dann nach \eqref{eqn:sommerfeldtheorie}:
+der Hauptquantenzahl $n = 1$ ergibt sich dann
 \begin{equation}
   \sigma_K = Z - \sqrt{\frac{E_K}{R_\infty} - \frac{\alpha^2 Z^4}{4}}.
-  \label{abschirmktheorie}
+  \label{eqn:abschirmktheorie}
 \end{equation}
 Aufgrund der Komplexität der Bestimmung der Abschirmkonstante $\sigma_L$ wird durch
 die Bestimmung der Differenz $\Delta E_L = E_{L_{II}} - E_{L_{III}}$ zwischen
@@ -87,12 +87,14 @@ Um die Abschirmkonstanten $\sigma_1$, $\sigma_2$ und $\sigma_3$ für Kupfer
 abschätzen zu können, werden folgende Gleichungen für die Emissionsenergien der
 $K_\alpha$- sowie der $K_\beta$-Kante verwendet:
 \begin{align}
-  E_{K, abs}    & = R_{\infty} (z - \sigma_1)^2 \\
-  E_{K, \alpha} & = R_{\infty} \left( \frac{1}{n} \right)^2 \cdot (z - \sigma_1)^2 - R_{\infty} \left( \frac{1}{m}\right)^2 \cdot (z - \sigma_2)^2 \\
-  E_{K, \beta}  & = R_{\infty} \left( \frac{1}{n}\right)^2 \cdot (z - \sigma_1)^2 - R_{\infty} \left( \frac{1}{l} \right)^ \cdot (z - \sigma_3)^2 .
-  \label{eqn:8}
+  E_{K, abs}    & = R_{\infty} (z - \sigma_1)^2 
+  \label{eqn:8}\\
+  E_{K, \alpha} & = R_{\infty} \left( \frac{1}{n} \right)^2 \cdot (z - \sigma_1)^2 - R_{\infty} \left( \frac{1}{m}\right)^2 \cdot (z - \sigma_2)^2 
+  \label{eqn:9}\\
+  E_{K, \beta}  & = R_{\infty} \left( \frac{1}{n}\right)^2 \cdot (z - \sigma_1)^2 - R_{\infty} \left( \frac{1}{l} \right)^2 \cdot (z - \sigma_3)^2 .
+  \label{eqn:10}
 \end{align}
-Die Abschätzung gilt mit $n=1$, $m=2$ sowie $l=3$. Hierbei wurde der
+Die Abschätzung gilt mit $n=1$, $m=2$ sowie $l=3$. Hierbei wird der
 Drehimpulsbeitrag vernachlässigt.
 
 \subsection{Die Absorption der Röntgenstrahlung}
@@ -125,7 +127,7 @@ nach der Braggschen Bedingung die Wellenlänge bestimmen:
   \label{eqn:braggtheorie}
 \end{equation}
 Hierbei bezeichnet $d$ die Gitterkonstante und $n$ die Beugungsordnung. Der
-Sachverhalt ist in folgender Abbildung schematisch dargestellt.
+Sachverhalt ist in Abbildung \ref{fig:braggtheorie} schematisch dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{"content/bragg.png"}

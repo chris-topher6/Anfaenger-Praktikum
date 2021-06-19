@@ -9,8 +9,13 @@ Im Folgenden sind die nach Kapitel \ref{sec:Durchführung} aufgenommenen Messdat
 \label{sec:brag}
 Nach der Bragg'schen Bedingung \eqref{eqn:braggtheorie} tritt das Intensitätsmaximum bei dem Glanzwinkel $\theta_{glanz}=\SI{28}{\degree}$ auf.
 In Abbildung \ref{fig:plot1} sind die Messdaten mittels \textit{matplotlib} \cite{matplotlib} graphisch dargestellt. Das Maximum befindet
-sich bei $\theta=\SI{28.2}{\degree}$. Die totale Abweichung zu dem Theoriewert beträgt somit $\Delta\theta_{glanz}=\SI{0.2}{\degree}$,
-was einer prozentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
+sich bei $\theta=\SI{28.2}{\degree}$. 
+%Die totale Abweichung zu dem Theoriewert beträgt somit $\Delta\theta_{glanz}=\SI{0.2}{\degree}$,
+%was nach 
+%\begin{equation*}
+%    p=\frac{\theta_{ideal}-\theta_{mess}}{\theta_{ideal}}\cdot \num{100}
+%\end{equation*}
+%einer prozentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plot1.pdf}
@@ -20,10 +25,10 @@ was einer prozentualen Abweichung von $p=\SI{0.71}{\percent}$ entspricht.
 
 \subsection{Emissionspektrum}
 \label{sec:emission}
-Das nach Kapitel \ref{sec:Durchführung} gemessene Emissionsspektrum wurde in Abbildung \ref{fig:plot2}
+Das nach Kapitel \ref{sec:Durchführung} gemessene Emissionsspektrum wird in Abbildung \ref{fig:plot2}
 als ($\theta-N$)-Diagramm  dargestellt. Dabei sind Bremsberg und die Spektrallinien $K_{\alpha}$ und
 $K_{\beta}$ des Kupfers markiert. Die Punkte der jeweiligen Extrema sind in Tabelle \ref{tab:emission} dargestellt und in Abbildung
-\ref{fig:plot1} rot unterlegt. Zudem sind in grün die Halbwertsbreiten $\Delta\theta$ der $K_\alpha$ und $K_\beta$-Kante eingezeichnet.
+\ref{fig:plot1} rot unterlegt. Zudem sind in grün die Halbwertsbreiten $\Delta\theta$ der $K_\alpha$ und $K_\beta$-Linie eingezeichnet.
 Auch diese finden sich in Tabelle \ref{tab:emission}
 \begin{figure}[H]
     \centering
@@ -38,7 +43,7 @@ Auch diese finden sich in Tabelle \ref{tab:emission}
         \sisetup{table-format=4.1}
         \begin{tabular}{S S[table-format=2.1] S[table-format=1.3] S}
           \toprule
-          {Extremum} & {$\theta [°]$} & {$\Delta\theta$} & {$N [\si{\per\second}]$} \\
+          {Extremum} & {$\theta /°$} & {$\Delta\theta$} & {$N$} \\
           \midrule
           {Bremsberg }   & 11.1 &        &  420.0  \\
           {$K_{\beta} $} & 20.2 &  0.476  & 1599.0\\
@@ -47,7 +52,7 @@ Auch diese finden sich in Tabelle \ref{tab:emission}
         \end{tabular}
       \end{table}
 \noindent
-Sowohl die Maxima als auch die Halbwertsbreiten wurden dabei mittels \textit{scipy} \cite{scipy} bestimmt.
+Sowohl die Maxima als auch die Halbwertsbreiten werden dabei mittels \textit{scipy} \cite{scipy} bestimmt.
 \\\noindent
 Für die Spektrallinien wird nun die Wellenlänge $\lambda$ mittels Gleichung \eqref{eqn:energiekalphatheorie} berechnet und mit dem 
 Zusammenhang $E=hc/\lambda$ als Energie $E$ angegeben. Die Ergebnisse finden sich in Tabelle \ref{tab:energie}.
@@ -58,7 +63,7 @@ Zusammenhang $E=hc/\lambda$ als Energie $E$ angegeben. Die Ergebnisse finden sic
         \sisetup{table-format=1.4}
         \begin{tabular}{S S S S}
           \toprule
-          {Spektrallinie} & {$E [\si{\kilo\electronvolt}]$} & {Literatur \cite{AP03} $[\si{\kilo\electronvolt}]$} & {p [\%]}\\
+          {Spektrallinie} & {$E /\si{\kilo\electronvolt}$} & {Literatur \cite{AP03} $[\si{\kilo\electronvolt}]$} & {p /\%}\\
           \midrule
           {$K_{\alpha}$} & 8.044 & 8.048 & 0.047 \\
           {$K_{\beta} $} & 8.915 & 8.907 & 0.091 \\
@@ -66,6 +71,11 @@ Zusammenhang $E=hc/\lambda$ als Energie $E$ angegeben. Die Ergebnisse finden sic
         \end{tabular}
       \end{table}
 \noindent
+Die Indervalle der Halbwertsbreiten lauten 
+\begin{align*}
+    I_{\beta} &=[\SI{20.071}{\degree},\SI{20.546}{\degree}]\\
+    I_{\alpha}&=[\SI{22.357}{\degree},\SI{22.847}{\degree}] .
+\end{align*}
 Dabei beträgt die Energiedifferenz über die Halbwertsbreite
 \begin{align*}
     \Delta E_{K_\beta}  &= \SI{0.199}{\kilo\electronvolt}\\
@@ -77,11 +87,12 @@ Die Berechnung des Auflösevermögens $A=E/\Delta E$ ergibt
     A_{K_\alpha} &= \num{48.92} .
 \end{align*}
 
-Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} kann durch Umstellen der Gleichungen \eqref{eqn:8} zu
+Aus der Absorbtionsenergie $E_{abs}=\SI{8.988}{\kilo\electronvolt}$ \cite{AP04} kann durch Umstellen der Gleichungen \eqref{eqn:8}, \eqref{eqn:9}
+und \eqref{eqn:10} zu
 \begin{align*}
     \sigma_1&=Z-\sqrt{\frac{E_{abs}}{R_\infty}}\\
-    \sigma_2&=Z-\sqrt{\left(\frac{m}{n}\right)^2(Z-\sigma_1)^2-\frac{E_\alpha}{R_\infty}}\\
-    \sigma_3&=Z-\sqrt{\left(\frac{l}{n}\right)^2(Z-\sigma_1)^2-\frac{E_\alpha}{R_\infty}}
+    \sigma_2&=Z-\sqrt{\left(\frac{m}{n}\right)^2(Z-\sigma_1)^2-m^2\frac{E_\alpha}{R_\infty}}\\
+    \sigma_3&=Z-\sqrt{\left(\frac{l}{n}\right)^2(Z-\sigma_1)^2-l^2\frac{E_\alpha}{R_\infty}}
 \end{align*}
 die jeweilige Abschirmkonstante $\sigma$ berechnet werden. Dabei gilt für Kupfer $Z=\num{29}$. Des Weiteren ist $n=1$, $m=2$, $l=3$
 und $R_\infty$ die Rydberg-Energie. Durch Einsetzen ergibt sich
@@ -93,19 +104,20 @@ und $R_\infty$ die Rydberg-Energie. Durch Einsetzen ergibt sich
 
 \subsection{Absorbtionsspektrum}
 \label{sec:absorb}
-Das Absorbtionsspektrum wurde für die Elemente $\ce{_{30}Zn}$, $\ce{_{33}Ga}$, $\ce{_{35}Br}$, $\ce{_{37}Rb}$, $\ce{_{38}Sr}$ und
+Das Absorbtionsspektrum wird für die Elemente $\ce{_{30}Zn}$, $\ce{_{31}Ga}$, $\ce{_{35}Br}$, $\ce{_{37}Rb}$, $\ce{_{38}Sr}$ und
 $\ce{_{40}Zr}$ aufgenommen. In den folgenden Abbildungen \ref{fig:zink} - \ref{fig:zirkonium} sind die Absorbtionsspektren für das jeweilige
 Absorbermaterial als ($\theta-N$)-Diagramm dargestellt. Dabei sind die lokalen Extremwerte, die wieder mit \textit{scipy} \cite{scipy}
-berechnet wurden, farblich hervorgehoben. Der näherungsweise lineare Abschnitt zwischen Tief- und Hochpunkt entspricht nun der
-$K$-Kante. In der Mitte dieser beträgt die Intensität
+berechnet werden, farblich hervorgehoben. Der näherungsweise lineare Abschnitt zwischen Tief- und Hochpunkt entspricht nun der
+$K$-Linie. In der Mitte dieser beträgt die Intensität
 \begin{equation*}
     I_K=\frac{1}{2}(I_{K,min}+I_{K,max})   .
 \end{equation*}
-Der Winkel $\theta_K$ der für die gefragte Intensität wurde mittels linerarer Interpolation dargestellt. Diese ist der Form
+Der Winkel $\theta_K$ der für die gefragte Intensität wird mittels linerarer Interpolation dargestellt. Diese ist der Form
 \begin{equation*}
     \theta_K=\theta_i+(I_K-N_i)\frac{\theta_{i+1}-\theta_i}{N_{i+1}-N_i},
 \end{equation*}
 wobei $N_i<I_k<N_{i+1}$ gilt. Analog zu Abschnitt \ref{sec:emission} kann für $\theta_K$ wieder die Absorbtionsenergie berechnet werden.
+Die Abschirmkonstante $\sigma$ wird nach Gleichung \eqref{eqn:abschirmktheorie} berechnet.
 
 \input{content/absorbtion.tex}
 

@@ -88,6 +88,8 @@ w_h, l, r = results_half[1:]
 l = (l/10 + 8) * ureg.deg
 r = (r/10 + 8) * ureg.deg
 print(f"Halbwertsbreiten: {(r-l):.3f}°")
+print(f"l={l:.3f}")
+print(f"r={r:.3f}")
 
 #Energien
 def energie(theta):
