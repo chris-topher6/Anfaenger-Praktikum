@@ -15,9 +15,9 @@ In Abbildung \ref{fig:temp} sind die Messdaten der fernen Thermoelemente für di
 \noindent
 
 Es ist zu erkennen, dass alle Graphen zu beginn exponentiell ansteigen und dann stark abflachen. Dabei nimmmt die Temperatur von Aluminium
-am schnellsten, gefolgt von dem breiteren Messingstab. Die Temperaturkurve des schmalen Messingstabes steigt dabei noch langsamer, als die 
-von Edelstahl. Nach der Abflachung der Kurven, ist die Steigung für alle Metalle ähnlich. In Tabelle \ref{tab:T(700)} sind die Temperaturen 
-der fernen Thermoelemente nach einer Messzeit von $t=\SI[]{700}[]{\second}$ aufgelistet.
+am schnellsten zu, gefolgt von dem breiteren Messingstab. Die Temperaturkurve des Edelstahls steigt dabei noch langsamer, als 
+die des schmaleren Messingstabes. Nach der Abflachung der Kurven, ist die Steigung für alle Metalle ähnlich. In Tabelle \ref{tab:T(700)} 
+sind die Temperaturen der fernen Thermoelemente nach einer Messzeit von $t=\SI[]{700}[]{\second}$ aufgelistet.
 
 \begin{table}[H]                                                                                   
   \centering                                                                                     
@@ -34,9 +34,51 @@ der fernen Thermoelemente nach einer Messzeit von $t=\SI[]{700}[]{\second}$ aufg
     \end{table}
 \noindent             
 
-Die Messdaten aus Tabelle \ref{tab:T(700)} stützen die Beobachtung
+Die Messdaten aus Tabelle \ref{tab:T(700)} stützen die Beobachtung von Abbildung \ref{fig:temp}, dass Aluminium die größte und Edelstahl 
+die geringste Wärmeleitfähigkeit besitzt.
+\\\noindent
+Die Wärmeströme $\Phi=\Delta Q/\Delta t$ werden mit Gleichung \eqref{eqn:wärmemenge} berechnet. Dafür werden für fünf Zeitpunkte 
+$t\in\{100, 200, 300, 400, 500\}$ die Temperaturdifferenzen zwischen den fernen und nahen Thermoelementen berechnet. Die Querschnittsfläche 
+$A$ ist dabei das Produkt aus der Breite und der Höhe der Metallstäbe. Diese Werte werden aus der Versuchsanleitung \cite{AP01} entnommen. 
+Dabei ergibt sich 
+\begin{align*}
+  A_{breit} &=\SI{48 e-6}{\square\metre}\\
+  A_{schmal}&=\SI{28 e-6}{\square\metre} \; .
+\end{align*}
+Durch Messung ergibt sich für den Abstand $\Delta x$ zwischen den Thermoelementen $\Delta x=\SI{0.03}{\metre}$. 
+In Tabelle \ref{tab:wärmestrom} sind die Wärmeströme der Metalle für die verschiedenen Zeiten aufgelistet. 
 
-%HIER WEITER SCHREIBEN!
+\begin{table}[H]
+  \centering
+      \caption{Wärmestrom für Messing, Aluminium und Edelstahl zu verschiedenen Zeiten.}
+      \label{tab:wärmestrom}
+      \sisetup{table-format=3.2}
+      \begin{tabular}{S[table-format=3.0] S S[table-format=1.2] S S[table-format=1.2] S S[table-format=1.2] S S[table-format=1.2]}
+        \toprule
+        &
+        \multicolumn{2}{c}{Messing, breit}&
+        \multicolumn{2}{c}{Messing, schmal}&
+        \multicolumn{2}{c}{Aluminium} &
+        \multicolumn{2}{c}{Edelstahl}\\
+        \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+        {$t [\si{\second}]$} &
+        {$T_1 [\si{\kelvin}]$} & {$\Phi[\si{\watt}]$} &
+        {$T_4 [\si{\kelvin}]$} & {$\Phi[\si{\watt}]$} &
+        {$T_5 [\si{\kelvin}]$} & {$\Phi[\si{\watt}]$} &
+        {$T_8 [\si{\kelvin}]$} & {$\Phi[\si{\watt}]$} \\
+        \midrule
+        100 & 300.3 & 1.09 & 296.6 & 0.40 & 305.4 & 0.79 & 293.4 & 0.32 \\        
+        200 & 306.6 & 0.80 & 300.7 & 0.35 & 312.1 & 0.33 & 296.7 & 0.38 \\
+        300 & 310.2 & 0.65 & 303.5 & 0.32 & 315.2 & 0.16 & 299.4 & 0.36 \\
+        400 & 312.5 & 0.57 & 305.5 & 0.29 & 317.0 & 0.10 & 301.4 & 0.34 \\
+        500 & 314.1 & 0.53 & 307.1 & 0.28 & 318.3 & 0.07 & 303.1 & 0.33 \\        
+        \bottomrule
+      \end{tabular}
+    \end{table}
+
+\noindent
+In Abbildung \ref{fig:diff} ist die Temperaturdifferenz $\Delta T_{St}$ zwischen den nahen und den fernen Thermoelementen in Abhängigkeit 
+von der Zeit $t$ für den breiten Messing- und den Edelstahlstab dargestellt. 
 
 \begin{figure}[H]
     \centering
@@ -44,7 +86,12 @@ Die Messdaten aus Tabelle \ref{tab:T(700)} stützen die Beobachtung
     \caption{Temperaturdifferenz $T_{St}$ zwischen dem breiten Messingstab und dem Edelstahlstab.}
     \label{fig:diff}
 \end{figure}
+
 \noindent
+Es ist zu erkennen, dass die Temperaturdifferenz für beide Metalle zu Begin nahe null ist. Beide Graphen steigen dann stark an, bis sie 
+nach einem Maximum abflachen und sich einer konstanten Grenztemperatur nähern. Die Kurve des Messingstabes erreicht dabei das Maximum früher 
+und der Funktionswert ist deutlich geringer als bei der Edelstahlkurve. Auch die Grenztemperatur des Edelstahl ist deutlich größer als die des
+Messings. 
 
 \subsection{Dynamische Methode}
 \label{sec:ad}
@@ -59,7 +106,7 @@ In Abbildung \ref{fig:messing} sind die Temperaturverläufe des breiteren Messin
 \end{figure}
 \noindent
 
-Aus dem Graphen werden durch ablesen die Amplituden $A_{nah}$ und $A_{fern}$ und die Phasenverschiebung $\delta t$ zwischen $T_{nah}$ und 
+Aus dem Graphen werden durch ablesen die Amplituden $A_{nah}$ und $A_{fern}$ und die Phasenverschiebung $\Delta t$ zwischen $T_{nah}$ und 
 $T_{fern}$ bestimmt. Diese abgelesenen Werte sind in Tabelle \ref{tab:messing}  aufgelistet. 
 
 \begin{table}[H]                                                                                   
@@ -69,7 +116,7 @@ $T_{fern}$ bestimmt. Diese abgelesenen Werte sind in Tabelle \ref{tab:messing}  
         \sisetup{table-format=1.2}                                                                 
         \begin{tabular}{S S S[table-format=2.0] S[table-format=3.2]}                                                   
           \toprule                                                                                 
-          {$A_{nah}[\si{\kelvin}]$} & {$A_{fern}[\si{\degree}]$} & {$\delta t[\si{\second}]$} & {$\kappa [\si{\watt\per\milli\kelvin}]$}\\                                            
+          {$A_{nah}[\si{\kelvin}]$} & {$A_{fern}[\si{\degree}]$} & {$\Delta t[\si{\second}]$} & {$\kappa [\si{\watt\per\milli\kelvin}]$}\\                                            
           \midrule                                                                                 
            0.00 & 0.00 & 00 & 000.00 \\
           \bottomrule                                                                              
@@ -95,7 +142,7 @@ Tabelle \ref{tab:alu}.
         \sisetup{table-format=1.2}                                                                 
         \begin{tabular}{S S S[table-format=2.0] S[table-format=3.2]}                                                   
           \toprule                                                                                 
-          {$A_{nah}[\si{\kelvin}]$} & {$A_{fern}[\si{\degree}]$} & {$\delta t[\si{\second}]$} & {$\kappa [\si{\watt\per\milli\kelvin}]$}\\                                            
+          {$A_{nah}[\si{\kelvin}]$} & {$A_{fern}[\si{\degree}]$} & {$\Delta t[\si{\second}]$} & {$\kappa [\si{\watt\per\milli\kelvin}]$}\\                                            
           \midrule                                                                                 
            0.00 & 0.00 & 00 & 000.00 \\
           \bottomrule                                                                              
@@ -120,7 +167,7 @@ Tabelle \ref{tab:alu}.
         \sisetup{table-format=1.2}                                                                 
         \begin{tabular}{S S S[table-format=2.0] S[table-format=3.2]}                                                   
           \toprule                                                                                 
-          {$A_{nah}[\si{\kelvin}]$} & {$A_{fern}[\si{\degree}]$} & {$\delta t[\si{\second}]$} & {$\kappa [\si{\watt\per\milli\kelvin}]$}\\                                            
+          {$A_{nah}[\si{\kelvin}]$} & {$A_{fern}[\si{\degree}]$} & {$\Delta t[\si{\second}]$} & {$\kappa [\si{\watt\per\milli\kelvin}]$}\\                                            
           \midrule                                                                                 
            0.00 & 0.00 & 00 & 000.00 \\
           \bottomrule                                                                              
