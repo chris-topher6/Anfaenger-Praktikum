@@ -123,7 +123,6 @@ ln12=np.log(A2_m/A1_m)
 ln56=np.log(A6_m/A5_m)
 ln78=np.log(A7_m/A8_m)
 
-
 dt12_m=np.mean(dt12)
 dt56_m=np.mean(dt56)
 dt78_m=np.mean(dt78)
@@ -135,6 +134,13 @@ dt78_s=np.std(dt78, ddof=1)
 dt12_u=ufloat(dt12_m, dt12_s)
 dt56_u=ufloat(dt56_m, dt56_s)
 dt78_u=ufloat(dt78_m, dt78_s)
+
+print("A1=",A1)
+print("A2=",A2)
+print("A5=",A5)
+print("A6=",A6)
+print("A7=",A7)
+print("A8=",A8)
 
 np.savetxt('build/tabelle2.txt',np.column_stack( [ A1_m, A1_s, A2_m,A2_s, ln12, dt12_m ,dt12_s] ), fmt='%10.2f' , delimiter='&',header='A1 A2 ln dt', newline='\\\\\n' )
 np.savetxt('build/tabelle3.txt',np.column_stack( [ A5_m, A5_s, A6_m,A6_s, ln56, dt56_m ,dt56_s] ), fmt='%10.2f' , delimiter='&',header='A5 A6 ln dt', newline='\\\\\n' )
@@ -190,3 +196,8 @@ print(f"l12={l12:.4}")
 print(f"l56={l56:.4}")
 print(f"l78={l78:.4}")
 print()
+
+np.savetxt('build/tabelle-A12.txt',np.column_stack( [ A2, A1, dt12, k12_neu] ), fmt='%10.2f' , delimiter='&',header='A2nah A1fern dt12 k12', newline='\\\\\n' )
+np.savetxt('build/tabelle-A56.txt',np.column_stack( [ A6, A5, dt56, k56_neu] ), fmt='%10.2f' , delimiter='&',header='A6nah A5fern dt56 k56', newline='\\\\\n' )
+np.savetxt('build/tabelle-A78.txt',np.column_stack( [ A7, A8, dt78, k78_neu] ), fmt='%10.2f' , delimiter='&',header='A7nah A8fern dt78 k78', newline='\\\\\n' )
+
