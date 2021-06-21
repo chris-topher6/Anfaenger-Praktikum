@@ -131,6 +131,13 @@
 % Trennung von Wörtern mit Strichen
 \usepackage[shortcuts]{extdash}
 
+%schönere \bar
+\newcommand{\olsi}[1]{\,\overline{\!{#1}}} % overline short italic
+\newcommand{\ols}[1]{\mskip.5\thinmuskip\overline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip} % overline short
+\newcommand{\ulsi}[1]{\!\overline{\,{#1}}} % underline short italic
+\newcommand{\uls}[1]{\mskip.5\thinmuskip\underline{\mskip-.5\thinmuskip {#1} \mskip-.5\thinmuskip}\mskip.5\thinmuskip} % underline short
+
+
 \author{%
   Christopher Breitfeld\\%
   \href{mailto:christopher.breitfeld@tu-dortmund.de}{christopher.breitfeld@tu-dortmund.de}%
