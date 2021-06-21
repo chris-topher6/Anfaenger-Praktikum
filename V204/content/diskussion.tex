@@ -1,2 +1,51 @@
 \section{Diskussion}
 \label{sec:diskussion}
+In der folgenden Tabelle \ref{tab:diss} sind die Ergebnisse aus Kapitel \ref{sec:auswertung} noch einmal zusammengefasst.
+\begin{table}[H]
+    \centering
+    \caption{Zusammenfassung der Ergebnisse}
+    \label{tab:diss}
+    \sisetup{table-format=2.2} 
+    \begin{tabular}{S S @{$\pm$} S S S}
+        \toprule
+        {Probe} &
+        \multicolumn{2}{c}{$\kappa [\si{\watt\per\metre\per\kelvin}]$} &
+        {$\kappa_\text{lit}   [\si{\watt\per\metre\per\kelvin}]$\cite{AP02}} &
+        {$p [\%]$}\\
+        \midrule
+        {Messing}   & 47.42 & 12.61 & {81-113} & {41.45-58.04} \\
+        {Aluminuim} & 154.4 & 45.1  & {220}    & {29.82      } \\
+        {Edelstahl} & 8.64  & 1.61  & {20-21}  & {56.8-58.9  } \\
+        \bottomrule
+    \end{tabular}
+  \end{table}
+Dabei sind die Abweichungen $p$ von den Literaturwerten mit 
+\begin{equation*}
+    p=\frac{\kappa_\text{lit}-\kappa}{\kappa_\text{lit}}\cdot 100
+\end{equation*}
+berechnet worden. 
+\\\\\noindent
+Die berechneten Werte weichen alle vergleichsweise stark von den Literaturwerten ab. Im Folgenden sind mögliche Gründe aufgelistet. 
+\begin{itemize}
+    \item \textit{Zusammensetzung der Metalle}\\
+    Wie in Tabelle \ref{tab:diss} zu erkennen, gibt es keinen diskreten Wert für die Wärmeleitfähigkeit von Messing und Eldelstahl. Die 
+    Wärmeleitfähigkeit ist vielmehr abhängig, von der Zusammensetzung der Legierung. Da die genauen Eigenschaften der Proben nicht bekannt
+    sind, kann der Fehler nur sehr grob abgeschäzt werde.
+    \item \textit{Isolierung der Proben}\\
+    Die Isolierung oberhalb der Stäbe erfasst nicht deren ganze Länge, sodass wahrscheinlich ein Teil der Wärme an die Umgebnung abgestrahlt wurde.
+    \item \textit{Abkühlen der Proben}\\
+    Vor jeder Messung wurden die Stäbe auf unter $\SI{30}{\celsius}$ abgekühlt. Es hatten jedoch nach dem Abkühlen nicht alle Stäbe die gleiche
+    Temperatur, sodass die Startemperaturen von einander abweichen. Dieses Problem trat auch innerhalb einzelner Stäbe auf. Dort gab es schon 
+    zu Begin der Messung eine Temperaturdifferenz zwischen dem nahen und dem fernen Thermoelement, was bei Edelstahl besonders deutlcih wird 
+    (vgl.Abb.\ref{fig:stahl}). 
+    \item \textit{Wechsel der Proben}\\
+    Um den Abkühlvorgang zu zeitlich zu umgehen wurde teilweise die Probe gewechselt, also vor einer Messung die warme Probe gegen eine Probe
+    mit Raumtmperatur ausgetauscht. Es könnte kleine Abweichungen in den Matrialweigenschaften der Proben geben.
+    \item \textit{Gauß'sche Fehlerfortpflanzung}\\
+    Auffällig sind die hohen Unsicherheiten der Wärmeleitfähigkeiten. Diese folgen aus der Gauß'schen Fehlerfortpflanzung \eqref{eqn:GaußFehler}, 
+    da mit drei Größen gerechnet wird, welche wiederum Unsicherheiten berechnen. Gerade $\olsi{\Delta t}$ besitzt dabei recht große Unsicherheiten,
+    was dem recht Fehleranfälligen Datenentnahme aus den Temperaturverläufen geschuldet sein könnte.
+    \item \textit{Umschalten zwischen COOL und HEAT}\\
+    Da das Umschalten zwischen COOl und HEAT nicht automatisiert, sondern von den Experimentierenden mittels Stoppuhr vorgenommen wurde, 
+    spielt ein menschlicher Fehler in die Messergebnisse ein. Somit ist die Periodendauer $T$ nicht immer exakt gleich lang gewesen.   
+\end{itemize}
