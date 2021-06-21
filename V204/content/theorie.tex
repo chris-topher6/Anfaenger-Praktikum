@@ -17,6 +17,8 @@ Daher folgt für die Wärmestromdichte
   j_w = - \kappa \frac{\partial T}{\partial x}.
   \label{eqn:wärmestromdichte}
 \end{equation}
+Hierbei gibt das Vorzeichen die Richtung des Wärmeflusses an, welcher von dem kälteren
+zu dem wärmeren Teil des Stabes fließt.
 Unter Verwendung der Kontinuitätsgleichung ergibt sich die eindimensionale
 Wärmeleitungsgleichung:
 \begin{equation}
@@ -32,4 +34,31 @@ Diese lässt sich dann mit folgender Gleichung beschreiben:
 \begin{equation}
   T(x,t) = T_{max} e^{-\sqrt{\frac{\omega \rho c}{2 \kappa}} x} \cos{\left(\omega t - \sqrt{\frac{\omega \rho c}{2 \kappa}} x \right)}.
   \label{eqn:temperaturwelle}
+\end{equation}
+Diese Welle besitzt dann die Phasengeschwindigkeit $v$, für die gilt:
+\begin{equation}
+  v = \frac{\omega}{k} = \sqrt{\frac{2 \kappa \omega}{\rho c}}.
+  \label{eqn:phasengeschwindigkeit}
+\end{equation}
+Die Dämpfung der Welle kann aus dem Amplitudenverhältnis $\frac{A_{\text{nah}}}{A_{\text{fern}}}$
+sowie den Beziehungen $\omega = \frac{2 \pi}{T^{*}}$ und $\phi = 2 \pi \frac{\Delta t}{ T^{*} }$, wobei
+$\phi$ die Phase und $T^{*}$ die Periodendauer meint, berechnet werden. Die Amplituden
+werden an zwei Stellen $x_{\text{nah}}$ und $x_{\text{fern}}$ gemessen. Für die Wärmeleitung
+gilt dann
+\begin{equation}
+  \kappa = \frac{\rho c (\Delta x)^2}{2 \Delta t \log(\frac{A_{\text{nah}}}{A_{\text{fern}}})}.
+  \label{eqn:wärmeleitfähigkeit}
+\end{equation}
+Hierbei bezeichnet $\Delta x$ den Abstand zwischen $x_{\text{nah}}$ und $x_{\text{fern}}$,
+$\Delta t$ die Phasendifferenz der Temperaturwelle zwischen $x_{\text{nah}}$ und $x_{\text{fern}}$.
+Aus dem Kehrwert der Periodendauer $T^{*}$ ergibt sich die Frequenz $f$ der Welle:
+\begin{equation}
+  f = \frac{1}{T^{*}}.
+  \label{eqn:frequenz}
+\end{equation}
+Die Wellenlänge $\lambda$ der Wärmewelle lässt sich durch die Phasengeschwindigkeit $v$ und der
+Periodendauer $T^{*}$ schreiben:
+\begin{equation}
+  \lambda = v \cdot T^{*}.
+  \label{eqn:wellenlänge}
 \end{equation}
