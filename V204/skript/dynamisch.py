@@ -36,6 +36,8 @@ np.savetxt('build/intervallb.txt',np.column_stack( [t, T1, T2, T3, T4, T5, T6, T
 #print()
 #print(find_peaks(T1, height=0))
 #print()
+#print(find_peaks(-T1,height=-70))
+#print()
 
 plt.figure()
 plt.plot(I/2, T1, 'k.', markersize=1, label = '$T_{fern}$')
