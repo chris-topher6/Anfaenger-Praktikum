@@ -202,3 +202,9 @@ print("\nAufgabe 3")
 #plt.legend()
 #plt.tight_layout()
 #plt.savefig('build/plot3.pdf')
+
+#Maximum des Bremsbergs
+#theta_brems=np.arcsin(h*c/(2*d*e*35000))
+theta_brems_arg=(const.h*const.c/(2*d*const.e*35000))
+print()
+print(theta_brems_arg)
