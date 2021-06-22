@@ -5,8 +5,8 @@ In der folgenden Tabelle \ref{tab:diss} sind die Ergebnisse aus Kapitel \ref{sec
     \centering
     \caption{Zusammenfassung der Ergebnisse}
     \label{tab:diss}
-    \sisetup{table-format=2.2} 
-    \begin{tabular}{S S @{$\pm$} S S S}
+    \sisetup{table-format=2.2}
+    \begin{tabular}{S S[table-format=3.2] @{$\pm$} S[table-format=2.2] S S}
         \toprule
         {Probe} &
         \multicolumn{2}{c}{$\kappa [\si{\watt\per\metre\per\kelvin}]$} &
@@ -19,33 +19,34 @@ In der folgenden Tabelle \ref{tab:diss} sind die Ergebnisse aus Kapitel \ref{sec
         \bottomrule
     \end{tabular}
   \end{table}
-Dabei sind die Abweichungen $p$ von den Literaturwerten mit 
+\noindent
+Dabei sind die Abweichungen $p$ von den Literaturwerten mit
 \begin{equation*}
     p=\frac{\kappa_\text{lit}-\kappa}{\kappa_\text{lit}}\cdot 100
 \end{equation*}
-berechnet worden. 
+berechnet worden.
 \\\\\noindent
-Die berechneten Werte weichen alle vergleichsweise stark von den Literaturwerten ab. Im Folgenden sind mögliche Gründe aufgelistet. 
+Die berechneten Werte weichen alle vergleichsweise stark von den Literaturwerten ab. Im Folgenden sind mögliche Gründe aufgelistet.
 \begin{itemize}
     \item \textit{Zusammensetzung der Metalle}\\
-    Wie in Tabelle \ref{tab:diss} zu erkennen, gibt es keinen diskreten Wert für die Wärmeleitfähigkeit von Messing und Eldelstahl. Die 
-    Wärmeleitfähigkeit ist vielmehr abhängig, von der Zusammensetzung der Legierung. Da die genauen Eigenschaften der Proben nicht bekannt
-    sind, kann der Fehler nur sehr grob abgeschäzt werde.
+    Wie in Tabelle \ref{tab:diss} zu erkennen, gibt es keinen diskreten Wert für die Wärmeleitfähigkeit von Messing und Edelstahl. Die
+    Wärmeleitfähigkeit ist vielmehr abhängig von der Zusammensetzung der Legierung. Da die genauen Eigenschaften der Proben nicht bekannt
+    sind, kann der Fehler nur sehr grob abgeschätzt werde.
     \item \textit{Isolierung der Proben}\\
-    Die Isolierung oberhalb der Stäbe erfasst nicht deren ganze Länge, sodass wahrscheinlich ein Teil der Wärme an die Umgebnung abgestrahlt wurde.
+    Die Isolierung oberhalb der Stäbe erfasst nicht deren ganze Länge, sodass wahrscheinlich ein Teil der Wärme an die Umgebung abgestrahlt wurde.
     \item \textit{Abkühlen der Proben}\\
     Vor jeder Messung wurden die Stäbe auf unter $\SI{30}{\celsius}$ abgekühlt. Es hatten jedoch nach dem Abkühlen nicht alle Stäbe die gleiche
-    Temperatur, sodass die Startemperaturen von einander abweichen. Dieses Problem trat auch innerhalb einzelner Stäbe auf. Dort gab es schon 
-    zu Begin der Messung eine Temperaturdifferenz zwischen dem nahen und dem fernen Thermoelement, was bei Edelstahl besonders deutlcih wird 
-    (vgl.Abb.\ref{fig:stahl}). 
+    Temperatur, sodass die Startemperaturen voneinander abweichen. Dieses Problem trat auch innerhalb einzelner Stäbe auf. Dort gab es schon
+    zu Beginn der Messung eine Temperaturdifferenz zwischen dem nahen und dem fernen Thermoelement, was bei Edelstahl besonders deutlich wird
+    (vgl.Abb.\ref{fig:stahl}).
     \item \textit{Wechsel der Proben}\\
-    Um den Abkühlvorgang zu zeitlich zu umgehen wurde teilweise die Probe gewechselt, also vor einer Messung die warme Probe gegen eine Probe
-    mit Raumtmperatur ausgetauscht. Es könnte kleine Abweichungen in den Matrialweigenschaften der Proben geben.
+    Um den Abkühlvorgang zeitlich zu umgehen wurde teilweise die Probe gewechselt, also vor einer Messung die warme Probe gegen eine Probe
+    mit Raumtemperatur ausgetauscht. Es könnte kleine Abweichungen in den Materialeigenschaften der Proben geben.
     \item \textit{Gauß'sche Fehlerfortpflanzung}\\
-    Auffällig sind die hohen Unsicherheiten der Wärmeleitfähigkeiten. Diese folgen aus der Gauß'schen Fehlerfortpflanzung \eqref{eqn:GaußFehler}, 
-    da mit drei Größen gerechnet wird, welche wiederum Unsicherheiten berechnen. Gerade $\olsi{\Delta t}$ besitzt dabei recht große Unsicherheiten,
-    was dem recht Fehleranfälligen Datenentnahme aus den Temperaturverläufen geschuldet sein könnte.
-    \item \textit{Umschalten zwischen COOL und HEAT}\\
-    Da das Umschalten zwischen COOl und HEAT nicht automatisiert, sondern von den Experimentierenden mittels Stoppuhr vorgenommen wurde, 
-    spielt ein menschlicher Fehler in die Messergebnisse ein. Somit ist die Periodendauer $T$ nicht immer exakt gleich lang gewesen.   
+    Auffällig sind die hohen Unsicherheiten der Wärmeleitfähigkeiten. Diese folgen aus der Gauß'schen Fehlerfortpflanzung \eqref{eqn:GaußFehler},
+    da mit drei Größen gerechnet wird, welche wiederum Unsicherheiten besitzen. Gerade $\olsi{\Delta t}$ besitzt dabei recht große Unsicherheiten,
+    was der recht fehleranfälligen Datenentnahme aus den Temperaturverläufen geschuldet sein könnte.
+    \item \textit{Umschalten zwischen Cool und Heat}\\
+    Da das Umschalten zwischen \textit{Cool} und \textit{Heat} nicht automatisiert, sondern von den Experimentierenden mittels Stoppuhr vorgenommen wurde,
+    spielt ein menschlicher Fehler in die Messergebnisse ein. Somit ist die Periodendauer $T$ nicht immer exakt gleich lang gewesen.
 \end{itemize}
