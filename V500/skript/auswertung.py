@@ -90,7 +90,7 @@ plt.legend()
 plt.savefig("build/plotgelb.pdf")
 plt.clf()
 
-#Parameter der Regressionen ausgeben (mx + b)
+#Parameter der Regressionen ausgeben (mx + b) sowie Nullstellen bestimmen
 a = {}
 m = {}
 for i in range(1,5):
@@ -99,4 +99,7 @@ for i in range(1,5):
     print(f"Die Parameter der Regression {i} lauten: ")
     print(f"a{i} = {a[i]}")
     print(f"m{i} = {m[i]}")
+    print("")
+    print(f"Die Nullstelle der {i}-ten Regression findet sich bei:")
+    print(f"Ug{i} = x0 = ", (-m[i]/a[i]))
     print("")
