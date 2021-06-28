@@ -26,6 +26,7 @@ U_violett2, I_violett2 = np.genfromtxt("Data/violett2.dat", unpack=True)
 U_blau, I_blau = np.genfromtxt("Data/blau.dat", unpack=True)
 U_gelb, I_gelb = np.genfromtxt("Data/gelb.dat", unpack=True)
 
+#a)
 #params und errors speichern
 params = {}
 errors = {}
@@ -103,3 +104,13 @@ for i in range(1,5):
     print(f"Die Nullstelle der {i}-ten Regression findet sich bei:")
     print(f"Ug{i} = x0 = ", (-m[i]/a[i]))
     print("")
+
+#b)
+
+#c)
+plt.plot(U_gelb, I_gelb, "k.", label="Gelb", linewidth=1)
+plt.xlabel(r"$U_{Gelb}$")
+plt.ylabel(r"$I_{Gelb}$")
+plt.legend()
+plt.savefig("build/plotgelbc.pdf")
+plt.clf()
