@@ -102,6 +102,7 @@ plt.clf()
 #Parameter der Regressionen ausgeben (mx + b) sowie Nullstellen bestimmen
 m = {}
 b = {}
+ug = {}
 for i in range(1,5):
     m[i] = ufloat(params[i][0], errors[i][0])
     b[i] = ufloat(params[i][1], errors[i][1])
@@ -109,8 +110,9 @@ for i in range(1,5):
     print(f"m{i} = {m[i]}")
     print(f"b{i} = {b[i]}")
     print("")
+    ug[i] = -b[i]/m[i]
     print(f"Die Nullstelle der {i}-ten Regression findet sich bei:")
-    print(f"Ug{i} = x0 = ", (-b[i]/m[i]))
+    print(f"Ug{i} = x0 = ", ug[i])
     print("")
 
 #b)
