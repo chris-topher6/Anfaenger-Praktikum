@@ -1,10 +1,10 @@
 \section{Theorie}
 \label{sec:Theorie}
-Durch verschiedene experimentelle Befunde kann Licht nur durch die Quantenelektrodynamik widerspruchsfrei beschrieben werden. 
+Auf Grund verschiedener experimenteller Befunde kann Licht nur durch die Quantenelektrodynamik widerspruchsfrei beschrieben werden. 
 Für eine große Anzahl an Photenen kann Licht dabei als Welle genähert werden, wie es zum Beispiel in der Beugungsoptik geschieht. 
 Wechselwirkt das Licht jedoch mit Materie, wie es bei dem Photoeffekt der Fall ist, können die auftretenden Phänomene mit dem 
 Korpuskelmodell erklärt werden, in welcher die Quantelung des Lichts in einzelne Photonen angenommen wird. Im Folgenden soll 
-das Licht dabei nach dem Korpuskelmodell behandelt werden. 
+das Licht nach dem Korpuskelmodell behandelt werden. 
 
 \subsection{Die Phänomene und Erklärung des Photoeffekts}
 \label{sec:phänomene}
@@ -14,11 +14,9 @@ Wird eine Metalloberfläche mit Photenen der Energie
     \label{eqn:photon}
 \end{equation}
 bestrahlt, können durch diese Elektronen aus dem Metall herrausgelöst werden. Dabei überträgt das Photon seine Energie dem im Metall 
-befindelichen Elektron. %, welches schon eine kinetische Energie $E_{kin}\geq 0$ besitzt. 
-%Was ist hier mit der Anfangsenergie?
-Zum Verlassen des Metalls muss die spezifische 
+befindelichen Elektron. Zum Verlassen des Metalls muss die spezifische 
 Austrittsarbeit $\Phi_K$ geleistet werden. Die restliche Energie wird in kinetische Energie $E_{kin}\geq 0$ des Elektrons umgesetzt. Die 
-Energiebilanz lautet demnach
+Energiebilanz für ruhende Elektronen (vgl. Abschnitt \ref{sec:nachweis} für bewegte Elektronen) lautet demnach
 \begin{equation}
     h\nu=\Phi_K+E_{kin}\;.
     %h\nu+E_{kin}=\Phi_K+E'_{kin}\;.
@@ -29,7 +27,7 @@ Offensichtlich kann der Photoeffekt nur auftreten, wenn
 \begin{equation*}
     h\nu<\Phi_K
 \end{equation*}
-gilt. Es existiert also eine minimale Grenzfrequenz unterhalb derer der Photoeffekt nicht auftritt.
+gilt. Es existiert also eine minimale Grenzfrequenz unterhalb derer keine Elektronen mehr aus dem Metall gelöst werden können.
 Desweiteren ist zu beobachten, dass die Anzahl der ausgelösten Elektronen proportional zur Intensität des Lichtes ist. 
 
 \subsection{Experimenteller Nachweis des Photoeffekts}
@@ -60,7 +58,7 @@ Glaskolbens, in welchem sich die Elektroden befinden, ist weitestgehend evakuier
 
 \noindent
 Zwischen Kathode und Anode wird ein elektrisches Bremsfeld erzeugt, indem eine variable Spannungsquelle angeschlossen wird. Zur Messung der 
-ausgelösten Elektronen wird ein Picoampermeter verwenendet. Die elektrische Schaltung ist in Abbildung \ref{fig:Schaltung} dargestellt. 
+ausgelösten Elektronen wird ein Picoampermeter verwendet. Die elektrische Schaltung ist in Abbildung \ref{fig:Schaltung} dargestellt. 
 \begin{figure}
     \centering
     \includegraphics[scale=0.3]{pictures/ElektischeSchaltung.png}
@@ -87,22 +85,25 @@ sinkt der gemessene Photostrom kontinuierlich ab, bis er bei $U_g$ null erreicht
     \centering
     \includegraphics[scale=0.3]{pictures/Photostrom.png}
     \caption{Photostrom $I_{P}$ in Abhängigkeit der Bremsspannung $U_B$. \cite{AP01}}
-    \label{fig:Schaltung}
+    \label{fig:Photostrom}
 \end{figure}
 
 \noindent
 Die unterschiedlichen Geschwindigkeiten der ausgelösten Elektronen resultiert aus der bereits im Metall vorhandenen kinetischen Energie der 
 Elektronen, welche einer Fermi-Dirac-Verteilung folgt. 
-\\\noindent
+\\
+\\
+\noindent
 Unter bestimmten Vorraussetzungen lässt sich zwischen dem gemessenen Strom $I_{P}$ und der Bremsspannung $U_B$ der Zusammenhang 
 \begin{equation*}
     I_{P}\propto U^2_g
 \end{equation*}
 zeigen. 
+\\
 \\\noindent
 Für den Fall, dass zwar $\Phi_K<h\nu$ gilt, also Elektronen aus der Kathode gelöst werden, aber für die Austrittsarbeit der Anode 
-$\Phi_A>h\nu$ gilt, wird kein Strom auf der Anode gemessen, da die Elektronen durch das Gegenfeld zu stark abgebremst werden.
-%Welches Gegenfeld bitte???
+$\Phi_A>h\nu$ gilt, wird kein Strom auf der Anode gemessen. Dies liegt an dem elektrischen Gegenfeld, welches durch die Diffenz der 
+Fermi-Niveaus entsteht und die Elektronen so stark abbremst, dass sie die Anode nicht mehr erreichen. 
 Mit einem beschleunigenden Potential $U_b$ kann jedoch wieder ein Strom gemessen werden, sobald 
 \begin{equation*}
     h\nu+e_0U_{b}\geq \Phi_A
