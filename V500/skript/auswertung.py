@@ -26,6 +26,14 @@ U_violett2, I_violett2 = np.genfromtxt("Data/violett2.dat", unpack=True)
 U_blau, I_blau = np.genfromtxt("Data/blau.dat", unpack=True)
 U_gelb, I_gelb = np.genfromtxt("Data/gelb.dat", unpack=True)
 
+#Dunkelstrom abziehen
+U_grün -= 0.03
+U_blaugrün -= 0.03
+U_violett1 -= 0.03
+U_violett2 -= 0.03
+U_blau -= 0.03
+U_gelb -= 0.03
+
 #a)
 #params und errors speichern
 params = {}
@@ -92,17 +100,17 @@ plt.savefig("build/plotgelb.pdf")
 plt.clf()
 
 #Parameter der Regressionen ausgeben (mx + b) sowie Nullstellen bestimmen
-a = {}
 m = {}
+b = {}
 for i in range(1,5):
-    a[i] = ufloat(params[i][0], errors[i][0])
-    m[i] = ufloat(params[i][1], errors[i][1])
+    m[i] = ufloat(params[i][0], errors[i][0])
+    b[i] = ufloat(params[i][1], errors[i][1])
     print(f"Die Parameter der Regression {i} lauten: ")
-    print(f"a{i} = {a[i]}")
     print(f"m{i} = {m[i]}")
+    print(f"b{i} = {b[i]}")
     print("")
     print(f"Die Nullstelle der {i}-ten Regression findet sich bei:")
-    print(f"Ug{i} = x0 = ", (-m[i]/a[i]))
+    print(f"Ug{i} = x0 = ", (-b[i]/m[i]))
     print("")
 
 #b)
