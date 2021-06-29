@@ -81,6 +81,7 @@ Die gemessenen Werte sind in folgenden Tabellen dargestellt.
 Es wird ein Dunkelstrom von $I_{Dunkel} = 0.03 \si{\nano\ampere}$ gemessen.
 Dieser wird vor weiteren Rechnungen von allen gemessenen Strömen abgezogen.
 \noindent
+\subsection{Bestimmung der Grenzspannung}
 Für die grüne Spektrallinie mit einer Wellenlänge von $\lambda = 546 \si{\nano\meter}$
 ist in folgender Abbildung die Wurzel des gemessenen Photostroms gegen die Bremsspannung
 aufgetragen.
@@ -151,3 +152,32 @@ An den Teil der Messwerte, welcher näherungsweise linear verläuft, ist eine li
   b = & 1.266 \pm 0.011.\\
 \end{align*}
 Die Grenzspannung $U_g$ ergibt sich hier zu $ U_g = -92 \pm 5$ \si{\nano\ampere}. \\
+\subsection{Bestimmung der Austrittsarbeit sowie dem Verhältnis $h/e^0$}
+Das Verhältnis $\frac{h}{e_0}$ sowie die Austrittsarbeit $A_k$ lässt sich durch
+eine lineare Ausgleichsrechnung an $U_g$ aufgetragen gegen die Frequenz $f = \frac{c}{\lambda}$
+nach der Gleichung \eqref{eqn:ausgleichb} bestimmen.
+Es ergeben sich folgende Parameter:
+\begin{align}
+  \frac{h}{e_0} = & -2.7315918777824717 \cdot 10^{-15} \\
+  A_k           = & 1.0791957852628055 \cdot 10^{-19}.  \\
+  \label{eqn:ergebnisseb}
+\end{align}
+Die gegeneinander aufgetragenen Werte sowie der Fit sind in folgender Abbildung wiedergegeben:
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{build/plotb2.pdf}
+  \label{fig:plotb2}
+  \caption{Die Werte für Grenzspannungen und Frequenzen sowie ein linearer Fit.}
+\end{figure}
+\noindent
+
+\subsection{Untersuchung des Kurvenverlaufs für $\lambda = 578 \si{\nano\meter}$}
+In folgender Abbildung ist der Photostrom für $\lambda = 578 \si{\nano\meter}$ in
+Abhängigkeit zu der angelegten Spannung dargestellt.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{build/plotgelbc.pdf}
+  \label{fig:plotgelbc}
+  \caption{Photostrom aufgetragen gegen die angelegte Spannung für $\lambda = 578 \si{\nano\meter}$.}
+\end{figure}
+\noindent

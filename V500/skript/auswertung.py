@@ -38,6 +38,7 @@ U_gelb -= 0.03
 #params und errors speichern
 params = {}
 errors = {}
+print("Aufgabenteil a):")
 
 #Fit an Grün (1)
 params[1], cov1 = np.polyfit(U_grün, np.sqrt(I_grün), deg=1, cov=True)
@@ -119,19 +120,29 @@ for i in range(1,5):
 ug_l = np.array([ug[3].n, ug[2].n, ug[1].n, ug[4].n])
 lambda_ug = np.array([435, 492, 546, 577])#in nm
 lambda_ug = lambda_ug*10**(-9)#in m
-#Fit
-params_ug, cov5 = np.polyfit((const.c/lambda_ug), ug_l, deg=1, cov=True)
-errors_ug = np.sqrt(np.diag(cov5))
-#x-Werte für Plot der Regressionsgeraden
-x5 = np.linspace(lambda_ug[2],lambda_ug[3])
-#Plot des Fits
-plt.plot(lambda_ug, params_ug[0]*ug_l+params_ug[1], "r", label="Fit", linewidth=1)
 #Plot der Messwerte
 plt.plot(const.c/lambda_ug, ug_l, "k.", label="Messwerte", linewidth=1)
 plt.xlabel(r"$f/Hz$")
 plt.ylabel(r"$U_g/V$")
 plt.legend()
-plt.savefig("build/plotb.pdf")
+plt.savefig("build/plotb1.pdf")
+plt.clf()
+#Entferne Gelb
+ug_l = ug_l[0:3]
+lambda_ug = lambda_ug[0:3]
+#Fit
+params_ug, cov5 = np.polyfit((const.c/lambda_ug), ug_l, deg=1, cov=True)
+errors_ug = np.sqrt(np.diag(cov5))
+print("Aufgabenteil b:")
+print("h/e0 = ", params_ug[0])
+print("Ak = ", params_ug[1]*const.e)
+#Plot des Fits und der Messwerte
+plt.plot(lambda_ug, (params_ug[0]*ug_l+params_ug[1]), "r", label="Fit", linewidth=1)
+plt.plot(const.c/lambda_ug, ug_l, "k.", label="Messwerte", linewidth=1)
+plt.xlabel(r"$f/Hz$")
+plt.ylabel(r"$U_g/V$")
+plt.legend()
+plt.savefig("build/plotb2.pdf")
 plt.clf()
 
 #c)
