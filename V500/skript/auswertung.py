@@ -116,15 +116,16 @@ for i in range(1,5):
     print("")
 
 #b)
-ug_l = np.array([ug[1].n, ug[2].n, ug[3].n, ug[4].n])
-lambda_ug = np.array([546, 492, 435, 577])#in nm
+ug_l = np.array([ug[3].n, ug[2].n, ug[1].n, ug[4].n])
+lambda_ug = np.array([435, 492, 546, 577])#in nm
 lambda_ug = lambda_ug*10**(-9)#in m
-print(ug_l)
 #Fit
 params_ug, cov5 = np.polyfit((const.c/lambda_ug), ug_l, deg=1, cov=True)
 errors_ug = np.sqrt(np.diag(cov5))
 #x-Werte für Plot der Regressionsgeraden
-#x5 = np.linspace()
+x5 = np.linspace(lambda_ug[2],lambda_ug[3])
+#Plot des Fits
+plt.plot(lambda_ug, params_ug[0]*ug_l+params_ug[1], "r", label="Fit", linewidth=1)
 #Plot der Messwerte
 plt.plot(const.c/lambda_ug, ug_l, "k.", label="Messwerte", linewidth=1)
 plt.xlabel(r"$f/Hz$")
