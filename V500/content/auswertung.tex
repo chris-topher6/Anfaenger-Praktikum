@@ -148,31 +148,61 @@ aufgetragen.
 \noindent
 An den Teil der Messwerte, welcher näherungsweise linear verläuft, ist eine lineare Funktion der Form $mx +b$ gefittet. Es ergeben sich die Parameter
 \begin{align*}
-  m = & 0.0138 \pm 0.0008 \\
-  b = & 1.266 \pm 0.011.\\
+  m = & 0.0268 \pm 0.0032 \\
+  b = & 1.08 \pm 0.04.\\
 \end{align*}
-Die Grenzspannung $U_g$ ergibt sich hier zu $ U_g = -92 \pm 5$ \si{\nano\ampere}. \\
+Die Grenzspannung $U_g$ ergibt sich hier zu $ U_g = -40 \pm 5$ \si{\nano\ampere}. \\
+
 \subsection{Bestimmung der Austrittsarbeit sowie dem Verhältnis $h/e^0$}
 Das Verhältnis $\frac{h}{e_0}$ sowie die Austrittsarbeit $A_k$ lässt sich durch
 eine lineare Ausgleichsrechnung an $U_g$ aufgetragen gegen die Frequenz $f = \frac{c}{\lambda}$
-nach der Gleichung \eqref{eqn:ausgleichb} bestimmen.
-Es ergeben sich folgende Parameter:
-\begin{align}
-  \frac{h}{e_0} = & -2.7315918777824717 \cdot 10^{-15} \\
-  A_k           = & 1.0791957852628055 \cdot 10^{-19}.  \\
-  \label{eqn:ergebnisseb}
-\end{align}
-Die gegeneinander aufgetragenen Werte sowie der Fit sind in folgender Abbildung wiedergegeben:
+nach der Gleichung \eqref{eqn:ausgleichb} bestimmen. Die Daten, an denen die
+Ausgleichsrechnung durchgeführt wurde, sind folgender Tabelle \ref{tab:werteb} zu entnehmen.
+\begin{table}[h]
+  \centering
+  \caption{Die Wellenlänge sowie die zugehörige Grenzspannung einiger Spektrallinien.}
+  \label{tab:werteb}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{S S[table-format=3.0]}
+    \toprule
+    {$U_g [\si{\volt}]$} & {$\lambda [\si{\nano\meter}]$} \\
+    \midrule
+    -0.84  &  546 \\
+    -0.97  &  492 \\
+    -1.22  &  435 \\
+   -40     &  577 \\
+   \bottomrule
+ \end{tabular}
+\end{table}
+An diesen Werten wurden zwei Fits durchgeführt. Diese sind in Abbildung \ref{fig:plotb}
+dargestellt.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.8]{build/plotb2.pdf}
-  \label{fig:plotb2}
+  \includegraphics[scale=0.8]{build/plotb.pdf}
   \caption{Die Werte für Grenzspannungen und Frequenzen sowie ein linearer Fit.}
+  \label{fig:plotb}
 \end{figure}
 \noindent
+Der in obiger Abbildung \ref{fig:plotb} als \textit{Fit 1} bezeichnete Fit wurde unter Verwendung
+aller in Tabelle \ref{tab:werteb} aufgeführten Werte durchgeführt. Da der Wert für
+$\lambda = \SI{577}{\nano\meter}$ einen hohen Einfluss auf den Verlauf des Fits hat,
+wurde ein zweiter Fit \textit{Fit 2} ohne diesen Wert durchgeführt, um seinen Einfluss
+zu untersuchen. Es ergeben sich folgende Parameter für \textit{Fit 1}:
+\begin{align}
+  \frac{h}{e_0} = & (1.7 \pm 1.4) \cdot 10^{-13} \\
+  A_k           = & (1.8 \pm 1.4) \cdot 10^{-17}.
+  \label{eqn:ergebnisseb1}
+\end{align}
+Für den \textit{Fit 2} ergeben sich die Parameter
+\begin{align}
+  \frac{h}{e_0} = & (-2.73 \pm 0.28) \cdot 10^{-15} \\
+  A_k           = & (-1.08 \pm 0.27) \cdot 10^{-19}.
+  \label{eqn:ergebnisseb2}
+\end{align}
 
-\subsection{Untersuchung des Kurvenverlaufs für $\lambda = 578 \si{\nano\meter}$}
-In folgender Abbildung ist der Photostrom für $\lambda = 578 \si{\nano\meter}$ in
+
+\subsection{Untersuchung des Kurvenverlaufs für eine Wellenlänge von $\SI{578}{\nano\meter}$}
+In folgender Abbildung ist der Photostrom für $\lambda = \SI{578}{\nano\meter}$ in
 Abhängigkeit zu der angelegten Spannung dargestellt.
 \begin{figure}[H]
   \centering
