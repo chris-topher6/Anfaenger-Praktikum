@@ -174,7 +174,7 @@ Ausgleichsrechnung durchgeführt wurde, sind folgender Tabelle \ref{tab:werteb} 
    \bottomrule
  \end{tabular}
 \end{table}
-An diesen Werten wurden zwei Fits durchgeführt. Diese sind in Abbildung \ref{fig:plotb}
+An diesen Werten wurde ein linearer Fit durchgeführt. Dieser ist in Abbildung \ref{fig:plotb}
 dargestellt.
 \begin{figure}[H]
   \centering
@@ -184,7 +184,7 @@ dargestellt.
 \end{figure}
 \noindent
 Der in obiger Abbildung \ref{fig:plotb} dargestellte Fit wurde unter Verwendung
-der Werte in Tabelle \ref{tab:werteb} aufgeführten durchgeführt.
+der Werte in Tabelle \ref{tab:werteb} durchgeführt.
 Es ergeben sich folgende Parameter
 \begin{align}
   \frac{h}{e_0} = & (-2.1 \pm 0.6) \cdot 10^{-15} \\
@@ -200,12 +200,19 @@ sich in Tabelle \ref{tab:messdaten2}.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{build/plotgelbc.pdf}
-  \caption{Photostrom aufgetragen gegen die angelegte Spannung für $\lambda = 577 \si{\nano\meter}$.}
+  \caption{Der Photostrom aufgetragen gegen die angelegte Spannung für $\lambda = 577 \si{\nano\meter}$.}
   \label{fig:plotgelbc}
 \end{figure}
 \noindent
 Hier ist erkennbar, dass die Kurve für hohe Spannungen einen Sättigungswert erreicht,
-sie konvergiert gegen einen Grenzwert. Dies kann dadurch erklärt werden, dass ab
-einer gewissen Spannung alle emittierten Elektronen die Anode erreichen. Die Anzahl
+sie nähert sich asymptotisch einem Grenzwert an. Dies kann dadurch erklärt werden, dass ab
+einer gewissen Spannung der Maximalwert der emittierten Elektronen die Anode erreicht. Die Anzahl
 der emittierten Elektronen ist von der Intensität des eingestrahlten Lichtes abhängig
-und kann daher bei konstanter Lichtstrahlung nur bis zu einem endlichen Wert steigen.
+und kann sich daher bei konstanter Lichtstrahlung nur an einen endlichen Wert annähern.
+Die asymptotische Annäherung entsteht durch die ungleiche Verteilung der kinetischen
+Energie der Elektronen. Aufgrund der geringen Größe der Anode können manche Elektronen
+mit hoher kinetischen Energie die Anode verfehlen, was das Erreichen des Grenzwertes
+verhindert. Dies müsste auch für die Grenzspannung $U_g$ gelten, diese ist jedoch
+nicht innerhalb des Messbereiches und daher in Abbildung \ref{fig:plotgelbc} nicht
+zu erkennen. Elektronen mit hoher kinetischer Energie können auch ohne eine angelegte
+Spannung die Anode erreichen, daher kann auch in diesem Fall ein Strom gemessen werden.

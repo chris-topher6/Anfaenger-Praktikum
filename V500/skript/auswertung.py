@@ -18,6 +18,9 @@ from scipy.signal import find_peaks, peak_widths
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 
+def abweichung(lit, mess):
+    return abs(100*(lit-mess)/lit)
+
 #Daten importieren
 U_grün, I_grün = np.genfromtxt("Data/gruen.dat", unpack=True)
 U_blaugrün, I_blaugrün = np.genfromtxt("Data/blaugruen.dat", unpack=True)
@@ -165,3 +168,11 @@ plt.legend()
 plt.grid(linewidth=0.6)
 plt.savefig("build/plotgelbc.pdf")
 plt.clf()
+
+fraclit = 4.136*10**(-15)
+frac = ufloat(params_ug[0], errors_ug[0])
+
+abweich = abweichung(fraclit, frac)
+print("Die Abweichung von h/e0 zur Literatur beträgt: ", abweich, "%")
+print("")
+print(frac)
