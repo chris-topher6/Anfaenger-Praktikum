@@ -89,14 +89,14 @@ plt.savefig("build/plotblau.pdf")
 plt.clf()
 
 #Fit an Gelb (4) (577nm)
-params[4], cov4 = np.polyfit(U_gelb[0:18], np.sqrt(I_gelb[0:18]), deg=1, cov=True)
+params[4], cov4 = np.polyfit(U_gelb[17:29], np.sqrt(I_gelb[17:29]), deg=1, cov=True)
 errors[4] = np.sqrt(np.diag(cov4))
 #x-Werte für Plot der Regressionsgeraden
-x4 = np.linspace(-0.2, 20, num=21)
+x4 = np.linspace(-0.2, 2, num=22)
 #Plot der Regressionsgeraden
 plt.plot(x4, params[4][0]*x4+params[4][1], "r", label="Lineare Regression", linewidth=0.8)
 #Plot der Messwerte
-plt.plot(U_gelb, np.sqrt(I_gelb),  "k.", label="Gelb", linewidth=1)
+plt.plot(U_gelb[17:29], np.sqrt(I_gelb[17:29]),  "k.", label="Gelb", linewidth=1)
 plt.xlabel(r"$U_{Gelb}/V $")
 plt.ylabel(r"$\sqrt{I_{Gelb}}/nA $")
 plt.legend()
@@ -125,30 +125,30 @@ ug_b = np.array([ug[1].n, ug[2].n, ug[3].n, ug[4].n])
 lambda_b = np.array([546, 492, 435, 577]) #in nm
 lambda_b = 10**(-9)*lambda_b #in m
 #Entferne Gelb
-ug_bg = ug_b[0:3]
-lambda_bg = lambda_b[0:3]
+#ug_bg = ug_b[0:3]
+#lambda_bg = lambda_b[0:3]
 #Fit an alle Daten
 params_ug, cov5 = np.polyfit((const.c/lambda_b), ug_b, deg=1, cov=True)
 errors_ug = np.sqrt(np.diag(cov5))
 #Fit ohne Gelb
-params_ugg, cov6 = np.polyfit((const.c/lambda_bg), ug_bg, deg=1, cov=True)
-errors_ugg = np.sqrt(np.diag(cov6))
+#params_ugg, cov6 = np.polyfit((const.c/lambda_bg), ug_bg, deg=1, cov=True)
+#errors_ugg = np.sqrt(np.diag(cov6))
 print("Aufgabenteil b:")
 print("")
 print("Fit an alle Daten:")
 print("h/e0 = ", ufloat(params_ug[0], errors_ug[0]))
 print("Ak = ", (-1)*ufloat(params_ug[1], errors_ug[1])*const.e)
 print("")
-print("Fit an Daten ohne Gelb = 577nm:")
-print("h/e0 = ", ufloat(params_ugg[0], errors_ugg[0]))
-print("Ak = ", (-1)*ufloat(params_ugg[1], errors_ugg[1])*const.e)
-print("")
+#print("Fit an Daten ohne Gelb = 577nm:")
+#print("h/e0 = ", ufloat(params_ugg[0], errors_ugg[0]))
+#print("Ak = ", (-1)*ufloat(params_ugg[1], errors_ugg[1])*const.e)
+#print("")
 #x-Koordinaten vom kleinsten lambda bis zum größten lambda
 xb = np.linspace(const.c/lambda_b[2],const.c/lambda_b[3])
-xbg = np.linspace(const.c/lambda_bg[2], const.c/lambda_bg[0])
+#xbg = np.linspace(const.c/lambda_bg[2], const.c/lambda_bg[0])
 #Plot der Fits und der Messwerte
-plt.plot(xb, params_ug[0]*xb+params_ug[1], "r", label="Fit 1", linewidth=0.8)
-plt.plot(xbg, params_ugg[0]*xbg+params_ugg[1], "b", label="Fit 2", linewidth=0.8)
+plt.plot(xb, params_ug[0]*xb+params_ug[1], "r", label="Fit", linewidth=0.8)
+#plt.plot(xbg, params_ugg[0]*xbg+params_ugg[1], "b", label="Fit 2", linewidth=0.8)
 plt.plot(const.c/lambda_b, ug_b, "k.", label="Messwerte", linewidth=1)
 plt.xlabel(r"$f/Hz$")
 plt.ylabel(r"$U_g/V$")

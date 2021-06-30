@@ -146,14 +146,14 @@ aufgetragen.
   \caption{Die Messwerte der gelben Spektrallinie sowie ein linearer Fit.}
 \end{figure}
 \noindent
-An den Teil der Messwerte, welcher näherungsweise linear verläuft, ist eine lineare Funktion der Form $mx +b$ gefittet. Es ergeben sich die Parameter
+An die Messwerte ist eine lineare Funktion der Form $mx +b$ gefittet. Es ergeben sich die Parameter
 \begin{align*}
-  m = & 0.0268 \pm 0.0032 \\
-  b = & 1.08 \pm 0.04.\\
+  m = & 0.37 \pm 0.06 \\
+  b = & 0.33 \pm 0.06.\\
 \end{align*}
-Die Grenzspannung $U_g$ ergibt sich hier zu $ U_g = -40 \pm 5$ \si{\nano\ampere}. \\
+Die Grenzspannung $U_g$ ergibt sich hier zu $ U_g = -0.90 \pm 0.22$ \si{\nano\ampere}. \\
 
-\subsection{Bestimmung der Austrittsarbeit sowie dem Verhältnis $h/e^0$}
+\subsection{Bestimmung der Austrittsarbeit sowie des Verhältnisses $h/e^0$}
 Das Verhältnis $\frac{h}{e_0}$ sowie die Austrittsarbeit $A_k$ lässt sich durch
 eine lineare Ausgleichsrechnung an $U_g$ aufgetragen gegen die Frequenz $f = \frac{c}{\lambda}$
 nach der Gleichung \eqref{eqn:ausgleichb} bestimmen. Die Daten, an denen die
@@ -170,7 +170,7 @@ Ausgleichsrechnung durchgeführt wurde, sind folgender Tabelle \ref{tab:werteb} 
     -0.84  &  546 \\
     -0.97  &  492 \\
     -1.22  &  435 \\
-   -40     &  577 \\
+    -0.9   &  577 \\
    \bottomrule
  \end{tabular}
 \end{table}
@@ -183,31 +183,29 @@ dargestellt.
   \label{fig:plotb}
 \end{figure}
 \noindent
-Der in obiger Abbildung \ref{fig:plotb} als \textit{Fit 1} bezeichnete Fit wurde unter Verwendung
-aller in Tabelle \ref{tab:werteb} aufgeführten Werte durchgeführt. Da der Wert für
-$\lambda = \SI{577}{\nano\meter}$ einen hohen Einfluss auf den Verlauf des Fits hat,
-wurde ein zweiter Fit \textit{Fit 2} ohne diesen Wert durchgeführt, um seinen Einfluss
-zu untersuchen. Es ergeben sich folgende Parameter für \textit{Fit 1}:
+Der in obiger Abbildung \ref{fig:plotb} dargestellte Fit wurde unter Verwendung
+der Werte in Tabelle \ref{tab:werteb} aufgeführten durchgeführt.
+Es ergeben sich folgende Parameter
 \begin{align}
-  \frac{h}{e_0} = & (1.7 \pm 1.4) \cdot 10^{-13} \\
-  A_k           = & (1.8 \pm 1.4) \cdot 10^{-17}.
+  \frac{h}{e_0} = & (-2.1 \pm 0.6) \cdot 10^{-15} \\
+  A_k           = & (-4 \pm 5) \cdot 10^{-20}.
   \label{eqn:ergebnisseb1}
 \end{align}
-Für den \textit{Fit 2} ergeben sich die Parameter
-\begin{align}
-  \frac{h}{e_0} = & (-2.73 \pm 0.28) \cdot 10^{-15} \\
-  A_k           = & (-1.08 \pm 0.27) \cdot 10^{-19}.
-  \label{eqn:ergebnisseb2}
-\end{align}
 
 
-\subsection{Untersuchung des Kurvenverlaufs für eine Wellenlänge von $\SI{578}{\nano\meter}$}
-In folgender Abbildung ist der Photostrom für $\lambda = \SI{578}{\nano\meter}$ in
-Abhängigkeit zu der angelegten Spannung dargestellt.
+\subsection{Untersuchung des Kurvenverlaufs der gelben Spektrallinie}
+In folgender Abbildung \ref{fig:plotgelbc} ist der Photostrom für $\lambda = \SI{577}{\nano\meter}$ in
+Abhängigkeit zu der angelegten Spannung dargestellt. Die dargestellten Werte finden
+sich in Tabelle \ref{tab:messdaten2}.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{build/plotgelbc.pdf}
+  \caption{Photostrom aufgetragen gegen die angelegte Spannung für $\lambda = 577 \si{\nano\meter}$.}
   \label{fig:plotgelbc}
-  \caption{Photostrom aufgetragen gegen die angelegte Spannung für $\lambda = 578 \si{\nano\meter}$.}
 \end{figure}
 \noindent
+Hier ist erkennbar, dass die Kurve für hohe Spannungen einen Sättigungswert erreicht,
+sie konvergiert gegen einen Grenzwert. Dies kann dadurch erklärt werden, dass ab
+einer gewissen Spannung alle emittierten Elektronen die Anode erreichen. Die Anzahl
+der emittierten Elektronen ist von der Intensität des eingestrahlten Lichtes abhängig
+und kann daher bei konstanter Lichtstrahlung nur bis zu einem endlichen Wert steigen.
