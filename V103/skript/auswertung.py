@@ -26,11 +26,14 @@ g_me1=550
 g_me2=1550
 
 #Volumen berechnen
-V_al= 0.520**2 * 59.3            #cm^3
+L_al=59.3 #cm
+L_fe=59.3 #cm
+L_me=60.2 #cm
+V_al= 0.520**2 * L_al            #cm^3
 #V_al= 1.3208**2*59.3
-V_fe= 0.505**2 * 59.3            #cm^3
+V_fe= 0.505**2 * L_fe            #cm^3
 #V_fe= 1.2827**2 * 59.3
-V_me= (0.52/2)**2 * np.pi *60.2  #cm^3
+V_me= (0.52/2)**2 * np.pi * L_me  #cm^3
 #V_me= (1.3208/2)**2 * np.pi *60.2 
  
 #Dichte
@@ -48,3 +51,33 @@ x1, D_al1 = np.genfromtxt('data/al1.dat',   unpack=True)
 x1, D_fe1 = np.genfromtxt('data/fe1.dat',   unpack=True)
 x1, D_me1 = np.genfromtxt('data/me1.dat',   unpack=True)
 x2, D_me2 = np.genfromtxt('data/me2.dat',   unpack=True)
+
+#Flächenträgheitsmoment
+
+#Funktionen für 8,9,10
+def arg8(x, L):
+    return L*x**2-x**3
+def arg9(x, L):
+    return 3*L**2*x-4*x**3
+def arg10(x, L):
+    return 4*x**3-12*L*x**2+9*L**2*x-L**3
+
+#Regression
+params_al8, cov_al8   = np.polyfit(arg8(x1 ,L_al), D_al1, deg=1, cov=True)
+params_al9, cov_al9   = np.polyfit(arg9(x1 ,L_al), D_al1, deg=1, cov=True)
+params_al10, cov_al10 = np.polyfit(arg10(x1,L_al), D_al1, deg=1, cov=True)
+
+#Plots 
+plt.figure()
+x=np.linspace(np.min(arg10(x1, L_al)), np.max(arg10(x1, L_al)))
+plt.plot(arg8(x , L_al), tools.gerade(arg8(x , L_al), *params_al8),    'r',   label="Regression 8")
+plt.plot(arg9(x , L_al), tools.gerade(arg9(x , L_al), *params_al9),    'g',   label="Regression 9")
+plt.plot(arg10(x, L_al), tools.gerade(arg10(x, L_al), *params_al10),   'b',   label="Regression 10")
+plt.plot(arg8(x1 , L_al), D_al1, 'r.',  label='Messdaten 8')
+plt.plot(arg9(x1 , L_al), D_al1, 'g.',  label='Messdaten 9')
+plt.plot(arg10(x1, L_al), D_al1, 'b.',  label='Messdaten 10')
+plt.xlabel(r"$??$")
+plt.ylabel(r"$??$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('build/plot1.pdf')
