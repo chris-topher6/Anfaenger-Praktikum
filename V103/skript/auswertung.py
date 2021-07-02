@@ -67,6 +67,10 @@ params_al8, cov_al8   = np.polyfit(arg8(x1 ,L_al), D_al1, deg=1, cov=True)
 params_al9, cov_al9   = np.polyfit(arg9(x1 ,L_al), D_al1, deg=1, cov=True)
 params_al10, cov_al10 = np.polyfit(arg10(x1,L_al), D_al1, deg=1, cov=True)
 
+print(params_al8)
+print(params_al9)
+print(params_al10)
+
 #Plots 
 plt.figure()
 x=np.linspace(np.min(arg10(x1, L_al)), np.max(arg10(x1, L_al)))
