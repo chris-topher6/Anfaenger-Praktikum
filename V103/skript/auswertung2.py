@@ -35,11 +35,11 @@ L_al=59.3   *10**(-2)
 L_fe=59.3   *10**(-2)   
 L_me=60.2   *10**(-2)   
 a_al=0.52   *10**(-2)
-a_al=1.2    *10**(-2)   #von Nicolai  Mit den Werten von Nicolai, kommen auch vernünftige Ergebnisse raus
+a_al=1.04    *10**(-2)   #von Nicolai  Mit den Werten von Nicolai, kommen auch vernünftige Ergebnisse raus
 a_fe=0.505  *10**(-2)  
-a_fe=1.1    *10**(-2)   #von Nicolai
+a_fe=1.06    *10**(-2)   #von Nicolai
 R_me=0.52/2 *10**(-2) 
-R_me=0.999/2 *10**(-2)  #von Nicolai
+R_me=1.00/2 *10**(-2)  #von Nicolai
 #Volumen in m^3
 V_al= a_al**2 * L_al          
 V_fe= a_fe**2 * L_fe         
@@ -165,9 +165,9 @@ print(f" E=({E_me9 :.3f})kNmm^-2")
 print(f" E=({E_me10:.3f})kNmm^-2")
 
 print(f"\nprozentuale Abweichungen der Elastizitätsmoduln")
-print(f"abw von me10 bzgl me9: p={tools.abweichung(E_me9, E_me10)}%")
-print(f"abw von me9  bzgl me8: p={tools.abweichung(E_me8, E_me9) }%")
-print(f"abw von me10 bzgl me8: p={tools.abweichung(E_me8, E_me10)}%")
+print(f"abw von me10 bzgl me9: p={tools.abweichung(E_me9, E_me10):.3f}%")
+print(f"abw von me9  bzgl me8: p={tools.abweichung(E_me8, E_me9) :.3f}%")
+print(f"abw von me10 bzgl me8: p={tools.abweichung(E_me8, E_me10):.3f}%")
 print(f"abw von al8 bzgl Lit:  p={tools.abweichung(Elit_al, E_al8)}%")
 print(f"abw von fe8 bzgl Lit:  p={tools.abweichung(Elit_fe, E_fe8)}%")
 print(f"abw von me8 bzgl Lit:  p={tools.abweichung(Elit_me_min, E_me8)} bis {tools.abweichung(Elit_me_max, E_me8)}%")
