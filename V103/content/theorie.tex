@@ -2,7 +2,8 @@ f\section{Theorie}
 \label{sec:Theorie}
 %ich brauche vor allem Gleichung 8, 9 und 10 aus der Anleitung. Und am besten wäre eine Herleitung von den Flächenträgheitsmomenten.
 %Nicolai hatte das ja durchgerechnet und das ging ja auch ziemlich fix.
-\section{Problemstellung}
+\subsection{Problemstellung}
+\label{sec:problemstellung}
 Eine Kraft, die an eine Oberfläche angreift, erzeugt pro Flächeneinheit eine Spannung.
 Diese kann senkrecht oder aber tangential zu der Oberfläche wirken und wird dann
 Normalspannung oder Tangential- beziehungsweise Schubspannung genannt.
@@ -25,3 +26,93 @@ Hierbei bezeichnet $D_G(x)$ die Auslenkung bei einem angehängten Gewicht an den
 und $D_0(x)$ die Auslenkung des Körpers in der Ruhelage ohne ein angehängtes Gewicht.
 Um die Funktion zu bestimmen, können zwei Verfahren verwendet werden. Auf diese
 wird im Folgenden näher eingegangen.
+
+\subsection{Berechnung der Durchbiegung bei einseitiger Einhängung}
+\label{sec:einseitigg}
+Im folgenden Abschnitt wird die Durchbiegung eines homogenen Stabes bei einseitiger
+Einspannung nach in Abbildung \ref{fig:einseitig} dargestelltem Aufbau untersucht,
+um die Funktion $D(x)$ sowie das Elastizitätsmodul zu erhalten.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{content/EinspannungEinseitig.png}
+  \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung.}
+  \label{fig:einseitig}
+\end{figure}
+\noindent
+Durch ein angehängtes Gewicht wird ein Drehmoment $M_F$ auf den Querschnitt $Q$ des
+Stabes ausgeübt. Aufgrund der Elastizität des Stabes wirken diesem Drehmoment im
+inneren des Stabes Normalspannungen entgegen. Diese erzeugen ein Drehmoment $M_\sigma$.
+Innerhalb des Stabes gibt es eine neutrale Faser, in der keinerlei Spannungen auftreten.
+Unter Vernachlässigung des durch das Eigengewicht des Stabes erzeugten Drehmoments
+ergibt sich eine Gleichgewichtslage, in der gilt
+\begin{equation}
+  M_F = M_\sigma .
+  \label{eqn:momentengleichung1}
+\end{equation}
+Hierbei lässt sich $M_\sigma$ durch Integration über den Querschnitt $Q$ des Stabes
+ermitteln:
+\begin{equation}
+  M_\sigma = \int_Q = y \sigma(y) dq.
+  \label{eqn:msigma}
+\end{equation}
+Hierbei bezeichnet $y$ den Abstand des Flächenelementes $dq$ von der neutralen Faser
+des Stabes $x$ sowie $\sigma(y)$ die Normalspannung.
+$M_F$ wirkt durch die Länge $L$ des Stabes mit einem Hebel, weshalb sich der Betrag des Drehmoments
+$M_F$ wie folgt bestimmen lässt:
+\begin{equation}
+  M_F = F(L - x).
+  \label{eqn:mf}
+\end{equation}
+Daher ergibt sich die auch als Momentengleichung bezeichnete Gleichung \eqref{eqn:momentengleichung1}
+mit Gleichung \eqref{eqn:msigma} sowie Gleichung \eqref{eqn:mf} zu
+\begin{equation}
+  F(L - x) = \int_Q = y \sigma(y) dq.
+  \label{eqn:momentengleichung2}
+\end{equation}
+Die hier auftretende Normalspannung $\sigma(y)$ lässt sich nach dem Hookeschen Gesetz \eqref{eqn:captainhook} bestimmen.
+Sie ergibt sich zu
+\begin{equation}
+  \sigma(y) = E \frac{\delta x}{\Delta x}.
+  \label{eqn:normalspannung}
+\end{equation}
+$y$ gibt hier den Abstand zu der neutralen Faser des Stabes der Länge $\Delta x$ an.
+Durch die Durchbiegung entsteht eine Längenänderung der neutralen Faser von $\Delta x$ zu $\delta x$.
+Diese Längenänderung ergibt sich nach Abbildung \ref{fig:einspannungeinseitig2} zu
+\begin{equation}
+  \delta x = y \frac{\Delta x}{R}.
+  \label{eqn:kleindeltax}
+\end{equation}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{content/EinspannungEinseitig2.png}
+  \caption{Schematische Abbildung des gebogenen Stabes zur Bestimmung der Normalspannung.}
+  \label{fig:einspannungeinseitig2}
+\end{figure}
+\noindent
+Unter Verwendung von Gleichung \eqref{eqn:normalspannung}, Gleichung \eqref{eqn:kleindeltax} sowie der Näherung
+\begin{equation*}
+\frac{1}{R} \approx \frac{d^2 D}{d x^2}
+\end{equation*}
+ergibt sich für die Normalspannung
+\begin{equation}
+\sigma (y) = E y \frac{d^2 D}{d x^2}.
+\label{eqn:normalspannung2}
+\end{equation}
+Setzt man nun in die Momentengleichung \eqref{eqn:momentengleichung2} den so erhaltenen Ausruck \eqref{eqn:normalspannung2}
+für die Normalspannung ein, erhält man
+\begin{equation}
+  E \frac{d^2 D}{d x^2} \int_Q y^2 dq = F(L - x).
+  \label{eqn:momentengleichung3}
+\end{equation}
+Hierbei wird der in \eqref{eqn:momentengleichung3} auftretende Term
+\begin{equation*}
+  I := \int_Q y^2 dq(y)
+\end{equation*}
+als Flächenträgheitsmoment bezeichnet.
+Aus Gleichung \eqref{eqn:momentengleichung3} kann nun durch Integration die Durchbiegung $D(x)$ bestimmt
+werden:
+\begin{equation}
+  D(x) = \frac{F}{2 E I} \left( L x^2 - \frac{x^3}{3} \right).
+  \label{eqn:durchbiegungeinseitig}
+\end{equation}
+Hierbei gilt $0 \leq x \leq L$.
