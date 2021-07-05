@@ -1,4 +1,27 @@
-\section{Theorie}
+f\section{Theorie}
 \label{sec:Theorie}
 %ich brauche vor allem Gleichung 8, 9 und 10 aus der Anleitung. Und am besten wäre eine Herleitung von den Flächenträgheitsmomenten.
 %Nicolai hatte das ja durchgerechnet und das ging ja auch ziemlich fix.
+\section{Problemstellung}
+Eine Kraft, die an eine Oberfläche angreift, erzeugt pro Flächeneinheit eine Spannung.
+Diese kann senkrecht oder aber tangential zu der Oberfläche wirken und wird dann
+Normalspannung oder Tangential- beziehungsweise Schubspannung genannt.
+Der Zusammenhang zwischen der Normalspannung $\sigma$ und
+der erzeugten Längenänderung $\Delta L/L$ eines Körpers wird beschrieben durch das Hookesche Gesetz.
+Es ergibt sich zu
+\begin{equation}
+  \sigma = E \frac{\Delta L}{L}.
+  \label{eqn:captainhook}
+\end{equation}
+Hierbei meint $E$ das Elastizitätsmodul, einen Proportionalitätsfaktor, der eine
+Materialkonstante des jeweiligen Körpers ist und der experimentell mithilfe der
+Biegung eines Körpers bestimmt werden kann.
+Hierfür beschreibt man die Biegung mit einer Funktion $D(x)$. Für diese gilt
+\begin{equation}
+  D(x) = D_G(x) + D_0(x).
+  \label{eqn:DmitNull}
+\end{equation}
+Hierbei bezeichnet $D_G(x)$ die Auslenkung bei einem angehängten Gewicht an den Körper
+und $D_0(x)$ die Auslenkung des Körpers in der Ruhelage ohne ein angehängtes Gewicht.
+Um die Funktion zu bestimmen, können zwei Verfahren verwendet werden. Auf diese
+wird im Folgenden näher eingegangen.
