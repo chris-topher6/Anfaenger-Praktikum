@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 \subsection{Messdaten}
 \label{sec:mess}
-In den folgenden Tabellen \ref{tab:abmessungen}, \ref{tab:einseitig} und \ref{tab:zweiseitig} sind die nach Kapitel 
+In den folgenden Tabellen \ref{tab:abmessungen}, \ref{tab:einseitig} und \ref{tab:zweiseitig} sind die nach Kapitel
 \ref{sec:Durchführung} aufgenommenen Messdaten aufgelistet.
 
 \input{content/messdaten.tex}
@@ -13,13 +13,13 @@ Um die Elastizitätsmoduln $E$ der Proben zu berechnen, wird der Zusammenhang \e
 \begin{equation}
     \xi=Lx^2-\frac{x^3}{3}
     \label{eqn:xi}
-\end{equation}  
-wird $D(x)$ zu der lineraren Funktion 
+\end{equation}
+wird $D(x)$ zu der lineraren Funktion
 \begin{equation}
     D(\xi)=\frac{mg}{2EI}\xi=:a\xi+b \;.
     \label{eqn:D(xi)}
 \end{equation}
-In Abbildung \ref{fig:einseitig} sind die Messdaten aus Tabelle \ref{tab:einseitig} nach der Ersetzung \eqref{eqn:xi} aufgetragen. 
+In Abbildung \ref{fig:einseitig} sind die Messdaten aus Tabelle \ref{tab:einseitig} nach der Ersetzung \eqref{eqn:xi} aufgetragen.
 
 \begin{figure}[H]
     \centering
@@ -29,18 +29,18 @@ In Abbildung \ref{fig:einseitig} sind die Messdaten aus Tabelle \ref{tab:einseit
 \end{figure}
 
 \noindent Mit \textit{numpy}
-\cite{numpy} ist eine linerare Regression berechnet worden, welche die Form von Gleichung \eqref{eqn:D(xi)} besitzt. Die berechneten 
+\cite{numpy} ist eine linerare Regression berechnet worden, welche die Form von Gleichung \eqref{eqn:D(xi)} besitzt. Die berechneten
 Parameter der Geraden lauten
 \begin{align*}
-    a_1&=\SI[per-mode=reciprocal]{0.0543 \pm 0.0014}{\per\square\metre} \qquad 
+    a_1&=\SI[per-mode=reciprocal]{0.0543 \pm 0.0014}{\per\square\metre} \qquad
     b_1=\SI{0.18   \pm 0.08}{\milli\metre}      \\
-    a_2&=\SI[per-mode=reciprocal]{0.0308 \pm 0.0006}{\per\square\metre} \qquad 
+    a_2&=\SI[per-mode=reciprocal]{0.0308 \pm 0.0006}{\per\square\metre} \qquad
     b_2=\SI{0.07  \pm 0.03}  {\milli\metre}       \\
-    a_3&=\SI[per-mode=reciprocal]{0.0518 \pm 0.0011}{\per\square\metre} \qquad 
+    a_3&=\SI[per-mode=reciprocal]{0.0518 \pm 0.0011}{\per\square\metre} \qquad
     b_3=\SI{0.12   \pm 0.07}   {\milli\metre}         \;.
 \end{align*}
 Die Unsicherheiten sind dabei von \textit{uncertainties} \cite{uncertainties} berechnet worden.
-Nach Gleichung \eqref{eqn:D(xi)} kann aus der Steigung $a$ der Geraden das Elastizitätsmodul 
+Nach Gleichung \eqref{eqn:D(xi)} kann aus der Steigung $a$ der Geraden das Elastizitätsmodul
 \begin{equation}
     E=\frac{mg}{2aI}
     \label{eqn:E}
@@ -48,15 +48,15 @@ Nach Gleichung \eqref{eqn:D(xi)} kann aus der Steigung $a$ der Geraden das Elast
 berechnet werden. Das Flächentrgheitsmoment ist dabei durch Gleichung \eqref{eqn:I1} für die eckigen Stäbe 1 und 2 und duch \eqref{eqn:I2}
 für den runden Stab 3 gegeben. Durch Einsetzten ergeben sich für die Elastizitätsmoduln
 \begin{align*}
-    E_1&=\SI{ 74.13 \pm 1.20}{\kilo\newton\per\square\milli\metre}\\ 
-    E_2&=\SI{189.20 \pm 3.35}{\kilo\newton\per\square\milli\metre}\\ 
+    E_1&=\SI{ 74.13 \pm 1.20}{\kilo\newton\per\square\milli\metre}\\
+    E_2&=\SI{189.20 \pm 3.35}{\kilo\newton\per\square\milli\metre}\\
     E_3&=\SI{106.02 \pm 2.34}{\kilo\newton\per\square\milli\metre} \;.
 \end{align*}
 
-\subsection{Runder Stab, zweiseitig}   
+\subsection{Runder Stab bei zweiseitiger Einspannung}   
 \label{sec:zweiseitig}
-Analog zu Abschnitt \ref{sec:einseitig} werden neue Argumente $\eta$ definiert, welche zu einem lineraren Zusammenhang zwischen 
-$\eta$ und $D(\eta)$ führen. Nach den Gleichungen \eqref{eqn:9} und \eqref{eqn:10} wird 
+Analog zu Abschnitt \ref{sec:einseitig} werden neue Argumente $\eta$ definiert, welche zu einem lineraren Zusammenhang zwischen
+$\eta$ und $D(\eta)$ führen. Nach den Gleichungen \eqref{eqn:9} und \eqref{eqn:10} wird
 \begin{align*}
     \eta_1&=3L^2x-4x^3 \\
     \eta_2&=4x^3-12Lx^2+9L^2x-L^3
@@ -66,7 +66,7 @@ gewählt, sodass sich
     D(\eta)=\frac{mg}{48EI}=:c\eta+d
 \end{equation}
 ergibt. $\eta_1$ beschreibt dabei nach Gleichung \eqref{eqn:9} das Intervall $[0,L/2]$ und $\eta_2$ ist für $(L/2,L]$ gültig. In den Abbildungen
-\ref{fig:me9} und \ref{fig:me10} sind die Messdaten für beide Bereiche in ein ($\eta$-$D$)-Diagramm aufgetragen. 
+\ref{fig:me9} und \ref{fig:me10} sind die Messdaten für beide Bereiche in ein ($\eta$-$D$)-Diagramm aufgetragen.
 
 \begin{figure}[H]
     \centering
@@ -82,16 +82,16 @@ ergibt. $\eta_1$ beschreibt dabei nach Gleichung \eqref{eqn:9} das Intervall $[0
     \label{fig:einseitig}
 \end{figure}
 
-\noindent Die Parameter der von 
+\noindent Die Parameter der von
 \textit{numpy} \cite{numpy} berechneten Regression mit den von \textit{uncertainties} \cite{uncertainties} berechneten Unsicherheiten lauten
 \begin{align*}
     c_1&=\SI[per-mode=reciprocal]{0.00303 \pm 0.00020}{\per\square\metre} \qquad
     d_1=\SI{-0.141 \pm 0.030}{\milli\metre}\\
     c_2&=\SI[per-mode=reciprocal]{0.00344 \pm 0.00007}{\per\square\metre} \qquad
     d_2=\SI{-0.192 \pm 0.012}{\milli\metre} \;.
-\end{align*} 
+\end{align*}
 
-\noindent Durch die Steigung $c$ der Geraden kann nun wieder das Elastizitätsmodul 
+\noindent Durch die Steigung $c$ der Geraden kann nun wieder das Elastizitätsmodul
 \begin{equation*}
     E=\frac{mg}{48cI}
 \end{equation*}
