@@ -27,7 +27,7 @@ und $D_0(x)$ die Auslenkung des Körpers in der Ruhelage ohne ein angehängtes G
 Um die Funktion zu bestimmen, können zwei Verfahren verwendet werden. Auf diese
 wird im Folgenden näher eingegangen.
 
-\subsection{Berechnung der Durchbiegung bei einseitiger Einhängung}
+\subsection{Berechnung der Durchbiegung bei einseitiger Aufhängung}
 \label{sec:einseitigg}
 Im folgenden Abschnitt wird die Durchbiegung eines homogenen Stabes bei einseitiger
 Einspannung nach in Abbildung \ref{fig:einseitig} dargestelltem Aufbau untersucht,
@@ -98,7 +98,7 @@ ergibt sich für die Normalspannung
 \sigma (y) = E y \frac{d^2 D}{d x^2}.
 \label{eqn:normalspannung2}
 \end{equation}
-Setzt man nun in die Momentengleichung \eqref{eqn:momentengleichung2} den so erhaltenen Ausruck \eqref{eqn:normalspannung2}
+Setzt man nun in die Momentengleichung \eqref{eqn:momentengleichung2} den so erhaltenen Ausdruck \eqref{eqn:normalspannung2}
 für die Normalspannung ein, erhält man
 \begin{equation}
   E \frac{d^2 D}{d x^2} \int_Q y^2 dq = F(L - x).
@@ -116,3 +116,52 @@ werden:
   \label{eqn:durchbiegungeinseitig}
 \end{equation}
 Hierbei gilt $0 \leq x \leq L$.
+
+\subsection{Berechnung der Durchbiegung bei beidseitiger Aufhängung}
+\label{sec:beidseitigg}
+Im folgenden Abschnitt wird nun die Durchbiegung eines homogenen Stabes bei beidseitiger Aufhängung untersucht.
+Hierfür wird der in Abbildung \ref{fig:beidseitig1} schematisch dargestellte Aufbau verwendet.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{content/Beidseitig.png}
+  \caption{Durchbiegung eines elastischen Stabes bei beidseitiger Aufhängung.}
+  \label{fig:beidseitig1}
+\end{figure}
+\noindent
+Hier ergibt sich durch die Kraft $F$, ganz analog zu \ref{sec:einseitigg}, ein Drehmoment.
+Durch die beidseitige Aufhängung hat dies nun für $0 \leq x \leq L/2$ die Form
+\begin{equation}
+  M_F = - \frac{F}{2}x
+  \label{eqn:drehmomentbeidseitig1}
+\end{equation}
+und für $L/2 \leq x \leq L$ die Form
+\begin{equation}
+  M_F = -\frac{F}{2} (L - x).
+  \label{eqn:drehmomentbeidseitig2}
+\end{equation}
+Unter Verwendug dieses Drehmoments ergibt sich eine Momentengleichung:
+\begin{equation}
+  \frac{d^2 D}{d x^2} =  - \frac{F}{E I} \frac{x}{2}
+  \label{eqn:momentengleichungbeidseitig1}
+\end{equation}
+für $0 \leq x \leq L$ sowie
+\begin{equation}
+  \frac{d^2 D}{d x^2} = - \frac{1}{2} \frac{F}{E I} (L - x)
+  \label{eqn:momentengleichungbeidseitig2}
+\end{equation}
+für $L/2 \leq x \leq L$.
+Integriert man Gleichung \eqref{eqn:momentengleichungbeidseitig1} und Gleichung \eqref{eqn:momentengleichungbeidseitig2},
+erhält man unter Verwendung der Tangentialbedingung
+\begin{equation}
+  D(x) = \frac{F}{48 E I} \left( 3 L^2 x -4 x^3 \right)
+  \label{eqn:durchbiegungbeidseitig1}
+\end{equation}
+für $0 \leq x \leq L$ und
+\begin{equation}
+  D(x) = \frac{F}{48 E I} \left( 4 x^3 -12 L x^2 +9 L^2 x-L^3 \right)
+  \label{eqn:durchbiegungbeidseitig2}
+\end{equation}
+für $L/2 \leq x \leq L$.
+\\
+Aus den Gleichungen \eqref{eqn:durchbiegungeinseitig}, \eqref{eqn:durchbiegungbeidseitig1} sowie \eqref{eqn:durchbiegungbeidseitig2}
+lässt sich nun durch Umformen das Elastizitätsmodul bestimmen.
