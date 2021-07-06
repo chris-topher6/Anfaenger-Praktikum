@@ -9,7 +9,7 @@ In den folgenden Tabellen \ref{tab:abmessungen}, \ref{tab:einseitig} und \ref{ta
 
 \subsection{Einseitige Einspannung}
 \label{sec:einseitig}
-Um die Elastizitätsmoduln $E$ der Proben zu berechnen, wird der Zusammenhang \eqref{eqn:8} zwischen $x$ und $D(x)$ betrachtet. Durch die Ersetzung
+Um die Elastizitätsmoduln $E$ der Proben zu berechnen, wird der Zusammenhang \eqref{eqn:durchbiegungeinseitig} zwischen $x$ und $D(x)$ betrachtet. Durch die Ersetzung
 \begin{equation}
     \xi=Lx^2-\frac{x^3}{3}
     \label{eqn:xi}
@@ -45,18 +45,18 @@ Nach Gleichung \eqref{eqn:D(xi)} kann aus der Steigung $a$ der Geraden das Elast
     E=\frac{mg}{2aI}
     \label{eqn:E}
 \end{equation}
-berechnet werden. Das Flächentrgheitsmoment ist dabei durch Gleichung \eqref{eqn:I1} für die eckigen Stäbe 1 und 2 und duch \eqref{eqn:I2}
-für den runden Stab 3 gegeben. Durch Einsetzten ergeben sich für die Elastizitätsmoduln
+berechnet werden. Das Flächenträgheitsmoment ist dabei durch Gleichung \eqref{eqn:trägefläche} für die eckigen Stäbe 1 und 2 und duch \eqref{eqn:I2}
+für den runden Stab 3 gegeben. Durch Einsetzen ergeben sich für die Elastizitätsmoduln
 \begin{align*}
     E_1&=\SI{ 74.13 \pm 1.20}{\kilo\newton\per\square\milli\metre}\\
     E_2&=\SI{189.20 \pm 3.35}{\kilo\newton\per\square\milli\metre}\\
     E_3&=\SI{106.02 \pm 2.34}{\kilo\newton\per\square\milli\metre} \;.
 \end{align*}
 
-\subsection{Runder Stab bei zweiseitiger Einspannung}   
+\subsection{Runder Stab bei zweiseitiger Einspannung}
 \label{sec:zweiseitig}
 Analog zu Abschnitt \ref{sec:einseitig} werden neue Argumente $\eta$ definiert, welche zu einem lineraren Zusammenhang zwischen
-$\eta$ und $D(\eta)$ führen. Nach den Gleichungen \eqref{eqn:9} und \eqref{eqn:10} wird
+$\eta$ und $D(\eta)$ führen. Nach den Gleichungen \eqref{eqn:durchbiegungbeidseitig1} und \eqref{eqn:durchbiegungbeidseitig2} wird
 \begin{align*}
     \eta_1&=3L^2x-4x^3 \\
     \eta_2&=4x^3-12Lx^2+9L^2x-L^3
@@ -65,7 +65,7 @@ gewählt, sodass sich
 \begin{equation}
     D(\eta)=\frac{mg}{48EI}=:c\eta+d
 \end{equation}
-ergibt. $\eta_1$ beschreibt dabei nach Gleichung \eqref{eqn:9} das Intervall $[0,L/2]$ und $\eta_2$ ist für $(L/2,L]$ gültig. In den Abbildungen
+ergibt. $\eta_1$ beschreibt dabei nach Gleichung \eqref{eqn:durchbiegungbeidseitig1} das Intervall $[0,L/2]$ und $\eta_2$ ist für $(L/2,L]$ gültig. In den Abbildungen
 \ref{fig:me9} und \ref{fig:me10} sind die Messdaten für beide Bereiche in ein ($\eta$-$D$)-Diagramm aufgetragen.
 
 \begin{figure}[H]

@@ -1,4 +1,4 @@
-f\section{Theorie}
+\section{Theorie}
 \label{sec:Theorie}
 \subsection{Problemstellung}
 \label{sec:problemstellung}
@@ -33,7 +33,7 @@ um die Funktion $D(x)$ sowie das Elastizitätsmodul zu erhalten.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{content/EinspannungEinseitig.png}
-  \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung.}
+  \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung. \cite{AP01}}
   \label{fig:einseitig}
 \end{figure}
 \noindent
@@ -50,10 +50,10 @@ ergibt sich eine Gleichgewichtslage, in der gilt
 Hierbei lässt sich $M_\sigma$ durch Integration über den Querschnitt $Q$ des Stabes
 ermitteln:
 \begin{equation}
-  M_\sigma = \int_Q = y \sigma(y) dq.
+  M_\sigma = \int_Q  y \sigma(y) dq.
   \label{eqn:msigma}
 \end{equation}
-Hierbei bezeichnet $y$ den Abstand des Flächenelementes $dq$ von der neutralen Faser
+$y$ meint hier den Abstand des Flächenelementes $dq$ von der neutralen Faser
 des Stabes $x$ sowie $\sigma(y)$ die Normalspannung.
 $M_F$ wirkt durch die Länge $L$ des Stabes mit einem Hebel, weshalb sich der Betrag des Drehmoments
 $M_F$ wie folgt bestimmen lässt:
@@ -64,7 +64,7 @@ $M_F$ wie folgt bestimmen lässt:
 Daher ergibt sich die auch als Momentengleichung bezeichnete Gleichung \eqref{eqn:momentengleichung1}
 mit Gleichung \eqref{eqn:msigma} sowie Gleichung \eqref{eqn:mf} zu
 \begin{equation}
-  F(L - x) = \int_Q = y \sigma(y) dq.
+  F(L - x) = \int_Q  y \sigma(y) dq.
   \label{eqn:momentengleichung2}
 \end{equation}
 Die hier auftretende Normalspannung $\sigma(y)$ lässt sich nach dem Hookeschen Gesetz \eqref{eqn:captainhook} bestimmen.
@@ -83,18 +83,18 @@ Diese Längenänderung ergibt sich nach Abbildung \ref{fig:einspannungeinseitig2
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{content/EinspannungEinseitig2.png}
-  \caption{Schematische Abbildung des gebogenen Stabes zur Bestimmung der Normalspannung.}
+  \caption{Schematische Abbildung des gebogenen Stabes zur Bestimmung der Normalspannung. \cite{AP01}}
   \label{fig:einspannungeinseitig2}
 \end{figure}
 \noindent
 Unter Verwendung von Gleichung \eqref{eqn:normalspannung}, Gleichung \eqref{eqn:kleindeltax} sowie der Näherung
 \begin{equation*}
-\frac{1}{R} \approx \frac{d^2 D}{d x^2}
+  \frac{1}{R} \approx \frac{d^2 D}{d x^2}
 \end{equation*}
 ergibt sich für die Normalspannung
 \begin{equation}
-\sigma (y) = E y \frac{d^2 D}{d x^2}.
-\label{eqn:normalspannung2}
+  \sigma (y) = E y \frac{d^2 D}{d x^2}.
+  \label{eqn:normalspannung2}
 \end{equation}
 Setzt man nun in die Momentengleichung \eqref{eqn:momentengleichung2} den so erhaltenen Ausdruck \eqref{eqn:normalspannung2}
 für die Normalspannung ein, erhält man
@@ -103,9 +103,10 @@ für die Normalspannung ein, erhält man
   \label{eqn:momentengleichung3}
 \end{equation}
 Hierbei wird der in \eqref{eqn:momentengleichung3} auftretende Term
-\begin{equation*}
+\begin{equation}
   I := \int_Q y^2 dq(y)
-\end{equation*}
+  \label{eqn:trägefläche}
+\end{equation}
 als Flächenträgheitsmoment bezeichnet.
 Aus Gleichung \eqref{eqn:momentengleichung3} kann nun durch Integration die Durchbiegung $D(x)$ bestimmt
 werden:
@@ -122,7 +123,7 @@ Hierfür wird der in Abbildung \ref{fig:beidseitig1} schematisch dargestellte Au
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{content/Beidseitig.png}
-  \caption{Durchbiegung eines elastischen Stabes bei beidseitiger Aufhängung.}
+  \caption{Durchbiegung eines elastischen Stabes bei beidseitiger Aufhängung. \cite{AP01}}
   \label{fig:beidseitig1}
 \end{figure}
 \noindent
@@ -137,7 +138,7 @@ und für $L/2 \leq x \leq L$ die Form
   M_F = -\frac{F}{2} (L - x).
   \label{eqn:drehmomentbeidseitig2}
 \end{equation}
-Unter Verwendug dieses Drehmoments ergibt sich eine Momentengleichung:
+Unter Verwendung dieses Drehmoments ergibt sich eine Momentengleichung:
 \begin{equation}
   \frac{d^2 D}{d x^2} =  - \frac{F}{E I} \frac{x}{2}
   \label{eqn:momentengleichungbeidseitig1}
