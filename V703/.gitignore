@@ -8,3 +8,7 @@ main.fls
 main.log
 matplotlibrc
 .DS_Store
+/auswertung/plot1.pdf
+/auswertung/plot2.pdf
+main.bbl
+main.blg
