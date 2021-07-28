@@ -3,7 +3,7 @@
 In der folgenden Tabelle \ref{tab:diss} sind die Ergebnisse aus Kapitel \ref{sec:auswertung} noch einmal zusammengefasst.
 \begin{table}[H]
     \centering
-    \caption{Zusammenfassung der Ergebnisse.}
+    \caption{Zusammenfassung der Ergebnisse für $\kappa$.}
     \label{tab:diss}
     \sisetup{table-format=2.2}
     \begin{tabular}{S S[table-format=3.2] @{$\pm$} S[table-format=2.2] S S}
@@ -14,18 +14,38 @@ In der folgenden Tabelle \ref{tab:diss} sind die Ergebnisse aus Kapitel \ref{sec
         {$p [\%]$}\\
         \midrule
         {Messing}   & 47.42 & 12.61 & {81-113} & {41.45-58.04} \\
-        {Aluminuim} & 154.4 & 45.1  & {220}    & {29.82      } \\
+        {Aluminium} & 154.4 & 45.1  & {220}    & {29.82      } \\
         {Edelstahl} & 8.64  & 1.61  & {20-21}  & {56.8-58.9  } \\
+        \bottomrule
+    \end{tabular}
+  \end{table}
+\noindent
+\begin{table}[H]
+    \centering
+    \caption{Zusammenfassung der Ergebnisse für $\lambda$.}
+    \label{tab:diss2}
+    \sisetup{table-format=1.5}
+    \begin{tabular}{S S @{$\pm$} S S S[table-format=2.2]}
+        \toprule
+        {Probe} &
+        \multicolumn{2}{c}{$\lambda [\si{\meter}]$} & {$\lambda_\text{lit}   [\si{\meter}]$\cite{AP02}} & {$p [\%]$}\\
+        \midrule
+        {Messing}   & 0.1218  & 0.0162   & 0.1938   & 37.14 \\
+        {Aluminium} & 0.2486  & 0.0363   & 0.3067   & 18.95 \\
+        {Edelstahl} & 0.05209 & 0.00486  & 0.08122  & 35.87 \\
         \bottomrule
     \end{tabular}
   \end{table}
 \noindent
 Dabei sind die Abweichungen $p$ von den Literaturwerten mit
 \begin{equation*}
-    p=\frac{\kappa_\text{lit}-\kappa}{\kappa_\text{lit}}\cdot 100
+    p=\frac{x_\text{lit}-x}{x_\text{lit}}\cdot 100
 \end{equation*}
 berechnet worden.
-\\\\\noindent
+$\lambda_\text{lit}$ meint hier $\lambda$ berechnet unter Verwendung des Literaturwertes $\kappa$ \ref{tab:vorbereitung}.
+\\
+\\
+\noindent
 Die berechneten Werte weichen alle vergleichsweise stark von den Literaturwerten ab. Im Folgenden sind mögliche Gründe aufgelistet.
 \begin{itemize}
     \item \textit{Zusammensetzung der Metalle}\\
