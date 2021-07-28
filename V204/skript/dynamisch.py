@@ -5,6 +5,7 @@ import sympy
 from sympy import *
 from uncertainties import ufloat
 from scipy.signal import find_peaks
+import tools
 
 #Konstanten
 d_x=0.03
@@ -189,6 +190,14 @@ l12=((4*np.pi *k12*80)/(rho_messing*c_messing))**0.5
 l56=((4*np.pi *k56*80)/(rho_aluminium*c_aluminium))**0.5
 l78=((4*np.pi *k78*80)/(rho_edelstahl*c_edelstahl))**0.5
 
+l12_lit=((4*np.pi *k_messing*80)/(rho_messing*c_messing))**0.5
+l56_lit=((4*np.pi *k_aluminium*80)/(rho_aluminium*c_aluminium))**0.5
+l78_lit=((4*np.pi *k_edelstahl*80)/(rho_edelstahl*c_edelstahl))**0.5
+
+p12=tools.abweichung(l12_lit,l12)
+p56=tools.abweichung(l56_lit,l56)
+p78=tools.abweichung(l78_lit,l78)
+
 print()
 print(f"k12={k12:.4}")
 print(f"k56={k56:.4}")
@@ -198,6 +207,14 @@ print(f"l12={l12:.4}")
 print(f"l56={l56:.4}")
 print(f"l78={l78:.4}")
 print()
+print(f"l12_lit={l12_lit:.4}")
+print(f"l56_lit={l56_lit:.4}")
+print(f"l78_lit={l78_lit:.4}")
+print()
+print(f"p12_lit={p12:.4}%")
+print(f"p56_lit={p56:.4}%")
+print(f"p78_lit={p78:.4}%")
+
 
 np.savetxt('build/tabelle-A12.txt',np.column_stack( [ A2, A1, dt12, k12_neu] ), fmt='%10.2f' , delimiter='&',header='A2nah A1fern dt12 k12', newline='\\\\\n' )
 np.savetxt('build/tabelle-A56.txt',np.column_stack( [ A6, A5, dt56, k56_neu] ), fmt='%10.2f' , delimiter='&',header='A6nah A5fern dt56 k56', newline='\\\\\n' )
