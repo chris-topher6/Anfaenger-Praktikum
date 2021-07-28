@@ -28,7 +28,7 @@ plt.savefig('build/plot2.pdf')
 
 np.savetxt('build/intervalla.txt',np.column_stack( [t, T1, T2, T3, T4, T5, T6, T7, T8] ), fmt='%10.2f' , delimiter='&',header='t statisch', newline='\\\\\n' )
 
-np.savetxt('build/tabelle1.txt',np.column_stack( [ T1[139],T4[139],T5[139],T8[139] ] ), fmt='%10.2f' , delimiter='&',header='T(700s) T1 T4 T5 T8', newline='\\\\\n' )
+np.savetxt('build/tabelle1.txt',np.column_stack( [ T1[3500],T4[3500],T5[3500],T8[3500] ] ), fmt='%10.2f' , delimiter='&',header='T(700s) T1 T4 T5 T8', newline='\\\\\n' )
 d_x=0.03
 k_messing=120 #W/mk
 rho_messing=8520 #kg/m^3
@@ -48,6 +48,7 @@ A_edelstahl=0.012*0.004
 #i=np.array([19,39,59,79,99])                #t=n*5-1
 i=np.array([499, 999, 1499, 1999, 2499])
 j=0
+print('dQ:')
 while j < 5:
     dQ=np.array([-k_messing*A_messingb*(T2[i[j]]-T1[i[j]])/d_x, -k_messing*A_messings*(T3[i[j]]-T4[i[j]])/d_x,-k_aluminium*A_aluminium*(T6[i[j]]-T5[i[j]])/d_x,  -k_edelstahl*A_edelstahl*(T7[i[j]]-T8[i[j]])/d_x])
     j=j+1
@@ -64,3 +65,6 @@ print(f"T4: {T4[499]+273.15:.4},{T4[999]+273.15:.4},{T4[1499]+273.15:.4},{T4[199
 print(f"T5: {T5[499]+273.15:.4},{T5[999]+273.15:.4},{T5[1499]+273.15:.4},{T5[1999]+273.15:.4},{T5[2499]+273.15:.4}")
 print(f"T8: {T8[499]+273.15:.4},{T8[999]+273.15:.4},{T8[1499]+273.15:.4},{T8[1999]+273.15:.4},{T8[2499]+273.15:.4}")
 print()
+
+print('!')
+print(f'T1(700)={T1[3500]}')
